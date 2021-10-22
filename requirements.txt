@@ -7,3 +7,12 @@ python-Levenshtein
 lxml
 graphviz
 tabulate
+numpy
+spacy
+tqdm
+scikit-learn
+torch
+transformers
+pystruct
+allennlp
+nltk 

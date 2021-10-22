@@ -14,13 +14,6 @@ clean:
 	make cleanTemporary
 	- rm dot.*
 
-subs: ; git submodule update --init --recursive
-
-install:
-	git submodule update --recursive --remote
-	sudo pip3 install GMatch4py/.
-	sudo pip3 install --upgrade --force-reinstall korg-update/.
-
 .PHONY: nlp2promela
 
 tcp2promela:
