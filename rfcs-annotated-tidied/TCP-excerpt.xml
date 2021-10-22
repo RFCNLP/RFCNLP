@@ -1,0 +1,81 @@
+<p>
+  <def_state>LISTEN</def_state>
+  <def_state>SYN-RECEIVED</def_state>
+  <def_event id="10">SYN</def_event>
+  <def_event id="9">reset</def_event>
+  third check for a SYN
+  <control relevant="false">
+    <trigger>
+      If the 
+      <ref_event id="10">SYN</ref_event> 
+      bit is set,
+    </trigger> 
+    <action>check the security.</action> 
+    <control relevant="false">
+      <trigger>
+        If the
+          security/compartment on the incoming segment does not exactly
+          match the security/compartment in the TCB
+      </trigger> 
+      then 
+      <action type="send">
+        send a 
+        <arg>
+          <ref_event id="9">reset</ref_event>
+        </arg>
+      </action> 
+      and
+      <action>return.</action>
+      <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action>
+    </control>
+  </control>
+  [Page 65]
+  September 1981
+  Transmission Control Protocol
+  Functional Specification
+  SEGMENT ARRIVES
+  <control relevant="true">
+    <trigger>
+      If the SEG.PRC is greater than the TCB.PRC then if allowed by
+      the user and the system
+    </trigger> 
+    <variable>
+      set TCB.PRC&lt;-SEG.PRC,
+    </variable> 
+    <trigger>if not allowed</trigger>
+    <action type="send">
+      send 
+      <arg>a reset</arg>
+    </action> 
+    and 
+    <action>return.</action>
+    <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action>
+  </control>
+  <control relevant="true">
+    <trigger>If the SEG.PRC is less than the TCB.PRC</trigger> 
+    then 
+    <action>continue.</action>
+  </control>
+  <variable>Set RCV.NXT to SEG.SEQ+1,</variable> 
+  <variable>IRS is set to SEG.SEQ</variable> 
+  and 
+  <action>
+    any other
+    control or text should be queued for processing later.
+  </action>  
+  <variable>ISS should be selected</variable> 
+  and a 
+  <action type="send">
+    <arg>
+      <ref_event id="10">SYN</ref_event> 
+      segment
+    </arg> 
+    sent of the form:
+    &lt;SEQ=ISS&gt;&lt;ACK=RCV.NXT&gt;&lt;CTL=SYN,ACK&gt;
+  </action>
+  <variable>SND.NXT is set to ISS+1</variable> 
+  and 
+  <variable>SND.UNA to ISS.</variable>  
+  The connection
+  <transition>state should be changed to SYN-RECEIVED.</transition>
+</p>

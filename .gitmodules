@@ -1,0 +1,6 @@
+[submodule "GMatch4py"]
+	path = GMatch4py
+	url = https://github.com/Jacobe2169/GMatch4py.git
+[submodule "korg-update"]
+	path = korg-update
+	url = https://github.com/anonymous-sp-submission/korg-update.git

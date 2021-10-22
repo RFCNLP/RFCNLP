@@ -1,0 +1,64 @@
+BGPv4	ManualStart	1
+BGPv4	ManualStop	2
+BGPv4	AutomaticStart	3
+BGPv4	ManualStart_with_PassiveTcpEstablishment	4
+BGPv4	AutomaticStart_with_PassiveTcpEstablishment	5
+BGPv4	AutomaticStart_with_DampPeerOscillations	6
+BGPv4	AutomaticStart_with_DampPeerOscillations_and_       PassiveTcpEstablishment	7
+BGPv4	AutomaticStop	8
+BGPv4	ConnectRetryTimer_Expires	9
+BGPv4	HoldTimer_Expires	10
+BGPv4	KeepaliveTimer_Expires	11
+BGPv4	DelayOpenTimer_Expires	12
+BGPv4	IdleHoldTimer_Expires	13
+BGPv4	TcpConnection_Valid	14
+BGPv4	Tcp_CR_Invalid	15
+BGPv4	Tcp_CR_Acked	16
+BGPv4	TcpConnectionConfirmed	17
+BGPv4	TcpConnectionFails	18
+BGPv4	BGPOpen	19
+BGPv4	BGPOpen with DelayOpenTimer running	20
+BGPv4	BGPHeaderErr	21
+BGPv4	BGPOpenMsgErr	22
+BGPv4	OpenCollisionDump	23
+BGPv4	NotifMsgVerErr	24
+BGPv4	NotifMsg	25
+BGPv4	KeepAliveMsg	26
+BGPv4	UpdateMsg	27
+BGPv4	UpdateMsgErr	28
+DCCP	DCCP-Request	1
+DCCP	DCCP-Response	2
+DCCP	DCCP-Data	3
+DCCP	DCCP-Ack	4
+DCCP	DCCP-DataAck	5
+DCCP	DCCP-CloseReq	6
+DCCP	DCCP-Close	7
+DCCP	DCCP-Reset	8
+DCCP	DCCP-Sync	9
+DCCP	DCCP-SyncAck	10
+DCCP	timeout	11
+SCTP	INIT	1
+SCTP	INIT ACK	2
+SCTP	SACK	3
+SCTP	HEARTBEAT	4
+SCTP	ABORT	6
+SCTP	SHUTDOWN	7
+SCTP	SHUTDOWN ACK	8
+SCTP	COOKIE ECHO	9
+SCTP	COOKIE ACK	10
+SCTP	SHUTDOWN COMPLETE	11
+TCP	ACK	7
+TCP	PSH	8
+TCP	RST	9
+TCP	SYN	10
+TCP	FIN	11
+TCP	OPEN	1
+TCP	SEND	2
+TCP	RECEIVE	3
+TCP	CLOSE	4
+TCP	ABORT	5
+TCP	STATUS	6
+TCP	SEGMENT ARRIVES	12
+TCP	USER TIMEOUT	13
+TCP	RETRANSMISSION TIMEOUT	14
+TCP	TIME-WAIT TIMEOUT	15

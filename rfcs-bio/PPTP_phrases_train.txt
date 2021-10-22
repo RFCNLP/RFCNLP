@@ -1,0 +1,1369 @@
+When ======= trigger ======= WRB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+TCP ======= trigger ======= NNP ======= True ======= 0 ======= 0
+connection ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+open ======= trigger ======= JJ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+originator ======= action ======= NN ======= True ======= 0 ======= 0
+transmits ======= action ======= VBZ ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+send ======= action ======= JJ ======= True ======= 0 ======= 0
+Start-Control- ======= action ======= JJ ======= True ======= 0 ======= 0
+Connection-Request ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+then ======= O ======= RB ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_ctl_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+The ======= trigger ======= DT ======= False ======= 0 ======= 0
+originator ======= trigger ======= NN ======= False ======= 0 ======= 0
+checks ======= trigger ======= NNS ======= False ======= 0 ======= 0
+to ======= trigger ======= TO ======= False ======= 0 ======= 0
+see ======= trigger ======= VB ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+if ======= trigger ======= IN ======= False ======= 0 ======= 0
+another ======= trigger ======= DT ======= False ======= 0 ======= 0
+TCP ======= trigger ======= NNP ======= False ======= 0 ======= 0
+connection ======= trigger ======= NN ======= False ======= 0 ======= 0
+has ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+been ======= trigger ======= VBN ======= False ======= 0 ======= 0
+requested ======= trigger ======= VBN ======= False ======= 0 ======= 0
+from ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+same ======= trigger ======= JJ ======= False ======= 0 ======= 0
+peer ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+and ======= trigger ======= CC ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+if ======= trigger ======= IN ======= False ======= 0 ======= 0
+so ======= trigger ======= RB ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+handles ======= action ======= VBZ ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+collision ======= action ======= NN ======= False ======= 0 ======= 0
+situation ======= action ======= NN ======= False ======= 0 ======= 0
+described ======= action ======= VBN ======= False ======= 0 ======= 0
+in ======= action ======= IN ======= False ======= 0 ======= 0
+section ======= action ======= NN ======= False ======= 0 ======= 0
+3.1.3 ======= action ======= CD ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= False ======= 0 ======= 0
+a ======= trigger ======= DT ======= False ======= 0 ======= 0
+Start-Control-Connection-Reply ======= trigger ======= NNP ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+received ======= trigger ======= VBN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= action ======= PRP ======= False ======= 0 ======= 0
+is ======= action ======= VBZ ======= False ======= 0 ======= 0
+examined ======= action ======= VBN ======= False ======= 0 ======= 0
+for ======= action ======= IN ======= False ======= 0 ======= 0
+a ======= action ======= DT ======= False ======= 0 ======= 0
+compatible ======= action ======= JJ ======= False ======= 0 ======= 0
+version ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+version ======= trigger ======= NN ======= True ======= 1 ======= 1
+of ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+reply ======= trigger ======= NN ======= True ======= 1 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+lower ======= trigger ======= JJR ======= True ======= 1 ======= 1
+than ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+version ======= trigger ======= NN ======= True ======= 1 ======= 1
+sent ======= trigger ======= VBD ======= True ======= 1 ======= 1
+in ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+request ======= trigger ======= NN ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= action ======= DT ======= True ======= 1 ======= 1
+older ======= action ======= NN ======= True ======= 1 ======= 1
+( ======= action ======= ( ======= True ======= 1 ======= 1
+lower ======= action ======= JJR ======= True ======= 1 ======= 1
+) ======= action ======= ) ======= True ======= 1 ======= 1
+version ======= action ======= NN ======= True ======= 1 ======= 1
+should ======= action ======= MD ======= True ======= 1 ======= 1
+be ======= action ======= VB ======= True ======= 1 ======= 1
+used ======= action ======= VBN ======= True ======= 1 ======= 1
+provided ======= action ======= VBN ======= True ======= 1 ======= 1
+it ======= action ======= PRP ======= True ======= 1 ======= 1
+is ======= action ======= VBZ ======= True ======= 1 ======= 1
+supported ======= action ======= VBN ======= True ======= 1 ======= 1
+. ======= action ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+If ======= trigger ======= IN ======= True ======= 2 ======= 2
+the ======= trigger ======= DT ======= True ======= 2 ======= 2
+version ======= trigger ======= NN ======= True ======= 2 ======= 2
+in ======= trigger ======= IN ======= True ======= 2 ======= 2
+the ======= trigger ======= DT ======= True ======= 2 ======= 2
+reply ======= trigger ======= NN ======= True ======= 2 ======= 2
+is ======= trigger ======= VBZ ======= True ======= 2 ======= 2
+earlier ======= trigger ======= RBR ======= True ======= 2 ======= 2
+and ======= trigger ======= CC ======= True ======= 2 ======= 2
+supported ======= trigger ======= VBD ======= True ======= 2 ======= 2
+, ======= trigger ======= , ======= True ======= 2 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 2 ======= 2
+the ======= transition ======= DT ======= True ======= 2 ======= 2
+originator ======= transition ======= NN ======= True ======= 2 ======= 2
+moves ======= transition ======= VBZ ======= True ======= 2 ======= 2
+to ======= transition ======= TO ======= True ======= 2 ======= 2
+the ======= transition ======= DT ======= True ======= 2 ======= 2
+established ======= transition ======= VBN ======= True ======= 2 ======= 2
+state ======= transition ======= NN ======= True ======= 2 ======= 2
+. ======= transition ======= . ======= True ======= 2 ======= 2
+END-OF-CHUNK ======= B-TRANSITION ======= 2 ======= 2
+If ======= trigger ======= IN ======= True ======= 3 ======= 2
+the ======= trigger ======= DT ======= True ======= 3 ======= 2
+version ======= trigger ======= NN ======= True ======= 3 ======= 2
+is ======= trigger ======= VBZ ======= True ======= 3 ======= 2
+earlier ======= trigger ======= RBR ======= True ======= 3 ======= 2
+and ======= trigger ======= CC ======= True ======= 3 ======= 2
+not ======= trigger ======= RB ======= True ======= 3 ======= 2
+supported ======= trigger ======= VBN ======= True ======= 3 ======= 2
+, ======= trigger ======= , ======= True ======= 3 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 3 ======= 2
+a ======= action ======= DT ======= True ======= 3 ======= 2
+Stop-Control-Connection-Request ======= action ======= NNP ======= True ======= 3 ======= 2
+SHOULD ======= action ======= NNP ======= True ======= 3 ======= 2
+be ======= action ======= VB ======= True ======= 3 ======= 2
+sent ======= action ======= VBN ======= True ======= 3 ======= 2
+to ======= action ======= TO ======= True ======= 3 ======= 2
+the ======= action ======= DT ======= True ======= 3 ======= 2
+peer ======= action ======= NN ======= True ======= 3 ======= 2
+and ======= O ======= CC ======= True ======= 3 ======= 2
+the ======= transition ======= DT ======= True ======= 3 ======= 2
+originator ======= transition ======= NN ======= True ======= 3 ======= 2
+moves ======= transition ======= VBZ ======= True ======= 3 ======= 2
+into ======= transition ======= IN ======= True ======= 3 ======= 2
+the ======= transition ======= DT ======= True ======= 3 ======= 2
+wait_stop_reply ======= transition ======= NN ======= True ======= 3 ======= 2
+state ======= transition ======= NN ======= True ======= 3 ======= 2
+. ======= transition ======= . ======= True ======= 3 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 3 ======= 2
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+reply ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+lower ======= trigger ======= JJR ======= True ======= 0 ======= 0
+than ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+sent ======= trigger ======= VBD ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+request ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+older ======= action ======= NN ======= True ======= 0 ======= 0
+( ======= action ======= ( ======= True ======= 0 ======= 0
+lower ======= action ======= JJR ======= True ======= 0 ======= 0
+) ======= action ======= ) ======= True ======= 0 ======= 0
+version ======= action ======= NN ======= True ======= 0 ======= 0
+should ======= action ======= MD ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+used ======= action ======= VBN ======= True ======= 0 ======= 0
+provided ======= action ======= VBN ======= True ======= 0 ======= 0
+it ======= action ======= PRP ======= True ======= 0 ======= 0
+is ======= action ======= VBZ ======= True ======= 0 ======= 0
+supported ======= action ======= VBN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+version ======= trigger ======= NN ======= True ======= 1 ======= 1
+in ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+reply ======= trigger ======= NN ======= True ======= 1 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+earlier ======= trigger ======= RBR ======= True ======= 1 ======= 1
+and ======= trigger ======= CC ======= True ======= 1 ======= 1
+supported ======= trigger ======= VBD ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= transition ======= DT ======= True ======= 1 ======= 1
+originator ======= transition ======= NN ======= True ======= 1 ======= 1
+moves ======= transition ======= VBZ ======= True ======= 1 ======= 1
+to ======= transition ======= TO ======= True ======= 1 ======= 1
+the ======= transition ======= DT ======= True ======= 1 ======= 1
+established ======= transition ======= VBN ======= True ======= 1 ======= 1
+state ======= transition ======= NN ======= True ======= 1 ======= 1
+. ======= transition ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+If ======= trigger ======= IN ======= True ======= 2 ======= 1
+the ======= trigger ======= DT ======= True ======= 2 ======= 1
+version ======= trigger ======= NN ======= True ======= 2 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 2 ======= 1
+earlier ======= trigger ======= RBR ======= True ======= 2 ======= 1
+and ======= trigger ======= CC ======= True ======= 2 ======= 1
+not ======= trigger ======= RB ======= True ======= 2 ======= 1
+supported ======= trigger ======= VBN ======= True ======= 2 ======= 1
+, ======= trigger ======= , ======= True ======= 2 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 2 ======= 1
+a ======= action ======= DT ======= True ======= 2 ======= 1
+Stop-Control-Connection-Request ======= action ======= NNP ======= True ======= 2 ======= 1
+SHOULD ======= action ======= NNP ======= True ======= 2 ======= 1
+be ======= action ======= VB ======= True ======= 2 ======= 1
+sent ======= action ======= VBN ======= True ======= 2 ======= 1
+to ======= action ======= TO ======= True ======= 2 ======= 1
+the ======= action ======= DT ======= True ======= 2 ======= 1
+peer ======= action ======= NN ======= True ======= 2 ======= 1
+and ======= O ======= CC ======= True ======= 2 ======= 1
+the ======= transition ======= DT ======= True ======= 2 ======= 1
+originator ======= transition ======= NN ======= True ======= 2 ======= 1
+moves ======= transition ======= VBZ ======= True ======= 2 ======= 1
+into ======= transition ======= IN ======= True ======= 2 ======= 1
+the ======= transition ======= DT ======= True ======= 2 ======= 1
+wait_stop_reply ======= transition ======= NN ======= True ======= 2 ======= 1
+state ======= transition ======= NN ======= True ======= 2 ======= 1
+. ======= transition ======= . ======= True ======= 2 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+reply ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+earlier ======= trigger ======= RBR ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+supported ======= trigger ======= VBD ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+originator ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+established ======= transition ======= VBN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+earlier ======= trigger ======= RBR ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+not ======= trigger ======= RB ======= True ======= 0 ======= 0
+supported ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Request ======= action ======= NNP ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+sent ======= action ======= VBN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+peer ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+originator ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+into ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_stop_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+In ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+event ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+local ======= trigger ======= JJ ======= True ======= 0 ======= 0
+termination ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+originator ======= action ======= NN ======= True ======= 0 ======= 0
+MUST ======= action ======= NNP ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Request ======= action ======= JJ ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_stop_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+originator ======= trigger ======= NN ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Request ======= trigger ======= JJ ======= True ======= 0 ======= 0
+it ======= action ======= PRP ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Reply ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+close ======= action ======= RB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+making ======= action ======= VBG ======= True ======= 0 ======= 0
+sure ======= action ======= JJ ======= True ======= 0 ======= 0
+that ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+final ======= action ======= JJ ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+information ======= action ======= NN ======= True ======= 0 ======= 0
+has ======= action ======= VBZ ======= True ======= 0 ======= 0
+been ======= action ======= VBN ======= True ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+pushed ======= action ======= VBN ======= True ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+properly ======= action ======= RB ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Reply ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+closed ======= action ======= VBN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+control ======= transition ======= NN ======= True ======= 0 ======= 0
+connection ======= transition ======= NN ======= True ======= 0 ======= 0
+becomes ======= transition ======= VBZ ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Start-Control- ======= trigger ======= JJ ======= True ======= 0 ======= 0
+Connection-Request ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+its ======= action ======= PRP$ ======= True ======= 0 ======= 0
+version ======= action ======= NN ======= True ======= 0 ======= 0
+field ======= action ======= NN ======= True ======= 0 ======= 0
+should ======= action ======= MD ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+examined ======= action ======= VBN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+If ======= trigger ======= IN ======= False ======= 1 ======= 1
+the ======= trigger ======= DT ======= False ======= 1 ======= 1
+version ======= trigger ======= NN ======= False ======= 1 ======= 1
+is ======= trigger ======= VBZ ======= False ======= 1 ======= 1
+earlier ======= trigger ======= JJR ======= False ======= 1 ======= 1
+than ======= trigger ======= IN ======= False ======= 1 ======= 1
+the ======= trigger ======= DT ======= False ======= 1 ======= 1
+receiver ======= trigger ======= NN ======= False ======= 1 ======= 1
+` ======= trigger ======= `` ======= False ======= 1 ======= 1
+s ======= trigger ======= JJ ======= False ======= 1 ======= 1
+version ======= trigger ======= NN ======= False ======= 1 ======= 1
+and ======= trigger ======= CC ======= False ======= 1 ======= 1
+the ======= trigger ======= DT ======= False ======= 1 ======= 1
+earlier ======= trigger ======= JJR ======= False ======= 1 ======= 1
+version ======= trigger ======= NN ======= False ======= 1 ======= 1
+can ======= trigger ======= MD ======= False ======= 1 ======= 1
+be ======= trigger ======= VB ======= False ======= 1 ======= 1
+supported ======= trigger ======= VBN ======= False ======= 1 ======= 1
+by ======= trigger ======= IN ======= False ======= 1 ======= 1
+the ======= trigger ======= DT ======= False ======= 1 ======= 1
+receiver ======= trigger ======= NN ======= False ======= 1 ======= 1
+, ======= trigger ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= action ======= DT ======= False ======= 1 ======= 1
+receiver ======= action ======= NN ======= False ======= 1 ======= 1
+SHOULD ======= action ======= NNP ======= False ======= 1 ======= 1
+send ======= action ======= VB ======= False ======= 1 ======= 1
+a ======= action ======= DT ======= False ======= 1 ======= 1
+Start-Control-Connection-Reply ======= action ======= NNP ======= False ======= 1 ======= 1
+. ======= action ======= . ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+If ======= trigger ======= IN ======= True ======= 2 ======= 1
+the ======= trigger ======= DT ======= True ======= 2 ======= 1
+version ======= trigger ======= NN ======= True ======= 2 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 2 ======= 1
+earlier ======= trigger ======= JJR ======= True ======= 2 ======= 1
+than ======= trigger ======= IN ======= True ======= 2 ======= 1
+the ======= trigger ======= DT ======= True ======= 2 ======= 1
+receiver ======= trigger ======= NN ======= True ======= 2 ======= 1
+` ======= trigger ======= `` ======= True ======= 2 ======= 1
+s ======= trigger ======= JJ ======= True ======= 2 ======= 1
+version ======= trigger ======= NN ======= True ======= 2 ======= 1
+and ======= trigger ======= CC ======= True ======= 2 ======= 1
+the ======= trigger ======= DT ======= True ======= 2 ======= 1
+version ======= trigger ======= NN ======= True ======= 2 ======= 1
+can ======= trigger ======= MD ======= True ======= 2 ======= 1
+not ======= trigger ======= RB ======= True ======= 2 ======= 1
+be ======= trigger ======= VB ======= True ======= 2 ======= 1
+supported ======= trigger ======= VBN ======= True ======= 2 ======= 1
+, ======= trigger ======= , ======= True ======= 2 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 2 ======= 1
+the ======= action ======= DT ======= True ======= 2 ======= 1
+receiver ======= action ======= NN ======= True ======= 2 ======= 1
+SHOULD ======= action ======= NNP ======= True ======= 2 ======= 1
+send ======= action ======= VB ======= True ======= 2 ======= 1
+a ======= action ======= DT ======= True ======= 2 ======= 1
+Start-Connection- ======= action ======= NNP ======= True ======= 2 ======= 1
+Reply ======= action ======= NNP ======= True ======= 2 ======= 1
+message ======= action ======= NN ======= True ======= 2 ======= 1
+, ======= action ======= , ======= True ======= 2 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 1
+close ======= action ======= RB ======= True ======= 2 ======= 1
+the ======= action ======= DT ======= True ======= 2 ======= 1
+TCP ======= action ======= NNP ======= True ======= 2 ======= 1
+connection ======= action ======= NN ======= True ======= 2 ======= 1
+and ======= O ======= CC ======= True ======= 2 ======= 0
+remain ======= transition ======= NN ======= True ======= 2 ======= 0
+in ======= transition ======= IN ======= True ======= 2 ======= 0
+the ======= transition ======= DT ======= True ======= 2 ======= 0
+idle ======= transition ======= JJ ======= True ======= 2 ======= 0
+state ======= transition ======= NN ======= True ======= 2 ======= 0
+. ======= transition ======= . ======= True ======= 2 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 2 ======= 0
+If ======= trigger ======= IN ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+receiver ======= trigger ======= NN ======= True ======= 3 ======= 1
+` ======= trigger ======= `` ======= True ======= 3 ======= 1
+s ======= trigger ======= JJ ======= True ======= 3 ======= 1
+version ======= trigger ======= NN ======= True ======= 3 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+same ======= trigger ======= JJ ======= True ======= 3 ======= 1
+as ======= trigger ======= IN ======= True ======= 3 ======= 1
+earlier ======= trigger ======= JJR ======= True ======= 3 ======= 1
+than ======= trigger ======= IN ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+peer ======= trigger ======= NN ======= True ======= 3 ======= 1
+` ======= trigger ======= `` ======= True ======= 3 ======= 1
+s ======= trigger ======= NN ======= True ======= 3 ======= 1
+, ======= trigger ======= , ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 3 ======= 1
+the ======= action ======= DT ======= True ======= 3 ======= 1
+receiver ======= action ======= NN ======= True ======= 3 ======= 1
+SHOULD ======= action ======= NNP ======= True ======= 3 ======= 1
+send ======= action ======= VB ======= True ======= 3 ======= 1
+a ======= action ======= DT ======= True ======= 3 ======= 1
+Start-Control-Connection-Reply ======= action ======= NN ======= True ======= 3 ======= 1
+with ======= action ======= IN ======= True ======= 3 ======= 1
+the ======= action ======= DT ======= True ======= 3 ======= 1
+receiver ======= action ======= NN ======= True ======= 3 ======= 1
+` ======= action ======= `` ======= True ======= 3 ======= 1
+s ======= action ======= JJ ======= True ======= 3 ======= 1
+version ======= action ======= NN ======= True ======= 3 ======= 1
+and ======= O ======= CC ======= True ======= 3 ======= 1
+enter ======= transition ======= NN ======= True ======= 3 ======= 1
+the ======= transition ======= DT ======= True ======= 3 ======= 1
+established ======= transition ======= VBN ======= True ======= 3 ======= 1
+state ======= transition ======= NN ======= True ======= 3 ======= 1
+. ======= transition ======= . ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 3 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+version ======= trigger ======= NN ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+earlier ======= trigger ======= JJR ======= False ======= 0 ======= 0
+than ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+receiver ======= trigger ======= NN ======= False ======= 0 ======= 0
+` ======= trigger ======= `` ======= False ======= 0 ======= 0
+s ======= trigger ======= JJ ======= False ======= 0 ======= 0
+version ======= trigger ======= NN ======= False ======= 0 ======= 0
+and ======= trigger ======= CC ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+earlier ======= trigger ======= JJR ======= False ======= 0 ======= 0
+version ======= trigger ======= NN ======= False ======= 0 ======= 0
+can ======= trigger ======= MD ======= False ======= 0 ======= 0
+be ======= trigger ======= VB ======= False ======= 0 ======= 0
+supported ======= trigger ======= VBN ======= False ======= 0 ======= 0
+by ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+receiver ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+receiver ======= action ======= NN ======= False ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= False ======= 0 ======= 0
+send ======= action ======= VB ======= False ======= 0 ======= 0
+a ======= action ======= DT ======= False ======= 0 ======= 0
+Start-Control-Connection-Reply ======= action ======= NNP ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+earlier ======= trigger ======= JJR ======= True ======= 0 ======= 0
+than ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+receiver ======= trigger ======= NN ======= True ======= 0 ======= 0
+` ======= trigger ======= `` ======= True ======= 0 ======= 0
+s ======= trigger ======= JJ ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+can ======= trigger ======= MD ======= True ======= 0 ======= 0
+not ======= trigger ======= RB ======= True ======= 0 ======= 0
+be ======= trigger ======= VB ======= True ======= 0 ======= 0
+supported ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+receiver ======= action ======= NN ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Start-Connection- ======= action ======= NNP ======= True ======= 0 ======= 0
+Reply ======= action ======= NNP ======= True ======= 0 ======= 0
+message ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+close ======= action ======= RB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+receiver ======= trigger ======= NN ======= True ======= 0 ======= 0
+` ======= trigger ======= `` ======= True ======= 0 ======= 0
+s ======= trigger ======= JJ ======= True ======= 0 ======= 0
+version ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+same ======= trigger ======= JJ ======= True ======= 0 ======= 0
+as ======= trigger ======= IN ======= True ======= 0 ======= 0
+earlier ======= trigger ======= JJR ======= True ======= 0 ======= 0
+than ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+peer ======= trigger ======= NN ======= True ======= 0 ======= 0
+` ======= trigger ======= `` ======= True ======= 0 ======= 0
+s ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+receiver ======= action ======= NN ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Start-Control-Connection-Reply ======= action ======= NN ======= True ======= 0 ======= 0
+with ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+receiver ======= action ======= NN ======= True ======= 0 ======= 0
+` ======= action ======= `` ======= True ======= 0 ======= 0
+s ======= action ======= JJ ======= True ======= 0 ======= 0
+version ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+established ======= transition ======= VBN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+In ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+event ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+local ======= trigger ======= JJ ======= True ======= 0 ======= 0
+termination ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+originator ======= action ======= NN ======= True ======= 0 ======= 0
+MUST ======= action ======= NNP ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Request ======= action ======= JJ ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_stop_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+originator ======= trigger ======= NN ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Request ======= trigger ======= JJ ======= True ======= 0 ======= 0
+it ======= O ======= PRP ======= True ======= 0 ======= 0
+SHOULD ======= O ======= MD ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Reply ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+close ======= action ======= RB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+making ======= O ======= VBG ======= True ======= 0 ======= 0
+sure ======= O ======= JJ ======= True ======= 0 ======= 0
+that ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+final ======= O ======= JJ ======= True ======= 0 ======= 0
+TCP ======= O ======= NNP ======= True ======= 0 ======= 0
+information ======= O ======= NN ======= True ======= 0 ======= 0
+has ======= O ======= VBZ ======= True ======= 0 ======= 0
+been ======= O ======= VBN ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+pushed ======= O ======= VBN ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+properly ======= O ======= RB ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Stop-Control-Connection-Reply ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCP ======= action ======= NNP ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+closed ======= action ======= VBN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+control ======= transition ======= NN ======= True ======= 0 ======= 0
+connection ======= transition ======= NN ======= True ======= 0 ======= 0
+becomes ======= transition ======= VBZ ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+The ======= trigger ======= DT ======= True ======= 0 ======= 0
+PAC ======= trigger ======= NNP ======= True ======= 0 ======= 0
+detects ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+incoming ======= trigger ======= VBG ======= True ======= 0 ======= 0
+call ======= trigger ======= NN ======= True ======= 0 ======= 0
+on ======= trigger ======= IN ======= True ======= 0 ======= 0
+one ======= trigger ======= CD ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+its ======= trigger ======= PRP$ ======= True ======= 0 ======= 0
+telco ======= trigger ======= NN ======= True ======= 0 ======= 0
+interfaces ======= trigger ======= NNS ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+Typically ======= O ======= RB ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+means ======= O ======= VBZ ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+analog ======= O ======= NN ======= True ======= 0 ======= 0
+line ======= O ======= NN ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+ringing ======= O ======= VBG ======= True ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+ISDN ======= O ======= NNP ======= True ======= 0 ======= 0
+TE ======= O ======= NNP ======= True ======= 0 ======= 0
+has ======= O ======= VBZ ======= True ======= 0 ======= 0
+detected ======= O ======= VBN ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+incoming ======= O ======= NN ======= True ======= 0 ======= 0
+Q.931 ======= O ======= NNP ======= True ======= 0 ======= 0
+SETUP ======= O ======= NNP ======= True ======= 0 ======= 0
+message ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+The ======= action ======= DT ======= True ======= 0 ======= 0
+PAC ======= action ======= NNP ======= True ======= 0 ======= 0
+sends ======= action ======= VBZ ======= True ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Request ======= action ======= JJ ======= True ======= 0 ======= 0
+message ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+moves ======= transition ======= NNS ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+The ======= trigger ======= DT ======= True ======= 0 ======= 0
+PAC ======= trigger ======= NNP ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Reply ======= trigger ======= JJ ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+indicating ======= trigger ======= VBG ======= True ======= 0 ======= 0
+non- ======= trigger ======= JJ ======= True ======= 0 ======= 0
+willingness ======= trigger ======= NN ======= True ======= 0 ======= 0
+to ======= trigger ======= TO ======= True ======= 0 ======= 0
+accept ======= trigger ======= VB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+call ======= trigger ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+general ======= O ======= JJ ======= True ======= 0 ======= 0
+error ======= O ======= NN ======= True ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+do ======= O ======= VB ======= True ======= 0 ======= 0
+n ======= O ======= JJ ======= True ======= 0 ======= 0
+` ======= O ======= `` ======= True ======= 0 ======= 0
+t ======= O ======= NN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+moves ======= transition ======= NNS ======= True ======= 0 ======= 0
+back ======= transition ======= RB ======= True ======= 0 ======= 0
+into ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+reply ======= trigger ======= NN ======= True ======= 1 ======= 1
+message ======= trigger ======= NN ======= True ======= 1 ======= 1
+indicates ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+that ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+call ======= trigger ======= NN ======= True ======= 1 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+accepted ======= trigger ======= VBN ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= action ======= DT ======= True ======= 1 ======= 1
+PAC ======= action ======= NNP ======= True ======= 1 ======= 1
+sends ======= action ======= VBZ ======= True ======= 1 ======= 1
+an ======= action ======= DT ======= True ======= 1 ======= 1
+Incoming-Call- ======= action ======= JJ ======= True ======= 1 ======= 1
+Connected ======= action ======= NNP ======= True ======= 1 ======= 1
+message ======= action ======= NN ======= True ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+enters ======= transition ======= NNS ======= True ======= 1 ======= 1
+the ======= transition ======= DT ======= True ======= 1 ======= 1
+established ======= transition ======= VBN ======= True ======= 1 ======= 1
+state ======= transition ======= NN ======= True ======= 1 ======= 1
+. ======= transition ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+reply ======= trigger ======= NN ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+indicates ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+that ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+call ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+accepted ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+PAC ======= action ======= NNP ======= True ======= 0 ======= 0
+sends ======= action ======= VBZ ======= True ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+Incoming-Call- ======= action ======= JJ ======= True ======= 0 ======= 0
+Connected ======= action ======= NNP ======= True ======= 0 ======= 0
+message ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+established ======= transition ======= VBN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+An ======= trigger ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Request ======= trigger ======= JJ ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+request ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+not ======= trigger ======= RB ======= True ======= 0 ======= 0
+acceptable ======= trigger ======= JJ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Reply ======= action ======= NNP ======= True ======= 0 ======= 0
+is ======= action ======= VBZ ======= True ======= 0 ======= 0
+sent ======= action ======= VBN ======= True ======= 0 ======= 0
+back ======= action ======= RB ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+PAC ======= action ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+PNS ======= transition ======= NNP ======= True ======= 0 ======= 0
+remains ======= transition ======= VBZ ======= True ======= 0 ======= 0
+in ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Request ======= trigger ======= NNP ======= True ======= 1 ======= 1
+message ======= trigger ======= NN ======= True ======= 1 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+acceptable ======= trigger ======= JJ ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+an ======= action ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Reply ======= action ======= NNP ======= True ======= 1 ======= 1
+is ======= action ======= VBZ ======= True ======= 1 ======= 1
+sent ======= action ======= VBN ======= True ======= 1 ======= 1
+indicating ======= action ======= VBG ======= True ======= 1 ======= 1
+accept ======= action ======= NN ======= True ======= 1 ======= 1
+in ======= action ======= IN ======= True ======= 1 ======= 1
+the ======= action ======= DT ======= True ======= 1 ======= 1
+result ======= action ======= NN ======= True ======= 1 ======= 1
+code ======= action ======= NN ======= True ======= 1 ======= 1
+. ======= action ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+The ======= transition ======= DT ======= True ======= 1 ======= 1
+session ======= transition ======= NN ======= True ======= 1 ======= 1
+moves ======= transition ======= VBZ ======= True ======= 1 ======= 1
+to ======= transition ======= TO ======= True ======= 1 ======= 1
+the ======= transition ======= DT ======= True ======= 1 ======= 1
+wait_connect ======= transition ======= JJ ======= True ======= 1 ======= 1
+state ======= transition ======= NN ======= True ======= 1 ======= 1
+. ======= transition ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Request ======= trigger ======= NNP ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+acceptable ======= trigger ======= JJ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+Incoming-Call-Reply ======= action ======= NNP ======= True ======= 0 ======= 0
+is ======= action ======= VBZ ======= True ======= 0 ======= 0
+sent ======= action ======= VBN ======= True ======= 0 ======= 0
+indicating ======= action ======= VBG ======= True ======= 0 ======= 0
+accept ======= action ======= NN ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+result ======= action ======= NN ======= True ======= 0 ======= 0
+code ======= action ======= NN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+The ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_connect ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+session ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+connected ======= trigger ======= VBN ======= True ======= 0 ======= 0
+on ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+PAC ======= trigger ======= NNP ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+PAC ======= action ======= NNP ======= True ======= 0 ======= 0
+sends ======= action ======= VBZ ======= True ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+incoming ======= action ======= VBG ======= True ======= 0 ======= 0
+call ======= action ======= NN ======= True ======= 0 ======= 0
+connect ======= action ======= JJ ======= True ======= 0 ======= 0
+message ======= action ======= NN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+PNS ======= action ======= NNP ======= True ======= 0 ======= 0
+which ======= O ======= WDT ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+then ======= O ======= RB ======= True ======= 0 ======= 0
+moves ======= transition ======= NNS ======= True ======= 0 ======= 0
+into ======= transition ======= IN ======= True ======= 0 ======= 0
+established ======= transition ======= VBN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+The ======= trigger ======= DT ======= True ======= 0 ======= 0
+session ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+terminated ======= trigger ======= VBN ======= True ======= 0 ======= 0
+either ======= trigger ======= RB ======= True ======= 0 ======= 0
+by ======= trigger ======= IN ======= True ======= 0 ======= 0
+receipt ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Disconnect- ======= trigger ======= NNP ======= True ======= 0 ======= 0
+Notify ======= trigger ======= NNP ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+from ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+PAC ======= trigger ======= NNP ======= True ======= 0 ======= 0
+or ======= trigger ======= CC ======= True ======= 0 ======= 0
+by ======= trigger ======= IN ======= True ======= 0 ======= 0
+sending ======= trigger ======= VBG ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Clear-Request ======= trigger ======= NNP ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+Once ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Clear-Request ======= trigger ======= NNP ======= True ======= 0 ======= 0
+has ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+been ======= trigger ======= VBN ======= True ======= 0 ======= 0
+sent ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+enters ======= transition ======= VBZ ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_disconnect ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Once ======= trigger ======= RB ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Disconnect-Notify ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+back ======= transition ======= RB ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+Outgoing-Call-Request ======= trigger ======= NNP ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+this ======= trigger ======= DT ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+error ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+respond ======= error ======= NN ======= True ======= 0 ======= 0
+with ======= error ======= IN ======= True ======= 0 ======= 0
+an ======= error ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Reply ======= error ======= JJ ======= True ======= 0 ======= 0
+with ======= error ======= IN ======= True ======= 0 ======= 0
+error ======= error ======= JJ ======= True ======= 0 ======= 0
+condition ======= error ======= NN ======= True ======= 0 ======= 0
+set ======= error ======= VBN ======= True ======= 0 ======= 0
+. ======= error ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ERROR ======= 0 ======= 0
+Otherwise ======= trigger ======= RB ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+allocate ======= action ======= JJ ======= True ======= 0 ======= 0
+physical ======= action ======= JJ ======= True ======= 0 ======= 0
+channel ======= action ======= NN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+dial ======= action ======= VB ======= True ======= 0 ======= 0
+on ======= action ======= IN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+Place ======= action ======= NN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+outbound ======= action ======= NN ======= True ======= 0 ======= 0
+call ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+wait ======= action ======= NN ======= True ======= 0 ======= 0
+for ======= action ======= IN ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+connection ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+move ======= transition ======= NN ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_cs_ans ======= transition ======= NNS ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+call ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+incomplete ======= trigger ======= JJ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+send ======= error ======= VB ======= True ======= 0 ======= 0
+an ======= error ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Reply ======= error ======= NN ======= True ======= 0 ======= 0
+with ======= error ======= IN ======= True ======= 0 ======= 0
+a ======= error ======= DT ======= True ======= 0 ======= 0
+non-zero ======= error ======= JJ ======= True ======= 0 ======= 0
+Error ======= error ======= NNP ======= True ======= 0 ======= 0
+Code ======= error ======= NNP ======= True ======= 0 ======= 0
+. ======= error ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ERROR ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+a ======= trigger ======= DT ======= True ======= 1 ======= 1
+timer ======= trigger ======= NN ======= True ======= 1 ======= 1
+expires ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+on ======= trigger ======= IN ======= True ======= 1 ======= 1
+an ======= trigger ======= DT ======= True ======= 1 ======= 1
+outbound ======= trigger ======= NN ======= True ======= 1 ======= 1
+call ======= trigger ======= NN ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+send ======= error ======= VB ======= True ======= 1 ======= 1
+back ======= error ======= RP ======= True ======= 1 ======= 1
+an ======= error ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Reply ======= error ======= NN ======= True ======= 1 ======= 1
+with ======= error ======= IN ======= True ======= 1 ======= 1
+a ======= error ======= DT ======= True ======= 1 ======= 1
+non-zero ======= error ======= JJ ======= True ======= 1 ======= 1
+Error ======= error ======= NNP ======= True ======= 1 ======= 1
+Code ======= error ======= NNP ======= True ======= 1 ======= 1
+. ======= error ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ERROR ======= 1 ======= 1
+If ======= trigger ======= IN ======= False ======= 2 ======= 1
+a ======= trigger ======= DT ======= False ======= 2 ======= 1
+circuit ======= trigger ======= NN ======= False ======= 2 ======= 1
+switched ======= trigger ======= VBN ======= False ======= 2 ======= 1
+connection ======= trigger ======= NN ======= False ======= 2 ======= 1
+is ======= trigger ======= VBZ ======= False ======= 2 ======= 1
+established ======= trigger ======= VBN ======= False ======= 2 ======= 1
+, ======= trigger ======= , ======= False ======= 2 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 2 ======= 1
+send ======= action ======= VB ======= False ======= 2 ======= 1
+an ======= action ======= DT ======= False ======= 2 ======= 1
+Outgoing- ======= action ======= JJ ======= False ======= 2 ======= 1
+Call-Reply ======= action ======= NNP ======= False ======= 2 ======= 1
+indicating ======= action ======= NN ======= False ======= 2 ======= 1
+success ======= action ======= NN ======= False ======= 2 ======= 1
+. ======= action ======= . ======= False ======= 2 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+timer ======= trigger ======= NN ======= True ======= 0 ======= 0
+expires ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+on ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+outbound ======= trigger ======= NN ======= True ======= 0 ======= 0
+call ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+send ======= error ======= VB ======= True ======= 0 ======= 0
+back ======= error ======= RP ======= True ======= 0 ======= 0
+an ======= error ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Reply ======= error ======= NN ======= True ======= 0 ======= 0
+with ======= error ======= IN ======= True ======= 0 ======= 0
+a ======= error ======= DT ======= True ======= 0 ======= 0
+non-zero ======= error ======= JJ ======= True ======= 0 ======= 0
+Error ======= error ======= NNP ======= True ======= 0 ======= 0
+Code ======= error ======= NNP ======= True ======= 0 ======= 0
+. ======= error ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ERROR ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+a ======= trigger ======= DT ======= False ======= 0 ======= 0
+circuit ======= trigger ======= NN ======= False ======= 0 ======= 0
+switched ======= trigger ======= VBN ======= False ======= 0 ======= 0
+connection ======= trigger ======= NN ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+established ======= trigger ======= VBN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+send ======= action ======= VB ======= False ======= 0 ======= 0
+an ======= action ======= DT ======= False ======= 0 ======= 0
+Outgoing- ======= action ======= JJ ======= False ======= 0 ======= 0
+Call-Reply ======= action ======= NNP ======= False ======= 0 ======= 0
+indicating ======= action ======= NN ======= False ======= 0 ======= 0
+success ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+a ======= trigger ======= DT ======= False ======= 0 ======= 0
+Call-Clear-Request ======= trigger ======= NNP ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+received ======= trigger ======= VBN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+telco ======= action ======= NN ======= False ======= 0 ======= 0
+call ======= action ======= NN ======= False ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+released ======= action ======= VBN ======= False ======= 0 ======= 0
+via ======= action ======= IN ======= False ======= 0 ======= 0
+appropriate ======= action ======= JJ ======= False ======= 0 ======= 0
+mechanisms ======= action ======= NNS ======= False ======= 0 ======= 0
+and ======= O ======= CC ======= False ======= 0 ======= 0
+a ======= O ======= DT ======= False ======= 0 ======= 0
+Call-Disconnect-Notify ======= action ======= JJ ======= False ======= 0 ======= 0
+message ======= action ======= NN ======= False ======= 0 ======= 0
+SHOULD ======= action ======= MD ======= False ======= 0 ======= 0
+BE ======= action ======= VB ======= False ======= 0 ======= 0
+sent ======= action ======= VBN ======= False ======= 0 ======= 0
+to ======= action ======= TO ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+PNS ======= action ======= NNP ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+call ======= trigger ======= NN ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+disconnected ======= trigger ======= VBN ======= False ======= 0 ======= 0
+by ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+client ======= trigger ======= NN ======= False ======= 0 ======= 0
+or ======= trigger ======= CC ======= False ======= 0 ======= 0
+by ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+telco ======= trigger ======= NN ======= False ======= 0 ======= 0
+interface ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+a ======= action ======= DT ======= False ======= 0 ======= 0
+Call-Disconnect-Notify ======= action ======= JJ ======= False ======= 0 ======= 0
+message ======= action ======= NN ======= False ======= 0 ======= 0
+SHOULD ======= action ======= MD ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+sent ======= action ======= VBN ======= False ======= 0 ======= 0
+to ======= action ======= TO ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+PNS ======= action ======= NNP ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+An ======= trigger ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Request ======= trigger ======= JJ ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+sent ======= trigger ======= VBN ======= True ======= 0 ======= 0
+to ======= trigger ======= TO ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+PAC ======= trigger ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+into ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_reply ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+An ======= trigger ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Reply ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+which ======= trigger ======= WDT ======= True ======= 0 ======= 0
+indicates ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+error ======= trigger ======= NN ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+The ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+returns ======= transition ======= NNS ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+idle ======= transition ======= VB ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+Outgoing-Call-Reply ======= trigger ======= NNP ======= True ======= 0 ======= 0
+does ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+not ======= trigger ======= RB ======= True ======= 0 ======= 0
+indicate ======= trigger ======= VB ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+error ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+telco ======= O ======= NN ======= True ======= 0 ======= 0
+call ======= O ======= NN ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+connected ======= O ======= VBN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+established ======= transition ======= VBN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Disconnect-Notify ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+telco ======= O ======= NN ======= True ======= 0 ======= 0
+call ======= O ======= NN ======= True ======= 0 ======= 0
+has ======= O ======= VBZ ======= True ======= 0 ======= 0
+been ======= O ======= VBN ======= True ======= 0 ======= 0
+terminated ======= O ======= VBN ======= True ======= 0 ======= 0
+for ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+reason ======= O ======= NN ======= True ======= 0 ======= 0
+indicated ======= O ======= VBD ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+Result ======= O ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+Cause ======= O ======= NNP ======= True ======= 0 ======= 0
+Codes ======= O ======= NNP ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+The ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+moves ======= transition ======= VBZ ======= True ======= 0 ======= 0
+back ======= transition ======= RB ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+If ======= trigger ======= IN ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+PNS ======= trigger ======= NNP ======= True ======= 1 ======= 1
+chooses ======= trigger ======= VBZ ======= True ======= 1 ======= 1
+to ======= trigger ======= TO ======= True ======= 1 ======= 1
+terminate ======= trigger ======= VB ======= True ======= 1 ======= 1
+the ======= trigger ======= DT ======= True ======= 1 ======= 1
+session ======= trigger ======= NN ======= True ======= 1 ======= 1
+, ======= trigger ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+it ======= action ======= PRP ======= True ======= 1 ======= 1
+sends ======= action ======= VBZ ======= True ======= 1 ======= 1
+a ======= action ======= DT ======= True ======= 1 ======= 1
+Call-Clear-Request ======= action ======= JJ ======= True ======= 1 ======= 1
+to ======= action ======= TO ======= True ======= 1 ======= 1
+the ======= action ======= DT ======= True ======= 1 ======= 1
+PAC ======= action ======= NNP ======= True ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+then ======= O ======= RB ======= True ======= 1 ======= 1
+enters ======= transition ======= NNS ======= True ======= 1 ======= 1
+the ======= transition ======= DT ======= True ======= 1 ======= 1
+wait_disconnect ======= transition ======= JJ ======= True ======= 1 ======= 1
+state ======= transition ======= NN ======= True ======= 1 ======= 1
+. ======= transition ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+PNS ======= trigger ======= NNP ======= True ======= 0 ======= 0
+chooses ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+to ======= trigger ======= TO ======= True ======= 0 ======= 0
+terminate ======= trigger ======= VB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+session ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= action ======= PRP ======= True ======= 0 ======= 0
+sends ======= action ======= VBZ ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+Call-Clear-Request ======= action ======= JJ ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+PAC ======= action ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+then ======= O ======= RB ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+wait_disconnect ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Once ======= trigger ======= RB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+PNS ======= trigger ======= NNP ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+Call-Disconnect-Notify ======= trigger ======= JJ ======= True ======= 0 ======= 0
+message ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+session ======= transition ======= NN ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+idle ======= transition ======= JJ ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL

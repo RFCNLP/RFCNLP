@@ -1,0 +1,9 @@
+transitions
+networkx
+matplotlib
+cython
+deepwalk
+python-Levenshtein
+lxml
+graphviz
+tabulate

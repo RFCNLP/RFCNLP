@@ -1,0 +1,2371 @@
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+State ======= trigger ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= trigger ======= NNP ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+received ======= trigger ======= JJ ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+invalid ======= trigger ======= JJ ======= True ======= 0 ======= 0
+( ======= trigger ======= ( ======= True ======= 0 ======= 0
+i.e ======= trigger ======= JJ ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+&newline; ======= trigger ======= RB ======= True ======= 0 ======= 0
+failed ======= trigger ======= VBD ======= True ======= 0 ======= 0
+to ======= trigger ======= TO ======= True ======= 0 ======= 0
+pass ======= trigger ======= VB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+integrity ======= trigger ======= NN ======= True ======= 0 ======= 0
+check ======= trigger ======= NN ======= True ======= 0 ======= 0
+) ======= trigger ======= ) ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+receiver ======= O ======= NN ======= True ======= 0 ======= 0
+MUST ======= O ======= NNP ======= True ======= 0 ======= 0
+silently ======= action ======= RB ======= True ======= 0 ======= 0
+discard ======= action ======= VBZ ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+packet ======= action ======= NN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+Or ======= O ======= CC ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+if ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+received ======= O ======= JJ ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+expired ======= O ======= VBN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+see ======= O ======= VB ======= True ======= 0 ======= 0
+Section ======= O ======= NNP ======= True ======= 0 ======= 0
+5.1.5 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+receiver ======= O ======= NN ======= True ======= 0 ======= 0
+MUST ======= O ======= NNP ======= True ======= 0 ======= 0
+send ======= O ======= VB ======= True ======= 0 ======= 0
+back ======= O ======= RP ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+ERROR ======= O ======= NNP ======= True ======= 0 ======= 0
+chunk ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+In ======= O ======= IN ======= True ======= 0 ======= 0
+either ======= O ======= DT ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+receiver ======= O ======= NN ======= True ======= 0 ======= 0
+stays ======= transition ======= NNS ======= True ======= 0 ======= 0
+in ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+CLOSED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+After ======= trigger ======= IN ======= True ======= 0 ======= 0
+sending ======= trigger ======= VBG ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+INIT ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+`` ======= timer ======= `` ======= True ======= 0 ======= 0
+A ======= timer ======= DT ======= True ======= 0 ======= 0
+`` ======= timer ======= `` ======= True ======= 0 ======= 0
+starts ======= timer ======= VBZ ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T1-init ======= timer ======= NNP ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+COOKIE-WAIT ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+B ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+Z ======= action ======= VB ======= True ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+shall ======= action ======= MD ======= True ======= 0 ======= 0
+respond ======= action ======= VB ======= True ======= 0 ======= 0
+immediately ======= action ======= RB ======= True ======= 0 ======= 0
+with ======= action ======= IN ======= True ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+INIT ======= action ======= NNP ======= True ======= 0 ======= 0
+ACK ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= True ======= 0 ======= 0
+reception ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+INIT ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= True ======= 0 ======= 0
+from ======= trigger ======= IN ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+Z ======= trigger ======= NNP ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+A ======= trigger ======= DT ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+shall ======= timer ======= MD ======= True ======= 0 ======= 0
+stop ======= timer ======= VB ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T1- ======= timer ======= NNP ======= True ======= 0 ======= 0
+&newline; ======= timer ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+init ======= timer ======= NN ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+leave ======= transition ======= VB ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+COOKIE-WAIT ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+A ======= action ======= DT ======= True ======= 0 ======= 0
+`` ======= action ======= `` ======= True ======= 0 ======= 0
+shall ======= action ======= MD ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+then ======= action ======= RB ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+State ======= action ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= action ======= NNP ======= True ======= 0 ======= 0
+received ======= action ======= VBD ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+INIT ======= action ======= NNP ======= True ======= 0 ======= 0
+ACK ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+start ======= timer ======= VB ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T1-cookie ======= timer ======= NNP ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+, ======= timer ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+COOKIE-ECHOED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= True ======= 0 ======= 0
+reception ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= True ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+Z ======= trigger ======= NNP ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+will ======= action ======= MD ======= True ======= 0 ======= 0
+reply ======= action ======= VB ======= True ======= 0 ======= 0
+&newline; ======= action ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+with ======= action ======= IN ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ACK ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+after ======= O ======= IN ======= True ======= 0 ======= 0
+building ======= action ======= VBG ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+TCB ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+moving ======= transition ======= VBG ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+ESTABLISHED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= True ======= 0 ======= 0
+reception ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+A ======= trigger ======= DT ======= True ======= 0 ======= 0
+`` ======= trigger ======= `` ======= True ======= 0 ======= 0
+will ======= transition ======= MD ======= True ======= 0 ======= 0
+move ======= transition ======= VB ======= True ======= 0 ======= 0
+from ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+&newline; ======= transition ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+COOKIE-ECHOED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+to ======= transition ======= TO ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+ESTABLISHED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+, ======= transition ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+stopping ======= timer ======= VBG ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T1- ======= timer ======= NNP ======= True ======= 0 ======= 0
+cookie ======= timer ======= NN ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= False ======= 0 ======= 0
+( ======= trigger ======= ( ======= False ======= 0 ======= 0
+in ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE-WAIT ======= trigger ======= NN ======= False ======= 0 ======= 0
+state ======= trigger ======= NN ======= False ======= 0 ======= 0
+) ======= trigger ======= ) ======= False ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+INIT ======= trigger ======= NNP ======= False ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= False ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= False ======= 0 ======= 0
+with ======= trigger ======= IN ======= False ======= 0 ======= 0
+a ======= trigger ======= DT ======= False ======= 0 ======= 0
+State ======= trigger ======= NNP ======= False ======= 0 ======= 0
+Cookie ======= trigger ======= NNP ======= False ======= 0 ======= 0
+parameter ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= action ======= PRP ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+immediately ======= action ======= RB ======= False ======= 0 ======= 0
+send ======= action ======= VB ======= False ======= 0 ======= 0
+a ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= False ======= 0 ======= 0
+chunk ======= action ======= NN ======= False ======= 0 ======= 0
+to ======= action ======= TO ======= False ======= 0 ======= 0
+its ======= action ======= PRP$ ======= False ======= 0 ======= 0
+peer ======= action ======= NN ======= False ======= 0 ======= 0
+with ======= action ======= IN ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+received ======= action ======= JJ ======= False ======= 0 ======= 0
+State ======= action ======= NNP ======= False ======= 0 ======= 0
+Cookie ======= action ======= NNP ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+The ======= action ======= DT ======= False ======= 0 ======= 0
+sender ======= action ======= NN ======= False ======= 0 ======= 0
+MAY ======= action ======= NNP ======= False ======= 0 ======= 0
+also ======= action ======= RB ======= False ======= 0 ======= 0
+add ======= action ======= VBP ======= False ======= 0 ======= 0
+any ======= action ======= DT ======= False ======= 0 ======= 0
+pending ======= action ======= VBG ======= False ======= 0 ======= 0
+DATA ======= action ======= NNP ======= False ======= 0 ======= 0
+chunks ======= action ======= NNS ======= False ======= 0 ======= 0
+to ======= action ======= TO ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+packet ======= action ======= NN ======= False ======= 0 ======= 0
+after ======= action ======= IN ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= False ======= 0 ======= 0
+chunk ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+&newline; ======= O ======= NN ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NN ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+The ======= timer ======= DT ======= False ======= 0 ======= 0
+endpoint ======= timer ======= NN ======= False ======= 0 ======= 0
+shall ======= timer ======= MD ======= False ======= 0 ======= 0
+also ======= timer ======= RB ======= False ======= 0 ======= 0
+start ======= timer ======= VB ======= False ======= 0 ======= 0
+the ======= timer ======= DT ======= False ======= 0 ======= 0
+T1-cookie ======= timer ======= NNP ======= False ======= 0 ======= 0
+timer ======= timer ======= NN ======= False ======= 0 ======= 0
+after ======= O ======= IN ======= False ======= 0 ======= 0
+sending ======= action ======= VBG ======= False ======= 0 ======= 0
+out ======= action ======= RP ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= False ======= 0 ======= 0
+chunk ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+timer ======= trigger ======= NN ======= True ======= 0 ======= 0
+expires ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+endpoint ======= action ======= NN ======= True ======= 0 ======= 0
+shall ======= action ======= MD ======= True ======= 0 ======= 0
+retransmit ======= action ======= VB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+restart ======= timer ======= VB ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T1-cookie ======= timer ======= NNP ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+. ======= timer ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+This ======= trigger ======= DT ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+repeated ======= trigger ======= VBN ======= True ======= 0 ======= 0
+until ======= trigger ======= IN ======= True ======= 0 ======= 0
+either ======= trigger ======= CC ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+or ======= trigger ======= CC ======= True ======= 0 ======= 0
+` ======= trigger ======= `` ======= True ======= 0 ======= 0
+Max ======= trigger ======= NNPS ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+Init ======= trigger ======= NNP ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+Retransmits ======= trigger ======= NNP ======= True ======= 0 ======= 0
+15 ======= trigger ======= CD ======= True ======= 0 ======= 0
+) ======= trigger ======= ) ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+reached ======= trigger ======= VBN ======= True ======= 0 ======= 0
+causing ======= variable ======= VBG ======= True ======= 0 ======= 0
+the ======= variable ======= DT ======= True ======= 0 ======= 0
+peer ======= variable ======= NN ======= True ======= 0 ======= 0
+endpoint ======= variable ======= NN ======= True ======= 0 ======= 0
+to ======= variable ======= TO ======= True ======= 0 ======= 0
+be ======= variable ======= VB ======= True ======= 0 ======= 0
+marked ======= variable ======= VBN ======= True ======= 0 ======= 0
+unreachable ======= variable ======= JJ ======= True ======= 0 ======= 0
+( ======= transition ======= ( ======= True ======= 0 ======= 0
+and ======= transition ======= CC ======= True ======= 0 ======= 0
+thus ======= transition ======= RB ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+association ======= transition ======= NN ======= True ======= 0 ======= 0
+enters ======= transition ======= VBZ ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+CLOSED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+) ======= transition ======= ) ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= True ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= True ======= 0 ======= 0
+from ======= trigger ======= IN ======= True ======= 0 ======= 0
+another ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+with ======= trigger ======= IN ======= True ======= 0 ======= 0
+which ======= trigger ======= WDT ======= True ======= 0 ======= 0
+it ======= trigger ======= PRP ======= True ======= 0 ======= 0
+has ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+no ======= trigger ======= DT ======= True ======= 0 ======= 0
+association ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= trigger ======= PRP ======= True ======= 0 ======= 0
+shall ======= trigger ======= MD ======= True ======= 0 ======= 0
+take ======= trigger ======= VB ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+following ======= trigger ======= JJ ======= True ======= 0 ======= 0
+actions ======= trigger ======= NNS ======= True ======= 0 ======= 0
+: ======= trigger ======= : ======= True ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+1 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Compute ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+MAC ======= action ======= NNP ======= True ======= 0 ======= 0
+using ======= action ======= VBG ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCB ======= action ======= NNP ======= True ======= 0 ======= 0
+data ======= action ======= NNS ======= True ======= 0 ======= 0
+carried ======= action ======= VBD ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+State ======= action ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= action ======= NNP ======= True ======= 0 ======= 0
+and ======= action ======= CC ======= True ======= 0 ======= 0
+&newline; ======= action ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+secret ======= action ======= JJ ======= True ======= 0 ======= 0
+key ======= action ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+note ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+timestamp ======= O ======= NN ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+MAY ======= O ======= NNP ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+used ======= O ======= VBN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+determine ======= O ======= VB ======= True ======= 0 ======= 0
+which ======= O ======= WDT ======= True ======= 0 ======= 0
+secret ======= O ======= JJ ======= True ======= 0 ======= 0
+key ======= O ======= NN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+use ======= O ======= VB ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+can ======= O ======= MD ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+used ======= O ======= VBN ======= True ======= 0 ======= 0
+as ======= O ======= IN ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+guideline ======= O ======= NN ======= True ======= 0 ======= 0
+for ======= O ======= IN ======= True ======= 0 ======= 0
+generating ======= O ======= VBG ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+MAC ======= O ======= NNP ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Authenticate ======= action ======= VB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+State ======= action ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= action ======= NNP ======= True ======= 0 ======= 0
+as ======= action ======= IN ======= True ======= 0 ======= 0
+one ======= action ======= CD ======= True ======= 0 ======= 0
+that ======= action ======= IN ======= True ======= 0 ======= 0
+it ======= action ======= PRP ======= True ======= 0 ======= 0
+previously ======= action ======= RB ======= True ======= 0 ======= 0
+generated ======= action ======= VBD ======= True ======= 0 ======= 0
+&newline; ======= action ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+by ======= action ======= IN ======= True ======= 0 ======= 0
+comparing ======= action ======= VBG ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+computed ======= action ======= JJ ======= True ======= 0 ======= 0
+MAC ======= action ======= NNP ======= True ======= 0 ======= 0
+against ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+one ======= action ======= CD ======= True ======= 0 ======= 0
+carried ======= action ======= VBN ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+State ======= action ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= action ======= NNP ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+If ======= trigger ======= IN ======= False ======= 1 ======= 1
+this ======= trigger ======= DT ======= False ======= 1 ======= 1
+comparison ======= trigger ======= NN ======= False ======= 1 ======= 1
+fails ======= trigger ======= VBZ ======= False ======= 1 ======= 1
+, ======= trigger ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= action ======= DT ======= False ======= 1 ======= 1
+SCTP ======= action ======= NNP ======= False ======= 1 ======= 1
+packet ======= action ======= NN ======= False ======= 1 ======= 1
+, ======= action ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+including ======= action ======= VBG ======= False ======= 1 ======= 1
+the ======= action ======= DT ======= False ======= 1 ======= 1
+COOKIE ======= action ======= NNP ======= False ======= 1 ======= 1
+ECHO ======= action ======= NNP ======= False ======= 1 ======= 1
+and ======= action ======= CC ======= False ======= 1 ======= 1
+any ======= action ======= DT ======= False ======= 1 ======= 1
+DATA ======= action ======= NNP ======= False ======= 1 ======= 1
+chunks ======= action ======= NNS ======= False ======= 1 ======= 1
+, ======= action ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+should ======= action ======= MD ======= False ======= 1 ======= 1
+be ======= action ======= VB ======= False ======= 1 ======= 1
+silently ======= action ======= RB ======= False ======= 1 ======= 1
+discarded ======= action ======= VBN ======= False ======= 1 ======= 1
+, ======= action ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+&newline; ======= O ======= JJ ======= True ======= 1 ======= 0
+END-OF-CHUNK ======= O ======= 1 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 1 ======= 0
+END-OF-CHUNK ======= O ======= 1 ======= 0
+3 ======= O ======= CD ======= True ======= 1 ======= 0
+) ======= O ======= ) ======= True ======= 1 ======= 0
+Compare ======= action ======= VB ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+port ======= action ======= NN ======= True ======= 1 ======= 0
+numbers ======= action ======= NNS ======= True ======= 1 ======= 0
+and ======= action ======= CC ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+Verification ======= action ======= NNP ======= True ======= 1 ======= 0
+Tag ======= action ======= NNP ======= True ======= 1 ======= 0
+contained ======= action ======= VBD ======= True ======= 1 ======= 0
+&newline; ======= action ======= NNP ======= True ======= 1 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 0
+within ======= action ======= IN ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 1 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 1 ======= 0
+chunk ======= action ======= NN ======= True ======= 1 ======= 0
+to ======= action ======= TO ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+actual ======= action ======= JJ ======= True ======= 1 ======= 0
+port ======= action ======= NN ======= True ======= 1 ======= 0
+numbers ======= action ======= NNS ======= True ======= 1 ======= 0
+and ======= action ======= CC ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+Verification ======= action ======= NNP ======= True ======= 1 ======= 0
+Tag ======= action ======= NNP ======= True ======= 1 ======= 0
+within ======= action ======= IN ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+SCTP ======= action ======= NNP ======= True ======= 1 ======= 0
+common ======= action ======= JJ ======= True ======= 1 ======= 0
+header ======= action ======= NN ======= True ======= 1 ======= 0
+of ======= action ======= IN ======= True ======= 1 ======= 0
+the ======= action ======= DT ======= True ======= 1 ======= 0
+received ======= action ======= JJ ======= True ======= 1 ======= 0
+packet ======= action ======= NN ======= True ======= 1 ======= 0
+. ======= action ======= . ======= True ======= 1 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 0
+If ======= trigger ======= IN ======= False ======= 2 ======= 1
+these ======= trigger ======= DT ======= False ======= 2 ======= 1
+values ======= trigger ======= NNS ======= False ======= 2 ======= 1
+do ======= trigger ======= VBP ======= False ======= 2 ======= 1
+not ======= trigger ======= RB ======= False ======= 2 ======= 1
+match ======= trigger ======= VB ======= False ======= 2 ======= 1
+, ======= trigger ======= , ======= False ======= 2 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 2 ======= 1
+the ======= action ======= DT ======= False ======= 2 ======= 1
+packet ======= action ======= NN ======= False ======= 2 ======= 1
+MUST ======= action ======= NNP ======= False ======= 2 ======= 1
+be ======= action ======= VB ======= False ======= 2 ======= 1
+silently ======= action ======= RB ======= False ======= 2 ======= 1
+discarded ======= action ======= VBN ======= False ======= 2 ======= 1
+. ======= action ======= . ======= False ======= 2 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 1
+&newline; ======= O ======= JJ ======= True ======= 2 ======= 0
+END-OF-CHUNK ======= O ======= 2 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 2 ======= 0
+END-OF-CHUNK ======= O ======= 2 ======= 0
+4 ======= O ======= CD ======= True ======= 2 ======= 0
+) ======= O ======= ) ======= True ======= 2 ======= 0
+Compare ======= action ======= VB ======= True ======= 2 ======= 0
+the ======= action ======= DT ======= True ======= 2 ======= 0
+creation ======= action ======= NN ======= True ======= 2 ======= 0
+timestamp ======= action ======= NN ======= True ======= 2 ======= 0
+in ======= action ======= IN ======= True ======= 2 ======= 0
+the ======= action ======= DT ======= True ======= 2 ======= 0
+State ======= action ======= NNP ======= True ======= 2 ======= 0
+Cookie ======= action ======= NNP ======= True ======= 2 ======= 0
+to ======= action ======= TO ======= True ======= 2 ======= 0
+the ======= action ======= DT ======= True ======= 2 ======= 0
+current ======= action ======= JJ ======= True ======= 2 ======= 0
+&newline; ======= action ======= NNP ======= True ======= 2 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 0
+local ======= action ======= JJ ======= True ======= 2 ======= 0
+time ======= action ======= NN ======= True ======= 2 ======= 0
+. ======= action ======= . ======= True ======= 2 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 2 ======= 0
+If ======= trigger ======= IN ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+elapsed ======= trigger ======= JJ ======= True ======= 3 ======= 1
+time ======= trigger ======= NN ======= True ======= 3 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 3 ======= 1
+longer ======= trigger ======= JJR ======= True ======= 3 ======= 1
+than ======= trigger ======= IN ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+lifespan ======= trigger ======= NN ======= True ======= 3 ======= 1
+carried ======= trigger ======= VBD ======= True ======= 3 ======= 1
+in ======= trigger ======= IN ======= True ======= 3 ======= 1
+the ======= trigger ======= DT ======= True ======= 3 ======= 1
+State ======= trigger ======= NNP ======= True ======= 3 ======= 1
+Cookie ======= trigger ======= NNP ======= True ======= 3 ======= 1
+, ======= trigger ======= , ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 3 ======= 1
+then ======= O ======= RB ======= True ======= 3 ======= 1
+the ======= action ======= DT ======= True ======= 3 ======= 1
+packet ======= action ======= NN ======= True ======= 3 ======= 1
+, ======= action ======= , ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 3 ======= 1
+including ======= action ======= VBG ======= True ======= 3 ======= 1
+the ======= action ======= DT ======= True ======= 3 ======= 1
+COOKIE ======= action ======= NNP ======= True ======= 3 ======= 1
+ECHO ======= action ======= NNP ======= True ======= 3 ======= 1
+and ======= action ======= CC ======= True ======= 3 ======= 1
+any ======= action ======= DT ======= True ======= 3 ======= 1
+attached ======= action ======= JJ ======= True ======= 3 ======= 1
+DATA ======= action ======= NNP ======= True ======= 3 ======= 1
+chunks ======= action ======= NNS ======= True ======= 3 ======= 1
+, ======= action ======= , ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 3 ======= 1
+SHOULD ======= action ======= NNP ======= True ======= 3 ======= 1
+be ======= action ======= VB ======= True ======= 3 ======= 1
+discarded ======= action ======= VBN ======= True ======= 3 ======= 1
+, ======= action ======= , ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 3 ======= 1
+and ======= O ======= CC ======= True ======= 3 ======= 1
+the ======= error ======= DT ======= True ======= 3 ======= 1
+endpoint ======= error ======= NN ======= True ======= 3 ======= 1
+MUST ======= error ======= NNP ======= True ======= 3 ======= 1
+transmit ======= error ======= NN ======= True ======= 3 ======= 1
+an ======= error ======= DT ======= True ======= 3 ======= 1
+ERROR ======= error ======= NNP ======= True ======= 3 ======= 1
+chunk ======= error ======= NN ======= True ======= 3 ======= 1
+with ======= error ======= IN ======= True ======= 3 ======= 1
+a ======= error ======= DT ======= True ======= 3 ======= 1
+`` ======= error ======= `` ======= True ======= 3 ======= 1
+Stale ======= error ======= NNP ======= True ======= 3 ======= 1
+Cookie ======= error ======= NNP ======= True ======= 3 ======= 1
+`` ======= error ======= `` ======= True ======= 3 ======= 1
+error ======= error ======= NN ======= True ======= 3 ======= 1
+cause ======= error ======= NN ======= True ======= 3 ======= 1
+to ======= error ======= TO ======= True ======= 3 ======= 1
+the ======= error ======= DT ======= True ======= 3 ======= 1
+peer ======= error ======= NN ======= True ======= 3 ======= 1
+endpoint ======= error ======= NN ======= True ======= 3 ======= 1
+. ======= error ======= . ======= True ======= 3 ======= 1
+END-OF-CHUNK ======= B-ERROR ======= 3 ======= 1
+&newline; ======= O ======= JJ ======= True ======= 3 ======= 0
+END-OF-CHUNK ======= O ======= 3 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 3 ======= 0
+END-OF-CHUNK ======= O ======= 3 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 3 ======= 0
+END-OF-CHUNK ======= O ======= 3 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 3 ======= 0
+END-OF-CHUNK ======= O ======= 3 ======= 0
+5 ======= O ======= CD ======= True ======= 3 ======= 0
+) ======= O ======= ) ======= True ======= 3 ======= 0
+END-OF-CHUNK ======= O ======= 3 ======= 0
+If ======= trigger ======= IN ======= True ======= 4 ======= 1
+the ======= trigger ======= DT ======= True ======= 4 ======= 1
+State ======= trigger ======= NNP ======= True ======= 4 ======= 1
+Cookie ======= trigger ======= NNP ======= True ======= 4 ======= 1
+is ======= trigger ======= VBZ ======= True ======= 4 ======= 1
+valid ======= trigger ======= JJ ======= True ======= 4 ======= 1
+, ======= trigger ======= , ======= True ======= 4 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 4 ======= 1
+create ======= action ======= VB ======= True ======= 4 ======= 1
+an ======= action ======= DT ======= True ======= 4 ======= 1
+association ======= action ======= NN ======= True ======= 4 ======= 1
+to ======= action ======= TO ======= True ======= 4 ======= 1
+the ======= action ======= DT ======= True ======= 4 ======= 1
+sender ======= action ======= NN ======= True ======= 4 ======= 1
+&newline; ======= action ======= NN ======= True ======= 4 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 4 ======= 1
+of ======= action ======= IN ======= True ======= 4 ======= 1
+the ======= action ======= DT ======= True ======= 4 ======= 1
+COOKIE ======= action ======= NNP ======= True ======= 4 ======= 1
+ECHO ======= action ======= NNP ======= True ======= 4 ======= 1
+chunk ======= action ======= NN ======= True ======= 4 ======= 1
+with ======= action ======= IN ======= True ======= 4 ======= 1
+the ======= action ======= DT ======= True ======= 4 ======= 1
+information ======= action ======= NN ======= True ======= 4 ======= 1
+in ======= action ======= IN ======= True ======= 4 ======= 1
+the ======= action ======= DT ======= True ======= 4 ======= 1
+TCB ======= action ======= NNP ======= True ======= 4 ======= 1
+data ======= action ======= NNS ======= True ======= 4 ======= 1
+carried ======= action ======= VBD ======= True ======= 4 ======= 1
+in ======= action ======= IN ======= True ======= 4 ======= 1
+the ======= action ======= DT ======= True ======= 4 ======= 1
+COOKIE ======= action ======= NNP ======= True ======= 4 ======= 1
+ECHO ======= action ======= NNP ======= True ======= 4 ======= 1
+and ======= O ======= CC ======= True ======= 4 ======= 1
+enter ======= transition ======= NN ======= True ======= 4 ======= 1
+the ======= transition ======= DT ======= True ======= 4 ======= 1
+ESTABLISHED ======= transition ======= NN ======= True ======= 4 ======= 1
+state ======= transition ======= NN ======= True ======= 4 ======= 1
+. ======= transition ======= . ======= True ======= 4 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 4 ======= 1
+&newline; ======= O ======= JJ ======= True ======= 4 ======= 0
+END-OF-CHUNK ======= O ======= 4 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 4 ======= 0
+END-OF-CHUNK ======= O ======= 4 ======= 0
+6 ======= O ======= CD ======= True ======= 4 ======= 0
+) ======= O ======= ) ======= True ======= 4 ======= 0
+Send ======= action ======= VB ======= True ======= 4 ======= 0
+a ======= action ======= DT ======= True ======= 4 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 4 ======= 0
+ACK ======= action ======= NNP ======= True ======= 4 ======= 0
+chunk ======= action ======= NN ======= True ======= 4 ======= 0
+to ======= action ======= TO ======= True ======= 4 ======= 0
+the ======= action ======= DT ======= True ======= 4 ======= 0
+peer ======= action ======= NN ======= True ======= 4 ======= 0
+acknowledging ======= action ======= VBG ======= True ======= 4 ======= 0
+receipt ======= action ======= NN ======= True ======= 4 ======= 0
+of ======= action ======= IN ======= True ======= 4 ======= 0
+the ======= action ======= DT ======= True ======= 4 ======= 0
+&newline; ======= action ======= NN ======= True ======= 4 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 4 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 4 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 4 ======= 0
+. ======= action ======= . ======= True ======= 4 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 4 ======= 0
+The ======= trigger ======= DT ======= False ======= 5 ======= 1
+COOKIE ======= trigger ======= NNP ======= False ======= 5 ======= 1
+ACK ======= trigger ======= NNP ======= False ======= 5 ======= 1
+MAY ======= trigger ======= NNP ======= False ======= 5 ======= 1
+be ======= trigger ======= VB ======= False ======= 5 ======= 1
+bundled ======= trigger ======= VBN ======= False ======= 5 ======= 1
+with ======= trigger ======= IN ======= False ======= 5 ======= 1
+an ======= trigger ======= DT ======= False ======= 5 ======= 1
+outbound ======= trigger ======= NN ======= False ======= 5 ======= 1
+DATA ======= trigger ======= NNP ======= False ======= 5 ======= 1
+chunk ======= trigger ======= NN ======= False ======= 5 ======= 1
+or ======= trigger ======= CC ======= False ======= 5 ======= 1
+SACK ======= trigger ======= NN ======= False ======= 5 ======= 1
+chunk ======= trigger ======= NN ======= False ======= 5 ======= 1
+; ======= trigger ======= : ======= False ======= 5 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 5 ======= 1
+however ======= O ======= RB ======= False ======= 5 ======= 1
+, ======= O ======= , ======= False ======= 5 ======= 1
+END-OF-CHUNK ======= O ======= 5 ======= 1
+the ======= action ======= DT ======= False ======= 5 ======= 1
+COOKIE ======= action ======= NNP ======= False ======= 5 ======= 1
+ACK ======= action ======= NNP ======= False ======= 5 ======= 1
+MUST ======= action ======= NNP ======= False ======= 5 ======= 1
+be ======= action ======= VB ======= False ======= 5 ======= 1
+the ======= action ======= DT ======= False ======= 5 ======= 1
+first ======= action ======= JJ ======= False ======= 5 ======= 1
+chunk ======= action ======= NN ======= False ======= 5 ======= 1
+in ======= action ======= IN ======= False ======= 5 ======= 1
+the ======= action ======= DT ======= False ======= 5 ======= 1
+SCTP ======= action ======= NNP ======= False ======= 5 ======= 1
+packet ======= action ======= NN ======= False ======= 5 ======= 1
+. ======= action ======= . ======= False ======= 5 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 5 ======= 1
+&newline; ======= O ======= JJ ======= True ======= 5 ======= 0
+END-OF-CHUNK ======= O ======= 5 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 5 ======= 0
+END-OF-CHUNK ======= O ======= 5 ======= 0
+7 ======= O ======= CD ======= True ======= 5 ======= 0
+) ======= O ======= ) ======= True ======= 5 ======= 0
+Immediately ======= action ======= RB ======= True ======= 5 ======= 0
+acknowledge ======= action ======= VBP ======= True ======= 5 ======= 0
+any ======= action ======= DT ======= True ======= 5 ======= 0
+DATA ======= action ======= NNP ======= True ======= 5 ======= 0
+chunk ======= action ======= NN ======= True ======= 5 ======= 0
+bundled ======= action ======= VBD ======= True ======= 5 ======= 0
+with ======= action ======= IN ======= True ======= 5 ======= 0
+the ======= action ======= DT ======= True ======= 5 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 5 ======= 0
+&newline; ======= action ======= NNP ======= True ======= 5 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 5 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 5 ======= 0
+with ======= action ======= IN ======= True ======= 5 ======= 0
+a ======= action ======= DT ======= True ======= 5 ======= 0
+SACK ======= action ======= NN ======= True ======= 5 ======= 0
+( ======= O ======= ( ======= True ======= 5 ======= 0
+subsequent ======= O ======= JJ ======= True ======= 5 ======= 0
+DATA ======= O ======= NNP ======= True ======= 5 ======= 0
+chunk ======= O ======= NN ======= True ======= 5 ======= 0
+acknowledgement ======= O ======= NN ======= True ======= 5 ======= 0
+should ======= O ======= MD ======= True ======= 5 ======= 0
+follow ======= O ======= VB ======= True ======= 5 ======= 0
+the ======= O ======= DT ======= True ======= 5 ======= 0
+rules ======= O ======= NNS ======= True ======= 5 ======= 0
+defined ======= O ======= VBN ======= True ======= 5 ======= 0
+in ======= O ======= IN ======= True ======= 5 ======= 0
+Section ======= O ======= NNP ======= True ======= 5 ======= 0
+6.2 ======= O ======= CD ======= True ======= 5 ======= 0
+) ======= O ======= ) ======= True ======= 5 ======= 0
+. ======= O ======= . ======= True ======= 5 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 5 ======= 0
+As ======= O ======= IN ======= True ======= 5 ======= 0
+mentioned ======= O ======= VBN ======= True ======= 5 ======= 0
+in ======= O ======= IN ======= True ======= 5 ======= 0
+step ======= O ======= NN ======= True ======= 5 ======= 0
+6 ======= O ======= CD ======= True ======= 5 ======= 0
+, ======= O ======= , ======= True ======= 5 ======= 0
+END-OF-CHUNK ======= O ======= 5 ======= 0
+if ======= trigger ======= IN ======= False ======= 6 ======= 1
+the ======= trigger ======= DT ======= False ======= 6 ======= 1
+SACK ======= trigger ======= NN ======= False ======= 6 ======= 1
+is ======= trigger ======= VBZ ======= False ======= 6 ======= 1
+bundled ======= trigger ======= VBN ======= False ======= 6 ======= 1
+with ======= trigger ======= IN ======= False ======= 6 ======= 1
+the ======= trigger ======= DT ======= False ======= 6 ======= 1
+COOKIE ======= trigger ======= NNP ======= False ======= 6 ======= 1
+ACK ======= trigger ======= NNP ======= False ======= 6 ======= 1
+, ======= trigger ======= , ======= False ======= 6 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 6 ======= 1
+the ======= action ======= DT ======= False ======= 6 ======= 1
+COOKIE ======= action ======= NNP ======= False ======= 6 ======= 1
+ACK ======= action ======= NNP ======= False ======= 6 ======= 1
+MUST ======= action ======= NNP ======= False ======= 6 ======= 1
+appear ======= action ======= VBP ======= False ======= 6 ======= 1
+first ======= action ======= RB ======= False ======= 6 ======= 1
+in ======= action ======= IN ======= False ======= 6 ======= 1
+the ======= action ======= DT ======= False ======= 6 ======= 1
+SCTP ======= action ======= NNP ======= False ======= 6 ======= 1
+packet ======= action ======= NN ======= False ======= 6 ======= 1
+. ======= action ======= . ======= False ======= 6 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 6 ======= 1
+&newline; ======= O ======= NN ======= True ======= 6 ======= 0
+END-OF-CHUNK ======= O ======= 6 ======= 0
+&newline; ======= O ======= NN ======= True ======= 6 ======= 0
+END-OF-CHUNK ======= O ======= 6 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+this ======= trigger ======= DT ======= False ======= 0 ======= 0
+comparison ======= trigger ======= NN ======= False ======= 0 ======= 0
+fails ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+SCTP ======= action ======= NNP ======= False ======= 0 ======= 0
+packet ======= action ======= NN ======= False ======= 0 ======= 0
+, ======= action ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+including ======= action ======= VBG ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= False ======= 0 ======= 0
+and ======= action ======= CC ======= False ======= 0 ======= 0
+any ======= action ======= DT ======= False ======= 0 ======= 0
+DATA ======= action ======= NNP ======= False ======= 0 ======= 0
+chunks ======= action ======= NNS ======= False ======= 0 ======= 0
+, ======= action ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+should ======= action ======= MD ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+silently ======= action ======= RB ======= False ======= 0 ======= 0
+discarded ======= action ======= VBN ======= False ======= 0 ======= 0
+, ======= action ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+these ======= trigger ======= DT ======= False ======= 0 ======= 0
+values ======= trigger ======= NNS ======= False ======= 0 ======= 0
+do ======= trigger ======= VBP ======= False ======= 0 ======= 0
+not ======= trigger ======= RB ======= False ======= 0 ======= 0
+match ======= trigger ======= VB ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+packet ======= action ======= NN ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+silently ======= action ======= RB ======= False ======= 0 ======= 0
+discarded ======= action ======= VBN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+elapsed ======= trigger ======= JJ ======= True ======= 0 ======= 0
+time ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+longer ======= trigger ======= JJR ======= True ======= 0 ======= 0
+than ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+lifespan ======= trigger ======= NN ======= True ======= 0 ======= 0
+carried ======= trigger ======= VBD ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+State ======= trigger ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= trigger ======= NNP ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+then ======= O ======= RB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+packet ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+including ======= action ======= VBG ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 0 ======= 0
+and ======= action ======= CC ======= True ======= 0 ======= 0
+any ======= action ======= DT ======= True ======= 0 ======= 0
+attached ======= action ======= JJ ======= True ======= 0 ======= 0
+DATA ======= action ======= NNP ======= True ======= 0 ======= 0
+chunks ======= action ======= NNS ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+SHOULD ======= action ======= NNP ======= True ======= 0 ======= 0
+be ======= action ======= VB ======= True ======= 0 ======= 0
+discarded ======= action ======= VBN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= error ======= DT ======= True ======= 0 ======= 0
+endpoint ======= error ======= NN ======= True ======= 0 ======= 0
+MUST ======= error ======= NNP ======= True ======= 0 ======= 0
+transmit ======= error ======= NN ======= True ======= 0 ======= 0
+an ======= error ======= DT ======= True ======= 0 ======= 0
+ERROR ======= error ======= NNP ======= True ======= 0 ======= 0
+chunk ======= error ======= NN ======= True ======= 0 ======= 0
+with ======= error ======= IN ======= True ======= 0 ======= 0
+a ======= error ======= DT ======= True ======= 0 ======= 0
+`` ======= error ======= `` ======= True ======= 0 ======= 0
+Stale ======= error ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= error ======= NNP ======= True ======= 0 ======= 0
+`` ======= error ======= `` ======= True ======= 0 ======= 0
+error ======= error ======= NN ======= True ======= 0 ======= 0
+cause ======= error ======= NN ======= True ======= 0 ======= 0
+to ======= error ======= TO ======= True ======= 0 ======= 0
+the ======= error ======= DT ======= True ======= 0 ======= 0
+peer ======= error ======= NN ======= True ======= 0 ======= 0
+endpoint ======= error ======= NN ======= True ======= 0 ======= 0
+. ======= error ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ERROR ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+State ======= trigger ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= trigger ======= NNP ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+valid ======= trigger ======= JJ ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+create ======= action ======= VB ======= True ======= 0 ======= 0
+an ======= action ======= DT ======= True ======= 0 ======= 0
+association ======= action ======= NN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+sender ======= action ======= NN ======= True ======= 0 ======= 0
+&newline; ======= action ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+of ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+with ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+information ======= action ======= NN ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+TCB ======= action ======= NNP ======= True ======= 0 ======= 0
+data ======= action ======= NNS ======= True ======= 0 ======= 0
+carried ======= action ======= VBD ======= True ======= 0 ======= 0
+in ======= action ======= IN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= action ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+ESTABLISHED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+The ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= False ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= False ======= 0 ======= 0
+MAY ======= trigger ======= NNP ======= False ======= 0 ======= 0
+be ======= trigger ======= VB ======= False ======= 0 ======= 0
+bundled ======= trigger ======= VBN ======= False ======= 0 ======= 0
+with ======= trigger ======= IN ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+outbound ======= trigger ======= NN ======= False ======= 0 ======= 0
+DATA ======= trigger ======= NNP ======= False ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= False ======= 0 ======= 0
+or ======= trigger ======= CC ======= False ======= 0 ======= 0
+SACK ======= trigger ======= NN ======= False ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= False ======= 0 ======= 0
+; ======= trigger ======= : ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+however ======= O ======= RB ======= False ======= 0 ======= 0
+, ======= O ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ACK ======= action ======= NNP ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+first ======= action ======= JJ ======= False ======= 0 ======= 0
+chunk ======= action ======= NN ======= False ======= 0 ======= 0
+in ======= action ======= IN ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+SCTP ======= action ======= NNP ======= False ======= 0 ======= 0
+packet ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+if ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+SACK ======= trigger ======= NN ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+bundled ======= trigger ======= VBN ======= False ======= 0 ======= 0
+with ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= False ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= action ======= NNP ======= False ======= 0 ======= 0
+ACK ======= action ======= NNP ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+appear ======= action ======= VBP ======= False ======= 0 ======= 0
+first ======= action ======= RB ======= False ======= 0 ======= 0
+in ======= action ======= IN ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+SCTP ======= action ======= NNP ======= False ======= 0 ======= 0
+packet ======= action ======= NN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= False ======= 0 ======= 0
+a ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= False ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+received ======= trigger ======= VBN ======= False ======= 0 ======= 0
+from ======= trigger ======= IN ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= False ======= 0 ======= 0
+with ======= trigger ======= IN ======= False ======= 0 ======= 0
+which ======= trigger ======= WDT ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+receiver ======= trigger ======= NN ======= False ======= 0 ======= 0
+of ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= False ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= False ======= 0 ======= 0
+has ======= trigger ======= VBZ ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+existing ======= trigger ======= VBG ======= False ======= 0 ======= 0
+association ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+procedures ======= action ======= NNS ======= False ======= 0 ======= 0
+in ======= action ======= IN ======= False ======= 0 ======= 0
+Section ======= action ======= NNP ======= False ======= 0 ======= 0
+5.2 ======= action ======= CD ======= False ======= 0 ======= 0
+should ======= action ======= MD ======= False ======= 0 ======= 0
+be ======= action ======= VB ======= False ======= 0 ======= 0
+followed ======= action ======= VBN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= False ======= 0 ======= 0
+receipt ======= trigger ======= NN ======= False ======= 0 ======= 0
+of ======= trigger ======= IN ======= False ======= 0 ======= 0
+an ======= trigger ======= DT ======= False ======= 0 ======= 0
+INIT ======= trigger ======= NN ======= False ======= 0 ======= 0
+in ======= trigger ======= IN ======= False ======= 0 ======= 0
+the ======= trigger ======= DT ======= False ======= 0 ======= 0
+COOKIE-WAIT ======= trigger ======= NN ======= False ======= 0 ======= 0
+state ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+an ======= action ======= DT ======= False ======= 0 ======= 0
+endpoint ======= action ======= NN ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+respond ======= action ======= NN ======= False ======= 0 ======= 0
+with ======= action ======= IN ======= False ======= 0 ======= 0
+an ======= action ======= DT ======= False ======= 0 ======= 0
+INIT ======= action ======= NN ======= False ======= 0 ======= 0
+ACK ======= action ======= NNP ======= False ======= 0 ======= 0
+using ======= action ======= VBG ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+same ======= action ======= JJ ======= False ======= 0 ======= 0
+parameters ======= action ======= NNS ======= False ======= 0 ======= 0
+it ======= action ======= PRP ======= False ======= 0 ======= 0
+sent ======= action ======= VBD ======= False ======= 0 ======= 0
+in ======= action ======= IN ======= False ======= 0 ======= 0
+its ======= action ======= PRP$ ======= False ======= 0 ======= 0
+original ======= action ======= JJ ======= False ======= 0 ======= 0
+INIT ======= action ======= NNP ======= False ======= 0 ======= 0
+chunk ======= action ======= NN ======= False ======= 0 ======= 0
+( ======= action ======= ( ======= False ======= 0 ======= 0
+including ======= action ======= VBG ======= False ======= 0 ======= 0
+its ======= action ======= PRP$ ======= False ======= 0 ======= 0
+Initiate ======= action ======= NNP ======= False ======= 0 ======= 0
+Tag ======= action ======= NNP ======= False ======= 0 ======= 0
+, ======= action ======= , ======= False ======= 0 ======= 0
+unchanged ======= action ======= JJ ======= False ======= 0 ======= 0
+) ======= action ======= ) ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= False ======= 0 ======= 0
+responding ======= trigger ======= NN ======= False ======= 0 ======= 0
+, ======= trigger ======= , ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+endpoint ======= action ======= NN ======= False ======= 0 ======= 0
+MUST ======= action ======= NNP ======= False ======= 0 ======= 0
+send ======= action ======= VB ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+INIT ======= action ======= NNP ======= False ======= 0 ======= 0
+ACK ======= action ======= NNP ======= False ======= 0 ======= 0
+back ======= action ======= RB ======= False ======= 0 ======= 0
+to ======= action ======= TO ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+same ======= action ======= JJ ======= False ======= 0 ======= 0
+address ======= action ======= NN ======= False ======= 0 ======= 0
+that ======= action ======= IN ======= False ======= 0 ======= 0
+the ======= action ======= DT ======= False ======= 0 ======= 0
+original ======= action ======= JJ ======= False ======= 0 ======= 0
+INIT ======= action ======= NNP ======= False ======= 0 ======= 0
+( ======= action ======= ( ======= False ======= 0 ======= 0
+sent ======= action ======= VBN ======= False ======= 0 ======= 0
+by ======= action ======= IN ======= False ======= 0 ======= 0
+this ======= action ======= DT ======= False ======= 0 ======= 0
+endpoint ======= action ======= NN ======= False ======= 0 ======= 0
+) ======= action ======= ) ======= False ======= 0 ======= 0
+was ======= action ======= VBD ======= False ======= 0 ======= 0
+sent ======= action ======= VBN ======= False ======= 0 ======= 0
+. ======= action ======= . ======= False ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+When ======= trigger ======= WRB ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= trigger ======= NNP ======= True ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+received ======= trigger ======= VBN ======= True ======= 0 ======= 0
+by ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+any ======= trigger ======= DT ======= True ======= 0 ======= 0
+state ======= trigger ======= NN ======= True ======= 0 ======= 0
+for ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+existing ======= trigger ======= VBG ======= True ======= 0 ======= 0
+association ======= trigger ======= NN ======= True ======= 0 ======= 0
+( ======= trigger ======= ( ======= True ======= 0 ======= 0
+i.e ======= trigger ======= NN ======= True ======= 0 ======= 0
+. ======= trigger ======= . ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+not ======= trigger ======= RB ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+CLOSED ======= trigger ======= NN ======= True ======= 0 ======= 0
+state ======= trigger ======= NN ======= True ======= 0 ======= 0
+) ======= trigger ======= ) ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+following ======= O ======= JJ ======= True ======= 0 ======= 0
+rules ======= O ======= NNS ======= True ======= 0 ======= 0
+shall ======= O ======= MD ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+applied ======= O ======= VBN ======= True ======= 0 ======= 0
+: ======= O ======= : ======= True ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+1 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Compute ======= O ======= VB ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+MAC ======= O ======= NNP ======= True ======= 0 ======= 0
+as ======= O ======= IN ======= True ======= 0 ======= 0
+described ======= O ======= VBN ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+step ======= O ======= NN ======= True ======= 0 ======= 0
+1 ======= O ======= CD ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+Section ======= O ======= NN ======= True ======= 0 ======= 0
+5.1.5 ======= O ======= CD ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Authenticate ======= O ======= VBP ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+as ======= O ======= IN ======= True ======= 0 ======= 0
+described ======= O ======= VBN ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+step ======= O ======= NN ======= True ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+Section ======= O ======= NNP ======= True ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+5.1.5 ======= O ======= CD ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+C ======= O ======= NNP ======= True ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+D ======= O ======= NNP ======= True ======= 0 ======= 0
+above ======= O ======= IN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+3 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Compare ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+timestamp ======= O ======= NN ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+current ======= O ======= JJ ======= True ======= 0 ======= 0
+time ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+If ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+older ======= O ======= JJR ======= True ======= 0 ======= 0
+than ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+lifespan ======= O ======= NN ======= True ======= 0 ======= 0
+carried ======= O ======= VBD ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+Verification ======= O ======= NNP ======= True ======= 0 ======= 0
+Tags ======= O ======= NNP ======= True ======= 0 ======= 0
+contained ======= O ======= VBD ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+do ======= O ======= VBP ======= True ======= 0 ======= 0
+not ======= O ======= RB ======= True ======= 0 ======= 0
+match ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+current ======= O ======= JJ ======= True ======= 0 ======= 0
+association ======= O ======= NN ======= True ======= 0 ======= 0
+` ======= O ======= `` ======= True ======= 0 ======= 0
+s ======= O ======= JJ ======= True ======= 0 ======= 0
+Verification ======= O ======= NN ======= True ======= 0 ======= 0
+Tags ======= O ======= NNP ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VBD ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+packet ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+including ======= O ======= VBG ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= O ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= O ======= NNP ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+any ======= O ======= DT ======= True ======= 0 ======= 0
+DATA ======= O ======= NNP ======= True ======= 0 ======= 0
+chunks ======= O ======= NNS ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+should ======= O ======= MD ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+discarded ======= O ======= VBN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+The ======= O ======= DT ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+also ======= O ======= RB ======= True ======= 0 ======= 0
+MUST ======= O ======= NNP ======= True ======= 0 ======= 0
+transmit ======= O ======= VB ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+ERROR ======= O ======= NNP ======= True ======= 0 ======= 0
+chunk ======= O ======= NN ======= True ======= 0 ======= 0
+with ======= O ======= IN ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+Stale ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+error ======= O ======= NN ======= True ======= 0 ======= 0
+cause ======= O ======= NN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+C ======= O ======= NNP ======= True ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+D ======= O ======= NNP ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+Section ======= O ======= NNP ======= True ======= 0 ======= 0
+5.2 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= $ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+If ======= O ======= IN ======= True ======= 0 ======= 0
+both ======= O ======= DT ======= True ======= 0 ======= 0
+Verification ======= O ======= NNP ======= True ======= 0 ======= 0
+Tags ======= O ======= NNP ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+match ======= O ======= VBD ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+Verification ======= O ======= NNP ======= True ======= 0 ======= 0
+Tags ======= O ======= NNP ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+current ======= O ======= JJ ======= True ======= 0 ======= 0
+association ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+consider ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+valid ======= O ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+E ======= O ======= NNP ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+Section ======= O ======= NNP ======= True ======= 0 ======= 0
+5.2 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+even ======= O ======= RB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+if ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+lifespan ======= O ======= NN ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+exceeded ======= O ======= VBN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+4 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+If ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+State ======= O ======= NNP ======= True ======= 0 ======= 0
+Cookie ======= O ======= NNP ======= True ======= 0 ======= 0
+proves ======= O ======= VBZ ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+valid ======= O ======= JJ ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+unpack ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+TCB ======= O ======= NNP ======= True ======= 0 ======= 0
+into ======= O ======= IN ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+temporary ======= O ======= JJ ======= True ======= 0 ======= 0
+TCB ======= O ======= NNP ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+5 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+Refer ======= O ======= NN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+Table ======= O ======= VB ======= True ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+determine ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+correct ======= O ======= JJ ======= True ======= 0 ======= 0
+action ======= O ======= NN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+taken ======= O ======= VBN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
++ ======= O ======= NN ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= JJ ======= True ======= 0 ======= 0
+Local ======= O ======= NNP ======= True ======= 0 ======= 0
+Tag ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+Peer ======= O ======= NNP ======= True ======= 0 ======= 0
+` ======= O ======= `` ======= True ======= 0 ======= 0
+s ======= O ======= RB ======= True ======= 0 ======= 0
+Tag ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+Local-Tie-Tag ======= O ======= NNP ======= True ======= 0 ======= 0
+|Peer`s-Tie-Tag| ======= O ======= JJ ======= True ======= 0 ======= 0
+Action/ ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+Description ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
++ ======= O ======= NNP ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= JJ ======= True ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+| ======= O ======= NN ======= True ======= 0 ======= 0
++ ======= O ======= NN ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= VBZ ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+B ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+| ======= O ======= VBP ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= VBD ======= True ======= 0 ======= 0
+0 ======= O ======= CD ======= True ======= 0 ======= 0
+| ======= O ======= NN ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= VBZ ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+B ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+| ======= O ======= VBP ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= JJ ======= True ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= VBD ======= True ======= 0 ======= 0
+0 ======= O ======= CD ======= True ======= 0 ======= 0
+| ======= O ======= JJ ======= True ======= 0 ======= 0
+0 ======= O ======= CD ======= True ======= 0 ======= 0
+| ======= O ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+C ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+| ======= O ======= VBP ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
++ ======= O ======= FW ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-- ======= O ======= : ======= True ======= 0 ======= 0
+-+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= VBZ ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+D ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+| ======= O ======= VBP ======= True ======= 0 ======= 0
++======================================================================+ ======= O ======= JJ ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
+Table ======= O ======= NNP ======= True ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+: ======= O ======= : ======= True ======= 0 ======= 0
+Handling ======= O ======= NN ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+COOKIE ======= O ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+when ======= O ======= WRB ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+TCB ======= O ======= NNP ======= True ======= 0 ======= 0
+Exists ======= O ======= NNP ======= True ======= 0 ======= 0
+| ======= O ======= NNP ======= True ======= 0 ======= 0
++======================================================================+ ======= O ======= NNP ======= True ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+Legend ======= O ======= NNP ======= True ======= 0 ======= 0
+: ======= O ======= : ======= True ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+Tag ======= O ======= NN ======= True ======= 0 ======= 0
+does ======= O ======= VBZ ======= True ======= 0 ======= 0
+not ======= O ======= RB ======= True ======= 0 ======= 0
+match ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+existing ======= O ======= VBG ======= True ======= 0 ======= 0
+TCB ======= O ======= NNP ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+Tag ======= O ======= NN ======= True ======= 0 ======= 0
+matches ======= O ======= VBZ ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+existing ======= O ======= VBG ======= True ======= 0 ======= 0
+TCB ======= O ======= NNP ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+0 ======= O ======= CD ======= True ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+No ======= O ======= DT ======= True ======= 0 ======= 0
+Tie-Tag ======= O ======= NNP ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+cookie ======= O ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+unknown ======= O ======= JJ ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+A ======= O ======= DT ======= True ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+All ======= O ======= DT ======= True ======= 0 ======= 0
+cases ======= O ======= NNS ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+i.e ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+M ======= O ======= NNP ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+X ======= O ======= NNP ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+0 ======= O ======= CD ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+Note ======= O ======= NN ======= True ======= 0 ======= 0
+: ======= O ======= : ======= True ======= 0 ======= 0
+For ======= O ======= IN ======= True ======= 0 ======= 0
+any ======= O ======= DT ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+not ======= O ======= RB ======= True ======= 0 ======= 0
+shown ======= O ======= VBN ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+Table ======= O ======= JJ ======= True ======= 0 ======= 0
+2 ======= O ======= CD ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+cookie ======= O ======= NN ======= True ======= 0 ======= 0
+should ======= O ======= MD ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+silently ======= O ======= RB ======= True ======= 0 ======= 0
+discarded ======= O ======= VBN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+Action ======= O ======= NNP ======= True ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+A ======= O ======= NNP ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+In ======= O ======= IN ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+case ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+may ======= O ======= MD ======= True ======= 0 ======= 0
+have ======= O ======= VB ======= True ======= 0 ======= 0
+restarted ======= O ======= VBN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+When ======= O ======= WRB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+recognizes ======= O ======= VBZ ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+potential ======= O ======= JJ ======= True ======= 0 ======= 0
+`restart ======= O ======= NN ======= True ======= 0 ======= 0
+` ======= O ======= `` ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+existing ======= O ======= VBG ======= True ======= 0 ======= 0
+session ======= O ======= NN ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+treated ======= O ======= VBN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+same ======= O ======= JJ ======= True ======= 0 ======= 0
+as ======= O ======= IN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+if ======= O ======= IN ======= True ======= 0 ======= 0
+it ======= O ======= PRP ======= True ======= 0 ======= 0
+received ======= O ======= VBD ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+ABORT ======= O ======= NNP ======= True ======= 0 ======= 0
+followed ======= O ======= VBN ======= True ======= 0 ======= 0
+by ======= O ======= IN ======= True ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+new ======= O ======= JJ ======= True ======= 0 ======= 0
+COOKIE ======= O ======= NNP ======= True ======= 0 ======= 0
+ECHO ======= O ======= NNP ======= True ======= 0 ======= 0
+with ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+following ======= O ======= JJ ======= True ======= 0 ======= 0
+exceptions ======= O ======= NNS ======= True ======= 0 ======= 0
+: ======= O ======= : ======= True ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+Any ======= O ======= DT ======= True ======= 0 ======= 0
+SCTP ======= O ======= NNP ======= True ======= 0 ======= 0
+DATA ======= O ======= NNP ======= True ======= 0 ======= 0
+chunks ======= O ======= NNS ======= True ======= 0 ======= 0
+MAY ======= O ======= NNP ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+retained ======= O ======= VBN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+is ======= O ======= VBZ ======= True ======= 0 ======= 0
+an ======= O ======= DT ======= True ======= 0 ======= 0
+&newline; ======= O ======= JJ ======= True ======= 0 ======= 0
+implementation-specific ======= O ======= JJ ======= True ======= 0 ======= 0
+option ======= O ======= NN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= $ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= SYM ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+A ======= O ======= DT ======= True ======= 0 ======= 0
+notification ======= O ======= NN ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+RESTART ======= O ======= NNP ======= True ======= 0 ======= 0
+SHOULD ======= O ======= NNP ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+sent ======= O ======= VBN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+ULP ======= O ======= NNP ======= True ======= 0 ======= 0
+instead ======= O ======= RB ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+a ======= O ======= DT ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+COMMUNICATION ======= O ======= NNP ======= True ======= 0 ======= 0
+LOST ======= O ======= NNP ======= True ======= 0 ======= 0
+`` ======= O ======= `` ======= True ======= 0 ======= 0
+notification ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= IN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+All ======= O ======= PDT ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+congestion ======= O ======= NN ======= True ======= 0 ======= 0
+control ======= O ======= NN ======= True ======= 0 ======= 0
+parameters ======= O ======= NNS ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+e.g ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+cwnd ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+ssthresh ======= O ======= NN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+related ======= O ======= VBN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+MUST ======= O ======= NNP ======= True ======= 0 ======= 0
+be ======= O ======= VB ======= True ======= 0 ======= 0
+reset ======= O ======= VBN ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+their ======= O ======= PRP$ ======= True ======= 0 ======= 0
+initial ======= O ======= JJ ======= True ======= 0 ======= 0
+values ======= O ======= NNS ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+see ======= O ======= VB ======= True ======= 0 ======= 0
+Section ======= O ======= NNP ======= True ======= 0 ======= 0
+6.2.1 ======= O ======= CD ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= $ ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= RB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+After ======= O ======= IN ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+endpoint ======= transition ======= NN ======= True ======= 0 ======= 0
+shall ======= transition ======= MD ======= True ======= 0 ======= 0
+enter ======= transition ======= VB ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+ESTABLISHED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= True ======= 0 ======= 0
+receipt ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= trigger ======= NN ======= True ======= 0 ======= 0
+primitive ======= trigger ======= NN ======= True ======= 0 ======= 0
+from ======= O ======= IN ======= True ======= 0 ======= 0
+its ======= O ======= PRP$ ======= True ======= 0 ======= 0
+upper ======= O ======= JJ ======= True ======= 0 ======= 0
+layer ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+enters ======= transition ======= NNS ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-PENDING ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Once ======= trigger ======= RB ======= True ======= 0 ======= 0
+all ======= trigger ======= DT ======= True ======= 0 ======= 0
+its ======= trigger ======= PRP$ ======= True ======= 0 ======= 0
+outstanding ======= trigger ======= JJ ======= True ======= 0 ======= 0
+data ======= trigger ======= NN ======= True ======= 0 ======= 0
+has ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+been ======= trigger ======= VBN ======= True ======= 0 ======= 0
+acknowledged ======= trigger ======= VBN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+endpoint ======= action ======= NN ======= True ======= 0 ======= 0
+shall ======= action ======= MD ======= True ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= action ======= NN ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+its ======= action ======= PRP$ ======= True ======= 0 ======= 0
+peer ======= action ======= NN ======= True ======= 0 ======= 0
+including ======= O ======= VBG ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+Cumulative ======= O ======= NNP ======= True ======= 0 ======= 0
+TSN ======= O ======= NNP ======= True ======= 0 ======= 0
+Ack ======= O ======= NNP ======= True ======= 0 ======= 0
+field ======= O ======= NN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+last ======= O ======= JJ ======= True ======= 0 ======= 0
+sequential ======= O ======= JJ ======= True ======= 0 ======= 0
+TSN ======= O ======= NN ======= True ======= 0 ======= 0
+it ======= O ======= PRP ======= True ======= 0 ======= 0
+has ======= O ======= VBZ ======= True ======= 0 ======= 0
+received ======= O ======= VBN ======= True ======= 0 ======= 0
+from ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+It ======= O ======= PRP ======= True ======= 0 ======= 0
+shall ======= O ======= MD ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+then ======= O ======= RB ======= True ======= 0 ======= 0
+start ======= timer ======= VB ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T2-shutdown ======= timer ======= JJ ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-SENT ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+. ======= transition ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+If ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+timer ======= O ======= NN ======= True ======= 0 ======= 0
+expires ======= O ======= VBZ ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+must ======= O ======= MD ======= True ======= 0 ======= 0
+resend ======= O ======= VB ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= O ======= NNP ======= True ======= 0 ======= 0
+with ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+updated ======= O ======= VBN ======= True ======= 0 ======= 0
+last ======= O ======= JJ ======= True ======= 0 ======= 0
+sequential ======= O ======= JJ ======= True ======= 0 ======= 0
+TSN ======= O ======= NNP ======= True ======= 0 ======= 0
+received ======= O ======= VBD ======= True ======= 0 ======= 0
+from ======= O ======= IN ======= True ======= 0 ======= 0
+its ======= O ======= PRP$ ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+Upon ======= trigger ======= IN ======= True ======= 0 ======= 0
+reception ======= trigger ======= NN ======= True ======= 0 ======= 0
+of ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+peer ======= O ======= NN ======= True ======= 0 ======= 0
+endpoint ======= O ======= NN ======= True ======= 0 ======= 0
+shall ======= O ======= MD ======= True ======= 0 ======= 0
+&newline; ======= O ======= VB ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+enter ======= transition ======= NN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-RECEIVED ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+, ======= transition ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+&newline; ======= O ======= NN ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= SYM ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+stop ======= O ======= VB ======= True ======= 0 ======= 0
+accepting ======= O ======= VBG ======= True ======= 0 ======= 0
+new ======= O ======= JJ ======= True ======= 0 ======= 0
+data ======= O ======= NNS ======= True ======= 0 ======= 0
+from ======= O ======= IN ======= True ======= 0 ======= 0
+its ======= O ======= PRP$ ======= True ======= 0 ======= 0
+SCTP ======= O ======= NNP ======= True ======= 0 ======= 0
+user ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= NNP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+- ======= O ======= : ======= True ======= 0 ======= 0
+verify ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+by ======= O ======= IN ======= True ======= 0 ======= 0
+checking ======= O ======= VBG ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+Cumulative ======= O ======= NNP ======= True ======= 0 ======= 0
+TSN ======= O ======= NNP ======= True ======= 0 ======= 0
+Ack ======= O ======= NNP ======= True ======= 0 ======= 0
+field ======= O ======= NN ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+chunk ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+&newline; ======= O ======= VBP ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+that ======= O ======= IN ======= True ======= 0 ======= 0
+all ======= O ======= PDT ======= True ======= 0 ======= 0
+its ======= O ======= PRP$ ======= True ======= 0 ======= 0
+outstanding ======= O ======= JJ ======= True ======= 0 ======= 0
+DATA ======= O ======= NNP ======= True ======= 0 ======= 0
+chunks ======= O ======= NNS ======= True ======= 0 ======= 0
+have ======= O ======= VBP ======= True ======= 0 ======= 0
+been ======= O ======= VBN ======= True ======= 0 ======= 0
+received ======= O ======= VBN ======= True ======= 0 ======= 0
+by ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= O ======= NNP ======= True ======= 0 ======= 0
+sender ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-ACK-SENT ======= trigger ======= NNP ======= True ======= 0 ======= 0
+state ======= trigger ======= NN ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+INIT ======= trigger ======= NN ======= True ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+e.g ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+if ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= O ======= NNP ======= True ======= 0 ======= 0
+COMPLETE ======= O ======= NNP ======= True ======= 0 ======= 0
+was ======= O ======= VBD ======= True ======= 0 ======= 0
+lost ======= O ======= VBN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+with ======= O ======= IN ======= True ======= 0 ======= 0
+source ======= O ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+destination ======= O ======= NN ======= True ======= 0 ======= 0
+transport ======= O ======= NN ======= True ======= 0 ======= 0
+addresses ======= O ======= NNS ======= True ======= 0 ======= 0
+( ======= O ======= ( ======= True ======= 0 ======= 0
+either ======= O ======= CC ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+IP ======= O ======= NNP ======= True ======= 0 ======= 0
+addresses ======= O ======= VBZ ======= True ======= 0 ======= 0
+or ======= O ======= CC ======= True ======= 0 ======= 0
+in ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+INIT ======= O ======= NNP ======= True ======= 0 ======= 0
+chunk ======= O ======= NN ======= True ======= 0 ======= 0
+) ======= O ======= ) ======= True ======= 0 ======= 0
+that ======= O ======= WDT ======= True ======= 0 ======= 0
+belong ======= O ======= VBP ======= True ======= 0 ======= 0
+to ======= O ======= TO ======= True ======= 0 ======= 0
+this ======= O ======= DT ======= True ======= 0 ======= 0
+association ======= O ======= NN ======= True ======= 0 ======= 0
+, ======= O ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= action ======= PRP ======= True ======= 0 ======= 0
+should ======= action ======= MD ======= True ======= 0 ======= 0
+discard ======= action ======= VB ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+INIT ======= action ======= NN ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+retransmit ======= action ======= NN ======= True ======= 0 ======= 0
+the ======= action ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= action ======= NNP ======= True ======= 0 ======= 0
+ACK ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+. ======= action ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-SENT ======= trigger ======= NN ======= True ======= 0 ======= 0
+state ======= trigger ======= NN ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= trigger ======= NN ======= True ======= 0 ======= 0
+chunk ======= trigger ======= NN ======= True ======= 0 ======= 0
+from ======= trigger ======= IN ======= True ======= 0 ======= 0
+its ======= trigger ======= PRP$ ======= True ======= 0 ======= 0
+peer ======= trigger ======= NN ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+endpoint ======= action ======= NN ======= True ======= 0 ======= 0
+shall ======= action ======= MD ======= True ======= 0 ======= 0
+respond ======= action ======= VB ======= True ======= 0 ======= 0
+immediately ======= action ======= RB ======= True ======= 0 ======= 0
+with ======= action ======= IN ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= action ======= NNP ======= True ======= 0 ======= 0
+ACK ======= action ======= NNP ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+its ======= action ======= PRP$ ======= True ======= 0 ======= 0
+peer ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+move ======= transition ======= NN ======= True ======= 0 ======= 0
+into ======= transition ======= IN ======= True ======= 0 ======= 0
+the ======= transition ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-ACK-SENT ======= transition ======= NN ======= True ======= 0 ======= 0
+state ======= transition ======= NN ======= True ======= 0 ======= 0
+restarting ======= timer ======= VBG ======= True ======= 0 ======= 0
+its ======= timer ======= PRP$ ======= True ======= 0 ======= 0
+T2-shutdown ======= timer ======= JJ ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+. ======= timer ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRANSITION ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
+If ======= trigger ======= IN ======= True ======= 0 ======= 0
+an ======= trigger ======= DT ======= True ======= 0 ======= 0
+endpoint ======= trigger ======= NN ======= True ======= 0 ======= 0
+is ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+in ======= trigger ======= IN ======= True ======= 0 ======= 0
+the ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN-ACK-SENT ======= trigger ======= NN ======= True ======= 0 ======= 0
+state ======= trigger ======= NN ======= True ======= 0 ======= 0
+and ======= trigger ======= CC ======= True ======= 0 ======= 0
+receives ======= trigger ======= VBZ ======= True ======= 0 ======= 0
+a ======= trigger ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= trigger ======= NNP ======= True ======= 0 ======= 0
+ACK ======= trigger ======= NNP ======= True ======= 0 ======= 0
+, ======= trigger ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TRIGGER ======= 0 ======= 0
+it ======= O ======= PRP ======= True ======= 0 ======= 0
+shall ======= O ======= MD ======= True ======= 0 ======= 0
+stop ======= timer ======= VB ======= True ======= 0 ======= 0
+the ======= timer ======= DT ======= True ======= 0 ======= 0
+T2-shutdown ======= timer ======= JJ ======= True ======= 0 ======= 0
+timer ======= timer ======= NN ======= True ======= 0 ======= 0
+, ======= timer ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-TIMER ======= 0 ======= 0
+send ======= action ======= VB ======= True ======= 0 ======= 0
+a ======= action ======= DT ======= True ======= 0 ======= 0
+SHUTDOWN ======= action ======= NNP ======= True ======= 0 ======= 0
+COMPLETE ======= action ======= NNP ======= True ======= 0 ======= 0
+chunk ======= action ======= NN ======= True ======= 0 ======= 0
+to ======= action ======= TO ======= True ======= 0 ======= 0
+its ======= action ======= PRP$ ======= True ======= 0 ======= 0
+peer ======= action ======= NN ======= True ======= 0 ======= 0
+, ======= action ======= , ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= B-ACTION ======= 0 ======= 0
+and ======= O ======= CC ======= True ======= 0 ======= 0
+remove ======= O ======= VB ======= True ======= 0 ======= 0
+all ======= O ======= DT ======= True ======= 0 ======= 0
+record ======= O ======= NN ======= True ======= 0 ======= 0
+of ======= O ======= IN ======= True ======= 0 ======= 0
+the ======= O ======= DT ======= True ======= 0 ======= 0
+association ======= O ======= NN ======= True ======= 0 ======= 0
+. ======= O ======= . ======= True ======= 0 ======= 0
+END-OF-CHUNK ======= O ======= 0 ======= 0
+END-OF-CONTROL ======= END_CONTROL
