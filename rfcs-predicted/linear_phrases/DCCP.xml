@@ -1,0 +1,1083 @@
+<p><def_state id="1">closed</def_state>
+<def_state id="2">listen</def_state>
+<def_state id="3">request</def_state>
+<def_state id="4">respond</def_state>
+<def_state id="5">partopen</def_state>
+<def_state id="6">open</def_state>
+<def_state id="7">closereq</def_state>
+<def_state id="8">closing</def_state>
+<def_state id="9">timewait</def_state>
+<def_state id="None">stable</def_state>
+<def_state id="None">changing</def_state>
+<def_state id="None">unstable</def_state>
+<def_event id="1">dccp-request</def_event>
+<def_event id="2">dccp-response</def_event>
+<def_event id="3">dccp-data</def_event>
+<def_event id="4">dccp-ack</def_event>
+<def_event id="5">dccp-dataack</def_event>
+<def_event id="6">dccp-closereq</def_event>
+<def_event id="7">dccp-close</def_event>
+<def_event id="8">dccp-reset</def_event>
+<def_event id="9">dccp-sync</def_event>
+<def_event id="10">dccp-syncack</def_event>
+<def_event id="11">timeout</def_event>
+
+<control relevant="true">
+	<trigger><ref_state id="3">request</ref_state>  	</trigger>
+	<transition>a client socket enters this state , from <arg_source><ref_state id="1">closed</ref_state></arg_source> , 	</transition>
+	<action type="send">after sending <arg> a <ref_event id="1" type="send">dccp-request</ref_event> packet to try </arg> to initiate a connection . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger><ref_state id="4">respond</ref_state>  	</trigger>
+	<transition>a server socket enters this state , from <arg_source><ref_state id="2">listen</ref_state></arg_source> , 	</transition>
+	<action type="receive">after receiving <arg> a <ref_event id="1" type="receive">dccp-request</ref_event> from a </arg> client . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger><ref_state id="5">partopen</ref_state>  	</trigger>
+	<transition>a client socket enters this state , from <ref_state id="3">request</ref_state> , 	</transition>
+	<action type="receive">after receiving <arg> a <ref_event id="2" type="receive">dccp-response</ref_event> from the </arg> server . 	</action>. this state represents the third phase of the three-way handshake . 
+	<action type="send">the client may send <arg> application <ref_event id="3" type="send">data</ref_event> </arg> in this state , 	</action>
+	<action type="receive">but it must include an acknowledgement number on all of its packets . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger><ref_state id="6">open</ref_state>  	</trigger>
+	<action type="receive">the central <ref_event id="3" type="receive">data</ref_event> transfer portion of a dccp connection . 	</action>
+	<transition>client and server sockets enter this state from <arg_source><ref_state id="5">partopen</ref_state></arg_source> and <ref_state id="4">respond</ref_state> , 	</transition>respectively . 
+	<trigger>sometimes we speak of server-open and client-open states , 	</trigger>
+	<transition>corresponding to the server ` s <ref_state id="6">open</ref_state> state and the client ` s <ref_state id="6">open</ref_state> state . 	</transition> 
+</control>
+
+<control relevant="true">
+	<trigger><ref_state id="7">closereq</ref_state>  	</trigger>
+	<transition>a server socket enters this state , 	</transition>
+	<action type="receive">from server-open , 	</action>
+	<transition>to order the client to <ref_event id="7" type="None">close</ref_event> the connection and to hold <ref_state id="9">timewait</ref_state> state . 	</transition> 
+</control>
+
+<control relevant="true">
+	<trigger><ref_state id="9">timewait</ref_state>  		</trigger>
+
+	<control relevant="true">
+		<trigger>a server or client socket remains in this state for <ref_event id="11" type="compute">2msl</ref_event> ( 4 minutes ) after the connection has been torn down , 		</trigger>
+		<action type="receive">to prevent mistakes due to the delivery of old packets . 		</action>
+		<transition>only one of the endpoints has to enter <ref_state id="9">timewait</ref_state> state ( the other can enter <ref_state id="1">closed</ref_state> state immediately ) , and a server can <ref_state id="3">request</ref_state> its client to hold <ref_state id="9">timewait</ref_state> state using the <ref_event id="6" type="None">dccp-closereq</ref_event> packet type . 		</transition>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>to start a negotiation for feature f/a , 	</trigger>
+	<action type="send">dccp a will send <arg> a change l option </arg> ; 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>to start a negotiation for f/b , 	</trigger>
+	<action type="send">it will send <arg> a change r option </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">change options are retransmitted until <arg> some <ref_event id="2" type="receive">response</ref_event> </arg> is received . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>confirm l and confirm r options complete feature negotiation and are sent in <ref_event id="2" type="send">response</ref_event> to change r and change l options , 	</trigger>
+	<action type="receive">respectively . 	</action>
+</control>
+
+<control relevant="true">
+<trigger>if an endpoint receives an invalid change option -- with an unknown  </trigger>
+<trigger>feature number , 	</trigger>
+	<trigger>or an invalid value -- it will <ref_state id="4">respond</ref_state> with an empty confirm option containing the problematic feature number , 	</trigger>
+	<action type="receive">but no value . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if there is no shared entry , 	</trigger>
+	<variable>the feature ` s value must not change , 	</variable>
+	<action type="receive">and the confirm option will confirm the feature ` s previous value ( unless the change option was mandatory ; see section 6.6.9 ) . 	</action> 
+</control>
+
+<control relevant="true">
+<trigger>for example , 	</trigger>
+	<action type="send">dccp a may send <arg> a <ref_event id="4" type="send">dccp-ack</ref_event> or <ref_event id="9" type="send">dccp-sync</ref_event> for feature negotiation only </arg> 	</action>
+	<trigger>if the b-to-a ccid would allow sending a <ref_event id="4" type="send">dccp-ack</ref_event> . 	</trigger>in addition , 
+	<action type="issue">an endpoint should generate <arg> at most one feature negotiation packet per round-trip time </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>on receiving a change l or change r option , 	</trigger>
+	<trigger>a dccp endpoint examines the included preference list , 	</trigger>
+	<action type="receive">reconciles that with its own preference list , 	</action>calculates the new value , 
+	<action type="send">and sends back <arg> a confirm r or confirm l option </arg> , 	</action>
+	<action type="receive">respectively , 	</action>
+	<action type="receive">informing its peer of the new value or that the feature was not understood . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">the confirm-sending endpoint changes its stored feature value as soon as it sends the confirm . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>an endpoint enters the <ref_state id="None">changing</ref_state> state 	</transition>
+	<action type="send">when it first sends <arg> a change for the feature </arg> 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">returns to stable once it receives <arg> a corresponding confirm </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>the final state , 	</trigger>
+	<trigger><ref_state id="None">unstable</ref_state> , 	</trigger>
+	<trigger>indicates that an endpoint in <ref_state id="None">changing</ref_state> state changed its preference list but has not yet transmitted a change option with the new preference list . 	</trigger> 
+</control>
+
+<control relevant="true">
+	<trigger>first , 	</trigger>check for unknown features ( section 6.6.7 ) ;  
+	<trigger>if f is unknown , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if the option was mandatory , 		</trigger>
+		<action type="receive">/* 		</action>section 6.6.9 */  <ref_event id="8" type="receive">reset</ref_event> connection and return  
+		<trigger>otherwise , 		</trigger>
+		<trigger>if o.type == change r , 		</trigger> 
+		<action type="send">send <arg> empty confirm l </arg> on a future packet  	</action> return  
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>second , 	</trigger>check for reordering ( section 6.6.4 ) ;  
+	<trigger>if f.state == <ref_state id="None">unstable</ref_state> or p.seqno &lt;= fgsr or ( o.type == confirm r and p.ackno &lt; fgss ) , 	</trigger> ignore option and return  
+</control>
+
+<control relevant="true">
+	<trigger>third , 	</trigger>
+	<action type="receive">process change r options ; 	</action> 
+	<trigger>if o.type == change r , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if the option ` s value is valid , 		</trigger>
+		<action type="receive">/* 		</action>section 6.6.8 */  calculate new value  
+		<action type="send">send <arg> confirm l on a future packet </arg>  		</action>
+		<trigger>set f.state := stable  		</trigger>
+		<trigger>otherwise , 		</trigger>
+		<trigger>if the option was mandatory , 		</trigger> <ref_event id="8" type="None">reset</ref_event> connection and return  
+		<trigger>otherwise , 		</trigger> 
+		<action type="send">send <arg> empty confirm l </arg> on a future packet  		</action>/* 
+		<transition>remain in existing state . 		</transition>
+		<trigger>if that ` s <ref_state id="None">changing</ref_state> , 		</trigger>this  
+		<action type="receive">endpoint will retransmit its change l option later . 		</action>*/   
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>fourth , 	</trigger>
+	<trigger>process confirm r options ( but only in <ref_state id="None">changing</ref_state> state ) . 	</trigger> 
+	<trigger>if f.state == <ref_state id="None">changing</ref_state> and o.type == confirm r , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if o.len &gt; 3 , 		</trigger>
+		<action type="receive">/* 		</action>nonempty */  
+
+		<control relevant="true">
+			<trigger>if the option ` s value is valid , 			</trigger> set f.value := new value  
+			<trigger>otherwise , 			</trigger> <ref_event id="8" type="None">reset</ref_event> connection and return   
+		</control>
+		<trigger>set f.state := <ref_state id="None">stable</ref_state>  	</trigger> 
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>a <ref_state id="None">changing</ref_state> endpoint transmits another change option once it realizes that it has not heard back from the other endpoint . 	</trigger>
+</control>
+
+<control relevant="true">
+	<action type="send">the confirm-sending endpoint must generate a confirm option after every non-reordered change . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if a packet ` s sequence number is less than or equal to fgsr , 	</trigger>then  
+	<action type="receive">its change options must be ignored . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if a packet ` s sequence number is less than or equal to fgsr , 	</trigger>
+	<trigger>if it  	</trigger>
+	<trigger>has no acknowledgement number , 	</trigger>
+	<trigger>or 	</trigger>
+	<trigger>if its acknowledgement number is less than fgss , 	</trigger>
+	<action type="receive">then its confirm options must be ignored . 	</action>
+</control>
+
+<control relevant="true">an endpoint that changes its preference list 
+	<trigger>while in the <ref_state id="None">changing</ref_state> state must transition to the <ref_state id="None">unstable</ref_state> state . 	</trigger>
+</control>
+
+<control relevant="true">
+	<action type="receive">it will transition back to changing once it has transmitted a change option with the new preference list . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>the two endpoints might simultaneously <ref_state id="6">open</ref_state> negotiation for the same feature , 	</transition>
+	<action type="receive">after which an endpoint in the changing state will receive <arg> a change option for the same feature </arg> . 	</action>such received change options can act as responses to the original change options . 
+	<transition>the <ref_state id="None">changing</ref_state> endpoint must examine the received change ` s preference list , 	</transition>reconcile that with its own preference list ( as expressed in its generated change options ) , 
+	<action type="issue">and generate <arg> the corresponding confirm option </arg> . 	</action>it can 
+	<transition>then transition to the <ref_state id="None">stable</ref_state> state . 	</transition>
+</control>
+
+<control relevant="true">
+	<trigger>endpoints may receive change options referring to feature numbers they do not understand -- for instance , 	</trigger>
+	<trigger>when an extended dccp converses with a non-extended dccp . 	</trigger>
+	<transition>endpoints must <ref_state id="4">respond</ref_state> to unknown change options with empty confirm options ( that is , confirm options containing no <ref_event id="3" type="None">data</ref_event> ) , 	</transition>
+	<trigger>which inform the <ref_state id="None">changing</ref_state> endpoint that the feature was not understood . 	</trigger>however , 
+
+	<control relevant="true">
+		<trigger>if the change option was mandatory , 	</trigger>
+	</control>
+	<action type="receive">the connection must be <ref_event id="8" type="receive">reset</ref_event> ; 	</action>
+	<action type="receive">see section 6.6.9 . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>on receiving an empty confirm option for some feature , 	</trigger>
+	<transition>the <ref_state id="None">changing</ref_state> endpoint must transition back to the <ref_state id="None">stable</ref_state> state , 	</transition>
+	<action type="receive">leaving the feature ` s value unchanged . 	</action>
+</control>
+
+<control relevant="true">
+	<error>the changing endpoint should <ref_event id="8" type="None">reset</ref_event> the connection ( with <ref_event id="8" type="None">reset</ref_event> code 5 , `` option error `` ) 	</error>
+	<trigger>if it receives an empty confirm option for such a feature . 	</trigger>
+</control>
+
+<control relevant="true">
+	<action type="issue">since <arg> confirm options </arg> are generated only in <ref_event id="2" type="send">response</ref_event> to change options , 	</action>
+	<action type="receive">an endpoint should never receive <arg> a confirm option referring to a feature number it does not understand </arg> . 	</action>nevertheless , 
+	<action type="receive">endpoints must ignore <arg> any such options </arg> they receive . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>an endpoint receiving an invalid change option must <ref_state id="4">respond</ref_state> with the corresponding empty confirm option . 	</transition>
+</control>
+
+<control relevant="true">
+	<action type="receive">an endpoint receiving <arg> an invalid confirm option </arg> must <ref_event id="8" type="receive">reset</ref_event> the connection , 	</action>
+	<trigger>with <ref_event id="8" type="receive">reset</ref_event> code 5 , 	</trigger>
+	<error>`` option error `` . 	</error>
+</control>
+
+<control relevant="true">
+	<trigger>change options may be preceded by mandatory options ( section 5.8.2 ) . 	</trigger>
+	<action type="receive">mandatory change options are processed like normal change options except that the following failure cases will cause the receiver to <ref_event id="8" type="receive">reset</ref_event> the connection with <ref_event id="8" type="receive">reset</ref_event> code 6 , 	</action>`` mandatory failure `` , 
+	<action type="send">rather than send <arg> a confirm option </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">the connection must be <ref_event id="8" type="receive">reset</ref_event> 	</action>
+	<trigger>if :  	</trigger> o the change option ` s feature number was not understood ;  o the change option ` s value was invalid , 
+	<action type="send">and the receiver would normally have sent <arg> an empty confirm option </arg> in <ref_event id="2" type="send">response</ref_event> ; 	</action>or   o for server-priority features , 
+	<error>there was no shared entry in the two endpoints ` preference lists . 	</error>
+</control>
+
+<control relevant="true">
+	<action type="send">the simplest way to enforce this rule is for dccp endpoints to avoid sending <arg> any packets </arg> until one maximum segment lifetime ( 2 minutes ) after boot . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a received packet is classified as acknowledgeable 	</trigger>
+	<trigger>if and only 	</trigger>
+	<trigger>if its  	</trigger>
+	<trigger>header was successfully processed by the receiving dccp . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>a received packet becomes acknowledgeable 	</trigger>
+	<action type="receive">when the receiving endpoint reaches step 8 . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>endpoints <ref_state id="4">respond</ref_state> to received sequence-invalid packets as follows . 	</transition>  
+	<action type="receive">o any sequence-invalid <ref_event id="9" type="receive">dccp-sync</ref_event> or <ref_event id="10" type="receive">dccp-syncack</ref_event> packet must be ignored . 	</action>  
+	<action type="receive">o a sequence-invalid <ref_event id="8" type="receive">dccp-reset</ref_event> packet must elicit a <ref_event id="9" type="receive">dccp-sync</ref_event> packet in <ref_event id="2" type="receive">response</ref_event> ( subject to a possible rate limit ) . 	</action>
+	<action type="receive">this <ref_event id="2" type="receive">response</ref_event> packet must use a new sequence number , 	</action>and thus will increase gss ; 
+	<variable>gsr will not change , 	</variable>
+	<action type="receive">however , 	</action>
+	<action type="receive">since the received <arg> packet </arg> was sequence-invalid . 	</action>
+	<variable>the <ref_event id="2" type="None">response</ref_event> packet ` s acknowledgement number must equal gsr . 	</variable>  
+	<action type="receive">o any other sequence-invalid packet must elicit a similar <ref_event id="9" type="receive">dccp-sync</ref_event> packet , 	</action>
+	<action type="receive">except that the <ref_event id="2" type="receive">response</ref_event> packet ` s acknowledgement number must equal the sequence-invalid packet ` s sequence number . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">on receiving <arg> a sequence-valid <ref_event id="9" type="receive">dccp-sync</ref_event> packet , </arg> 	</action>
+	<action type="receive">the peer endpoint ( say , dccp b ) must update its gsr variable and reply with a dccp- <ref_event id="10" type="receive">syncack</ref_event> packet . 	</action>
+	<action type="receive">the <ref_event id="10" type="receive">dccp-syncack</ref_event> packet ` s acknowledgement number will equal the <ref_event id="9" type="receive">dccp-sync</ref_event> ` s sequence number , 	</action>which is not necessarily gsr . 
+</control>
+
+<control relevant="true">
+	<action type="receive">upon receiving <arg> this <ref_event id="10" type="receive">dccp-syncack</ref_event> , </arg> 	</action>
+	<action type="receive">which will be sequence-valid since it acknowledges the <ref_event id="9" type="receive">dccp-sync</ref_event> , 	</action>
+	<action type="receive">dccp a will update its gsr variable , 	</action>
+	<action type="receive">and the endpoints will be back in <ref_event id="9" type="receive">sync</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the peer endpoint is in the <ref_state id="3">request</ref_state> state , 	</trigger>
+	<trigger>it must <ref_state id="4">respond</ref_state> with a <ref_event id="8" type="receive">dccp-reset</ref_event> instead of a <ref_event id="10" type="receive">dccp-syncack</ref_event> . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>if , 	</trigger>
+	<trigger>within that time , 	</trigger>
+	<action type="receive">the relevant sequence windows change so that the packets become sequence-valid , 	</action>
+	<action type="receive">the endpoint may process them again . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">send <arg> <ref_event id="3" type="send">dccp-data</ref_event> packets with random sequence numbers . </arg> 	</action>
+	<trigger>if one of these packets hits the valid sequence number window , 	</trigger>
+	<action type="receive">the attack packet ` s application <ref_event id="3" type="receive">data</ref_event> may be inserted into the <ref_event id="3" type="receive">data</ref_event> stream . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">send <arg> <ref_event id="9" type="send">dccp-sync</ref_event> packets with random sequence and acknowledgement numbers . </arg> 	</action>
+	<trigger>if one of these packets hits the valid acknowledgement number window , 	</trigger>
+	<action type="receive">the receiver will shift its sequence number window accordingly , 	</action>
+	<action type="receive">getting out of <ref_event id="9" type="receive">sync</ref_event> with the correct endpoint -- perhaps permanently . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger>if ref_low (&lt;) s /* 	</trigger>circular comparison mod 2^24 */  
+	<trigger>and s |&lt;| ref_low , 	</trigger>
+	<action type="receive">/* 	</action>conventional , non-circular  comparison */  return ( ( ( ref_hi + 1 ) mod 2^24 ) &lt;&lt; 24 ) | s  
+	<trigger>otherwise , 	</trigger>
+	<trigger>if s (&lt;) ref_low and ref_low |&lt;| s , 	</trigger> return ( ( ( ref_hi - 1 ) mod 2^24 ) &lt;&lt; 24 ) | s  
+	<trigger>otherwise , 	</trigger> return ( ref_hi &lt;&lt; 24 ) | s  
+</control>
+
+<control relevant="true">
+	<trigger>when allow short seqnos/b is zero , 	</trigger>
+	<action type="send">dccp b must not send <arg> packets with short sequence numbers </arg> and dccp a must ignore any packets with short sequence  	</action>  
+	<trigger>rfc 4340 datagram congestion control protocol ( dccp ) march 2006  	</trigger>
+	<action type="receive"><arg> numbers </arg> that are received . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if a dccp endpoint ` s send ndp count feature is one ( see below ) , 	</trigger>
+	<action type="send">then that endpoint must send <arg> an ndp count option on every packet whose </arg>  	</action>  
+	<trigger>rfc 4340 datagram congestion control protocol ( dccp ) march 2006  	</trigger>
+	<action type="receive">immediate predecessor was a non-data packet . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>dccp b must send ndp count options as described above 	</trigger>
+	<trigger>when send ndp count/b is one , 	</trigger>
+	<action type="send">although it may send <arg> ndp count options </arg> even 	</action>
+	<trigger>when send ndp count/b is zero . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>when a client decides to initiate a connection , 	</trigger>
+	<transition>it enters the <ref_state id="3">request</ref_state> state , 	</transition>
+	<action type="receive">chooses an initial sequence number ( section 7.2 ) , 	</action>
+	<action type="send">and sends <arg> a <ref_event id="1" type="send">dccp-request</ref_event> packet using that </arg> sequence number to the intended server . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">a client in the <ref_event id="1" type="send">request</ref_event> state should use an exponential-backoff timer to send <arg> new <ref_event id="1" type="send">dccp-request</ref_event> packets </arg> 	</action>
+	<trigger>if no <ref_event id="2" type="receive">response</ref_event> is received . 	</trigger>
+	<trigger>the first retransmission should occur after approximately one second , 	</trigger>backing off to not less than one packet every 64 seconds ; or the    
+	<trigger>rfc 4340 datagram congestion control protocol ( dccp ) march 2006  	</trigger>endpoint can use whatever retransmission strategy is followed for retransmitting tcp syns . 
+	<action type="receive">each new <ref_event id="1" type="receive">dccp-request</ref_event> must increment the sequence number by one and must contain the same service code and application <ref_event id="3" type="receive">data</ref_event> as the original <ref_event id="1" type="receive">dccp-request</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a client may give up on its dccp-requests after some time ( 3 minutes , for example ) . 	</trigger>
+	<trigger>when it does , 	</trigger>
+	<action type="send">it should send <arg> a <ref_event id="8" type="send">dccp-reset</ref_event> packet to the </arg> server with <ref_event id="8" type="send">reset</ref_event> code 2 , 	</action>`` aborted `` , 
+	<transition>to clean up state in case one or more of the requests actually arrived . 	</transition>
+</control>
+
+<control relevant="true">
+	<action type="receive">a client in <ref_event id="1" type="receive">request</ref_event> state has never received <arg> an initial sequence number </arg> from its peer , 	</action>
+	<variable>so the <ref_event id="8" type="None">dccp-reset</ref_event> ` s acknowledgement number must be set to zero . 	</variable>
+</control>
+
+<control relevant="true">
+	<transition>the client leaves the <arg_source><ref_state id="3">request</ref_state></arg_source> state for <ref_state id="5">partopen</ref_state> 	</transition>
+	<action type="receive">when it receives <arg> a <ref_event id="2" type="receive">dccp-response</ref_event> from the </arg> server . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the <ref_event id="1" type="receive">dccp-request</ref_event> ` s service code does n ` t any of the server ` s service codes for the given port , 	</trigger>
+	<action type="send">the server must reject the <ref_event id="1" type="send">request</ref_event> by sending <arg> a dccp- <ref_event id="8" type="send">reset</ref_event> packet with <ref_event id="8" type="send">reset</ref_event> code 8 </arg> , 	</action>
+	<action type="receive">`` bad service code `` . 	</action>
+	<action type="send">a middlebox may also send <arg> such a <ref_event id="8" type="send">dccp-reset</ref_event> in <ref_event id="2" type="send">response</ref_event> </arg> to packets whose service code is considered unsuitable . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger>the value 4294967295 is an invalid service code . 	</trigger>
+	<action type="send">servers must reject any <ref_event id="1" type="send">dccp-request</ref_event> with this service code value by sending a <ref_event id="8" type="send">dccp-reset</ref_event> <arg> packet with <ref_event id="8" type="send">reset</ref_event> code 8 , </arg> 	</action>
+	<action type="receive">`` bad service code `` . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>in the second phase of the three-way handshake , 	</trigger>
+	<action type="send">the server moves from the listen state to respond and sends <arg> a <ref_event id="2" type="send">dccp-response</ref_event> message to the </arg> client 	</action>
+</control>
+
+<control relevant="true">
+	<transition>the server may <ref_state id="4">respond</ref_state> to a <ref_event id="1" type="None">dccp-request</ref_event> packet with a <ref_event id="8" type="None">dccp-reset</ref_event> packet to refuse the connection . 	</transition>
+	<action type="receive">relevant <ref_event id="8" type="receive">reset</ref_event> codes for refusing a connection include 7 , 	</action>
+	<error>`` connection refused `` , 	</error>
+	<transition>when the <ref_event id="1" type="None">dccp-request</ref_event> ` s destination port did not correspond to a dccp port <ref_state id="6">open</ref_state> for listening ; 	</transition>
+	<trigger>8 , 	</trigger>
+	<error>`` bad service code `` , 	</error>
+	<error>when the <ref_event id="1" type="None">dccp-request</ref_event> ` s service code did not correspond to the service code registered with the destination port ; 	</error>
+	<trigger>and 9 , 	</trigger>`` too busy `` , 
+	<transition>when the server is currently too busy to <ref_state id="4">respond</ref_state> to requests . 	</transition>
+	<action type="issue">the server should limit the rate at which it generates <arg> these resets </arg> ; 	</action>for example , 
+	<action type="receive">to not more than 1024 per second . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">every valid <ref_event id="1" type="receive">dccp-request</ref_event> received 	</action>
+	<trigger>while the server is in the <ref_state id="4">respond</ref_state>  	</trigger>
+	<action type="receive">state must elicit a new <ref_event id="2" type="receive">dccp-response</ref_event> . 	</action>
+	<action type="receive">each new <ref_event id="2" type="receive">dccp-response</ref_event> must increment the server ` s sequence number by one and must include the same application <ref_event id="3" type="receive">data</ref_event> , 	</action>
+	<trigger>if any , 	</trigger>
+	<action type="receive">as the original <ref_event id="2" type="receive">dccp-response</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>the server leaves the <arg_source><ref_state id="4">respond</ref_state></arg_source> state for <arg_target><ref_state id="6">open</ref_state></arg_target> 	</transition>
+	<action type="receive">when it receives <arg> a valid <ref_event id="4" type="receive">dccp-ack</ref_event> from the </arg> client , 	</action>
+	<action type="send">completing the three-way handshake . 	</action>
+</control>
+
+<control relevant="true">
+	<transition>it may also leave the <arg_source><ref_state id="4">respond</ref_state></arg_source> state for <arg_target><ref_state id="1">closed</ref_state></arg_target> after a <ref_event id="11" type="None">timeout</ref_event> of not less than <ref_event id="11" type="compute">4msl</ref_event> ( 8 minutes ) ; 	</transition>
+	<trigger>when doing so , 	</trigger>
+	<action type="send">it should send <arg> a <ref_event id="8" type="send">dccp-reset</ref_event> with <ref_event id="8" type="send">reset</ref_event> code 2 , </arg> 	</action>`` aborted `` , 
+	<transition>to clean up state at the client . 	</transition>
+</control>
+
+<control relevant="true">
+	<action type="receive">when the server receives <arg> the cookie </arg> back in the <ref_event id="2" type="receive">response</ref_event> , 	</action>
+	<action type="receive">it can decrypt the cookie and instantiate all the state it avoided keeping . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>in the meantime , 	</trigger>
+	<transition>it need not move from the <arg_source><ref_state id="2">listen</ref_state></arg_source> state . 	</transition> 
+</control>
+
+<control relevant="true">
+	<action type="receive"><arg> any init cookie options </arg> received on <ref_event id="1" type="receive">dccp-request</ref_event> or dccp- <ref_event id="3" type="receive">data</ref_event> packets , 	</action>
+	<trigger>or after the connection has been established ( when the connection ` s state is &gt;= <ref_state id="6">open</ref_state> ) , 	</trigger>
+	<action type="receive">must be ignored . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>the server may include init cookie options in its <ref_event id="2" type="receive">dccp-response</ref_event> . 	</trigger>
+	<trigger>if so , 	</trigger>
+	<action type="receive">then the client must echo the same init cookie options , 	</action>in the same order , 
+	<action type="send">in each succeeding dccp packet until one of those packets is acknowledged ( showing that the three-way handshake has completed ) or the connection is <ref_event id="8" type="send">reset</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>on receiving a reflected init cookie , 	</trigger>
+	<action type="receive">the server would decrypt the cookie , 	</action>
+	<action type="receive">validate it by checking its magic number , 	</action>sequence numbers , 
+	<action type="receive">and ports , 	</action>
+	<action type="receive">and , 		</action>
+
+	<control relevant="true">
+		<trigger>if valid , 		</trigger>
+		<action type="receive">create a corresponding socket using the options . 		</action>
+	</control>
+</control>
+
+<control relevant="true">
+	<action type="receive">when the client receives <arg> a <ref_event id="2" type="receive">dccp-response</ref_event> from the </arg> server , 	</action>
+	<action type="send">it moves from the <ref_event id="1" type="send">request</ref_event> state to partopen and completes the three-way handshake by sending <arg> a <ref_event id="4" type="send">dccp-ack</ref_event> packet to the </arg> server . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">the client remains in partopen until it can be sure that the server has received <arg> some packet the client sent from partopen ( either the initial dccp- <ref_event id="4" type="receive">ack</ref_event> or a later packet ) </arg> . 	</action>
+	<action type="send">clients in the partopen state that want to send <arg> <ref_event id="3" type="send">data</ref_event> </arg> must do so using <ref_event id="5" type="send">dccp-dataack</ref_event> packets , 	</action>
+	<action type="receive">not <ref_event id="3" type="receive">dccp-data</ref_event> packets . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>furthermore , 	</trigger>
+	<trigger>if the <ref_event id="2" type="receive">dccp-response</ref_event> included an init cookie , 	</trigger>
+	<trigger>that init cookie must be included on every packet sent in <ref_state id="5">partopen</ref_state> . 	</trigger>
+</control>
+
+<control relevant="true">the single <ref_event id="4" type="None">dccp-ack</ref_event> sent 
+	<transition>when entering the <ref_state id="5">partopen</ref_state> state might , 	</transition>
+	<trigger>of course , 	</trigger>
+	<action type="receive">be dropped by the network . 	</action>
+	<action type="receive">the client should ensure that some packet gets through eventually . 	</action>the preferred mechanism would be a roughly 200-millisecond timer , 
+	<trigger>set every time a packet is transmitted in <ref_state id="5">partopen</ref_state> . 		</trigger>
+
+	<control relevant="true">
+		<transition>if this timer goes off and the client is still in <ref_state id="5">partopen</ref_state> , 		</transition>
+		<action type="issue">the client generates <arg> another <ref_event id="4" type="send">dccp-ack</ref_event> and backs </arg> off the timer . 		</action>
+	</control>
+
+	<control relevant="true">
+		<transition>if the client remains in <ref_state id="5">partopen</ref_state> for more than <ref_event id="11" type="compute">4msl</ref_event> ( 8 minutes ) , 		</transition>
+		<action type="receive">it should <ref_event id="8" type="receive">reset</ref_event> the connection with <ref_event id="8" type="receive">reset</ref_event> code 2 , 		</action>`` aborted `` 
+	</control>
+</control>
+
+<control relevant="true">
+	<transition>the client leaves the <arg_source><ref_state id="5">partopen</ref_state></arg_source> state for <arg_target><ref_state id="6">open</ref_state></arg_target> 	</transition>
+	<action type="receive">when it receives <arg> a valid packet other than <ref_event id="2" type="receive">dccp-response</ref_event> , </arg> 	</action><ref_event id="8" type="None">dccp-reset</ref_event> , 
+	<action type="receive">or <ref_event id="9" type="receive">dccp-sync</ref_event> from the server . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">dccp a sends <arg> <ref_event id="3" type="send">dccp-data</ref_event> and <ref_event id="5" type="send">dccp-dataack</ref_event> packets to dccp b due </arg> to application events on host a . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive"><ref_event id="4" type="receive">dccp-ack</ref_event> packets are used 	</action>
+	<action type="send">when there is <arg> no <ref_event id="3" type="send">data</ref_event> </arg> to send from dccp a to dccp b , 	</action>or 
+	<trigger>when the congestion state of the a-to-b ccid will not allow <ref_event id="3" type="send">data</ref_event> to be sent . 	</trigger>
+</control>
+
+<control relevant="true">
+	<action type="receive">on receiving <arg> a valid <ref_event id="9" type="receive">dccp-sync</ref_event> packet , </arg> 	</action>
+	<action type="send">a dccp endpoint must immediately generate and send <arg> a <ref_event id="10" type="send">dccp-syncack</ref_event> <ref_event id="2" type="send">response</ref_event> ( subject to any implementation rate limits ) ; </arg> 	</action>
+	<action type="receive">the acknowledgement number on that <ref_event id="10" type="receive">dccp-syncack</ref_event> must equal the sequence number of the <ref_event id="9" type="receive">dccp-sync</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>dccp connection termination uses a handshake consisting of an optional <ref_event id="6" type="send">dccp-closereq</ref_event> packet , 	</trigger>
+	<action type="receive">a <ref_event id="7" type="receive">dccp-close</ref_event> packet , 	</action>
+	<action type="receive">and a <ref_event id="8" type="receive">dccp-reset</ref_event> packet . 	</action>
+	<transition>the server moves from the <arg_source><ref_state id="6">open</ref_state></arg_source> state , possibly through the <arg_intermediate><ref_state id="7">closereq</ref_state></arg_intermediate> state , to <arg_target><ref_state id="1">closed</ref_state></arg_target> ; 	</transition>
+</control>
+
+<control relevant="true">
+	<transition>the client moves from <arg_source><ref_state id="6">open</ref_state></arg_source> through <arg_intermediate><ref_state id="8">closing</ref_state></arg_intermediate> to <arg_target><ref_state id="9">timewait</ref_state></arg_target> , and after <ref_event id="11" type="compute">2msl</ref_event> wait time ( 4 minutes ) to <ref_state id="1">closed</ref_state> . 	</transition>
+</control>
+
+<control relevant="true">
+	<trigger>the sequence <ref_event id="6" type="receive">dccp-closereq</ref_event> , 	</trigger>
+	<trigger><ref_event id="7" type="receive">dccp-close</ref_event> , 	</trigger>
+	<action type="receive"><ref_event id="8" type="receive">dccp-reset</ref_event> is used 	</action>
+	<transition>when the server decides to <ref_event id="7" type="None">close</ref_event> the connection but does n ` t to hold <ref_state id="9">timewait</ref_state> state : 	</transition>
+</control>
+
+<control relevant="true">
+	<action type="receive">the receiver of a valid <ref_event id="6" type="receive">dccp-closereq</ref_event> packet must respond with a <ref_event id="7" type="receive">dccp-close</ref_event> packet . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">the receiver of a valid <ref_event id="7" type="receive">dccp-close</ref_event> packet must respond with a dccp- <ref_event id="8" type="receive">reset</ref_event> packet with <ref_event id="8" type="receive">reset</ref_event> code 1 , 	</action>
+	<trigger>`` <ref_state id="1">closed</ref_state> `` . 	</trigger>
+</control>
+
+<control relevant="true">
+	<action type="receive">the receiver of a valid <ref_event id="8" type="receive">dccp-reset</ref_event> packet -- which is also the sender of the <ref_event id="7" type="receive">dccp-close</ref_event> packet ( and possibly the receiver of the <ref_event id="6" type="receive">dccp-closereq</ref_event> packet ) -- will hold timewait state for the connection . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="send">dccp implementations generally transition to the closed state after sending <arg> a <ref_event id="8" type="send">dccp-reset</ref_event> packet . </arg> 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">a server receiving <arg> a sequence-valid <ref_event id="6" type="receive">dccp-closereq</ref_event> packet must respond </arg> with a <ref_event id="9" type="receive">dccp-sync</ref_event> packet and 	</action>
+	<trigger>otherwise ignore the dccp- <ref_state id="7">closereq</ref_state> . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger><ref_event id="3" type="receive">dccp-data</ref_event> , 	</trigger>
+	<action type="receive"><ref_event id="5" type="receive">dccp-dataack</ref_event> , 	</action>
+	<action type="receive">and <arg> <ref_event id="4" type="receive">dccp-ack</ref_event> packets received in </arg> <ref_event id="6" type="receive">closereq</ref_event> or closing states may be either processed or ignored . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.ackno exists , 	</trigger>
+	<variable>then set r.seqno := p.ackno + 1 . 	</variable>
+	<trigger>otherwise , 	</trigger> 
+	<action type="receive">set r.seqno := 0 . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger>if the packet used short sequence numbers ( p.x == 0 ) , 	</trigger>
+	<variable>then set the  	</variable>
+	<action type="receive">upper 24 bits of r.seqno and r.ackno to 0 . 	</action> 
+</control>
+
+<control relevant="true">
+	<trigger>if the packet is shorter than 12 bytes , 	</trigger>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type is not understood , 	</trigger>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.data offset is smaller than the given packet type ` s  	</trigger>
+	<trigger>fixed header length or larger than the packet ` s length , 	</trigger>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type is not <ref_event id="3" type="receive">data</ref_event> , 	</trigger>
+	<trigger><ref_event id="4" type="receive">ack</ref_event> , 	</trigger>
+	<action type="receive">or <ref_event id="5" type="receive">dataack</ref_event> and p.x == 0 ( the packet  has short sequence numbers ) , 	</action>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the header checksum is incorrect , 	</trigger>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.cscov is too large for the packet size , 	</trigger>drop packet and  return 
+</control>
+
+<control relevant="true">
+	<trigger>look up flow id in table and get corresponding socket 	</trigger>
+	<trigger>if no socket , 	</trigger>
+	<trigger>or s.state == <ref_state id="9">timewait</ref_state> , 	</trigger> /* 
+	<action type="receive">the following <ref_event id="8" type="receive">reset</ref_event> ` s sequence and acknowledgement numbers  	</action>are taken from the input packet ; 
+	<action type="receive">see section 8.3.1 . 	</action>*/  
+	<action type="issue">generate <arg> <ref_event id="8" type="send">reset</ref_event> ( no connection ) </arg> unless p.type == <ref_event id="8" type="send">reset</ref_event> drop packet and return  	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if s.state == <ref_state id="2">listen</ref_state> , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if p.type == <ref_event id="1" type="receive">request</ref_event> or p contains a valid init cookie option , 		</trigger> /* must scan the packet ` s options to check for init  cookies . 
+		<trigger>only init cookies are processed here , 		</trigger>however ; other options are processed in step 8 . this scan need only be performed if the endpoint uses init cookies */  /* 
+		<action type="issue">generate <arg> a new socket </arg> and switch to that socket */ 		</action>
+		<transition>set s := new socket for this port pair s.state = <ref_state id="4">respond</ref_state> choose s.iss ( initial seqno ) or set from init cookies initialize s.gar := s.iss set s.isr , 		</transition>
+		<variable>s.gsr , 		</variable>
+		<action type="receive">s.swl , 		</action>
+		<transition>s.swh from packet or init cookies continue with s.state == <ref_state id="4">respond</ref_state> /* 		</transition>
+		<action type="issue"><arg> a <ref_event id="2" type="send">response</ref_event> packet </arg> will be generated in step 11 */ 		</action> 
+		<trigger>otherwise , 		</trigger> 
+		<action type="issue">generate <arg> <ref_event id="8" type="send">reset</ref_event> ( no connection ) </arg> unless p.type == <ref_event id="8" type="send">reset</ref_event>  		</action>
+		<action type="receive">drop packet and return 		</action>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if s.state == <ref_state id="3">request</ref_state> , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if ( p.type == <ref_event id="2" type="receive">response</ref_event> or p.type == <ref_event id="8" type="receive">reset</ref_event> )  		</trigger>
+		<trigger>and s.awl &lt;= p.ackno &lt;= s.awh , 		</trigger> /* set sequence number variables corresponding to the  
+		<trigger>other endpoint , 		</trigger>
+		<action type="receive">so p will pass the tests in step 6 */ 		</action> 
+		<variable>set s.gsr , 		</variable>
+		<variable>s.isr , 		</variable>
+		<variable>s.swl , 		</variable>
+		<variable>s.swh /* 		</variable>
+		<action type="receive"><ref_event id="2" type="receive">response</ref_event> processing continues in step 10 ; 		</action><ref_event id="8" type="receive">reset</ref_event>  processing continues in step 9 */  
+		<trigger>otherwise , 		</trigger> /* 
+		<trigger>only <ref_event id="2" type="receive">response</ref_event> and <ref_event id="8" type="receive">reset</ref_event> are valid in <ref_state id="3">request</ref_state> state */ 		</trigger> 
+		<action type="issue">generate <arg> <ref_event id="8" type="send">reset</ref_event> ( packet error </arg> )  		</action>
+		<action type="receive">drop packet and return 		</action>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="9" type="receive">sync</ref_event> or p.type == <ref_event id="10" type="receive">syncack</ref_event> , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if s.awl &lt;= p.ackno &lt;= s.awh and p.seqno &gt;= s.swl , 		</trigger> /* 
+		<trigger>p is valid , 		</trigger>so update sequence number variables  accordingly . after this update , 
+		<action type="receive">p will pass the tests in step 6 . 		</action>
+		<action type="issue"><arg> a <ref_event id="10" type="send">syncack</ref_event> </arg> is generated 		</action>
+		<trigger>if necessary in step 15 */ 		</trigger> 
+		<trigger>update s.gsr , 		</trigger>
+		<action type="receive">s.swl , 		</action>s.swh  
+		<trigger>otherwise , 		</trigger> 
+		<action type="receive">drop packet and return 		</action>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if p.x == 0 and the relevant allow short seqnos feature is 0 , 	</trigger> /* 
+	<trigger>packet has short seqnos , 	</trigger>
+	<action type="receive">but short seqnos not allowed */ 	</action> drop packet and return  
+	<trigger>otherwise , 	</trigger>
+	<trigger>if p.x == 0 , 	</trigger> extend p.seqno and p.ackno to 48 bits using the procedure  in section 7.6  
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="6" type="receive">closereq</ref_event> or p.type == <ref_event id="7" type="receive">close</ref_event> or p.type == <ref_event id="8" type="receive">reset</ref_event> , 	</trigger> 
+	<trigger>lswl := s.gsr + 1 , 	</trigger>
+	<action type="receive">lawl := s.gar  	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if lswl &lt;= p.seqno &lt;= s.swh  	</trigger>
+	<trigger>and ( p.ackno does not exist or lawl &lt;= p.ackno &lt;= s.awh ) , 	</trigger> 
+	<trigger>update s.gsr , 	</trigger>
+	<trigger>s.swl , 	</trigger>s.swh  
+
+	<control relevant="true">
+		<trigger>if p.type != <ref_event id="9" type="receive">sync</ref_event> , 		</trigger> update s.gar   
+	</control>
+	<trigger>otherwise , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if p.type == <ref_event id="8" type="receive">reset</ref_event> , 		</trigger> 
+		<action type="send">send <arg> <ref_event id="9" type="send">sync</ref_event> packet acknowledging s.gsr </arg>  		</action>
+		<trigger>otherwise , 		</trigger> 
+		<action type="send">send <arg> <ref_event id="9" type="send">sync</ref_event> packet acknowledging p.seqno </arg>  	</action> drop packet and return  
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if ( s.is_server and p.type == <ref_event id="6" type="receive">closereq</ref_event> )  	</trigger>
+	<trigger>or ( s.is_server and p.type == <ref_event id="2" type="receive">response</ref_event> ) or ( s.is_client and p.type == <ref_event id="1" type="receive">request</ref_event> ) or ( s.state &gt;= <ref_state id="6">open</ref_state> and p.type == <ref_event id="1" type="receive">request</ref_event>  and p.seqno &gt;= s.osr )  	</trigger>
+	<trigger>or ( s.state &gt;= <ref_state id="6">open</ref_state> and p.type == <ref_event id="2" type="receive">response</ref_event>  and p.seqno &gt;= s.osr )  	</trigger>
+	<trigger>or ( s.state == <ref_state id="4">respond</ref_state> and p.type == <ref_event id="3" type="receive">data</ref_event> ) , 	</trigger> 
+	<action type="send">send <arg> <ref_event id="9" type="send">sync</ref_event> packet acknowledging p.seqno drop packet and return </arg>  	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="8" type="receive">reset</ref_event> , 	</trigger> tear down connection  
+	<transition>s.state := <ref_state id="9">timewait</ref_state>  	</transition>
+	<trigger>set <ref_state id="9">timewait</ref_state> timer  	</trigger>
+	<action type="receive">drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if s.state == <ref_state id="3">request</ref_state> , 	</trigger> /* 
+
+	<control relevant="true">
+		<trigger>if we get here , 		</trigger>
+		<action type="receive">p is a valid <ref_event id="2" type="receive">response</ref_event> from the server ( see  step 4 ) , 		</action>
+		<transition>and we should move to <arg_target><ref_state id="5">partopen</ref_state></arg_target> state . 		</transition>
+		<action type="send">partopen means send <arg> an <ref_event id="4" type="send">ack</ref_event> </arg> , 		</action>
+		<action>do n ` t <ref_event id="3" type="None">data</ref_event> packets , 		</action>
+		<action type="receive">retransmit acks periodically , 	</action>
+	</control>
+	<action type="receive">and always include any init cookie from the <ref_event id="2" type="receive">response</ref_event> */ 	</action> 
+	<transition>s.state := <ref_state id="5">partopen</ref_state> set <ref_state id="5">partopen</ref_state> timer continue with s.state == <ref_state id="5">partopen</ref_state> /* 	</transition>
+	<action type="send">step 12 will send <arg> the <ref_event id="4" type="send">ack</ref_event> </arg> completing the three-way  	</action>handshake */ 
+</control>
+
+<control relevant="true">
+	<trigger>if s.state == <ref_state id="4">respond</ref_state> , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if p.type == <ref_event id="1" type="receive">request</ref_event> , 		</trigger> 
+		<action type="send">send <arg> <ref_event id="2" type="send">response</ref_event> </arg> , 		</action>possibly containing init cookie  
+
+		<control relevant="true">
+			<trigger>if init cookie was sent , 			</trigger> 
+		</control>
+		<action type="receive">destroy s and return /* 		</action>step 3 will create another socket when the client  completes the three-way handshake */  
+		<trigger>otherwise , 		</trigger> s.osr := p.seqno  
+		<transition>s.state := <ref_state id="6">open</ref_state> 		</transition>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if s.state == <ref_state id="5">partopen</ref_state> , 	</trigger> 
+
+	<control relevant="true">
+		<trigger>if p.type == <ref_event id="2" type="receive">response</ref_event> , 		</trigger> 
+		<action type="send">send <arg> <ref_event id="4" type="send">ack</ref_event> </arg>  		</action>
+		<trigger>otherwise , 		</trigger>
+		<trigger>if p.type != <ref_event id="9" type="receive">sync</ref_event> , 		</trigger> s.osr := p.seqno  
+		<transition>s.state := <ref_state id="6">open</ref_state> 		</transition>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="6" type="receive">closereq</ref_event> and s.state &lt; <ref_state id="7">closereq</ref_state> , 	</trigger> 
+	<action type="issue">generate <arg> <ref_event id="7" type="send">close</ref_event> </arg>  	</action>
+	<transition>s.state := <ref_state id="8">closing</ref_state>  	</transition>
+	<trigger>set <ref_state id="8">closing</ref_state> timer 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="7" type="receive">close</ref_event> , 	</trigger> 
+	<action type="issue">generate <arg> <ref_event id="8" type="send">reset</ref_event> ( closed ) </arg> tear down connection drop packet and return 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if p.type == <ref_event id="9" type="receive">sync</ref_event> , 	</trigger> 
+	<action type="issue">generate <arg> <ref_event id="10" type="send">syncack</ref_event> </arg> 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if cscov is 1 , 	</trigger>
+	<action type="receive">none of the application <ref_event id="3" type="receive">data</ref_event> is protected by the header checksum . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if mincscov = 0 , 	</trigger>
+	<action type="receive">then dccp b only finds packets with cscov = 0 acceptable . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if mincscov &gt; 0 , 	</trigger>
+	<action type="receive">then dccp b additionally finds packets with cscov &gt;= mincscov acceptable . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if it checks the checksum , 	</trigger>
+	<action type="receive">it computes the received application <ref_event id="3" type="receive">data</ref_event> ` s crc-32c using the same algorithm as the sender and compares the result with the <ref_event id="3" type="receive">data</ref_event> checksum value . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the crcs differ , 	</trigger>the endpoint reacts in one of two ways :   
+	<action type="receive">o the receiving application may have requested delivery of known- corrupt <ref_event id="3" type="receive">data</ref_event> via some optional api . 	</action>
+	<trigger>in this case , 	</trigger>
+	<variable>the packet ` s <ref_event id="3" type="None">data</ref_event> must be delivered to the application , 	</variable>
+	<action type="receive">with a note that it is known to be corrupt . 	</action>furthermore , 
+	<action type="receive">the receiving endpoint must report the packet as delivered corrupt using a <ref_event id="3" type="receive">data</ref_event> dropped option ( drop code 7 , delivered corrupt ) . 	</action>  o 
+	<trigger>otherwise , 	</trigger>
+	<action type="receive">the receiving endpoint must drop the application <ref_event id="3" type="receive">data</ref_event> and report that <ref_event id="3" type="receive">data</ref_event> as dropped due to corruption using a <ref_event id="3" type="receive">data</ref_event> dropped option ( drop code 3 , corrupt ) . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the crcs differ , 	</trigger>
+	<action type="receive">the packets similarly must be reported using <ref_event id="3" type="receive">data</ref_event> dropped options ( drop code 3 ) 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>new connections start with ccid 2 for both endpoints . 	</trigger>
+	<trigger>if this is unacceptable for a dccp endpoint , 	</trigger>
+	<action type="send">that endpoint must send <arg> mandatory change ( ccid ) options </arg> on its first packets . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if a <ref_event id="1" type="receive">dccp-request</ref_event> contains the option sequence `` change l ( ccid , 3 ) , 	</trigger>
+	<error>128 `` , 		</error>
+
+	<control relevant="true">
+		<trigger>the ccid-specific option `` 128 `` may be processed either by ccid 3 ( if the server supports ccid 3 ) or by the default ccid 2 ( if it does not ) . 		</trigger>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if a <ref_event id="1" type="receive">dccp-request</ref_event> contains the option sequence `` mandatory , 	</trigger>
+	<trigger>change l ( ccid , 3 ) , 	</trigger>
+	<action type="receive">128 `` , 	</action>
+	<action type="receive">then either the `` 128 `` option will be processed by ccid 3 or the connection will be <ref_event id="8" type="receive">reset</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+<trigger>therefore , 	</trigger>
+	<action type="receive">dccp senders and receivers should <ref_event id="8" type="receive">reset</ref_event> their congestion state -- essentially restarting congestion control from `` slow start `` or equivalent -- on significant changes in the end-to-end path . 	</action>
+</control>
+
+<control relevant="true">
+<trigger>for example , 	</trigger>
+	<action type="send">an endpoint that sends or receives <arg> a mobile ipv6 binding update message </arg> should <ref_event id="8" type="send">reset</ref_event> its congestion state for any corresponding dccp connections . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a dccp implementation may also <ref_event id="8" type="receive">reset</ref_event> its congestion state 	</trigger>
+	<action type="receive">when a ccid changes ( that is , when a negotiation for the ccid feature completes successfully and the new feature value differs from the old value ) . 	</action>
+</control>
+
+<control relevant="true">
+	<action type="receive">the hc-sender should occasionally inform the hc-receiver that it has received <arg> an <ref_event id="4" type="receive">ack</ref_event> </arg> . 	</action>
+	<trigger>if it did not , 	</trigger>
+	<action type="receive">the hc-receiver might resend complete <ref_event id="4" type="receive">ack</ref_event> vector information , 	</action>going back to the start of the connection , 
+	<action type="receive">with every <ref_event id="4" type="receive">dccp-ack</ref_event> packet ! 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if dccp b wants to elicit an acknowledgement , 	</trigger>
+	<action type="send">it can send <arg> a <ref_event id="9" type="send">dccp-sync</ref_event> . </arg> 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the <ref_event id="3" type="receive">data</ref_event> packets are too big to carry acknowledgement information , 	</trigger>
+	<trigger>or 	</trigger>
+	<trigger>if the <ref_event id="3" type="send">data</ref_event> sending rate is lower than <ref_event id="4" type="send">ack</ref_event> ratio would suggest , 	</trigger>
+	<action type="send">then dccp b should send <arg> enough pure <ref_event id="4" type="send">dccp-ack</ref_event> packets to maintain the rate of one acknowledgement per <ref_event id="4" type="send">ack</ref_event> ratio received <ref_event id="3" type="send">data</ref_event> packets . </arg> 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>receivers should send acknowledgements immediately on receiving packets marked ecn congestion experienced or packets whose out- of-order sequence numbers potentially indicate loss . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>the term `` ecn marked `` refers to packets with ecn code point 11 , 	</trigger>
+	<trigger>ce ( congestion experienced ) ; 	</trigger>
+	<trigger>packets received with this ecn code point must be reported using state 1 , 	</trigger>
+	<action type="receive">received <arg> ecn marked </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>packets received with ecn code points 00 , 	</trigger>
+	<trigger>01 , 	</trigger>
+	<trigger>or 10 ( non-ect , ect ( 0 ) , 	</trigger>
+	<action type="receive">or ect ( 1 ) , 	</action>
+	<trigger>respectively ) must be reported using state 0 , 	</trigger>received . 
+</control>
+
+<control relevant="true">
+	<trigger>for an old state of 0 ( received non-marked ) and received state of 1 ( received ecn marked ) , 	</trigger>
+	<transition>the packet ` s new state may be set to either 0 or 1 . 	</transition>
+</control>
+
+<control relevant="true">
+	<trigger>when the stored state is 1 and the received state is 0 , 	</trigger>
+	<transition>the receiver is allowed to switch its stored state to 0 . 	</transition>
+</control>
+
+<control relevant="true">
+	<trigger>if the ecn incapable/a feature is one , 	</trigger>
+	<action type="send">then <arg> all of dccp b ` s packets </arg> must be sent as ecn incapable . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if a dccp is not ecn capable , 	</trigger>
+	<action type="send">it must send <arg> mandatory `` change l ( ecn  incapable , 1 ) `` options to the other endpoint until acknowledged ( by `` confirm r ( ecn incapable , 1 ) `` ) or the connection closes . </arg> 	</action>furthermore , 
+	<action type="receive">it must not accept any <ref_event id="3" type="receive">data</ref_event> until the other endpoint  	</action>  
+	<trigger>rfc 4340 datagram congestion control protocol ( dccp ) march 2006  	</trigger>
+	<action type="send">sends `` <arg> confirm r ( ecn incapable </arg> , 1 ) . 	</action>`` 
+</control>
+
+<control relevant="true">
+	<action type="send">it should send <arg> <ref_event id="3" type="send">data</ref_event> dropped options on its acknowledgements </arg> , 	</action>
+	<trigger>with drop code 0 ( `` protocol constraints `` ) , 	</trigger>
+	<action type="send">if the other endpoint does send <arg> <ref_event id="3" type="send">data</ref_event> </arg> inappropriately . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>upon detecting possible misbehavior , 	</trigger>
+	<trigger>a sender should <ref_state id="4">respond</ref_state> as 	</trigger>
+	<trigger>if the receiver had reported one or more recent packets as ecn-marked ( instead of unmarked ) , 	</trigger>
+	<action type="receive">while a receiver should report one or more recent non-marked packets as ecn-marked . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a dccp receiving a timestamp option should <ref_state id="4">respond</ref_state> with a timestamp echo option on the next packet it sends . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>if elapsed time is less than a half-second , 	</trigger>
+	<trigger>the first , 	</trigger>
+	<action type="receive">smaller form of the option should be used . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if an endpoint has received multiple timestamp options since the last time it sent a packet , 	</trigger>
+	<action type="receive">then it may ignore all timestamp options but the one included on the packet with the greatest sequence number . 	</action>alternatively , 
+	<action type="receive">it may include multiple timestamp echo options in its <ref_event id="2" type="receive">response</ref_event> , 	</action>
+	<action type="receive">each corresponding to a different timestamp option . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the application provides <ref_event id="3" type="receive">data</ref_event> that , 	</trigger>
+	<trigger>when combined with the options the dccp implementation would like to include , 	</trigger>
+	<variable>would exceed the mps , 	</variable>
+	<action type="send">the implementation should either send <arg> the options </arg> on a separate packet ( such as a <ref_event id="4" type="send">dccp-ack</ref_event> ) or lower the mps , 	</action>
+	<action type="receive">drop the <ref_event id="3" type="receive">data</ref_event> , 	</action>
+	<error>and return an appropriate error to the application . 	</error>
+</control>
+
+<control relevant="true">
+	<trigger>when a router receives a packet with df set that is larger than the next link ` s mtu , 	</trigger>
+	<action type="send">it sends <arg> an icmp destination unreachable message </arg> back to the source whose code indicates that an unfragmentable packet was too large to forward ( a `` datagram too big `` message ) . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>when a dccp implementation receives a datagram too big message , 	</trigger>
+	<action type="receive">it decreases its pmtu to the next-hop mtu value given in the icmp message . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the mtu given in the message is zero , 	</trigger>
+	<trigger>the sender chooses a value for pmtu using the algorithm described in , 	</trigger>
+	<action type="receive">section 7 . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the mtu given in the message is greater than the current pmtu , 	</trigger>
+	<action type="receive">the datagram too big message is ignored , 	</action>
+	<action type="receive">as described in . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a dccp sender may treat the reception of an icmp datagram too big message as an indication that the packet being reported was not lost due to congestion , 	</trigger>
+	<action type="receive">and so for the purposes of congestion control it may ignore the dccp receiver ` s indication that this packet did not arrive . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if this is done , 		</trigger>
+
+	<control relevant="true">
+		<action type="receive">then the dccp sender must check the ecn bits of the ip header echoed in the icmp message and only perform this optimization 		</action>
+		<trigger>if these ecn bits indicate that the packet did not experience congestion prior to reaching the router whose link mtu it exceeded . 		</trigger>
+	</control>
+</control>
+
+<control relevant="true">
+	<trigger>if more than three odd datagram too big messages are received and the other dccp endpoint reports more than three lost packets , 	</trigger>
+	<trigger>however , 	</trigger>
+	<action type="receive">the dccp implementation should assume the presence of a confused router and either obey the icmp messages ` pmtu or ( on ipv4 networks ) switch to allowing fragmentation . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>on ipv4 connections whose applications have requested fragmentation , 	</trigger>
+	<action type="send">the sender should send <arg> packets with the df bit not set </arg> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>on ipv6 connections whose applications have requested fragmentation , 	</trigger>
+	<action type="receive">the sender should use fragmentation extension headers to fragment packets larger than pmtu into suitably-sized chunks . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if the dccp implementation has decreased the pmtu , 	</trigger>
+	<trigger>the sending application has not requested fragmentation , 	</trigger>
+	<action type="send">and the sending application attempts to send a packet larger than the new mps , 	</action>
+	<action type="send">the api must refuse to send <arg> the packet </arg> and return an appropriate error to the application . 	</action>the application should 
+	<variable>then use the api to query the new value of mps . 	</variable>
+	<action type="receive">the kernel might have some packets buffered for transmission that are smaller than the old mps but larger than the new mps . 	</action>
+	<action type="send">it may send <arg> these packets </arg> as fragmentable , 	</action>
+	<transition>or it may discard these packets ; 	</transition>
+	<action type="send">it must not send <arg> them </arg> as unfragmentable . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>for example , 	</trigger>
+	<action type="receive">dccp processors must not <ref_event id="8" type="receive">reset</ref_event> the connection 	</action>
+	<trigger>if some field marked reserved in this specification is non-zero ; 	</trigger>
+	<trigger>if some unknown option is present ; 	</trigger>or 
+	<trigger>if some feature negotiation option mentions an unknown feature . 	</trigger>instead , 
+	<action type="receive">dccp processors must ignore these events . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>if mandatory precedes some unknown option or feature , 	</trigger>
+	<action type="receive">the connection must be <ref_event id="8" type="receive">reset</ref_event> . 	</action>
+</control>
+
+<control relevant="true">
+	<trigger>a dccp must <ref_state id="4">respond</ref_state> with an empty confirm option 	</trigger>
+	<trigger>if it is assigned an unacceptable value for some non-negotiable feature . 	</trigger>
+</control>
+
+<control relevant="true">
+	<trigger>if an extended dccp wants to use the extension , 	</trigger>
+	<action type="receive">it should attempt to change the feature ` s value using a change l or change r option . 	</action>any non-extended dccp will ignore the option , thus leaving the feature value at its default , 
+	<error>`` extension not available `` . 	</error>
+</control>
+</p>
