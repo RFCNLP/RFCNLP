@@ -1,1488 +1,1488 @@
-When ======= B-TRIGGER ======= WRB ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-TCP ======= I-TRIGGER ======= NNP ======= True
-connection ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-open ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-originator ======= I-ACTION ======= NN ======= True
-transmits ======= I-ACTION ======= VBZ ======= True
-END-OF-CHUNK ======= B-ACTION
-a ======= I-ACTION ======= DT ======= True
-END-OF-CHUNK ======= I-ACTION
-send ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-Start-Control- ======= I-ACTION ======= JJ ======= True
-Connection-Request ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-then ======= O ======= RB ======= True
-END-OF-CHUNK ======= O
-enters ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_ctl_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+When ======= B-TRIGGER ======= WRB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+TCP ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+connection ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+open ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+originator ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+transmits ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+send ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+Start-Control- ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+Connection-Request ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+then ======= O ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+enters ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_ctl_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-The ======= B-TRIGGER ======= DT ======= False
-originator ======= I-TRIGGER ======= NN ======= False
-checks ======= I-TRIGGER ======= NNS ======= False
-END-OF-CHUNK ======= B-TRIGGER
-to ======= I-TRIGGER ======= TO ======= False
-see ======= I-TRIGGER ======= VB ======= False
-END-OF-CHUNK ======= I-TRIGGER
-if ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-another ======= I-TRIGGER ======= DT ======= False
-TCP ======= I-TRIGGER ======= NNP ======= False
-connection ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-has ======= I-TRIGGER ======= VBZ ======= False
-been ======= I-TRIGGER ======= VBN ======= False
-requested ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-from ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-same ======= I-TRIGGER ======= JJ ======= False
-peer ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-and ======= I-TRIGGER ======= CC ======= False
-END-OF-CHUNK ======= I-TRIGGER
-if ======= I-TRIGGER ======= IN ======= False
-so ======= I-TRIGGER ======= RB ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-handles ======= B-ACTION ======= VBZ ======= False
-END-OF-CHUNK ======= B-ACTION
-the ======= I-ACTION ======= DT ======= False
-collision ======= I-ACTION ======= NN ======= False
-situation ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= I-ACTION
-described ======= I-ACTION ======= VBN ======= False
-END-OF-CHUNK ======= I-ACTION
-in ======= I-ACTION ======= IN ======= False
-END-OF-CHUNK ======= I-ACTION
-section ======= I-ACTION ======= NN ======= False
-3.1.3 ======= I-ACTION ======= CD ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
+The ======= B-TRIGGER ======= DT ======= False ======= 1 ======= 1
+originator ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+checks ======= I-TRIGGER ======= NNS ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+to ======= I-TRIGGER ======= TO ======= False ======= 1 ======= 1
+see ======= I-TRIGGER ======= VB ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+if ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+another ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+TCP ======= I-TRIGGER ======= NNP ======= False ======= 1 ======= 1
+connection ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+has ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 1
+been ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 1
+requested ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+from ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+same ======= I-TRIGGER ======= JJ ======= False ======= 1 ======= 1
+peer ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+and ======= I-TRIGGER ======= CC ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+if ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 1
+so ======= I-TRIGGER ======= RB ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+handles ======= B-ACTION ======= VBZ ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= False ======= 1 ======= 1
+collision ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+situation ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+described ======= I-ACTION ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+in ======= I-ACTION ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+section ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+3.1.3 ======= I-ACTION ======= CD ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-When ======= B-TRIGGER ======= WRB ======= False
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= False
-Start-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= False
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= False
-received ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-it ======= B-ACTION ======= PRP ======= False
-END-OF-CHUNK ======= B-ACTION
-is ======= I-ACTION ======= VBZ ======= False
-examined ======= I-ACTION ======= VBN ======= False
-END-OF-CHUNK ======= I-ACTION
-for ======= I-ACTION ======= IN ======= False
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= False
-compatible ======= I-ACTION ======= JJ ======= False
-version ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-of ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-reply ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-lower ======= I-TRIGGER ======= JJR ======= True
-END-OF-CHUNK ======= I-TRIGGER
-than ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-sent ======= I-TRIGGER ======= VBD ======= True
-END-OF-CHUNK ======= I-TRIGGER
-in ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-request ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-older ======= I-ACTION ======= NN ======= True
-( ======= I-ACTION ======= ( ======= True
-lower ======= I-ACTION ======= JJR ======= True
-) ======= I-ACTION ======= ) ======= True
-version ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-should ======= I-ACTION ======= MD ======= True
-be ======= I-ACTION ======= VB ======= True
-used ======= I-ACTION ======= VBN ======= True
-provided ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-it ======= I-ACTION ======= PRP ======= True
-END-OF-CHUNK ======= I-ACTION
-is ======= I-ACTION ======= VBZ ======= True
-supported ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= True
-END-OF-CHUNK ======= I-ACTION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-in ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-reply ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-earlier ======= I-TRIGGER ======= RBR ======= True
-END-OF-CHUNK ======= I-TRIGGER
-and ======= I-TRIGGER ======= CC ======= True
-END-OF-CHUNK ======= I-TRIGGER
-supported ======= I-TRIGGER ======= VBD ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-TRANSITION ======= DT ======= True
-originator ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-established ======= I-TRANSITION ======= VBN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-earlier ======= I-TRIGGER ======= RBR ======= True
-END-OF-CHUNK ======= I-TRIGGER
-and ======= I-TRIGGER ======= CC ======= True
-END-OF-CHUNK ======= I-TRIGGER
-not ======= I-TRIGGER ======= RB ======= True
-supported ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= B-ACTION ======= DT ======= True
-Stop-Control-Connection-Request ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-be ======= I-ACTION ======= VB ======= True
-sent ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-peer ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-originator ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-into ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_stop_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+When ======= B-TRIGGER ======= WRB ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+Start-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+it ======= B-ACTION ======= PRP ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+is ======= I-ACTION ======= VBZ ======= False ======= 1 ======= 1
+examined ======= I-ACTION ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+for ======= I-ACTION ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= False ======= 1 ======= 1
+compatible ======= I-ACTION ======= JJ ======= False ======= 1 ======= 1
+version ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+of ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+reply ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+lower ======= I-TRIGGER ======= JJR ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+than ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+sent ======= I-TRIGGER ======= VBD ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+in ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+request ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 2
+older ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+( ======= I-ACTION ======= ( ======= True ======= 1 ======= 2
+lower ======= I-ACTION ======= JJR ======= True ======= 1 ======= 2
+) ======= I-ACTION ======= ) ======= True ======= 1 ======= 2
+version ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+should ======= I-ACTION ======= MD ======= True ======= 1 ======= 2
+be ======= I-ACTION ======= VB ======= True ======= 1 ======= 2
+used ======= I-ACTION ======= VBN ======= True ======= 1 ======= 2
+provided ======= I-ACTION ======= VBN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+it ======= I-ACTION ======= PRP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+is ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 2
+supported ======= I-ACTION ======= VBN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+. ======= I-ACTION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 3
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 3
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+in ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 3
+reply ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+earlier ======= I-TRIGGER ======= RBR ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+and ======= I-TRIGGER ======= CC ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+supported ======= I-TRIGGER ======= VBD ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 3
+originator ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 3
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 3
+established ======= I-TRANSITION ======= VBN ======= True ======= 1 ======= 3
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 3
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 3
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+earlier ======= I-TRIGGER ======= RBR ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+and ======= I-TRIGGER ======= CC ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+not ======= I-TRIGGER ======= RB ======= True ======= 1 ======= 3
+supported ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 3
+a ======= B-ACTION ======= DT ======= True ======= 1 ======= 3
+Stop-Control-Connection-Request ======= I-ACTION ======= NNP ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 3
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 3
+be ======= I-ACTION ======= VB ======= True ======= 1 ======= 3
+sent ======= I-ACTION ======= VBN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 3
+to ======= I-ACTION ======= TO ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 3
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 3
+peer ======= I-ACTION ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 3
+and ======= O ======= CC ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= O ======= 1 ======= 3
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 3
+originator ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 3
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+into ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 3
+wait_stop_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 3
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 3
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 3
 END-OF-CONTROL ======= END_CONTROL
-In ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-event ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-of ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-local ======= I-TRIGGER ======= JJ ======= True
-termination ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-originator ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-MUST ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= I-ACTION
-send ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Stop-Control-Connection-Request ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-enter ======= B-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_stop_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+In ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+event ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+of ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+local ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+termination ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+originator ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+MUST ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+send ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Request ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+enter ======= B-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_stop_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-originator ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-receives ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Stop-Control-Connection-Request ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-it ======= B-ACTION ======= PRP ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-send ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Stop-Control-Connection-Reply ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-close ======= B-ACTION ======= RB ======= True
-END-OF-CHUNK ======= B-ACTION
-the ======= I-ACTION ======= DT ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-making ======= I-ACTION ======= VBG ======= True
-END-OF-CHUNK ======= I-ACTION
-sure ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-that ======= I-ACTION ======= IN ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-final ======= I-ACTION ======= JJ ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-information ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-has ======= I-ACTION ======= VBZ ======= True
-been ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-`` ======= I-ACTION ======= `` ======= True
-END-OF-CHUNK ======= I-ACTION
-pushed ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-`` ======= I-ACTION ======= `` ======= True
-END-OF-CHUNK ======= I-ACTION
-properly ======= I-ACTION ======= RB ======= True
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= True
-END-OF-CHUNK ======= I-ACTION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+originator ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+receives ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Request ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+it ======= B-ACTION ======= PRP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+send ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Reply ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+close ======= B-ACTION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+making ======= I-ACTION ======= VBG ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+sure ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+that ======= I-ACTION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+final ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+information ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+has ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 1
+been ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+`` ======= I-ACTION ======= `` ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+pushed ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+`` ======= I-ACTION ======= `` ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+properly ======= I-ACTION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Stop-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-be ======= I-ACTION ======= VB ======= True
-closed ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-control ======= I-TRANSITION ======= NN ======= True
-connection ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-becomes ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-idle ======= I-TRANSITION ======= JJ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+be ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+closed ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+control ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+connection ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+becomes ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-When ======= B-TRIGGER ======= WRB ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Start-Control- ======= I-TRIGGER ======= JJ ======= True
-Connection-Request ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-its ======= B-ACTION ======= PRP$ ======= True
-version ======= I-ACTION ======= NN ======= True
-field ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-should ======= I-ACTION ======= MD ======= True
-be ======= I-ACTION ======= VB ======= True
-examined ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= True
-END-OF-CHUNK ======= I-ACTION
-If ======= B-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-version ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= False
-END-OF-CHUNK ======= I-TRIGGER
-earlier ======= I-TRIGGER ======= JJR ======= False
-END-OF-CHUNK ======= I-TRIGGER
-than ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-receiver ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-` ======= I-TRIGGER ======= `` ======= False
-END-OF-CHUNK ======= I-TRIGGER
-s ======= I-TRIGGER ======= JJ ======= False
-END-OF-CHUNK ======= I-TRIGGER
-version ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-and ======= I-TRIGGER ======= CC ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-earlier ======= I-TRIGGER ======= JJR ======= False
-version ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-can ======= I-TRIGGER ======= MD ======= False
-be ======= I-TRIGGER ======= VB ======= False
-supported ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-by ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-receiver ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= False
-receiver ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= False
-send ======= I-ACTION ======= VB ======= False
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= False
-Start-Control-Connection-Reply ======= I-ACTION ======= NNP ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-earlier ======= I-TRIGGER ======= JJR ======= True
-END-OF-CHUNK ======= I-TRIGGER
-than ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-receiver ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-` ======= I-TRIGGER ======= `` ======= True
-END-OF-CHUNK ======= I-TRIGGER
-s ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-and ======= I-TRIGGER ======= CC ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-can ======= I-TRIGGER ======= MD ======= True
-not ======= I-TRIGGER ======= RB ======= True
-be ======= I-TRIGGER ======= VB ======= True
-supported ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-receiver ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-send ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Start-Connection- ======= I-ACTION ======= NNP ======= True
-Reply ======= I-ACTION ======= NNP ======= True
-message ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-, ======= I-ACTION ======= , ======= True
-END-OF-CHUNK ======= I-ACTION
-close ======= I-ACTION ======= RB ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-remain ======= B-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-in ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-receiver ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-` ======= I-TRIGGER ======= `` ======= True
-END-OF-CHUNK ======= I-TRIGGER
-s ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-version ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-same ======= I-TRIGGER ======= JJ ======= True
-as ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-earlier ======= I-TRIGGER ======= JJR ======= True
-END-OF-CHUNK ======= I-TRIGGER
-than ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-peer ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-` ======= I-TRIGGER ======= `` ======= True
-END-OF-CHUNK ======= I-TRIGGER
-s ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-receiver ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-send ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Start-Control-Connection-Reply ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-with ======= I-ACTION ======= IN ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-receiver ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-` ======= I-ACTION ======= `` ======= True
-END-OF-CHUNK ======= I-ACTION
-s ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-version ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-enter ======= B-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-established ======= I-TRANSITION ======= VBN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+When ======= B-TRIGGER ======= WRB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Start-Control- ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+Connection-Request ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+its ======= B-ACTION ======= PRP$ ======= True ======= 1 ======= 1
+version ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+field ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+should ======= I-ACTION ======= MD ======= True ======= 1 ======= 1
+be ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+examined ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+earlier ======= I-TRIGGER ======= JJR ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+than ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 2
+receiver ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+` ======= I-TRIGGER ======= `` ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+s ======= I-TRIGGER ======= JJ ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+and ======= I-TRIGGER ======= CC ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 2
+earlier ======= I-TRIGGER ======= JJR ======= False ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+can ======= I-TRIGGER ======= MD ======= False ======= 1 ======= 2
+be ======= I-TRIGGER ======= VB ======= False ======= 1 ======= 2
+supported ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+by ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 2
+receiver ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= B-ACTION ======= DT ======= False ======= 1 ======= 2
+receiver ======= I-ACTION ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+SHOULD ======= I-ACTION ======= NNP ======= False ======= 1 ======= 2
+send ======= I-ACTION ======= VB ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+a ======= I-ACTION ======= DT ======= False ======= 1 ======= 2
+Start-Control-Connection-Reply ======= I-ACTION ======= NNP ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+earlier ======= I-TRIGGER ======= JJR ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+than ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+receiver ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+` ======= I-TRIGGER ======= `` ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+s ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+and ======= I-TRIGGER ======= CC ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+can ======= I-TRIGGER ======= MD ======= True ======= 1 ======= 2
+not ======= I-TRIGGER ======= RB ======= True ======= 1 ======= 2
+be ======= I-TRIGGER ======= VB ======= True ======= 1 ======= 2
+supported ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 2
+receiver ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+send ======= I-ACTION ======= VB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+Start-Connection- ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+Reply ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+message ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+, ======= I-ACTION ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+close ======= I-ACTION ======= RB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+remain ======= B-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+in ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+receiver ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+` ======= I-TRIGGER ======= `` ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+s ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+version ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+same ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 2
+as ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+earlier ======= I-TRIGGER ======= JJR ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+than ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+peer ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+` ======= I-TRIGGER ======= `` ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+s ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 2
+receiver ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+send ======= I-ACTION ======= VB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+Start-Control-Connection-Reply ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+with ======= I-ACTION ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+receiver ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+` ======= I-ACTION ======= `` ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+s ======= I-ACTION ======= JJ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+version ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+and ======= O ======= CC ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= O ======= 1 ======= 2
+enter ======= B-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 2
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 2
+established ======= I-TRANSITION ======= VBN ======= True ======= 1 ======= 2
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
 END-OF-CONTROL ======= END_CONTROL
-In ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-event ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-of ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-local ======= I-TRIGGER ======= JJ ======= True
-termination ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-originator ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-MUST ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= I-ACTION
-send ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Stop-Control-Connection-Request ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-enter ======= B-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_stop_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+In ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+event ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+of ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+local ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+termination ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+originator ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+MUST ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+send ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Request ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+enter ======= B-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_stop_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-originator ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-receives ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Stop-Control-Connection-Request ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-it ======= O ======= PRP ======= True
-END-OF-CHUNK ======= O
-SHOULD ======= O ======= MD ======= True
-END-OF-CHUNK ======= O
-send ======= B-ACTION ======= VB ======= True
-END-OF-CHUNK ======= B-ACTION
-a ======= I-ACTION ======= DT ======= True
-Stop-Control-Connection-Reply ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-close ======= B-ACTION ======= RB ======= True
-END-OF-CHUNK ======= B-ACTION
-the ======= I-ACTION ======= DT ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-, ======= I-ACTION ======= , ======= True
-END-OF-CHUNK ======= I-ACTION
-making ======= O ======= VBG ======= True
-END-OF-CHUNK ======= O
-sure ======= O ======= JJ ======= True
-END-OF-CHUNK ======= O
-that ======= O ======= IN ======= True
-END-OF-CHUNK ======= O
-the ======= O ======= DT ======= True
-final ======= O ======= JJ ======= True
-TCP ======= O ======= NNP ======= True
-information ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-has ======= O ======= VBZ ======= True
-been ======= O ======= VBN ======= True
-END-OF-CHUNK ======= O
-`` ======= O ======= `` ======= True
-END-OF-CHUNK ======= O
-pushed ======= O ======= VBN ======= True
-END-OF-CHUNK ======= O
-`` ======= O ======= `` ======= True
-END-OF-CHUNK ======= O
-properly ======= O ======= RB ======= True
-END-OF-CHUNK ======= O
-. ======= O ======= . ======= True
-END-OF-CHUNK ======= O
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+originator ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+receives ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Request ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+it ======= O ======= PRP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+SHOULD ======= O ======= MD ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+send ======= B-ACTION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Reply ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+close ======= B-ACTION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+, ======= I-ACTION ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+making ======= O ======= VBG ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+sure ======= O ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+that ======= O ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= O ======= DT ======= True ======= 1 ======= 1
+final ======= O ======= JJ ======= True ======= 1 ======= 1
+TCP ======= O ======= NNP ======= True ======= 1 ======= 1
+information ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+has ======= O ======= VBZ ======= True ======= 1 ======= 1
+been ======= O ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+`` ======= O ======= `` ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+pushed ======= O ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+`` ======= O ======= `` ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+properly ======= O ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+. ======= O ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Stop-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-TCP ======= I-ACTION ======= NNP ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= True
-be ======= I-ACTION ======= VB ======= True
-closed ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-control ======= I-TRANSITION ======= NN ======= True
-connection ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-becomes ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-idle ======= I-TRANSITION ======= JJ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Stop-Control-Connection-Reply ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+TCP ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+be ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+closed ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+control ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+connection ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+becomes ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-The ======= B-TRIGGER ======= DT ======= True
-PAC ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= B-TRIGGER
-detects ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= I-TRIGGER ======= DT ======= True
-incoming ======= I-TRIGGER ======= VBG ======= True
-call ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-on ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-one ======= I-TRIGGER ======= CD ======= True
-END-OF-CHUNK ======= I-TRIGGER
-of ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-its ======= I-TRIGGER ======= PRP$ ======= True
-telco ======= I-TRIGGER ======= NN ======= True
-interfaces ======= I-TRIGGER ======= NNS ======= True
-END-OF-CHUNK ======= I-TRIGGER
-. ======= I-TRIGGER ======= . ======= True
-END-OF-CHUNK ======= I-TRIGGER
-Typically ======= O ======= RB ======= True
-END-OF-CHUNK ======= O
-this ======= O ======= DT ======= True
-END-OF-CHUNK ======= O
-means ======= O ======= VBZ ======= True
-END-OF-CHUNK ======= O
-an ======= O ======= DT ======= True
-analog ======= O ======= NN ======= True
-line ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-is ======= O ======= VBZ ======= True
-ringing ======= O ======= VBG ======= True
-or ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-an ======= O ======= DT ======= True
-ISDN ======= O ======= NNP ======= True
-TE ======= O ======= NNP ======= True
-END-OF-CHUNK ======= O
-has ======= O ======= VBZ ======= True
-detected ======= O ======= VBN ======= True
-END-OF-CHUNK ======= O
-an ======= O ======= DT ======= True
-incoming ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-Q.931 ======= O ======= NNP ======= True
-END-OF-CHUNK ======= O
-SETUP ======= O ======= NNP ======= True
-message ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-. ======= O ======= . ======= True
-END-OF-CHUNK ======= O
-The ======= B-ACTION ======= DT ======= True
-PAC ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-sends ======= I-ACTION ======= VBZ ======= True
-END-OF-CHUNK ======= I-ACTION
-an ======= I-ACTION ======= DT ======= True
-Incoming-Call-Request ======= I-ACTION ======= JJ ======= True
-message ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-moves ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+The ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+detects ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+an ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+incoming ======= I-TRIGGER ======= VBG ======= True ======= 1 ======= 1
+call ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+on ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+one ======= I-TRIGGER ======= CD ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+of ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+its ======= I-TRIGGER ======= PRP$ ======= True ======= 1 ======= 1
+telco ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+interfaces ======= I-TRIGGER ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+. ======= I-TRIGGER ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+Typically ======= O ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+this ======= O ======= DT ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+means ======= O ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+an ======= O ======= DT ======= True ======= 1 ======= 1
+analog ======= O ======= NN ======= True ======= 1 ======= 1
+line ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+is ======= O ======= VBZ ======= True ======= 1 ======= 1
+ringing ======= O ======= VBG ======= True ======= 1 ======= 1
+or ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+an ======= O ======= DT ======= True ======= 1 ======= 1
+ISDN ======= O ======= NNP ======= True ======= 1 ======= 1
+TE ======= O ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+has ======= O ======= VBZ ======= True ======= 1 ======= 1
+detected ======= O ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+an ======= O ======= DT ======= True ======= 1 ======= 1
+incoming ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+Q.931 ======= O ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+SETUP ======= O ======= NNP ======= True ======= 1 ======= 1
+message ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+. ======= O ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+The ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+sends ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+an ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Request ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+message ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+moves ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-The ======= B-TRIGGER ======= DT ======= True
-PAC ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= B-TRIGGER
-receives ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= I-TRIGGER ======= DT ======= True
-Incoming-Call-Reply ======= I-TRIGGER ======= JJ ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-indicating ======= I-TRIGGER ======= VBG ======= True
-END-OF-CHUNK ======= I-TRIGGER
-non- ======= I-TRIGGER ======= JJ ======= True
-willingness ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-to ======= I-TRIGGER ======= TO ======= True
-accept ======= I-TRIGGER ======= VB ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-call ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-( ======= O ======= ( ======= True
-general ======= O ======= JJ ======= True
-error ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-or ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-do ======= O ======= VB ======= True
-n ======= O ======= JJ ======= True
-` ======= O ======= `` ======= True
-t ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-) ======= O ======= ) ======= True
-END-OF-CHUNK ======= O
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-moves ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-back ======= I-TRANSITION ======= RB ======= True
-END-OF-CHUNK ======= I-TRANSITION
-into ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-reply ======= I-TRIGGER ======= NN ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-indicates ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-that ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-call ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-accepted ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-PAC ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-sends ======= I-ACTION ======= VBZ ======= True
-END-OF-CHUNK ======= I-ACTION
-an ======= I-ACTION ======= DT ======= True
-Incoming-Call- ======= I-ACTION ======= JJ ======= True
-Connected ======= I-ACTION ======= NNP ======= True
-message ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-enters ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-established ======= I-TRANSITION ======= VBN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+The ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+receives ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+an ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Reply ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+indicating ======= I-TRIGGER ======= VBG ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+non- ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+willingness ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+to ======= I-TRIGGER ======= TO ======= True ======= 1 ======= 1
+accept ======= I-TRIGGER ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+call ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+( ======= O ======= ( ======= True ======= 1 ======= 1
+general ======= O ======= JJ ======= True ======= 1 ======= 1
+error ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+or ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+do ======= O ======= VB ======= True ======= 1 ======= 1
+n ======= O ======= JJ ======= True ======= 1 ======= 1
+` ======= O ======= `` ======= True ======= 1 ======= 1
+t ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+) ======= O ======= ) ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+moves ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+back ======= I-TRANSITION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+into ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+reply ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+indicates ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+that ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+call ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+accepted ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 2
+PAC ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+sends ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+an ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+Incoming-Call- ======= I-ACTION ======= JJ ======= True ======= 1 ======= 2
+Connected ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+message ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+and ======= O ======= CC ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= O ======= 1 ======= 2
+enters ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 2
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 2
+established ======= I-TRANSITION ======= VBN ======= True ======= 1 ======= 2
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
 END-OF-CONTROL ======= END_CONTROL
-An ======= B-TRIGGER ======= DT ======= True
-Incoming-Call-Request ======= I-TRIGGER ======= JJ ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-. ======= I-TRIGGER ======= . ======= True
-END-OF-CHUNK ======= I-TRIGGER
-If ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-request ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-not ======= I-TRIGGER ======= RB ======= True
-END-OF-CHUNK ======= I-TRIGGER
-acceptable ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= B-ACTION ======= DT ======= True
-Incoming-Call-Reply ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-is ======= I-ACTION ======= VBZ ======= True
-sent ======= I-ACTION ======= VBN ======= True
-END-OF-CHUNK ======= I-ACTION
-back ======= I-ACTION ======= RB ======= True
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-PAC ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-PNS ======= I-TRANSITION ======= NNP ======= True
-END-OF-CHUNK ======= B-TRANSITION
-remains ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-in ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-Incoming-Call-Request ======= I-TRIGGER ======= NNP ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-acceptable ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= B-ACTION ======= DT ======= True
-Incoming-Call-Reply ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-is ======= I-ACTION ======= VBZ ======= True
-sent ======= I-ACTION ======= VBN ======= True
-indicating ======= I-ACTION ======= VBG ======= True
-END-OF-CHUNK ======= I-ACTION
-accept ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-in ======= I-ACTION ======= IN ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-result ======= I-ACTION ======= NN ======= True
-code ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= True
-END-OF-CHUNK ======= I-ACTION
-The ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_connect ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+An ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Request ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+. ======= I-TRIGGER ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+If ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+request ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+not ======= I-TRIGGER ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+acceptable ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+an ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+Incoming-Call-Reply ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+is ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 1
+sent ======= I-ACTION ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+back ======= I-ACTION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+to ======= I-ACTION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+PNS ======= I-TRANSITION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+remains ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+in ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+Incoming-Call-Request ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 2
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+acceptable ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+an ======= B-ACTION ======= DT ======= True ======= 1 ======= 2
+Incoming-Call-Reply ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+is ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 2
+sent ======= I-ACTION ======= VBN ======= True ======= 1 ======= 2
+indicating ======= I-ACTION ======= VBG ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+accept ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+in ======= I-ACTION ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+result ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+code ======= I-ACTION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+. ======= I-ACTION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+The ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 2
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 2
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 2
+wait_connect ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 2
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-session ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-connected ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-on ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-PAC ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= True
-PAC ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= B-ACTION
-sends ======= I-ACTION ======= VBZ ======= True
-END-OF-CHUNK ======= I-ACTION
-an ======= I-ACTION ======= DT ======= True
-incoming ======= I-ACTION ======= VBG ======= True
-call ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-connect ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-message ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-PNS ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= I-ACTION
-which ======= O ======= WDT ======= True
-END-OF-CHUNK ======= O
-then ======= O ======= RB ======= True
-END-OF-CHUNK ======= O
-moves ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-into ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-established ======= I-TRANSITION ======= VBN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+connected ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+on ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+sends ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+an ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+incoming ======= I-ACTION ======= VBG ======= True ======= 1 ======= 1
+call ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+connect ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+message ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+to ======= I-ACTION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+PNS ======= I-ACTION ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+which ======= O ======= WDT ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+then ======= O ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+moves ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+into ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+established ======= I-TRANSITION ======= VBN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-The ======= B-TRIGGER ======= DT ======= True
-session ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-terminated ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-either ======= I-TRIGGER ======= RB ======= True
-END-OF-CHUNK ======= I-TRIGGER
-by ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-receipt ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-of ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Call-Disconnect- ======= I-TRIGGER ======= NNP ======= True
-Notify ======= I-TRIGGER ======= NNP ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-from ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-PAC ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-or ======= I-TRIGGER ======= CC ======= True
-END-OF-CHUNK ======= I-TRIGGER
-by ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-sending ======= I-TRIGGER ======= VBG ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Call-Clear-Request ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-. ======= I-TRIGGER ======= . ======= True
-END-OF-CHUNK ======= I-TRIGGER
-Once ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Call-Clear-Request ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-has ======= I-TRIGGER ======= VBZ ======= True
-been ======= I-TRIGGER ======= VBN ======= True
-sent ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-enters ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_disconnect ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+The ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+terminated ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+either ======= I-TRIGGER ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+by ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+receipt ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+of ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Disconnect- ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+Notify ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+from ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+or ======= I-TRIGGER ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+by ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+sending ======= I-TRIGGER ======= VBG ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Clear-Request ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+. ======= I-TRIGGER ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+Once ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Clear-Request ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+has ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+been ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+sent ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+enters ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_disconnect ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-Once ======= B-TRIGGER ======= RB ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Call-Disconnect-Notify ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-back ======= I-TRANSITION ======= RB ======= True
-END-OF-CHUNK ======= I-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+Once ======= B-TRIGGER ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Disconnect-Notify ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+back ======= I-TRANSITION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-Received ======= B-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-Outgoing-Call-Request ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-. ======= I-TRIGGER ======= . ======= True
-END-OF-CHUNK ======= I-TRIGGER
-If ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-this ======= I-TRIGGER ======= DT ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-in ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-error ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-respond ======= B-ERROR ======= NN ======= True
-END-OF-CHUNK ======= B-ERROR
-with ======= I-ERROR ======= IN ======= True
-END-OF-CHUNK ======= I-ERROR
-an ======= I-ERROR ======= DT ======= True
-Outgoing-Call-Reply ======= I-ERROR ======= JJ ======= True
-END-OF-CHUNK ======= I-ERROR
-with ======= I-ERROR ======= IN ======= True
-END-OF-CHUNK ======= I-ERROR
-error ======= I-ERROR ======= JJ ======= True
-condition ======= I-ERROR ======= NN ======= True
-END-OF-CHUNK ======= I-ERROR
-set ======= I-ERROR ======= VBN ======= True
-END-OF-CHUNK ======= I-ERROR
-. ======= I-ERROR ======= . ======= True
-END-OF-CHUNK ======= I-ERROR
-Otherwise ======= B-TRIGGER ======= RB ======= True
-END-OF-CHUNK ======= B-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-allocate ======= B-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= B-ACTION
-physical ======= I-ACTION ======= JJ ======= True
-channel ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= True
-dial ======= I-ACTION ======= VB ======= True
-END-OF-CHUNK ======= I-ACTION
-on ======= I-ACTION ======= IN ======= True
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= True
-END-OF-CHUNK ======= I-ACTION
-Place ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-outbound ======= I-ACTION ======= NN ======= True
-call ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-, ======= I-ACTION ======= , ======= True
-END-OF-CHUNK ======= I-ACTION
-wait ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-for ======= I-ACTION ======= IN ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-connection ======= I-ACTION ======= NN ======= True
-END-OF-CHUNK ======= I-ACTION
-, ======= I-ACTION ======= , ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-move ======= B-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_cs_ans ======= I-TRANSITION ======= NNS ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+Received ======= B-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+Outgoing-Call-Request ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+. ======= I-TRIGGER ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+If ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+this ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+in ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+error ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+respond ======= B-ERROR ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ERROR ======= 1 ======= 1
+with ======= I-ERROR ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+an ======= I-ERROR ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Reply ======= I-ERROR ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+with ======= I-ERROR ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+error ======= I-ERROR ======= JJ ======= True ======= 1 ======= 1
+condition ======= I-ERROR ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+set ======= I-ERROR ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+. ======= I-ERROR ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+Otherwise ======= B-TRIGGER ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+allocate ======= B-ACTION ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+physical ======= I-ACTION ======= JJ ======= True ======= 1 ======= 1
+channel ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+to ======= I-ACTION ======= TO ======= True ======= 1 ======= 1
+dial ======= I-ACTION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+on ======= I-ACTION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+Place ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+outbound ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+call ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+, ======= I-ACTION ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+wait ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+for ======= I-ACTION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 1
+connection ======= I-ACTION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+, ======= I-ACTION ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+move ======= B-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_cs_ans ======= I-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-call ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-incomplete ======= I-TRIGGER ======= JJ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-send ======= B-ERROR ======= VB ======= True
-END-OF-CHUNK ======= B-ERROR
-an ======= I-ERROR ======= DT ======= True
-Outgoing-Call-Reply ======= I-ERROR ======= NN ======= True
-END-OF-CHUNK ======= I-ERROR
-with ======= I-ERROR ======= IN ======= True
-END-OF-CHUNK ======= I-ERROR
-a ======= I-ERROR ======= DT ======= True
-non-zero ======= I-ERROR ======= JJ ======= True
-Error ======= I-ERROR ======= NNP ======= True
-Code ======= I-ERROR ======= NNP ======= True
-END-OF-CHUNK ======= I-ERROR
-. ======= I-ERROR ======= . ======= True
-END-OF-CHUNK ======= I-ERROR
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-timer ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-expires ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-on ======= I-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= I-TRIGGER ======= DT ======= True
-outbound ======= I-TRIGGER ======= NN ======= True
-call ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-send ======= B-ERROR ======= VB ======= True
-END-OF-CHUNK ======= B-ERROR
-back ======= I-ERROR ======= RP ======= True
-END-OF-CHUNK ======= I-ERROR
-an ======= I-ERROR ======= DT ======= True
-Outgoing-Call-Reply ======= I-ERROR ======= NN ======= True
-END-OF-CHUNK ======= I-ERROR
-with ======= I-ERROR ======= IN ======= True
-END-OF-CHUNK ======= I-ERROR
-a ======= I-ERROR ======= DT ======= True
-non-zero ======= I-ERROR ======= JJ ======= True
-Error ======= I-ERROR ======= NNP ======= True
-Code ======= I-ERROR ======= NNP ======= True
-END-OF-CHUNK ======= I-ERROR
-. ======= I-ERROR ======= . ======= True
-END-OF-CHUNK ======= I-ERROR
-If ======= B-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= False
-circuit ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-switched ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-connection ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= False
-established ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-send ======= B-ACTION ======= VB ======= False
-END-OF-CHUNK ======= B-ACTION
-an ======= I-ACTION ======= DT ======= False
-Outgoing- ======= I-ACTION ======= JJ ======= False
-Call-Reply ======= I-ACTION ======= NNP ======= False
-indicating ======= I-ACTION ======= NN ======= False
-success ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+call ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+incomplete ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+send ======= B-ERROR ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-ERROR ======= 1 ======= 1
+an ======= I-ERROR ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Reply ======= I-ERROR ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+with ======= I-ERROR ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+a ======= I-ERROR ======= DT ======= True ======= 1 ======= 1
+non-zero ======= I-ERROR ======= JJ ======= True ======= 1 ======= 1
+Error ======= I-ERROR ======= NNP ======= True ======= 1 ======= 1
+Code ======= I-ERROR ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+. ======= I-ERROR ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+timer ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+expires ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+on ======= I-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+an ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+outbound ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+call ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+send ======= B-ERROR ======= VB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ERROR ======= 1 ======= 2
+back ======= I-ERROR ======= RP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 2
+an ======= I-ERROR ======= DT ======= True ======= 1 ======= 2
+Outgoing-Call-Reply ======= I-ERROR ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 2
+with ======= I-ERROR ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 2
+a ======= I-ERROR ======= DT ======= True ======= 1 ======= 2
+non-zero ======= I-ERROR ======= JJ ======= True ======= 1 ======= 2
+Error ======= I-ERROR ======= NNP ======= True ======= 1 ======= 2
+Code ======= I-ERROR ======= NNP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 2
+. ======= I-ERROR ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ERROR ======= 1 ======= 2
+If ======= B-TRIGGER ======= IN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+a ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 2
+circuit ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+switched ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+connection ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+is ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 2
+established ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+send ======= B-ACTION ======= VB ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+an ======= I-ACTION ======= DT ======= False ======= 1 ======= 2
+Outgoing- ======= I-ACTION ======= JJ ======= False ======= 1 ======= 2
+Call-Reply ======= I-ACTION ======= NNP ======= False ======= 1 ======= 2
+indicating ======= I-ACTION ======= NN ======= False ======= 1 ======= 2
+success ======= I-ACTION ======= NN ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= False
-Call-Clear-Request ======= I-TRIGGER ======= NNP ======= False
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= False
-received ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-ACTION ======= DT ======= False
-telco ======= I-ACTION ======= NN ======= False
-call ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= NNP ======= False
-be ======= I-ACTION ======= VB ======= False
-released ======= I-ACTION ======= VBN ======= False
-END-OF-CHUNK ======= I-ACTION
-via ======= I-ACTION ======= IN ======= False
-END-OF-CHUNK ======= I-ACTION
-appropriate ======= I-ACTION ======= JJ ======= False
-mechanisms ======= I-ACTION ======= NNS ======= False
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= False
-END-OF-CHUNK ======= O
-a ======= O ======= DT ======= False
-END-OF-CHUNK ======= O
-Call-Disconnect-Notify ======= B-ACTION ======= JJ ======= False
-message ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= MD ======= False
-BE ======= I-ACTION ======= VB ======= False
-sent ======= I-ACTION ======= VBN ======= False
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= False
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= False
-PNS ======= I-ACTION ======= NNP ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
+If ======= B-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+Call-Clear-Request ======= I-TRIGGER ======= NNP ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-ACTION ======= DT ======= False ======= 1 ======= 1
+telco ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+call ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= NNP ======= False ======= 1 ======= 1
+be ======= I-ACTION ======= VB ======= False ======= 1 ======= 1
+released ======= I-ACTION ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+via ======= I-ACTION ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+appropriate ======= I-ACTION ======= JJ ======= False ======= 1 ======= 1
+mechanisms ======= I-ACTION ======= NNS ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+and ======= O ======= CC ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+a ======= O ======= DT ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+Call-Disconnect-Notify ======= B-ACTION ======= JJ ======= False ======= 1 ======= 1
+message ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= MD ======= False ======= 1 ======= 1
+BE ======= I-ACTION ======= VB ======= False ======= 1 ======= 1
+sent ======= I-ACTION ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+to ======= I-ACTION ======= TO ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= False ======= 1 ======= 1
+PNS ======= I-ACTION ======= NNP ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-call ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= False
-disconnected ======= I-TRIGGER ======= VBN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-by ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-client ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-or ======= I-TRIGGER ======= CC ======= False
-END-OF-CHUNK ======= I-TRIGGER
-by ======= I-TRIGGER ======= IN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= False
-telco ======= I-TRIGGER ======= NN ======= False
-interface ======= I-TRIGGER ======= NN ======= False
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= False
-END-OF-CHUNK ======= I-TRIGGER
-a ======= B-ACTION ======= DT ======= False
-Call-Disconnect-Notify ======= I-ACTION ======= JJ ======= False
-message ======= I-ACTION ======= NN ======= False
-END-OF-CHUNK ======= B-ACTION
-SHOULD ======= I-ACTION ======= MD ======= False
-be ======= I-ACTION ======= VB ======= False
-sent ======= I-ACTION ======= VBN ======= False
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= False
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= False
-PNS ======= I-ACTION ======= NNP ======= False
-END-OF-CHUNK ======= I-ACTION
-. ======= I-ACTION ======= . ======= False
-END-OF-CHUNK ======= I-ACTION
+If ======= B-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+call ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= False ======= 1 ======= 1
+disconnected ======= I-TRIGGER ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+by ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+client ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+or ======= I-TRIGGER ======= CC ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+by ======= I-TRIGGER ======= IN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= False ======= 1 ======= 1
+telco ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+interface ======= I-TRIGGER ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+a ======= B-ACTION ======= DT ======= False ======= 1 ======= 1
+Call-Disconnect-Notify ======= I-ACTION ======= JJ ======= False ======= 1 ======= 1
+message ======= I-ACTION ======= NN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 1
+SHOULD ======= I-ACTION ======= MD ======= False ======= 1 ======= 1
+be ======= I-ACTION ======= VB ======= False ======= 1 ======= 1
+sent ======= I-ACTION ======= VBN ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+to ======= I-ACTION ======= TO ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+the ======= I-ACTION ======= DT ======= False ======= 1 ======= 1
+PNS ======= I-ACTION ======= NNP ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
+. ======= I-ACTION ======= . ======= False ======= 1 ======= 1
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-An ======= B-TRIGGER ======= DT ======= True
-Outgoing-Call-Request ======= I-TRIGGER ======= JJ ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-sent ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-to ======= I-TRIGGER ======= TO ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-PAC ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-into ======= I-TRANSITION ======= IN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_reply ======= I-TRANSITION ======= NN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+An ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Request ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+sent ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+to ======= I-TRIGGER ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PAC ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+into ======= I-TRANSITION ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+wait_reply ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-An ======= B-TRIGGER ======= DT ======= True
-Outgoing-Call-Reply ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= B-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-which ======= I-TRIGGER ======= WDT ======= True
-END-OF-CHUNK ======= I-TRIGGER
-indicates ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= I-TRIGGER ======= DT ======= True
-error ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-. ======= I-TRIGGER ======= . ======= True
-END-OF-CHUNK ======= I-TRIGGER
-The ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-returns ======= I-TRANSITION ======= NNS ======= True
-to ======= I-TRANSITION ======= TO ======= True
-idle ======= I-TRANSITION ======= VB ======= True
-END-OF-CHUNK ======= I-TRANSITION
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+An ======= B-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Reply ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+which ======= I-TRIGGER ======= WDT ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+indicates ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+an ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+error ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+. ======= I-TRIGGER ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+The ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+returns ======= I-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-Outgoing-Call-Reply ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-does ======= I-TRIGGER ======= VBZ ======= True
-not ======= I-TRIGGER ======= RB ======= True
-indicate ======= I-TRIGGER ======= VB ======= True
-END-OF-CHUNK ======= I-TRIGGER
-an ======= I-TRIGGER ======= DT ======= True
-error ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= O ======= DT ======= True
-telco ======= O ======= NN ======= True
-call ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-is ======= O ======= VBZ ======= True
-connected ======= O ======= VBN ======= True
-END-OF-CHUNK ======= O
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-the ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-established ======= I-TRANSITION ======= VBN ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Outgoing-Call-Reply ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+does ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+not ======= I-TRIGGER ======= RB ======= True ======= 1 ======= 1
+indicate ======= I-TRIGGER ======= VB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+an ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+error ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= O ======= DT ======= True ======= 1 ======= 1
+telco ======= O ======= NN ======= True ======= 1 ======= 1
+call ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+is ======= O ======= VBZ ======= True ======= 1 ======= 1
+connected ======= O ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+established ======= I-TRANSITION ======= VBN ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-a ======= I-TRIGGER ======= DT ======= True
-Call-Disconnect-Notify ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-is ======= I-TRIGGER ======= VBZ ======= True
-received ======= I-TRIGGER ======= VBN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= O ======= DT ======= True
-telco ======= O ======= NN ======= True
-call ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-has ======= O ======= VBZ ======= True
-been ======= O ======= VBN ======= True
-terminated ======= O ======= VBN ======= True
-END-OF-CHUNK ======= O
-for ======= O ======= IN ======= True
-END-OF-CHUNK ======= O
-the ======= O ======= DT ======= True
-reason ======= O ======= NN ======= True
-END-OF-CHUNK ======= O
-indicated ======= O ======= VBD ======= True
-END-OF-CHUNK ======= O
-in ======= O ======= IN ======= True
-END-OF-CHUNK ======= O
-the ======= O ======= DT ======= True
-Result ======= O ======= NNP ======= True
-END-OF-CHUNK ======= O
-and ======= O ======= CC ======= True
-END-OF-CHUNK ======= O
-Cause ======= O ======= NNP ======= True
-END-OF-CHUNK ======= O
-Codes ======= O ======= NNP ======= True
-END-OF-CHUNK ======= O
-. ======= O ======= . ======= True
-END-OF-CHUNK ======= O
-The ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-moves ======= I-TRANSITION ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRANSITION
-back ======= I-TRANSITION ======= RB ======= True
-END-OF-CHUNK ======= I-TRANSITION
-to ======= I-TRANSITION ======= TO ======= True
-END-OF-CHUNK ======= I-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
-If ======= B-TRIGGER ======= IN ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-PNS ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-chooses ======= I-TRIGGER ======= VBZ ======= True
-to ======= I-TRIGGER ======= TO ======= True
-terminate ======= I-TRIGGER ======= VB ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-session ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-it ======= B-ACTION ======= PRP ======= True
-END-OF-CHUNK ======= B-ACTION
-sends ======= I-ACTION ======= VBZ ======= True
-END-OF-CHUNK ======= I-ACTION
-a ======= I-ACTION ======= DT ======= True
-Call-Clear-Request ======= I-ACTION ======= JJ ======= True
-END-OF-CHUNK ======= I-ACTION
-to ======= I-ACTION ======= TO ======= True
-END-OF-CHUNK ======= I-ACTION
-the ======= I-ACTION ======= DT ======= True
-PAC ======= I-ACTION ======= NNP ======= True
-END-OF-CHUNK ======= I-ACTION
-and ======= O ======= CC ======= True
-then ======= O ======= RB ======= True
-END-OF-CHUNK ======= O
-enters ======= B-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= B-TRANSITION
-the ======= I-TRANSITION ======= DT ======= True
-wait_disconnect ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+a ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Disconnect-Notify ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+is ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+received ======= I-TRIGGER ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= O ======= DT ======= True ======= 1 ======= 1
+telco ======= O ======= NN ======= True ======= 1 ======= 1
+call ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+has ======= O ======= VBZ ======= True ======= 1 ======= 1
+been ======= O ======= VBN ======= True ======= 1 ======= 1
+terminated ======= O ======= VBN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+for ======= O ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= O ======= DT ======= True ======= 1 ======= 1
+reason ======= O ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+indicated ======= O ======= VBD ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+in ======= O ======= IN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+the ======= O ======= DT ======= True ======= 1 ======= 1
+Result ======= O ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+and ======= O ======= CC ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+Cause ======= O ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+Codes ======= O ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+. ======= O ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= O ======= 1 ======= 1
+The ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+moves ======= I-TRANSITION ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+back ======= I-TRANSITION ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+to ======= I-TRANSITION ======= TO ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+If ======= B-TRIGGER ======= IN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+PNS ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+chooses ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 2
+to ======= I-TRIGGER ======= TO ======= True ======= 1 ======= 2
+terminate ======= I-TRIGGER ======= VB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 2
+session ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 2
+it ======= B-ACTION ======= PRP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-ACTION ======= 1 ======= 2
+sends ======= I-ACTION ======= VBZ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+a ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+Call-Clear-Request ======= I-ACTION ======= JJ ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+to ======= I-ACTION ======= TO ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+the ======= I-ACTION ======= DT ======= True ======= 1 ======= 2
+PAC ======= I-ACTION ======= NNP ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-ACTION ======= 1 ======= 2
+and ======= O ======= CC ======= True ======= 1 ======= 2
+then ======= O ======= RB ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= O ======= 1 ======= 2
+enters ======= B-TRANSITION ======= NNS ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 2
+the ======= I-TRANSITION ======= DT ======= True ======= 1 ======= 2
+wait_disconnect ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 2
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 2
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 2
 END-OF-CONTROL ======= END_CONTROL
-Once ======= B-TRIGGER ======= RB ======= True
-END-OF-CHUNK ======= B-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-PNS ======= I-TRIGGER ======= NNP ======= True
-END-OF-CHUNK ======= I-TRIGGER
-receives ======= I-TRIGGER ======= VBZ ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= I-TRIGGER ======= DT ======= True
-Call-Disconnect-Notify ======= I-TRIGGER ======= JJ ======= True
-message ======= I-TRIGGER ======= NN ======= True
-END-OF-CHUNK ======= I-TRIGGER
-, ======= I-TRIGGER ======= , ======= True
-END-OF-CHUNK ======= I-TRIGGER
-the ======= B-TRANSITION ======= DT ======= True
-session ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= B-TRANSITION
-enters ======= I-TRANSITION ======= NNS ======= True
-END-OF-CHUNK ======= I-TRANSITION
-idle ======= I-TRANSITION ======= JJ ======= True
-state ======= I-TRANSITION ======= NN ======= True
-END-OF-CHUNK ======= I-TRANSITION
-. ======= I-TRANSITION ======= . ======= True
-END-OF-CHUNK ======= I-TRANSITION
+Once ======= B-TRIGGER ======= RB ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+PNS ======= I-TRIGGER ======= NNP ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+receives ======= I-TRIGGER ======= VBZ ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= I-TRIGGER ======= DT ======= True ======= 1 ======= 1
+Call-Disconnect-Notify ======= I-TRIGGER ======= JJ ======= True ======= 1 ======= 1
+message ======= I-TRIGGER ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+, ======= I-TRIGGER ======= , ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRIGGER ======= 1 ======= 1
+the ======= B-TRANSITION ======= DT ======= True ======= 1 ======= 1
+session ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= B-TRANSITION ======= 1 ======= 1
+enters ======= I-TRANSITION ======= NNS ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+idle ======= I-TRANSITION ======= JJ ======= True ======= 1 ======= 1
+state ======= I-TRANSITION ======= NN ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
+. ======= I-TRANSITION ======= . ======= True ======= 1 ======= 1
+END-OF-CHUNK ======= I-TRANSITION ======= 1 ======= 1
 END-OF-CONTROL ======= END_CONTROL
