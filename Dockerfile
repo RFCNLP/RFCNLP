@@ -70,4 +70,5 @@ WORKDIR ..
 # 4. Install some stuff for the NLP pipeline
 RUN pip3 install allennlp==2.0.0
 RUN pip3 install allennlp-models==1.0.0
+RUN python3 -m spacy download en_core_web_sm
 entrypoint [""]

@@ -38,7 +38,7 @@ You will now be able to run any of the targets in the Makefile.
 
 ### NLP Results
 
-The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.  Unfortunately, doing so will require some work on your end, as you'll need to get [wandbi.ai credentials and set up appropriate environment variables](https://docs.wandb.ai/guides/track/advanced/environment-variables) inside the Docker image.
+The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
 
 * `make dccplineartrain` - runs our LinearCRF model on the DCCP RFC and saves the resulting intermediary representation.
 * `make tcplineartrain` - runs our LinearCRF model on the TCP RFC and saves the resulting intermediary representation.

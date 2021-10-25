@@ -46,7 +46,8 @@ dccpbert2promela:
 # --- NLP Targets ---
 
 dccplineartrain:
-	python3 nlp-parser/linear.py                \
+	WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"  \
+		python3 nlp-parser/linear.py            \
 		--protocol DCCP                         \
 		--stem                                  \
 		--heuristics                            \
@@ -55,7 +56,8 @@ dccplineartrain:
 		--write_results
 
 tcplineartrain:
-	python3 nlp-parser/linear.py                \
+	WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"  \
+		python3 nlp-parser/linear.py            \
 		--protocol TCP                          \
 		--stem                                  \
 		--heuristics                            \
@@ -64,7 +66,8 @@ tcplineartrain:
 		--write_results
 
 dccpberttrain:
-	python3 nlp-parser/bert_bilstm_crf.py                               \
+	WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"                          \
+		python3 nlp-parser/bert_bilstm_crf.py                           \
 		--features                                                      \
 		--savedir .                                                     \
 		--do_train                                                      \
@@ -78,7 +81,8 @@ dccpberttrain:
 		--batch_size 1
 
 tcpberttrain:
-	python3 nlp-parser/bert_bilstm_crf.py                               \
+	WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"                          \
+		python3 nlp-parser/bert_bilstm_crf.py                           \
 		--features                                                      \
 		--savedir .                                                     \
 		--do_train                                                      \
