@@ -68,5 +68,28 @@ WORKDIR ..
 # 4. Run NLP code.
 # TODO
 # 5. Run attacker synthesis.
+# 5.1 On TCP gold
 RUN make tcp2promela
+RUN mv out out.tcp2promela
+RUN make clean
+# 5.2 On TCP linear
+RUN make tcplinear2promela
+RUN mv out out.tcplinear2promela
+RUN make clean
+# 5.3 On TCP bert
+RUN make tcpbert2promela
+RUN mv out out.tcpbert2promela
+RUN make clean
+# 5.4 On DCCP gold
+RUN make dccp2promela
+RUN mv out out.dccp2promela
+RUN make clean
+# 5.5 On DCCP linear
+RUN make dccplinear2promela
+RUN mv out out.dccplinear2promela
+RUN make clean
+# 5.6 On DCCP bert
+RUN make dccpbert2promela
+RUN mv out out.dccpbert2promela
+RUN make clean
 entrypoint [""]
