@@ -1,3 +1,4 @@
+numpy
 transitions
 networkx
 matplotlib
@@ -7,7 +8,6 @@ python-Levenshtein
 lxml
 graphviz
 tabulate
-numpy
 spacy
 tqdm
 scikit-learn
