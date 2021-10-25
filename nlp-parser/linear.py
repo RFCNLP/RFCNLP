@@ -24,6 +24,8 @@ def main():
     parser.add_argument('--printout', default=False, action='store_true')
     parser.add_argument('--stem', default=False, action='store_true')
     parser.add_argument('--write_results', default=False, action='store_true')
+    parser.add_argument('--heuristics', default=False, action='store_true')
+    parser.add_argument('--heuristics_only', default=False, action='store_true')
     parser.add_argument('--token_level', default=False, action='store_true', help='perform prediction at token level')
     parser.add_argument('--phrase_level', default=False, action='store_true', help='perform prediction at the phrase level')
     parser.add_argument('--outdir', type=str, required=True)
@@ -34,7 +36,7 @@ def main():
         print("Specify a valid protocol")
         exit(-1)
 
-    word2id = {}; tag2id = {}; pos2id = {}; id2cap = {}; stem2id = {}
+    word2id = {}; tag2id = {}; pos2id = {}; id2cap = {}; stem2id = {}; id2word = {}
     # Get variable, state and event definitions
     def_vars = set(); def_states = set(); def_events_constrained = set(); def_events = set()
     data_utils.get_definitions(def_vars, def_states, def_events_constrained, def_events)
@@ -45,8 +47,8 @@ def main():
     if args.token_level:
         args.train = ["rfcs-bio/{}_no_chunk_train.txt".format(p) for p in together_path_list]
         args.test = ["rfcs-bio/{}_no_chunk.txt".format(args.protocol)]
-        X_train_data, y_train = data_utils.get_data_nochunks(args.train, word2id, tag2id, pos2id, id2cap, stem2id)
-        X_test_data, y_test = data_utils.get_data_nochunks(args.test, word2id, tag2id, pos2id, id2cap, stem2id)
+        X_train_data, y_train = data_utils.get_data_nochunks(args.train, word2id, tag2id, pos2id, id2cap, stem2id, id2word)
+        X_test_data, y_test = data_utils.get_data_nochunks(args.test, word2id, tag2id, pos2id, id2cap, stem2id, id2word)
     elif args.phrase_level:
         args.train = ["rfcs-bio/{}_phrases_train.txt".format(p) for p in together_path_list]
         args.test = ["rfcs-bio/{}_phrases.txt".format(args.protocol)]
@@ -56,8 +58,8 @@ def main():
         #print(len(X_test_data), y_test.shape)
         #exit()
     else:
-        args.train = ["rfcs-bio/{}_train_fixed.txt".format(p) for p in together_path_list]
-        args.test = ["rfcs-bio/{}_fixed.txt".format(args.protocol)]
+        args.train = ["rfcs-bio/{}_train.txt".format(p) for p in together_path_list]
+        args.test = ["rfcs-bio/{}.txt".format(args.protocol)]
         X_train_data, y_train, level_h, level_d = data_utils.get_data(args.train, word2id, tag2id, pos2id, id2cap, stem2id)
         X_test_data, y_test, level_h, level_d = data_utils.get_data(args.test, word2id, tag2id, pos2id, id2cap, stem2id)
 
@@ -105,28 +107,38 @@ def main():
         X_test_data_alt, y_pred_trans_alt, level_h_alt, level_d_alt = data_utils.alternative_expand(X_test_data, y_pred_trans, level_h, level_d, id2word, debug=True)
 
         # Do it in a way that flattens the chunk-level segmentation for evaluation
+        X_test_data_old = X_test_data[:]
         _, y_test_trans_eval = data_utils.expand(X_test_data, y_test_trans, id2word, debug=False)
         X_test_data_eval, y_pred_trans_eval = data_utils.expand(X_test_data, y_pred_trans, id2word, debug=True)
+    else:
+        y_test_trans_eval = y_test_trans
+        y_pred_trans_eval = y_pred_trans
+        X_test_data_eval = X_test_data
 
 
     #print(len(y_pred_trans), len(y_test_trans))
     #exit()
     evaluate(y_test_trans_eval, y_pred_trans_eval)
 
-    def_states_protocol = {}; def_events_protocol = {}; def_events_constrained_protocol = {}
-    data_utils.get_protocol_definitions(args.protocol, def_states_protocol, def_events_constrained_protocol, def_events_protocol)
+    def_states_protocol = {}; def_events_protocol = {}; def_events_constrained_protocol = {}; def_variables_protocol = {}
+    data_utils.get_protocol_definitions(args.protocol, def_states_protocol, def_events_constrained_protocol, def_events_protocol, def_variables_protocol)
 
     # Trying a heuristic
-    if args.phrase_level:
-        y_pred_trans_alt =\
-            apply_heuristics(X_test_data_alt, y_test_trans_alt, y_pred_trans_alt,
-                             level_h_alt, level_d_alt,
-                             id2word, def_states_protocol, def_events_protocol,
-                             transitions=True, outside=True, actions=True)
+    if args.heuristics_only:
+        for i in range(0, len(y_pred_trans_alt)):
+            for j in range(0, len(y_pred_trans_alt[i])):
+                for k in range(0, len(y_pred_trans_alt[i][j])):
+                    y_pred_trans_alt[i][j][k] = 'O'
+
+    y_pred_trans_alt =\
+        apply_heuristics(X_test_data_alt, y_test_trans_alt, y_pred_trans_alt,
+                         level_h_alt, level_d_alt,
+                         id2word, def_states_protocol, def_events_protocol, def_variables_protocol,
+                         transitions=args.heuristics, outside=args.heuristics, actions=args.heuristics)
     y_pred_trans_alt = \
         apply_heuristics(X_test_data_alt, y_test_trans_alt, y_pred_trans_alt,
                      level_h_alt, level_d_alt,
-                     id2word, def_states_protocol, def_events_protocol,
+                     id2word, def_states_protocol, def_events_protocol, def_variables_protocol,
                      consecutive_trans=True)
 
     X_test_data, y_pred_trans, level_h_trans, level_d_trans = \
@@ -134,6 +146,13 @@ def main():
                 X_test_data_alt, y_pred_trans_alt,
                 level_h_alt, level_d_alt,
                 id2word, debug=True)
+
+    # Do it in a way that flattens the chunk-level segmentation for evaluation
+    _, y_test_trans_eval = data_utils.expand(X_test_data_old, y_test_trans, id2word, debug=False)
+    #X_test_data_eval, y_pred_trans_eval = data_utils.expand(X_test_data, y_pred_trans, id2word, debug=True)
+
+    if args.heuristics:
+        evaluate(y_test_trans_eval, y_pred_trans)
 
     if args.write_results:
         output_xml = os.path.join(args.outdir, "{}.xml".format(args.protocol))

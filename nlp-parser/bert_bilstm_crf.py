@@ -490,6 +490,7 @@ def main():
     parser.add_argument('--do_eval', default=False, action='store_true')
     parser.add_argument('--outdir', type=str, required=True)
     parser.add_argument('--write_results', default=False, action='store_true')
+    parser.add_argument('--heuristics', default=False, action='store_true')
     parser.add_argument('--bert_model', type=str, required=True)
     parser.add_argument('--learning_rate', type=float, default=1e-1)
 
@@ -588,7 +589,7 @@ def main():
 
     classes = list(set(y_train_ints))
     print(classes, tag2id)
-    class_weights = list(compute_class_weight('balanced', classes, y_train_ints))
+    class_weights = list(compute_class_weight('balanced', classes=classes, y=y_train_ints))
     class_weights += [0.0, 0.0]
     class_weights = torch.FloatTensor(class_weights).cuda()
 
@@ -683,40 +684,41 @@ def main():
         X_test_data_alt, y_pred_trans_alt, level_h_alt, level_d_alt = data_utils.alternative_expand(X_test_data_orig, y_pred_trans, level_h, level_d, id2word, debug=True)
 
         # Do it in a way that flattens the chunk-level segmentation for evaluation
+        X_test_data_old = X_test_data_orig[:]
         _, y_test_trans_eval = data_utils.expand(X_test_data_orig, y_test_trans, id2word, debug=False)
         X_test_data_eval, y_pred_trans_eval = data_utils.expand(X_test_data_orig, y_pred_trans, id2word, debug=True)
 
 
         evaluate(y_test_trans_eval, y_pred_trans_eval)
 
-        if args.write_results:
-            def_states_protocol = {}; def_events_protocol = {}; def_events_constrained_protocol = {}
-            data_utils.get_protocol_definitions(args.protocol, def_states_protocol, def_events_constrained_protocol, def_events_protocol)
+        def_states_protocol = {}; def_events_protocol = {}; def_events_constrained_protocol = {}; def_variables_protocol = {}
+        data_utils.get_protocol_definitions(args.protocol, def_states_protocol, def_events_constrained_protocol, def_events_protocol, def_variables_protocol)
 
-            # Trying a heuristic
-            #y_pred_trans = data_utils.flip_outside_trigger(X_test_data_orig, y_test_trans, y_pred_trans, id2word, def_states_protocol, def_events_protocol)
-            #y_pred_trans = data_utils.flip_trigger_mistakes(X_test_data_orig, y_test_trans, y_pred_trans, id2word, def_states_protocol)
-
-            y_pred_trans_alt = \
-                    apply_heuristics(X_test_data_alt, y_test_trans_alt, y_pred_trans_alt,
-                            level_h_alt, level_d_alt,
-                            id2word, def_states_protocol, def_events_protocol,
-                            transitions=True, outside=True, actions=True,
-                            consecutive_trans=True)
-
-            X_test_data_orig, y_pred_trans, level_h_trans, level_d_trans = \
-                data_utils.alternative_join(
-                        X_test_data_alt, y_pred_trans_alt,
+        y_pred_trans_alt = \
+                apply_heuristics(X_test_data_alt, y_test_trans_alt, y_pred_trans_alt,
                         level_h_alt, level_d_alt,
-                        id2word, debug=True)
+                        id2word, def_states_protocol, def_events_protocol, def_variables_protocol,
+                        transitions=args.heuristics, outside=args.heuristics, actions=args.heuristics,
+                        consecutive_trans=True)
 
-            if args.write_results:
-                output_xml = os.path.join(args.outdir, "{}.xml".format(args.protocol))
-                results = data_utils.write_results(X_test_data_orig, y_test_trans, y_pred_trans, level_h_trans, level_d_trans,
-                                                   id2word, def_states_protocol, def_events_protocol, def_events_constrained_protocol,
-                                                   args.protocol)
-                with open(output_xml, "w") as fp:
-                    fp.write(results)
+        X_test_data_orig, y_pred_trans, level_h_trans, level_d_trans = \
+            data_utils.alternative_join(
+                    X_test_data_alt, y_pred_trans_alt,
+                    level_h_alt, level_d_alt,
+                    id2word, debug=True)
+
+        if args.heuristics:
+            _, y_test_trans_eval = data_utils.expand(X_test_data_old, y_test_trans, id2word, debug=False)
+            evaluate(y_test_trans_eval, y_pred_trans)
+
+
+        if args.write_results:
+            output_xml = os.path.join(args.outdir, "{}.xml".format(args.protocol))
+            results = data_utils.write_results(X_test_data_orig, y_test_trans, y_pred_trans, level_h_trans, level_d_trans,
+                                               id2word, def_states_protocol, def_events_protocol, def_events_constrained_protocol,
+                                               args.protocol)
+            with open(output_xml, "w") as fp:
+                fp.write(results)
 
 if __name__ == "__main__":
     # Reproducibility

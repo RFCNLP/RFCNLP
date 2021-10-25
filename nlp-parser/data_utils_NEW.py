@@ -52,12 +52,19 @@ def get_definitions(variables=set(), states=set(), events=set(), events_expand=s
             if args[1].startswith('DCCP-'):
                 events_expand.add(args[1][5:])
 
-def get_protocol_definitions(protocol, states={}, events={}, events_expanded={}):
+def get_protocol_definitions(protocol, states={}, events={}, events_expanded={}, variables={}):
     with open("rfcs-definitions/def_states.txt") as fp:
         for line in fp:
             args = line.strip().split('\t')
+            #print(args)
             if args[0] == protocol:
                 states[args[1].lower()] = args[2]
+    with open("rfcs-definitions/def_vars.txt") as fp:
+        for line in fp:
+            args = line.strip().split('\t')
+            #print(args)
+            if args[0] == protocol:
+                variables[args[1].lower()] = args[1].lower()
     with open("rfcs-definitions/def_events.txt") as fp:
         for line in fp:
             args = line.strip().split('\t')
@@ -605,7 +612,7 @@ def heuristic_actions(X_test_data, y_test_trans, y_pred_trans, id2word, def_stat
 def heuristic_errors(X_test_data, y_test_trans, y_pred_trans, id2word):
     pass
 
-def heuristic_outside(X_test_data, y_test_trans, y_pred_trans, id2word, def_states, def_events):
+def heuristic_outside(X_test_data, y_test_trans, y_pred_trans, id2word, def_states, def_events, def_variables):
     '''
         Apply a heuristic:
         1) If we have OUTSIDE spans and they have mentions to events and a verb, flip it to be an action
@@ -647,6 +654,15 @@ def heuristic_outside(X_test_data, y_test_trans, y_pred_trans, id2word, def_stat
                     (span_words[0] == "in" and span_words[1] == "addition" and span_words[2] == "to") \
                   ) and "otherwise" not in span_words and "if" not in span_words:
                 new_span = ['O'] * len(span_y)
+                new_y_p.append(new_span)
+            elif span_y[0] == "O" and 'timer' in span_words:
+                new_span = ['B-TIMER'] + ['I-TIMER'] * (len(span_y) - 1)
+                new_y_p.append(new_span)
+            elif span_y[0] == "O" and 'error' in span_words:
+                new_span = ['B-ERROR'] + ['I-ERROR'] * (len(span_y) - 1)
+                new_y_p.append(new_span)
+            elif span_y[0] == "O" and any_defs(span_words, def_variables):
+                new_span = ['B-VARIABLE'] + ['I-VARIABLE'] * (len(span_y) - 1)
                 new_y_p.append(new_span)
             else:
                 new_y_p.append(span_y)
@@ -952,6 +968,8 @@ def write_results(X_test_data, y_test_trans, y_pred_trans, level_h_trans, level_
                     offset_str = "".join(['\t'] * (offset-1))
                     ret_str += "\n" + offset_str + '</control>'
                     cur_str += "\n" + offset_str + '</control>'
+                    #print("------")
+                    #print(cur_str)
                     #print("removing", offset, num_open_control)
                     num_open_control[offset] -= 1
 

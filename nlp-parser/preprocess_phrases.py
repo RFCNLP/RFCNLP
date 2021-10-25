@@ -66,9 +66,9 @@ def cleanFile(file):
         all_text = ret_text
         all_text = all_text.replace("\f", "").replace("\t", "")
        
-        if re.match('.*Rekhter.*', all_text):
-            print("here2")
-            exit()
+        #if re.match('.*Rekhter.*', all_text):
+        #    print("here2")
+        #    exit()
 
         with open(newfile, "w") as fw:
             fw.write(all_text)
@@ -85,7 +85,7 @@ def cleanFile(file):
     return newfile
 
 '''
-    This method was developed by Haozhe in our old code to correct some tokenization issues.
+    This method was developed by [redacted] in [redacted] to correct some tokenization issues.
 '''
 def tokenize(tokenizer, line):
     tokens = tokenizer.tokenize(nltk.word_tokenize(line))

@@ -75,38 +75,39 @@ def tokenize(tokenizer, line):
             tokens[i:i + 1] = 'it', '.'
     return tokens
 
-def recursive_parent(elem, fp, tokenizer, args, tt, cp):
+def recursive_parent(elem, fp, tokenizer, args, tt, cp, level_horizontal, level_deep):
     if elem.tag == "control":
+        level_horizontal += 1
         control_elems = []
         if elem.text is not None:
-            control_elems.append(('O', elem.text, elem.get('relevant')))
+            control_elems.append(('O', elem.text, elem.get('relevant'), level_horizontal, level_deep))
 
-        recursive_control(elem, elem.get('relevant'), control_elems)
+        recursive_control(elem, elem.get('relevant'), control_elems, level_horizontal, level_deep + 1)
         write_control(args, control_elems, tokenizer, tt, cp, fp)
     else:
         for child in elem:
-            recursive_parent(child, fp, tokenizer, args, tt, cp)
+            recursive_parent(child, fp, tokenizer, args, tt, cp, level_horizontal, level_deep)
 
-def recursive_tag(elem, parent_tag, attr, accum=[]):
+def recursive_tag(elem, parent_tag, attr, accum=[], level_horizontal=0, level_deep=0):
     for child in elem:
         #print(child.tag, child.text)
         if child.text is not None:
-            accum.append((parent_tag, child.text, attr))
-        recursive_tag(child, parent_tag, attr, accum)
+            accum.append((parent_tag, child.text, attr, level_horizontal, level_deep))
+        recursive_tag(child, parent_tag, attr, accum, level_horizontal, level_deep)
         if child.tail is not None:
-            accum.append((parent_tag, child.tail, attr))
+            accum.append((parent_tag, child.tail, attr, level_horizontal, level_deep))
 
-def recursive_control(elem, attr, accum=[]):
+def recursive_control(elem, attr, accum=[], level_horizontal=0, level_deep=0):
     for child in elem:
         if child.tag == "control":
-            recursive_control(child, child.get('relevant'), accum)
+            recursive_control(child, child.get('relevant'), accum, level_horizontal, level_deep + 1)
         else:
             if child.text is not None:
-                accum.append((child.tag, child.text, attr))
-            recursive_tag(child, child.tag, attr, accum)
+                accum.append((child.tag, child.text, attr, level_horizontal, level_deep))
+            recursive_tag(child, child.tag, attr, accum, level_horizontal, level_deep)
 
         if child.tail is not None:
-            accum.append(('O', child.tail, attr))
+            accum.append(('O', child.tail, attr, level_horizontal, level_deep))
 
 '''
     Generate BIO data in the same style as before
@@ -114,8 +115,9 @@ def recursive_control(elem, attr, accum=[]):
 def write_control(args, control_elems, tokenizer, tt, cp, fp):
 
     prev_tag = None
-    for (tag, text, attr) in control_elems:
-        #print(tag, "----", text, '----', attr)
+    for elems in control_elems:
+        #print(elems)
+        (tag, text, attr, lvl_h, lvl_d) = elems
         #continue
         current_tag = tag
         #print(prev_tag, current_tag)
@@ -157,7 +159,10 @@ def write_control(args, control_elems, tokenizer, tt, cp, fp):
             sentence = tt.tag(sentence)
 
             if re.match(r'.*\w+.*', str(sentence)):
-                tree = cp.parse(sentence)
+                try:
+                    tree = cp.parse(sentence)
+                except:
+                    tree = None
             else:
                 tree = None
 
@@ -207,14 +212,14 @@ def write_control(args, control_elems, tokenizer, tt, cp, fp):
 
 
                         if idx == 0:
-                            fp.write(tokens[idx] + ' ======= ' + init_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + '\n')
+                            fp.write(tokens[idx] + ' ======= ' + init_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) + '\n')
                         else:
-                            fp.write(tokens[idx] + ' ======= ' + inside_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + '\n')
+                            fp.write(tokens[idx] + ' ======= ' + inside_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) + '\n')
                             #init_tag = inside_tag
 
                         idx += 1
 
-                    fp.write('END-OF-CHUNK' + ' ======= ' + chunk_tag + '\n')
+                    fp.write('END-OF-CHUNK' + ' ======= ' + chunk_tag + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) + '\n')
         if not tree:
             # create a single chunk
             for idx, tok in enumerate(tokens):
@@ -223,11 +228,11 @@ def write_control(args, control_elems, tokenizer, tt, cp, fp):
                     pos_tags[idx] = "SYM"
 
                 if idx == 0:
-                    fp.write(tokens[idx] + ' ======= ' + init_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + '\n')
+                    fp.write(tokens[idx] + ' ======= ' + init_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) +'\n')
                 else:
-                    fp.write(tokens[idx] + ' ======= ' + inside_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + '\n')
+                    fp.write(tokens[idx] + ' ======= ' + inside_tag + ' ======= ' + pos_tags[idx] + ' ======= ' + str(attr == "true") + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) +'\n')
             if not args.no_chunk:
-                fp.write('END-OF-CHUNK' + ' ======= ' + init_tag + '\n')
+                fp.write('END-OF-CHUNK' + ' ======= ' + init_tag + ' ======= ' + str(lvl_h) + ' ======= ' + str(lvl_d) +'\n')
 
         prev_tag = current_tag
     fp.write('END-OF-CONTROL' + ' ======= ' + 'END_CONTROL' + '\n')
@@ -276,14 +281,15 @@ def main():
     for i, control in enumerate(xml.iter('control')):
         control_elems = []
         if control.text is not None:
-            control_elems.append(('O', control.text, control.get('relevant')))
+            control_elems.append(('O', control.text, control.get('relevant'), 0, 0))
         recursive_control(control, control.get('relevant'), control_elems)
         write_control(args, control_elems, tokenizer, tt, cp, fp_train)
     fp_train.close()
 
     # Without over generation to predict
+    level_horizontal = 0; level_deep = 0
     for child in xml.getroot():
-        recursive_parent(child, fp, tokenizer, args, tt, cp)
+        recursive_parent(child, fp, tokenizer, args, tt, cp, level_horizontal, level_deep)
     fp.close()
 
 if __name__ == "__main__":
