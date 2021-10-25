@@ -1,0 +1,8 @@
+networking_bert_rfcs_only/train_results.txt filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/vocab.txt filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/config.json filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/special_tokens_map.json filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/tokenizer_config.json filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/trainer_state.json filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/training_args.bin filter=lfs diff=lfs merge=lfs -text
