@@ -38,7 +38,7 @@ You will now be able to run any of the targets in the Makefile.
 
 ### NLP Results
 
-The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
+The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.  Unfortunately, doing so will require some work on your end, as you'll need to get [wandbi.ai credentials and set up appropriate environment variables](https://docs.wandb.ai/guides/track/advanced/environment-variables) inside the Docker image.
 
 * `make dccplineartrain` - runs our LinearCRF model on the DCCP RFC and saves the resulting intermediary representation.
 * `make tcplineartrain` - runs our LinearCRF model on the TCP RFC and saves the resulting intermediary representation.
@@ -52,7 +52,12 @@ We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets a
 * `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.
 * `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.
 
-By default, each target runs on the corresponding intermediary representation from our paper.  However, if you run the NLP Makefile targets first, you will save your own intermediary representation (which could differ from ours due to nondeterminism in the machine learning step), and the below Makefile targets will run on your version instead.  If you over-write our intermediary representation(s) but want to use them again without re-building your Dockerfile, you can find them in `rfcs-predicted-paper/`.
+By default, each target runs on the corresponding intermediary representation from our paper.  However, if you run the NLP Makefile targets first, you will save your own intermediary representation (which could differ from ours due to nondeterminism in the machine learning step), and the below Makefile targets will run on your version instead.  If you over-write our intermediary representation(s) but want to use them again without re-building your Dockerfile, you can find them in `rfcs-predicted-paper/`.  The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
+
+* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF intermediary representation.
+* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRFT intermediary representation.
+* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF intermediary representation.
+* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF intermediary representation.
 
 ### Troubleshooting
 
@@ -90,12 +95,25 @@ mv out dccpbert2promela.out
 make clean
 ```
 
-Then in another terminal, you could copy the results to host for inspection:
+By the way, to exit the Docker image, you simply enter `exit`.
 
 ```
-docker cp rfcnlp:rfcnlp/tcp2promela.out/ tcp2promela.out/
-docker cp rfcnlp:rfcnlp/dccp2promela.out/ dccp2promela.out/
-docker cp rfcnlp:rfcnlp/tcplinear2promela.out/ tcplinear2promela.out/
-docker cp rfcnlp:rfcnlp/dccplinear2promela.out/ dccplinear2promela.out/
-docker cp rfcnlp:rfcnlp/dccpbert2promela.out/ dccpbert2promela.out/
+root@6abd73c26503:/rfcnlp# exit
+exit
 ```
+
+Then you could copy the results out of the Docker image and into your host computer for inspection.  Notice the use of `flamboyant_tu`; you'll have to replace this with your image's name.
+
+```
+docker cp flamboyant_tu:rfcnlp/tcp2promela.out/ tcp2promela.out/
+docker cp flamboyant_tu:rfcnlp/dccp2promela.out/ dccp2promela.out/
+docker cp flamboyant_tu:rfcnlp/tcplinear2promela.out/ tcplinear2promela.out/
+docker cp flamboyant_tu:rfcnlp/dccplinear2promela.out/ dccplinear2promela.out/
+docker cp flamboyant_tu:rfcnlp/dccpbert2promela.out/ dccpbert2promela.out/
+```
+
+There is a strange issue where when you do this, you don't have non-`sudo` permission to change or delete the copied files.  But you do have `sudo` permission, e.g., you can do `sudo rm -rf dccpbert2promela.out` if you'd like.
+
+## Disclaimers
+
+Considerable effort was taken to anonymize and automate our code-base for open-source release.  If you encounter something that does not work as expected, please feel free to open a Github Issue reporting the problem, and we will do our best to (anonymously) resolve it.
