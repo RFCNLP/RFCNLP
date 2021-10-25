@@ -6,3 +6,4 @@ networking_bert_rfcs_only/special_tokens_map.json filter=lfs diff=lfs merge=lfs 
 networking_bert_rfcs_only/tokenizer_config.json filter=lfs diff=lfs merge=lfs -text
 networking_bert_rfcs_only/trainer_state.json filter=lfs diff=lfs merge=lfs -text
 networking_bert_rfcs_only/training_args.bin filter=lfs diff=lfs merge=lfs -text
+networking_bert_rfcs_only/ filter=lfs diff=lfs merge=lfs -text
