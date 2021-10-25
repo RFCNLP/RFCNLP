@@ -32,6 +32,8 @@ RUN apt-get install -y build-essential   \
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 RUN git clone https://github.com/pystruct/pystruct.git
 WORKDIR pystruct
+RUN rm src/utils.c
+RUN cython src/utils.pyx
 RUN python3 setup.py install
 WORKDIR ..
 RUN pip3 install --upgrade allennlp
@@ -65,31 +67,7 @@ RUN apt-get install -y bison flex
 RUN make install
 RUN apt-get install -y graphviz
 WORKDIR ..
-# 4. Run NLP code.
-# TODO
-# 5. Run attacker synthesis.
-# 5.1 On TCP gold
-RUN make tcp2promela
-RUN mv out out.tcp2promela
-RUN make clean
-# 5.2 On TCP linear
-RUN make tcplinear2promela
-RUN mv out out.tcplinear2promela
-RUN make clean
-# 5.3 On TCP bert
-RUN make tcpbert2promela
-RUN mv out out.tcpbert2promela
-RUN make clean
-# 5.4 On DCCP gold
-RUN make dccp2promela
-RUN mv out out.dccp2promela
-RUN make clean
-# 5.5 On DCCP linear
-RUN make dccplinear2promela
-RUN mv out out.dccplinear2promela
-RUN make clean
-# 5.6 On DCCP bert
-RUN make dccpbert2promela
-RUN mv out out.dccpbert2promela
-RUN make clean
+# 4. Install some stuff for the NLP pipeline
+RUN pip3 install allennlp==2.0.0
+RUN pip3 install allennlp-models==1.0.0
 entrypoint [""]

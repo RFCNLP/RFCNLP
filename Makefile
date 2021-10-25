@@ -16,6 +16,8 @@ clean:
 
 .PHONY: nlp2promela
 
+# --- Attack Synthesis Targets ---
+
 tcp2promela:
 	python3 nlp2promela/nlp2promela.py rfcs-annotated-tidied/TCP.xml
 	make cleanTemporary
@@ -40,3 +42,51 @@ tcpbert2promela:
 dccpbert2promela:
 	python3 nlp2promela/nlp2promela.py rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
 	make cleanTemporary
+
+# --- NLP Targets ---
+
+dccplineartrain:
+	python3 nlp-parser/linear.py                \
+		--protocol DCCP                         \
+		--stem                                  \
+		--heuristics                            \
+		--phrase_level                          \
+		--outdir rfcs-predicted/linear_phrases/ \
+		--write_results
+
+tcplineartrain:
+	python3 nlp-parser/linear.py                \
+		--protocol TCP                          \
+		--stem                                  \
+		--heuristics                            \
+		--phrase_level                          \
+		--outdir rfcs-predicted/linear_phrases/ \
+		--write_results
+
+dccpberttrain:
+	python3 nlp-parser/bert_bilstm_crf.py                               \
+		--features                                                      \
+		--savedir .                                                     \
+		--do_train                                                      \
+		--do_eval                                                       \
+		--heuristics                                                    \
+		--protocol DCCP                                                 \
+		--outdir rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/ \
+		--write_results                                                 \
+		--bert_model networking_bert_rfcs_only                          \
+		--learning_rate 2e-5                                            \
+		--batch_size 1
+
+tcpberttrain:
+	python3 nlp-parser/bert_bilstm_crf.py                               \
+		--features                                                      \
+		--savedir .                                                     \
+		--do_train                                                      \
+		--do_eval                                                       \
+		--heuristics                                                    \
+		--protocol TCP                                                  \
+		--outdir rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/ \
+		--write_results                                                 \
+		--bert_model networking_bert_rfcs_only                          \
+		--learning_rate 2e-5                                            \
+		--batch_size 1
