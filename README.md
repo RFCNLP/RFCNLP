@@ -22,14 +22,9 @@ docker build -t rfcnlp .
 
 You may see some warnings about dependencies, but the image should build (tested on Linux Mint with an Intel i7).
 
-Next, run and enter the Docker image, like so (note your `NAMES` argument will be different from mine)
 
 ```
-~/rfc-nlp-anon$ sudo docker ps
-CONTAINER ID   IMAGE     COMMAND   CREATED              STATUS              PORTS     NAMES
-6abd73c26503   rfcnlp    "bash"    About a minute ago   Up About a minute             flamboyant_tu
-
-~/rfc-nlp-anon$ sudo docker exec -it flamboyant_tu bash
+lp-anon$ sudo docker run -it rfcnlp bash
 root@6abd73c26503:/rfcnlp# 
 
 ```

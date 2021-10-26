@@ -71,4 +71,6 @@ WORKDIR ..
 RUN pip3 install allennlp==2.0.0
 RUN pip3 install allennlp-models==1.0.0
 RUN python3 -m spacy download en_core_web_sm
+RUN echo "import nltk; nltk.download('averaged_perceptron_tagger')" | python3
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nvidia-driver-455
 entrypoint [""]
