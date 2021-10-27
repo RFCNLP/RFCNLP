@@ -9,7 +9,7 @@ RUN apt-get -y upgrade
 RUN apt-get install -y apt-utils python3-pip
 WORKDIR rfcnlp
 RUN python3 -m pip install --upgrade pip
-RUN pip3 install --upgrade numpy
+RUN pip3 install numpy==1.17.4
 RUN pip3 install --upgrade transitions
 RUN pip3 install --upgrade networkx
 RUN pip3 install --upgrade matplotlib
@@ -19,12 +19,13 @@ RUN pip3 install --upgrade python-Levenshtein
 RUN pip3 install --upgrade lxml
 RUN pip3 install --upgrade graphviz
 RUN pip3 install --upgrade tabulate
-RUN pip3 install --upgrade spacy
-RUN pip3 install --upgrade tqdm
-RUN pip3 install --upgrade scikit-learn
-RUN pip3 install --upgrade torch
-RUN pip3 install --upgrade transformers
-RUN pip3 install --upgrade scipy
+RUN pip3 install spacy==2.2.4
+RUN pip3 install spacy-legacy==3.0.8
+RUN pip3 install tqdm==4.62.3
+RUN pip3 install scikit-learn==1.0
+RUN pip3 install torch==1.7.1
+RUN pip3 install scipy==1.3.3
+RUN pip3 install torchvision==0.8.2
 RUN apt-get install -y build-essential   \
                        python-dev        \
                        python-setuptools \
@@ -36,7 +37,7 @@ RUN rm src/utils.c
 RUN cython src/utils.pyx
 RUN python3 setup.py install
 WORKDIR ..
-RUN pip3 install --upgrade allennlp
+RUN pip3 install allennlp==2.0.0
 RUN pip3 install --upgrade nltk 
 # # 2.2. Install Apache OpenNLP - https://hub.docker.com/r/casetext/opennlp/dockerfile
 RUN apt-get install -y openjdk-8-jdk curl maven
@@ -69,8 +70,10 @@ RUN apt-get install -y graphviz
 WORKDIR ..
 # 4. Install some stuff for the NLP pipeline
 RUN pip3 install allennlp==2.0.0
-RUN pip3 install allennlp-models==1.0.0
+RUN pip3 install allennlp-models==2.0.0
+RUN pip3 install nltk==3.6.5
 RUN python3 -m spacy download en_core_web_sm
 RUN echo "import nltk; nltk.download('averaged_perceptron_tagger')" | python3
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nvidia-driver-455
+RUN pip3 install transformers==4.2.2
 entrypoint [""]
