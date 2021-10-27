@@ -65,7 +65,12 @@ WORKDIR ..
 RUN git clone https://github.com/nimble-code/Spin.git
 WORKDIR Spin
 RUN apt-get install -y bison flex
-RUN make install
+# RUN make install
+WORKDIR Bin
+RUN apt-get install -y gunzip
+RUN gunzip spin651_linux64.gz
+RUN chmod +x spin651_linux64
+RUN cp spin651_linux64 /usr/local/bin/spin
 RUN apt-get install -y graphviz
 WORKDIR ..
 # 4. Install some stuff for the NLP pipeline
