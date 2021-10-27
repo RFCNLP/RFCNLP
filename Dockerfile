@@ -2,6 +2,8 @@ FROM ubuntu:latest
 # 1. COPY all the source code.
 RUN mkdir rfcnlp
 COPY . rfcnlp/
+# We will need this later ...
+RUN apt-get install -y gzip
 # 2. Install other dependencies
 # 2.1. Stuff in requirements.txt
 RUN apt-get -y update
@@ -67,7 +69,6 @@ WORKDIR Spin
 RUN apt-get install -y bison flex
 # RUN make install
 WORKDIR Bin
-RUN apt-get install -y gzip
 RUN gunzip spin651_linux64.gz
 RUN chmod +x spin651_linux64
 RUN cp spin651_linux64 /usr/local/bin/spin
