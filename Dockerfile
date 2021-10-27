@@ -25,7 +25,7 @@ RUN pip3 install spacy==2.2.4
 RUN pip3 install spacy-legacy==3.0.8
 RUN pip3 install tqdm==4.62.3
 RUN pip3 install scikit-learn==1.0
-RUN pip3 install torch==1.7.1
+RUN pip3 install torch==1.7.1 --no-cache-dir
 RUN pip3 install scipy==1.3.3
 RUN pip3 install torchvision==0.8.2
 RUN apt-get install -y build-essential   \
