@@ -169,7 +169,7 @@ def main():
             def_states_protocol, 
             def_events_protocol, 
             def_events_constrained_protocol,
-            args.protocol), 
+            args.protocol)#, 
             # cuda_device=args.cuda_device)
         
         with open(output_xml, "w") as fp:
