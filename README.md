@@ -39,21 +39,18 @@ Which output a nice ASCII summary of available NVIDIA GPUs for CUDA.
 Next, build the Docker image.
 
 ```
-docker build -t rfcnlp .
+sudo docker build -t rfcnlp .
 ```
 
 You may see some warnings about dependencies, but the image should build.
 
 ```
-rfclp-anon$ sudo docker run --name rfcnlp bash --gpus device=0 nvidia/cuda
+sudo docker run --name rfcnlp bash --gpus device=0 nvidia/cuda
 
 ```
 
 You will now be able to run any of the targets in the Makefile, from a prompt giving you full access to bash inside the docker image.
 
-```
-root@6abd73c26503:/rfcnlp# echo "I'm in!"
-```
 
 ### NLP Results
 
