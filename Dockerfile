@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+# FROM ubuntu:latest
+FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime
 # 1. COPY all the source code.
 RUN mkdir rfcnlp
 COPY . rfcnlp/
@@ -25,13 +26,12 @@ RUN pip3 install spacy==2.2.4
 RUN pip3 install spacy-legacy==3.0.8
 RUN pip3 install tqdm==4.62.3
 RUN pip3 install scikit-learn==1.0
-RUN pip3 install torch==1.7.1 --no-cache-dir
-RUN pip3 install scipy==1.3.3
-RUN pip3 install torchvision==0.8.2
 RUN apt-get install -y build-essential   \
                        python-dev        \
                        python-setuptools \
                        git
+RUN pip3 install scipy==1.3.3
+RUN pip3 install torchvision==0.8.2
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 RUN git clone https://github.com/pystruct/pystruct.git
 WORKDIR pystruct
