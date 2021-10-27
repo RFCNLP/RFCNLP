@@ -14,22 +14,46 @@ git lfs pull
 
 For easy reproducibility, we created a Dockerfile.  You can use it as follows.
 
-First, build the Docker image.
+First, install dependencies to allow Docker access to CUDA on your GPU(s).  For details on how to do this, refer [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).  In our case, we ran:
+
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+sudo apt-get update
+
+sudo apt-get install -y nvidia-docker2
+
+sudo systemctl restart docker
+```
+
+And tested successful installation of these dependencies via:
+
+```
+sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+```
+
+Which output a nice ASCII summary of available NVIDIA GPUs for CUDA.
+
+Next, build the Docker image.
 
 ```
 docker build -t rfcnlp .
 ```
 
-You may see some warnings about dependencies, but the image should build (tested on Linux Mint with an Intel i7).
-
+You may see some warnings about dependencies, but the image should build.
 
 ```
-lp-anon$ sudo docker run -it rfcnlp bash
-root@6abd73c26503:/rfcnlp# 
+rfclp-anon$ sudo docker run --name rfcnlp bash --gpus device=0 nvidia/cuda
 
 ```
 
-You will now be able to run any of the targets in the Makefile.
+You will now be able to run any of the targets in the Makefile, from a prompt giving you full access to bash inside the docker image.
+
+```
+root@6abd73c26503:/rfcnlp# echo "I'm in!"
+```
 
 ### NLP Results
 
