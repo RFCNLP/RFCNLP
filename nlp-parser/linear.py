@@ -29,6 +29,7 @@ def main():
     parser.add_argument('--token_level', default=False, action='store_true', help='perform prediction at token level')
     parser.add_argument('--phrase_level', default=False, action='store_true', help='perform prediction at the phrase level')
     parser.add_argument('--outdir', type=str, required=True)
+    parser.add_argument('--cuda_device', default=-1, type=int)
     args = parser.parse_args()
 
     protocols = ["TCP", "SCTP", "PPTP", "LTP", "DCCP", "BGPv4"]
@@ -155,10 +156,22 @@ def main():
         evaluate(y_test_trans_eval, y_pred_trans)
 
     if args.write_results:
+        
         output_xml = os.path.join(args.outdir, "{}.xml".format(args.protocol))
-        results = data_utils.write_results(X_test_data, y_test_trans, y_pred_trans, level_h_trans, level_d_trans,
-                                          id2word, def_states_protocol, def_events_protocol, def_events_constrained_protocol,
-                                          args.protocol)
+        
+        results = data_utils.write_results(
+            X_test_data, 
+            y_test_trans, 
+            y_pred_trans, 
+            level_h_trans, 
+            level_d_trans,
+            id2word, 
+            def_states_protocol, 
+            def_events_protocol, 
+            def_events_constrained_protocol,
+            args.protocol, 
+            cuda_device=args.cuda_device)
+        
         with open(output_xml, "w") as fp:
             fp.write(results)
 
