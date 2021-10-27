@@ -896,8 +896,8 @@ def overlap(word, definitions):
     return False
 
 
-def write_results(X_test_data, y_test_trans, y_pred_trans, level_h_trans, level_d_trans, id2word, def_states, def_events, def_events_constrained, protocol, cuda_device):
-    predictor = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz", cuda_device=cuda_device)
+def write_results(X_test_data, y_test_trans, y_pred_trans, level_h_trans, level_d_trans, id2word, def_states, def_events, def_events_constrained, protocol): # , cuda_device):
+    predictor = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz") #, cuda_device=cuda_device)
     
     ret_str = "<p>"
     
