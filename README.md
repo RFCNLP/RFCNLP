@@ -216,7 +216,7 @@ After interacting with the predefined [Makefile](Makefile) targets in the [Docke
 
 This script takes only one argument, namely the path to the intermediate representation of an RFC document.  It performs FSM Extraction on the provided intermediate representation.  Without loss of generality, if the path to the intermediate representation was `/dir1/dir2/dir3/protocol3.xml`, then it saves the extracted FSM as an image in `protocol3.png`, and as a Promela program in `protocol3.pml`.  
 
-In the special case where the FSM name (in the example, `protocol3`) contains the sub-string "TCP" or "DCP", respectively, it compares the graph representation of the extracted FSM to a canonical graph representation of TCP (or DCP, resp.), stored in [testConstants.py](nlp2promela/testConstants.py), and outputs a detailed summary of the differences.  Then, it performs Attacker Synthesis on the extracted FSM, using the TCP (or DCP, resp.) correctness properties stored in `promela-models/TCP/props`, and saves any synthesized attackers to `out/`.
+In the special case where the FSM name (in the example, `protocol3`) contains the sub-string "TCP" or "DCCP", respectively, it compares the graph representation of the extracted FSM to a canonical graph representation of TCP (or DCCP, resp.), stored in [testConstants.py](nlp2promela/testConstants.py), and outputs a detailed summary of the differences.  Then, it performs Attacker Synthesis on the extracted FSM, using the TCP (or DCP, resp.) correctness properties stored in `promela-models/TCP/props`, and saves any synthesized attackers to `out/`.
 
 Example usage:
 
