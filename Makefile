@@ -27,6 +27,22 @@ dccp2promela:
 	python3 nlp2promela/nlp2promela.py rfcs-annotated-tidied/DCCP.xml
 	make cleanTemporary
 
+tcplinearpretrained2promela:
+	python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/linear_phrases/TCP.xml
+	make cleanTemporary
+
+dccplinearpretrained2promela:
+	python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/linear_phrases/DCCP.xml
+	make cleanTemporary
+
+tcpbertpretrained2promela:
+	python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml
+	make cleanTemporary
+
+dccpbertpretrained2promela:
+	python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
+	make cleanTemporary
+
 tcplinear2promela:
 	python3 nlp2promela/nlp2promela.py rfcs-predicted/linear_phrases/TCP.xml
 	make cleanTemporary

@@ -493,6 +493,7 @@ def main():
     parser.add_argument('--heuristics', default=False, action='store_true')
     parser.add_argument('--bert_model', type=str, required=True)
     parser.add_argument('--learning_rate', type=float, default=1e-1)
+    parser.add_argument('--cuda_device', type=int, default=0)
 
     # I am not sure about what this is anymore
     parser.add_argument('--partition_sentence', default=False, action='store_true')
@@ -501,6 +502,20 @@ def main():
     protocols = ["TCP", "SCTP", "PPTP", "LTP", "DCCP", "BGPv4"]
     if args.protocol not in protocols:
         print("Specify a valid protocol")
+        exit(-1)
+
+    if args.cuda_device >= 0:
+        is_cuda_avail = torch.cuda.is_available()
+        if not is_cuda_avail:
+            print("ERROR: There is no CUDA device available, you need a GPU to train this model.")
+            exit(-1)
+        elif args.cuda_device >= torch.cuda.device_count():
+            print("ERROR: Please specify a valid cuda device, you have {} devices".format(torch.cuda.device_count()))
+            exit(-1)
+        torch.cuda.set_device('cuda:{}'.format(args.cuda_device))
+        torch.backends.cudnn.benchmark=True
+    else:
+        print("ERROR: You need a GPU to train this model. Please specify a valid cuda device, you have {} devices".format(torch.cuda.device_count()))
         exit(-1)
 
     args.savedir_fold = os.path.join(args.savedir, "checkpoint_{}.pt".format(args.protocol))
@@ -716,7 +731,7 @@ def main():
             output_xml = os.path.join(args.outdir, "{}.xml".format(args.protocol))
             results = data_utils.write_results(X_test_data_orig, y_test_trans, y_pred_trans, level_h_trans, level_d_trans,
                                                id2word, def_states_protocol, def_events_protocol, def_events_constrained_protocol,
-                                               args.protocol)
+                                               args.protocol, cuda_device=args.cuda_device)
             with open(output_xml, "w") as fp:
                 fp.write(results)
 
