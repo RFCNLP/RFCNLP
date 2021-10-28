@@ -226,13 +226,91 @@ Example usage:
 python3 nlp2promela/nlp2promela.py rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
 ```
 
+Interpreting the output in detail is complicated, because of how we use [KORG](https://github.com/anonymous-sp-submission/korg-update).  For more details, refer to the [attacker synthesis tutorial](tutorials/attacker.synthesis.md).
+
+
 ### `nlp-parser/linear.py`
 
-TODO
+This script uses a Linear-CRF model to learn to predict an intermediate
+representation for a given protocol. It can be run by doing:
+
+```
+python3 nlp-parser.py linear.py \
+	--protocol PROTOCOL         \
+	[--stem]                    \
+	[--write_results]           \
+	[--heuristics]              \
+	[--heuristics_only]         \
+	[--token_level]             \
+	[--phrase_level]            \
+	--outdir OUTDIR
+```
+
+#### Parameters
+
+
+* `--protocol`: receives one of BGPv4, DCCP, LTP, PPTP, SCTP, TCP
+* `--token_level`: if passed, the script will perform token-level prediction
+* `--phrase_level`: if passed, the script will perform phrase-level
+  prediction
+* `--stem`: if passed, the script will perform stemming of the language input (best results include stemming)
+* `--heuristics`: if passed, the script will apply the post-processing
+  correction rules on top of the predicted output (referred to as
+LinearCRF+R in the paper)
+* `--heuristics_only`: if passed, the script will not perform any
+  learning, and just rely on post-processing correction rules for
+prediction (referred to as Rule-based baseline in the paper)
+* `--outdir`: receives an existing directory to save the resulting intermediate representation
+* `--write_results`: if passed, the resulting intermediate
+  representation will be written in the directory specified in `OUTDIR`
 
 ### `nlp-parser/bert_bilstm_crf.py`
 
-TODO
+This script uses a Bert-BiLSTM-CRF model to learn to predict an intermediate
+representation for a given protocol. It can be run by doing:
+
+```
+python3 bert_bilstm_crf.py          \
+	--protocol PROTOCOL             \
+	[--features]                    \
+	[--batch_size BATCH_SIZE]       \
+	[--patience PATIENCE]           \
+	--savedir SAVEDIR               \
+	[--do_train]                    \
+	[--do_eval]                     \
+	--outdir OUTDIR                 \
+	[--write_results]               \
+	[--heuristics]                  \
+	--bert_model BERT_MODEL         \
+	[--learning_rate LEARNING_RATE] \
+	[--cuda_device CUDA_DEVICE]
+```
+#### Parameters
+
+* `--protocol`: receives one of BGPv4, DCCP, LTP, PPTP, SCTP, TCP
+* `--features`: if passed, the full set of features will be extracted.
+  If not passed, only BERT embeddings will be used as input
+* `--batch_size`: needs to be 1 to work correctly, as the CRF layer
+  does not handle batch processing successfully.
+* `--patience`: receives number of epochs to wait after no improvement is
+  observed in the development set for early stopping.
+* `--bert_model`: receives path to the pre-trained bert model, use
+  `bert-base-cased`: if you want to use standard BERT. Use `networking_bert_rfcs_only` if you want to use our technical BERT embeddings.
+* `--learning_rate`: receives learning rate to use. We use `2e-5` in the
+  paper.
+* `--heuristics`: if passed, the script will apply the post-processing
+  correction rules on top of the predicted output (referred to as
+NeuralCRF+R in the paper)
+* `--savedir`: receives directory to save the trained pytorch model
+* `--do_train`: if passed, training will be performed. If not passed,
+  model saved in `SAVEDIR` will be used as checkpoint for prediction
+* `--do_eval`: if passed, prediction and evaluation will be performed
+  using the model saved in `SAVEDIR`
+* `--outdir`: receives an existing directory to save the resulting intermediate representation
+* `--write_results`: if passed, the resulting intermediate
+  representation will be written in the directory specified in `OUTDIR`
+* `--cuda_device`: receives an int specifying which of your GPU devices
+  to use. It defaults to 0.
 
 ## Disclaimers
 
