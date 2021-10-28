@@ -53,12 +53,7 @@ RUN curl -o /models/en-ud-ewt-tokens.bin https://www.apache.org/dyn/closer.cgi/o
 RUN wget https://dlcdn.apache.org/opennlp/opennlp-1.9.3/apache-opennlp-1.9.3-bin.tar.gz
 RUN tar -xvzf apache-opennlp-1.9.3-bin.tar.gz
 RUN mv apache-opennlp-* /usr/bin/.
-# 2.3. Install GMatch4py
-RUN git clone https://github.com/Jacobe2169/GMatch4py.git
-WORKDIR GMatch4py
-RUN pip3 install .
-WORKDIR ..
-# 2.4. Install our updated version of KORG
+# 2.3. Install our updated version of KORG
 RUN git clone https://github.com/anonymous-sp-submission/korg-update.git korg-update
 WORKDIR korg-update
 RUN pip3 install .

@@ -78,10 +78,10 @@ You will now be able to run any of the targets in the Makefile, from a prompt gi
 
 The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
 
-* `make dccplineartrain` - runs our LinearCRF model on the DCCP RFC and saves the resulting intermediary representation.
-* `make tcplineartrain` - runs our LinearCRF model on the TCP RFC and saves the resulting intermediary representation.
-* `make dccpberttrain` - runs our NeuralCRF model on the DCCP RFC and saves the resulting intermediary representation.
-* `make tcpberttrain` - runs our NeuralCRF model on the TCP RFC and saves the resulting intermediary representation.
+* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation.
+* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation.
+* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation.
+* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation.
 
 ### FSM Extraction & Attacker Synthesis Results 
 
@@ -90,12 +90,19 @@ We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets a
 * `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.
 * `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.
 
-By default, each target runs on the corresponding intermediary representation from our paper.  However, if you run the NLP Makefile targets first, you will save your own intermediary representation (which could differ from ours due to nondeterminism in the machine learning step), and the below Makefile targets will run on your version instead.  If you over-write our intermediary representation(s) but want to use them again without re-building your Dockerfile, you can find them in `rfcs-predicted-paper/`.  The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
+The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
 
-* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF intermediary representation.
-* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRFT intermediary representation.
-* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF intermediary representation.
-* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF intermediary representation.
+* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.
+* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.
+* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.
+* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.
+
+The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce our results using our saved intermediary representations, using the targets given below.
+
+* `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper.
+* `make dccplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP LinearCRF+R intermediary representation generated on our machine and used in our paper.
+* `make tcpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP NeuralCRF+R intermediary representation generated on our machine and used in our paper.
+* `make dccpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP NeuralCRF+R intermediary representation generated on our machine and used in our paper.
 
 ### Troubleshooting
 
