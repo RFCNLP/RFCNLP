@@ -34,7 +34,30 @@ And tested successful installation of these dependencies via:
 sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
 
-Which output a nice ASCII summary of available NVIDIA GPUs for CUDA.
+... which outputs a nice ASCII summary of available NVIDIA GPUs for CUDA.  Importantly, this should be *the exact same table* you get by simply running `nvidia-smi` on your host machine!  In our case, this table looked like:
+
+```
+Thu Oct 28 12:21:49 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  TITAN X (Pascal)    Off  | 00000000:83:00.0 Off |                  N/A |
+| 17%   25C    P0    51W / 250W |      0MiB / 12196MiB |      3%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
 
 Next, build the Docker image.
 
