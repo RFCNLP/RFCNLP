@@ -1,0 +1,1366 @@
+~/RFCNLP-anon$ docker run --gpus all -it rfcnlp bash
+root@a4b74a76167c:/workspace/rfcnlp# 
+root@a4b74a76167c:/workspace/rfcnlp# 
+root@a4b74a76167c:/workspace/rfcnlp# make clean dccp2promela
+rm *.trail
+rm: cannot remove '*.trail': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm *.pml
+rm: cannot remove '*.pml': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm *.png
+rm: cannot remove '*.png': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm -rf out
+rm -rf net-rem-*
+rm _spin_nvr.tmp
+rm: cannot remove '_spin_nvr.tmp': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm *tmp*
+rm: cannot remove '*tmp*': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm pan*
+rm: cannot remove 'pan*': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+rm ._n_i_p_s_
+rm: cannot remove '._n_i_p_s_': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+make cleanTemporary
+make[1]: Entering directory '/workspace/rfcnlp'
+rm -rf TEMPORARY*
+make[1]: Leaving directory '/workspace/rfcnlp'
+rm dot.*
+rm: cannot remove 'dot.*': No such file or directory
+Makefile:5: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+python3 utils/tidy_documents.py
+python3 nlp2promela/nlp2promela.py rfcs-annotated-tidied/DCCP.xml
+
+Possibly['PARTOPEN'] ---['timeout']---> CLOSED should be ['PARTOPEN'] ---['DCCP-ACK!', 'DCCP-ACK!', 'timeout']---> CLOSED ? Check on this.
+
+
+ret =  [([], ['DCCP-RESPONSE?'], 'OPEN'), ([], ['DCCP-DATAACK?'], 'OPEN'), ([], ['DCCP-DATA?'], 'OPEN'), ([], ['DCCP-CLOSEREQ?'], 'OPEN'), ([], ['DCCP-CLOSE?'], 'OPEN'), ([], ['DCCP-SYNC?'], 'OPEN'), ([], ['DCCP-SYNCACK?'], 'OPEN'), ([], ['DCCP-RESET?'], 'OPEN'), ([], ['DCCP-ACK?'], 'OPEN')]
+
+
+ret =  [(['PARTOPEN'], ['DCCP-DATAACK?'], 'OPEN'), (['PARTOPEN'], ['DCCP-DATA?'], 'OPEN'), (['PARTOPEN'], ['DCCP-CLOSEREQ?'], 'OPEN'), (['PARTOPEN'], ['DCCP-CLOSE?'], 'OPEN'), (['PARTOPEN'], ['DCCP-REQUEST?'], 'OPEN'), (['PARTOPEN'], ['DCCP-SYNC?'], 'OPEN'), (['PARTOPEN'], ['DCCP-SYNCACK?'], 'OPEN'), (['PARTOPEN'], ['DCCP-RESET?'], 'OPEN')]
+Removing LISTEN          ---DCCP-REQUEST?   ---> RESPOND     because of call-and-response heuristic.
+Removing REQUEST         ---DCCP-RESPONSE?  ---> PARTOPEN    because of call-and-response heuristic.
+Removing REQUEST         ---DCCP-RESPONSE?  ---> PARTOPEN    because of call-and-response heuristic.
+Removing LISTEN          ---DCCP-RESPONSE!  ---> RESPOND     because of call-and-response heuristic.
+Removing PARTOPEN        ---ε               ---> OPEN        because of redundant-epsilon heuristic.
+Removing RESPOND         ---ε               ---> OPEN        because of redundant-epsilon heuristic.
+Graph distance = 
+I don't know.
+
+	CORRECT STATES:
+
+		TIMEWAIT, CLOSED, RESPOND, CLOSING, OPEN, PARTOPEN, STABLE, UNSTABLE, REQUEST,
+		CLOSEREQ, LISTEN, CHANGING
+
+	WRONG STATES: ∅
+
+	MISSING STATES: ∅
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~ 15 CORRECT TRANSITIONS ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+		15 Correct Communication Transitions
+╒══════════╤══════════════════════════════╤═══════════════╤════════════════════════════════════════════╕
+│ Source   │ Label                        │ Destination   │ Line #s                                    │
+╞══════════╪══════════════════════════════╪═══════════════╪════════════════════════════════════════════╡
+│ CLOSED   │ DCCP-REQUEST!                │ REQUEST       │ [513] ---> [706]                           │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ CLOSEREQ │ DCCP-CLOSE?;DCCP-RESET!      │ CLOSED        │ [2594] ---> [3578]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ CLOSEREQ │ DCCP-CLOSEREQ?               │ CLOSING       │ [2903] ---> [3982]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ LISTEN   │ DCCP-REQUEST?;DCCP-RESPONSE! │ RESPOND       │ [2784, 2788] ---> [3838, 3842]             │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ OPEN     │ DCCP-CLOSEREQ!               │ CLOSEREQ      │ [541, 2594] ---> [744, 3578]               │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ DCCP-ACK?                    │ OPEN          │ [2558] ---> [3530]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ DCCP-DATA?                   │ OPEN          │ [2558, 2899] ---> [3530, 3978]             │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ DCCP-DATAACK!                │ PARTOPEN      │ [2538] ---> [3508]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ DCCP-DATAACK?                │ OPEN          │ [2558, 2899] ---> [3530, 3978]             │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ DCCP-REQUEST?                │ OPEN          │ [2558, 2899] ---> [3530, 3978]             │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ PARTOPEN │ timeout                      │ CLOSED        │ [2555] ---> [3526]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ REQUEST  │ DCCP-RESPONSE?;DCCP-ACK!     │ PARTOPEN      │ [2536, 2873, 2877] ---> [3506, 3948, 3952] │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ RESPOND  │ DCCP-ACK?                    │ OPEN          │ [2482] ---> [3439]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ RESPOND  │ timeout;DCCP-RESET!          │ CLOSED        │ [2483] ---> [3440]                         │
+├──────────┼──────────────────────────────┼───────────────┼────────────────────────────────────────────┤
+│ TIMEWAIT │ timeout                      │ CLOSED        │ [553, 2595] ---> [758, 3579]               │
+╘══════════╧══════════════════════════════╧═══════════════╧════════════════════════════════════════════╛
+
+		0 Correct User Call Transitions
+╒══════════╤═════════╤═══════════════╤═══════════╕
+│ Source   │ Label   │ Destination   │ Line #s   │
+╞══════════╪═════════╪═══════════════╪═══════════╡
+╘══════════╧═════════╧═══════════════╧═══════════╛
+
+		0 Correct Reset Transitions
+╒══════════╤═════════╤═══════════════╤═══════════╕
+│ Source   │ Label   │ Destination   │ Line #s   │
+╞══════════╪═════════╪═══════════════╪═══════════╡
+╘══════════╧═════════╧═══════════════╧═══════════╛
+
+
+		9 WRONG TRANSITIONS, of which 9 pass the filter
+
+╒══════════╤══════════════════════════╤═══════════════╤════════════════════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╤══════════════════╕
+│ Source   │ Label                    │ Destination   │ Line #s                        │ Diagnosis                                                                                                                                             │ Passes Filter?   │
+╞══════════╪══════════════════════════╪═══════════════╪════════════════════════════════╪═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╪══════════════════╡
+│ CLOSING  │ timeout                  │ TIMEWAIT      │ [2595] ---> [3579]             │ SWAP ARG W/ SOME l ∈ ['DCCP-RESET?'] - see: [(Comm)]                                                                                                  │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ OPEN     │ timeout                  │ CLOSING       │ [2595] ---> [3579]             │ SWAP ARG W/ SOME l ∈ ['DCCP-CLOSE!', 'DCCP-CLOSEREQ?;DCCP-CLOSE!'] - see: [(Comm)]                                                                    │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-CLOSE?              │ OPEN          │ [2558, 2899] ---> [3530, 3978] │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-CLOSEREQ?           │ OPEN          │ [2558, 2899] ---> [3530, 3978] │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-RESET?              │ OPEN          │ [2558, 2899] ---> [3530, 3978] │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-RESPONSE?           │ OPEN          │ [2558] ---> [3530]             │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-RESPONSE?;DCCP-ACK! │ PARTOPEN      │ [2879] ---> [3954]             │ SWAP ARG W/ SOME l ∈ ['DCCP-DATAACK!', 'DCCP-ACK!'] - see: [(Comm)]                                                                                   │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-SYNC?               │ OPEN          │ [2558, 2899] ---> [3530, 3978] │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+├──────────┼──────────────────────────┼───────────────┼────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ PARTOPEN │ DCCP-SYNCACK?            │ OPEN          │ [2558, 2899] ---> [3530, 3978] │ SWAP ARG W/ SOME l ∈ ['DCCP-ACK?', 'DCCP-DATAACK?', 'DCCP-REQUEST?', 'DCCP-DATAACK?;DCCP-ACK!', 'DCCP-DATA?;DCCP-ACK!', 'DCCP-DATA?'] - see: [(Comm)] │ Yes              │
+╘══════════╧══════════════════════════╧═══════════════╧════════════════════════════════╧═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╧══════════════════╛
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~ 19 MISSING TRANSITIONS ~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+
+		19 Missing Communication Transitions
+╒══════════╤════════════════════════════╤═══════════════╕
+│ Source   │ Label                      │ Destination   │
+╞══════════╪════════════════════════════╪═══════════════╡
+│ CLOSED   │ ε                          │ LISTEN        │
+├──────────┼────────────────────────────┼───────────────┤
+│ CLOSING  │ DCCP-RESET?                │ TIMEWAIT      │
+├──────────┼────────────────────────────┼───────────────┤
+│ LISTEN   │ timeout                    │ CLOSED        │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-ACK?                  │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-CLOSE!                │ CLOSING       │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-CLOSE?;DCCP-RESET!    │ CLOSED        │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-CLOSEREQ?;DCCP-CLOSE! │ CLOSING       │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-DATA!                 │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-DATA?                 │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-DATAACK!              │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ OPEN     │ DCCP-DATAACK?              │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ PARTOPEN │ DCCP-ACK!                  │ PARTOPEN      │
+├──────────┼────────────────────────────┼───────────────┤
+│ PARTOPEN │ DCCP-CLOSE?;DCCP-RESET!    │ CLOSED        │
+├──────────┼────────────────────────────┼───────────────┤
+│ PARTOPEN │ DCCP-CLOSEREQ?;DCCP-CLOSE! │ CLOSING       │
+├──────────┼────────────────────────────┼───────────────┤
+│ PARTOPEN │ DCCP-DATA?;DCCP-ACK!       │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ PARTOPEN │ DCCP-DATAACK?;DCCP-ACK!    │ OPEN          │
+├──────────┼────────────────────────────┼───────────────┤
+│ REQUEST  │ DCCP-RESET?                │ CLOSED        │
+├──────────┼────────────────────────────┼───────────────┤
+│ REQUEST  │ DCCP-SYNC?;DCCP-RESET!     │ CLOSED        │
+├──────────┼────────────────────────────┼───────────────┤
+│ RESPOND  │ DCCP-DATAACK?              │ OPEN          │
+╘══════════╧════════════════════════════╧═══════════════╛
+
+		0 Missing User Call Transitions
+╒══════════╤═════════╤═══════════════╕
+│ Source   │ Label   │ Destination   │
+╞══════════╪═════════╪═══════════════╡
+╘══════════╧═════════╧═══════════════╛
+
+		0 Missing Reset Transitions
+╒══════════╤═════════╤═══════════════╕
+│ Source   │ Label   │ Destination   │
+╞══════════╪═════════╪═══════════════╡
+╘══════════╧═════════╧═══════════════╛
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~ SUMMARY STATISTICS ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+We expect 34 Communication transitions.
+
+	Of those, we find 15 but are still missing 19.
+
+We expect 0 User Calls transitions.
+
+	Of those, we find 0 but are still missing 0.
+
+We expect 0 Resets transitions.
+
+	Of those, we find 0 but are still missing 0.
+
++++++++++++++++++++++++++ SUPPORTED PROPERTIES +++++++++++++++++++++++++
+
+WROTE TO TEMPORARY-net-rem-7137449826737687070/7415447541539362035.pml
+WROTE TO TEMPORARY-net-rem-7137449826737687070/5122848765164576092.pml
+DCCP.pml⊨promela-models/DCCP/props/phi1.pml
+DCCP.pml⊨promela-models/DCCP/props/phi2.pml
+DCCP.pml⊨promela-models/DCCP/props/phi3.pml
+DCCP.pml⊨promela-models/DCCP/props/phi4.pml
+============ TRY TO ATTACK promela-models/DCCP/props/phi1.pml============
+remainder = TEMPORARY-net-rem-7137449826737687070/5122848765164576092.pml
+prop = promela-models/DCCP/props/phi1.pml
+network = TEMPORARY-net-rem-7137449826737687070/7415447541539362035.pml
+IO = promela-models/DCCP/korg-components/IO.txt
+Models?  True
+We could not find any with_recovery(model, (N), phi)-attacker A.
+============ TRY TO ATTACK promela-models/DCCP/props/phi2.pml============
+remainder = TEMPORARY-net-rem-7137449826737687070/5122848765164576092.pml
+prop = promela-models/DCCP/props/phi2.pml
+network = TEMPORARY-net-rem-7137449826737687070/7415447541539362035.pml
+IO = promela-models/DCCP/korg-components/IO.txt
+Models?  False
+ltl newPhi: (! (<> ((b==1)))) || ([] (! (((state[0]==8)) && ((state[1]==8)))))
+pan:1: assertion violated  !( !( !(((state[0]==8)&&(state[1]==8))))) (at depth 345)
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml1.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml2.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml3.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml4.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml5.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml6.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml7.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml8.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml9.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml10.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml11.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml12.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml13.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml14.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml15.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml16.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml17.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml18.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml19.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml20.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml21.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml22.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml23.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml24.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml25.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml26.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml27.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml28.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml29.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml30.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml31.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml32.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml33.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml34.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml35.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml36.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml37.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml38.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml39.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml40.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml41.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml42.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml43.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml44.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml45.trail
+pan:46: assertion violated  !(( !( !(((state[0]==8)&&(state[1]==8))))&&(b==1))) (at depth 345)
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml46.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml47.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml48.trail
+pan:49: assertion violated  !((b==1)) (at depth 351)
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml49.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml50.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml51.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml52.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml53.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml54.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml55.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml56.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml57.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml58.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml59.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml60.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml61.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml62.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml63.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml64.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml65.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml66.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml67.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml68.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml69.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml70.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml71.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml72.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml73.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml74.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml75.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml76.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml77.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml78.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml79.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml80.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml81.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml82.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml83.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml84.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml85.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml86.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml87.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml88.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml89.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml90.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml91.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml92.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml93.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml94.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml95.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml96.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml97.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml98.trail
+pan: wrote attack-promela-models.DCCP.props.phi2-DCCP-_daisy_check.pml99.trail
+
+(Spin Version 6.5.1 -- 20 December 2019)
+Warning: Search not completed
+
+Full statespace search for:
+	never claim         	+ (newPhi)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 84 byte, depth reached 374, errors: 99
+     7138 states, stored
+    12281 states, matched
+    19419 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.762	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.503	actual memory usage for states (compression: 65.92%)
+         	state-vector as stored = 46 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.611	memory used for DFS stack (-m10000)
+  129.099	total actual memory usage
+
+
+
+pan: elapsed time 0.09 seconds
+pan: rate 79311.111 states/second
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+	 testing if attacks transfer to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_10_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_19_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_28_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_31_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_51_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_60_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_78_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi2-DCCP-_True/attacker_83_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+============ TRY TO ATTACK promela-models/DCCP/props/phi3.pml============
+remainder = TEMPORARY-net-rem-7137449826737687070/5122848765164576092.pml
+prop = promela-models/DCCP/props/phi3.pml
+network = TEMPORARY-net-rem-7137449826737687070/7415447541539362035.pml
+IO = promela-models/DCCP/korg-components/IO.txt
+Models?  True
+We could not find any with_recovery(model, (N), phi)-attacker A.
+============ TRY TO ATTACK promela-models/DCCP/props/phi4.pml============
+remainder = TEMPORARY-net-rem-7137449826737687070/5122848765164576092.pml
+prop = promela-models/DCCP/props/phi4.pml
+network = TEMPORARY-net-rem-7137449826737687070/7415447541539362035.pml
+IO = promela-models/DCCP/korg-components/IO.txt
+Models?  False
+ltl newPhi: (! (<> ((b==1)))) || ([] (! (((state[0]==6)) && ((state[1]==6)))))
+pan:1: assertion violated  !( !( !(((state[0]==6)&&(state[1]==6))))) (at depth 309)
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml1.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml2.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml3.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml4.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml5.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml6.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml7.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml8.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml9.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml10.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml11.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml12.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml13.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml14.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml15.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml16.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml17.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml18.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml19.trail
+pan:20: assertion violated  !(( !( !(((state[0]==6)&&(state[1]==6))))&&(b==1))) (at depth 309)
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml20.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml21.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml22.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml23.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml24.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml25.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml26.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml27.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml28.trail
+pan:29: assertion violated  !((b==1)) (at depth 327)
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml29.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml30.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml31.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml32.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml33.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml34.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml35.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml36.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml37.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml38.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml39.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml40.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml41.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml42.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml43.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml44.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml45.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml46.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml47.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml48.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml49.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml50.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml51.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml52.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml53.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml54.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml55.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml56.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml57.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml58.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml59.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml60.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml61.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml62.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml63.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml64.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml65.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml66.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml67.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml68.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml69.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml70.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml71.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml72.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml73.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml74.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml75.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml76.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml77.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml78.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml79.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml80.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml81.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml82.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml83.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml84.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml85.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml86.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml87.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml88.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml89.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml90.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml91.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml92.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml93.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml94.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml95.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml96.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml97.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml98.trail
+pan: wrote attack-promela-models.DCCP.props.phi4-DCCP-_daisy_check.pml99.trail
+
+(Spin Version 6.5.1 -- 20 December 2019)
+Warning: Search not completed
+
+Full statespace search for:
+	never claim         	+ (newPhi)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 84 byte, depth reached 374, errors: 99
+     7207 states, stored
+    12367 states, matched
+    19574 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.770	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.503	actual memory usage for states (compression: 65.28%)
+         	state-vector as stored = 45 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.611	memory used for DFS stack (-m10000)
+  129.099	total actual memory usage
+
+
+
+pan: elapsed time 0.09 seconds
+pan: rate 80077.778 states/second
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi2.pml
+out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+	 testing if attacks transfer to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_4_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_5_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_6_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_7_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_14_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_15_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_18_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_37_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_52_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_88_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi4.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi3.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi1.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml does NOT
+		work as an attack with recovery against promela-models/DCCP/props/phi2.pml
+		when applied to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml
+[ comparing to promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml ]
+		out/attack-promela-models.DCCP.props.phi4-DCCP-_True/attacker_93_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/DCCP/props/phi4.pml
+make cleanTemporary
+make[1]: Entering directory '/workspace/rfcnlp'
+rm -rf TEMPORARY*
+make[1]: Leaving directory '/workspace/rfcnlp'

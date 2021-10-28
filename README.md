@@ -131,7 +131,7 @@ Of course, if you are running these targets inside the Docker image, all of thes
 
 * `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.
 
-* `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.
+* `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.  Example terminal output can be found [here](example.outputs/dccp2promela.txt).
 
 The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
 

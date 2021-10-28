@@ -332,15 +332,38 @@ out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_13_WITH_RECOVERY_sof
 Importantly, these are only candidates!  They are not actually confirmed.  In other words, all we've done is check that they work against the Promela program derived from the extracted FSM; we haven't yet checked that they also work against the Canonical version.  Next, we check if the candidates work against the corresponding Canonical Promela program.  The output from this step looks like this (and again, only the ones with `_soft_` in their names interest us!):
 
 ```
-TODO
+	 testing if attacks transfer to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
+
+		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/TCP/props/phi2.pml
+		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
+
+
+		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/TCP/props/phi3.pml
+		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
+
+		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/TCP/props/phi5.pml
+		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
+
+		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
+		work as an attack with recovery against promela-models/TCP/props/phi1.pml
+		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
+[ comparing to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml ]
+		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
+			promela-models/TCP/props/phi2.pml
+
 ```
 
 Ok, this is the most complicated part.  In brief:
 
 * We are only interested in the candidates that have `_soft_` in their name.  These are the ones we have modified to support partial FSMs.  If you're curious, the relevant code can be found [here](https://github.com/anonymous-sp-submission/korg-update/blob/44d2de312c56d0b844ddff5a5b1dee7082b35ca7/korg/Construct.py#L122).
 
-* The term "with recovery" is very misleading.  The term comes from the [original KORG paper](https://arxiv.org/pdf/2004.01220.pdf), in Definition 7.  Basically these are the attacks which succeed even when we assume that they eventually terminate.  They are the only attacks we are interested in and report on, in our paper, because we consider non-terminating attacks to be unrealistic.
+* The term "with recovery" is misleading.  The term comes from the [original KORG paper](https://arxiv.org/pdf/2004.01220.pdf), in Definition 7.  Basically these are the attacks which succeed even when we assume that they eventually terminate.  They are the only attacks we are interested in and report on, in our paper, because we consider non-terminating attacks to be unrealistic.
 
-* We consider a candidate to be "confirmed" if it causes the Canonical program to violate at least one of its correctness properties.
+* We consider a candidate to be "confirmed" if it causes the Canonical program to violate at least one of its correctness properties.  We check this by looking at the output under "testing if attacks transfer to `P`", where `P` is the Canonical program, e.g., `promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml`.  We don't use the word "transfers" in the paper, only in the code.  All it means is that we are checking if the attacks also work against the Canonical program, i.e., if the candidates are confirmed.
 
-* The term "transfers" is used in our code, but not in the paper.  It just means we are checking if the attacks also work against the Canonical program, i.e., if the candidates are confirmed.
+* If the candidate is confirmed, you see a line like `[ comparing to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml ]` which says Canonical program it was confirmed against, and then a line saying which property it was confirmed against.
+
+So, the snippet above communicates that attacker 0, when modified to support partial FSMs, is indeed confirmed using the Canonical TCP Promela program and the correctness property `phi2`.
