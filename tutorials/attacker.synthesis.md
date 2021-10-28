@@ -366,4 +366,4 @@ Ok, this is the most complicated part.  In brief:
 
 * If the candidate is confirmed, you see a line like `[ comparing to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml ]` which says Canonical program it was confirmed against, and then a line saying which property it was confirmed against.
 
-So, the snippet above communicates that attacker 0, when modified to support partial FSMs, is indeed confirmed using the Canonical TCP Promela program and the correctness property `phi2`.
+So, the snippet above communicates that attacker 0, when modified to support partial FSMs, is indeed confirmed using the Canonical TCP Promela program and the correctness property `phi2`.  These are the results we report in Table V of our paper.
