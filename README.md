@@ -6,10 +6,47 @@ The repository has been thoroughly anonymized for the double-blind review proces
 
 ## Reproduce Our Results
 
-You can either use our pre-trained NeuralCRF models, or train your own.  (More on this later.)  If you intend to use ours, you'll need to get them using git-LFS, like so:
+To use our pre-trained technical language embedding, you'll need to get them using git-LFS, like so:
 
 ```
 git lfs pull
+```
+
+_You might run into an error_, because GitHub throttles LFS usage and our files are rather large.  If so, try this instead:
+
+```
+rm -rf networking_bert_rfcs_only
+wget https://www.dropbox.com/s/zdr6s3erkyhsdjw/networking_bert_rfcs_only.zip?dl=0
+unzip networking_bert_rfcs_only.zip?dl=0
+```
+
+Either way, you'll know you've succeeded if `networking_bert_rfcs_only/config.json` looks like this:
+
+```
+{
+  "_name_or_path": "bert-base-cased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.3.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 28996
+}
 ```
 
 For easy reproducibility, we created a Dockerfile.  You can use it as follows.
