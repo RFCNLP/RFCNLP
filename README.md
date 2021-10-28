@@ -189,7 +189,7 @@ mv out dccpbert2promela.out
 make clean
 ```
 
-By the way, to exit the Docker image, you simply enter `exit`.
+To exit the Docker image, you simply enter `exit`.
 
 ```
 root@6abd73c26503:/rfcnlp# exit

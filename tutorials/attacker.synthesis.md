@@ -19,7 +19,7 @@ In the special case where the input is an intermediary representation derived fr
 2. check which properties (from a list of known correctness properties) the extracted FSM supports; and
 3. perform automated attacker synthesis on the extracted FSM.
 
-Our code can be used to perform attacker synthesis against other RFCs, but you need to write correctness properties first.  The process is a little complicated - we will document how to do this in the future.
+Our code can be used to perform attacker synthesis against other RFCs, but you need to write correctness properties first.
 
 The CLI output begins with a comparison of the extracted FSM to the canonical FSM.  For example:
 
@@ -263,7 +263,7 @@ TCP.pml⊭promela-models/TCP/props/phi5.pml
 
 Basically, if the Promela program `P` supports the property `phi`, we write `P⊨phi`; if it does not, then we write `P⊭phi` (notice that `⊭` is like `⊨` but with a line through it).  We make this a little easier to read in the terminal output by coloring the "supports" symbol `⊨` green, and the "does not support" symbol `⊭` red/yellow/orange (depending on your terminal theme).  
 
-If you are unfamiliar with the relevant formal methods, the word "supports" might seem strange -- you can interpret it as meaning "verifies", "makes true", etc.  Basically, `P⊨phi` means `phi` is a property which is true about the Promela program `P`.
+The word "supports" might seem strange -- you can interpret it as meaning "verifies", "makes true", etc.  Basically, `P⊨phi` means `phi` is a property which is true about the Promela program `P`.
 
 These results are reported in Table IV of our paper.
 
@@ -356,7 +356,7 @@ Importantly, these are only candidates!  They are not actually confirmed.  In ot
 
 ```
 
-Ok, this is the most complicated part.  In brief:
+In brief:
 
 * We are only interested in the candidates that have `_soft_` in their name.  These are the ones we have modified to support partial FSMs.  If you're curious, the relevant code can be found [here](https://github.com/anonymous-sp-submission/korg-update/blob/44d2de312c56d0b844ddff5a5b1dee7082b35ca7/korg/Construct.py#L122).
 
