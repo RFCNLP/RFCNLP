@@ -80,8 +80,6 @@ RUN pip3 install allennlp-models==2.0.0
 RUN pip3 install nltk==3.6.5
 RUN python3 -m spacy download en_core_web_sm
 RUN echo "import nltk; nltk.download('averaged_perceptron_tagger')" | python3
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nvidia-driver-455
 RUN pip3 install transformers==4.2.2
 WORKDIR ..
-RUN conda install -y cudatoolkit=10.1
 entrypoint [""]
