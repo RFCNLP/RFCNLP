@@ -102,7 +102,7 @@ Next, build the Docker image.
 sudo docker build -t rfcnlp .
 ```
 
-You may see some warnings about dependencies, but the image should build.
+You may see some warnings about dependencies, but the image should build.  Example output from this step can be found [here](example.outputs/docker.build.txt).
 
 ```
 sudo docker run --gpus all -it rfcnlp bash
@@ -115,31 +115,43 @@ You will now be able to run any of the targets in the Makefile, from a prompt gi
 
 The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
 
-* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation.
-* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation.
-* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation.
-* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation.
+* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccplineartrain.txt).
+
+* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcplineartrain.txt).
+
+* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccpberttrain.txt).
+
+* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcpberttrain.txt).
 
 ### FSM Extraction & Attacker Synthesis Results 
 
-We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets are defined below.  Synthesized attacks are saved to the `out` directory in the Docker image, and are also listed in the CLI output.  
+We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets are defined below.  Synthesized attacks are saved to the `out` directory, and are also analyzed in the CLI output.  Additionally, the extracted FSM is saved in `TCP.png` in the case of the TCP targets, or `DCCP.png` in the case of the DCCP targets.  The FSM is converted to a Promela program, which is saved in `TCP.pml` in the case of the TCP targets, or `DCCP.pml` in the case of the DCCP targets.  
+
+Of course, if you are running these targets inside the Docker image, all of these output files will be inside the image, so you will need to move them to the host machine if you want to inspect them in detail.  We show how to do this later on in this README.  
 
 * `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.
+
 * `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.
 
 The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
 
 * `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.
+
 * `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.
+
 * `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.
+
 * `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.
 
 The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce our results using our saved intermediary representations, using the targets given below.
 
-* `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper.
-* `make dccplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP LinearCRF+R intermediary representation generated on our machine and used in our paper.
-* `make tcpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP NeuralCRF+R intermediary representation generated on our machine and used in our paper.
-* `make dccpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP NeuralCRF+R intermediary representation generated on our machine and used in our paper.
+* `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/TCP.xml).
+
+* `make dccplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/DCCP.xml).
+
+* `make tcpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml).
+
+* `make dccpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml).
 
 ### Troubleshooting
 
@@ -156,22 +168,22 @@ make dccp2promela
 mv out dccp2promela.out
 make clean
 
-# TCP LinearCRF
+# TCP LinearCRF+R
 make tcplinear2promela
 mv out tcplinear2promela.out
 make clean
 
-# DCCP LinearCRF
+# DCCP LinearCRF+R
 make dccplinear2promela
 mv out dccplinear2promela.out
 make clean
 
-# TCP NeuralCRF
+# TCP NeuralCRF+R
 make tcpbert2promela
 mv out tcpbert2promela.out
 make clean
 
-# DCCP NeuralCRF
+# DCCP NeuralCRF+R
 make dccpbert2promela
 mv out dccpbert2promela.out
 make clean
@@ -187,18 +199,18 @@ exit
 Then you could copy the results out of the Docker image and into your host computer for inspection.  Notice the use of `flamboyant_tu`; you'll have to replace this with your image's name.
 
 ```
-docker cp flamboyant_tu:rfcnlp/tcp2promela.out/ tcp2promela.out/
-docker cp flamboyant_tu:rfcnlp/dccp2promela.out/ dccp2promela.out/
-docker cp flamboyant_tu:rfcnlp/tcplinear2promela.out/ tcplinear2promela.out/
+docker cp flamboyant_tu:rfcnlp/tcp2promela.out/        tcp2promela.out/
+docker cp flamboyant_tu:rfcnlp/dccp2promela.out/       dccp2promela.out/
+docker cp flamboyant_tu:rfcnlp/tcplinear2promela.out/  tcplinear2promela.out/
 docker cp flamboyant_tu:rfcnlp/dccplinear2promela.out/ dccplinear2promela.out/
-docker cp flamboyant_tu:rfcnlp/dccpbert2promela.out/ dccpbert2promela.out/
+docker cp flamboyant_tu:rfcnlp/dccpbert2promela.out/   dccpbert2promela.out/
 ```
 
 There is a strange issue where when you do this, you don't have non-`sudo` permission to change or delete the copied files.  But you do have `sudo` permission, e.g., you can do `sudo rm -rf dccpbert2promela.out` if you'd like.
 
 ## Command-Line Interface
 
-After interacting with the pre-defined [Makefile](Makefile) targets in the [Dockerfile](Dockerfile), you might want to start interacting directly with our software.  In this section, we explain the specific software provided, and how to interact with it.
+After interacting with the predefined [Makefile](Makefile) targets in the [Dockerfile](Dockerfile), you might want to start interacting directly with our software.  In this section, we explain the specific software provided, and how to interact with it.
 
 ### `nlp2promela/nlp2promela.py`
 
@@ -222,4 +234,4 @@ TODO
 
 ## Disclaimers
 
-Considerable effort was taken to anonymize and automate our code-base for open-source release.  If you encounter something that does not work as expected, please feel free to open a Github Issue reporting the problem, and we will do our best to (anonymously) resolve it.
+Considerable effort was taken to anonymize and automate our code-base for open-source release.  If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/anonymous-sp-submission/RFCNLP/issues) reporting the problem, and we will do our best to (anonymously) resolve it.

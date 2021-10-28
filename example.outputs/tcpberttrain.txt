@@ -1,0 +1,493 @@
+root@14e8001b4810:/workspace/rfcnlp# make tcpberttrain
+WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"                          \
+	python3 nlp-parser/bert_bilstm_crf.py                           \
+	--features                                                      \
+	--savedir .                                                     \
+	--do_train                                                      \
+	--do_eval                                                       \
+	--heuristics                                                    \
+	--protocol TCP                                                  \
+	--outdir rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/ \
+	--write_results                                                 \
+	--bert_model networking_bert_rfcs_only                          \
+	--learning_rate 2e-5                                            \
+	--batch_size 1
+/workspace/rfcnlp/nlp-parser/data_utils_NEW.py:354: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return X_train, np.array(y_train), level_h_train, level_d_train
+302 323
+/workspace/rfcnlp/nlp-parser/features.py:212: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return np.array(X_new)
+(412, 3, 302, 323) (412, 302, 4053) (412, 302) (412,) (412, 302)
+(45, 3, 302, 323) (45, 302, 4053) (45, 302) (45,) (45, 302)
+(412, 302)
+[0, 1, 2, 3, 4, 5, 6] {'B-TRIGGER': 0, 'B-ACTION': 1, 'O': 2, 'B-TRANSITION': 3, 'B-TIMER': 4, 'B-ERROR': 5, 'B-VARIABLE': 6}
+Some weights of BertModel were not initialized from the model checkpoint at networking_bert_rfcs_only and are newly initialized: ['bert.pooler.dense.weight', 'bert.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+epoch 0 loss 20.234753885604803 dev_loss 9.042622137069703 dev_macro_f1 0.37824052194886776 test_macro_f1 0.2978848190788275
+epoch 1 loss 12.456185628198883 dev_loss 7.115624290042454 dev_macro_f1 0.4711885197080651 test_macro_f1 0.4200573544289448
+epoch 2 loss 10.128701846576432 dev_loss 6.122507614559598 dev_macro_f1 0.5972036972846243 test_macro_f1 0.43321582975008266
+epoch 3 loss 8.429287880948447 dev_loss 5.6335410012139215 dev_macro_f1 0.6433867932177579 test_macro_f1 0.44213147025187155
+epoch 4 loss 7.381762431084531 dev_loss 5.191678608788385 dev_macro_f1 0.6538290176930166 test_macro_f1 0.48595886381526837
+epoch 5 loss 6.450941681283192 dev_loss 4.951678615146213 dev_macro_f1 0.6328643910628429 test_macro_f1 0.4803021695948427
+epoch 6 loss 5.744141123827221 dev_loss 4.7837921566433375 dev_macro_f1 0.6495895422946506 test_macro_f1 0.4935305686027851
+epoch 7 loss 5.17377424703061 dev_loss 4.736252445644802 dev_macro_f1 0.686950312624167 test_macro_f1 0.515808964278352
+epoch 8 loss 4.744691946552795 dev_loss 4.630516942342123 dev_macro_f1 0.7092639652552217 test_macro_f1 0.4789288210492231
+epoch 9 loss 4.42373061700932 dev_loss 4.528340350257026 dev_macro_f1 0.7179016558776621 test_macro_f1 0.49787696559463424
+epoch 10 loss 4.087972625945378 dev_loss 4.924589210086399 dev_macro_f1 0.7386465037817753 test_macro_f1 0.5183205044319285
+epoch 11 loss 3.6871323330888472 dev_loss 4.489823087056478 dev_macro_f1 0.7351174239131273 test_macro_f1 0.5522704162756454
+epoch 12 loss 3.437526979492706 dev_loss 4.801417658064101 dev_macro_f1 0.7403340671860198 test_macro_f1 0.545919013571837
+epoch 13 loss 3.2630355022485973 dev_loss 4.776959143744575 dev_macro_f1 0.7352985569718854 test_macro_f1 0.5235492310058767
+epoch 14 loss 3.131819513816278 dev_loss 4.842618507809109 dev_macro_f1 0.7507736888075325 test_macro_f1 0.5949039259054152
+epoch 15 loss 3.015390733492027 dev_loss 4.6525117980109325 dev_macro_f1 0.7487520812387348 test_macro_f1 0.6073816568183777
+epoch 16 loss 2.8169943568775957 dev_loss 4.887854946984185 dev_macro_f1 0.7561785074390116 test_macro_f1 0.6160498375140472
+epoch 17 loss 2.8009719038472594 dev_loss 4.932310814327664 dev_macro_f1 0.7478804403202349 test_macro_f1 0.6150481914956974
+epoch 18 loss 2.490792116493855 dev_loss 4.741296683417426 dev_macro_f1 0.747262006090749 test_macro_f1 0.6375824285736317
+epoch 19 loss 2.393171199317117 dev_loss 4.625757386949327 dev_macro_f1 0.7569160708328823 test_macro_f1 0.6215646133749887
+epoch 20 loss 2.119245850924149 dev_loss 4.613682132297092 dev_macro_f1 0.7511855242884186 test_macro_f1 0.6131267149401685
+epoch 21 loss 2.2369253253473818 dev_loss 4.587211396959093 dev_macro_f1 0.7560596405254364 test_macro_f1 0.6421760979455143
+epoch 22 loss 1.9458811572454509 dev_loss 4.710851563347711 dev_macro_f1 0.7543960985992392 test_macro_f1 0.6662968259134845
+epoch 23 loss 1.8868478588687563 dev_loss 4.953948561350504 dev_macro_f1 0.7464142444111023 test_macro_f1 0.6346013754351448
+epoch 24 loss 1.8337056787268629 dev_loss 4.931449137793647 dev_macro_f1 0.7425788677538858 test_macro_f1 0.6424179399934945
+              precision    recall  f1-score   support
+
+    B-ACTION     0.4783    0.8224    0.6048       107
+     B-ERROR     0.0000    0.0000    0.0000        38
+     B-TIMER     1.0000    1.0000    1.0000         7
+B-TRANSITION     0.8140    0.8974    0.8537        39
+   B-TRIGGER     0.6940    0.7257    0.7095       175
+  B-VARIABLE     0.4167    0.3125    0.3571        48
+    I-ACTION     0.4158    0.8080    0.5491       651
+     I-ERROR     0.0000    0.0000    0.0000       371
+     I-TIMER     1.0000    1.0000    1.0000        34
+I-TRANSITION     0.8235    0.9010    0.8605       202
+   I-TRIGGER     0.7012    0.8265    0.7587      1130
+  I-VARIABLE     0.3866    0.4228    0.4039       246
+           O     0.7211    0.4329    0.5410      1356
+
+    accuracy                         0.5992      4404
+   macro avg     0.5732    0.6269    0.5876      4404
+weighted avg     0.5830    0.5992    0.5681      4404
+
+ACC 0.599227974568574
+WEIGHTED f1 0.5681003361010036
+MACRO F1 0.5875630993844594
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+ent_type 0.5982339955849889
+partial 0.8189845474613686
+strict 0.5982339955849889
+exact 0.8189845474613686
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+TRIGGER ent_type 0.7078651685393258
+TRIGGER partial 0.7078651685393258
+TRIGGER strict 0.7078651685393258
+TRIGGER exact 0.7078651685393258
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+ACTION ent_type 0.604810996563574
+ACTION partial 0.604810996563574
+ACTION strict 0.604810996563574
+ACTION exact 0.604810996563574
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+ERROR ent_type 0.0
+ERROR partial 0.0
+ERROR strict 0.0
+ERROR exact 0.0
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+TIMER ent_type 1.0
+TIMER partial 1.0
+TIMER strict 1.0
+TIMER exact 1.0
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+TRANSITION ent_type 0.8536585365853658
+TRANSITION partial 0.8536585365853658
+TRANSITION strict 0.8536585365853658
+TRANSITION exact 0.8536585365853658
+2021-10-28 18:10:46 root INFO: Imported 31 predictions for 31 true examples
+VARIABLE ent_type 0.35714285714285715
+VARIABLE partial 0.35714285714285715
+VARIABLE strict 0.35714285714285715
+VARIABLE exact 0.35714285714285715
+True True True True
+['in', 'the', 'syn-sent', 'state', '(', 'a', 'rst', 'received', 'in', 'response', 'to', 'an', 'initial', 'syn', ')', ',']
+['data', 'associated', 'with', 'send', 'may', 'be', 'sent', 'with', 'syn', 'segment', 'or', 'queued', 'for', 'transmission', 'after', 'entering', 'established', 'state', '.']
+['data', 'associated', 'with', 'send', 'may', 'be', 'sent', 'with', 'syn', 'segment', 'or', 'queued', 'for', 'transmission', 'after', 'entering', 'established', 'state', '.']
+['form', 'an', 'ack', 'segment', '&newline;']
+['form', 'a', 'syn', ',']
+['users', 'should', 'receive', 'positive', 'acknowledgments', 'for', 'buffers', 'which', 'have', 'been', 'sent', 'and', 'fully', 'acknowledged', '(', 'i.e', '.', ',', 'send', 'buffer', 'should', 'be', 'returned', 'with', '``', 'ok', '``', 'response', ')', '.']
+              precision    recall  f1-score   support
+
+    B-ACTION     0.4555    0.8131    0.5839       107
+     B-ERROR     1.0000    0.1579    0.2727        38
+     B-TIMER     1.0000    0.5714    0.7273         7
+B-TRANSITION     0.7551    0.9487    0.8409        39
+   B-TRIGGER     0.7327    0.8457    0.7851       175
+  B-VARIABLE     0.5714    0.3333    0.4211        48
+    I-ACTION     0.3401    0.7711    0.4720       651
+     I-ERROR     1.0000    0.1375    0.2417       371
+     I-TIMER     1.0000    0.5882    0.7407        34
+I-TRANSITION     0.6293    1.0000    0.7725       202
+   I-TRIGGER     0.7579    0.9283    0.8345      1130
+  I-VARIABLE     0.4958    0.4797    0.4876       246
+           O     0.8940    0.2861    0.4335      1356
+
+    accuracy                         0.5967      4404
+   macro avg     0.7409    0.6047    0.5857      4404
+weighted avg     0.7319    0.5967    0.5671      4404
+
+ACC 0.5967302452316077
+WEIGHTED f1 0.5670620256468585
+MACRO F1 0.5856607313370952
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+ent_type 0.6200417536534447
+partial 0.802713987473904
+strict 0.6179540709812108
+exact 0.7995824634655533
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+TRIGGER ent_type 0.784
+TRIGGER partial 0.784
+TRIGGER strict 0.784
+TRIGGER exact 0.784
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+ACTION ent_type 0.5838926174496645
+ACTION partial 0.5838926174496645
+ACTION strict 0.5838926174496645
+ACTION exact 0.5838926174496645
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+ERROR ent_type 0.2727272727272727
+ERROR partial 0.2727272727272727
+ERROR strict 0.2727272727272727
+ERROR exact 0.2727272727272727
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+TIMER ent_type 0.7272727272727273
+TIMER partial 0.7272727272727273
+TIMER strict 0.7272727272727273
+TIMER exact 0.7272727272727273
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+TRANSITION ent_type 0.8863636363636364
+TRANSITION partial 0.8522727272727273
+TRANSITION strict 0.8181818181818182
+TRANSITION exact 0.8181818181818182
+2021-10-28 18:10:47 root INFO: Imported 31 predictions for 31 true examples
+VARIABLE ent_type 0.4210526315789474
+VARIABLE partial 0.4210526315789474
+VARIABLE strict 0.4210526315789474
+VARIABLE exact 0.4210526315789474
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Unzipping corpora/wordnet.zip.
+2021-10-28 18:10:48 allennlp.common.plugins INFO: Plugin allennlp_models available
+2021-10-28 18:10:48 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-28 18:10:48 urllib3.connectionpool DEBUG: https://storage.googleapis.com:443 "HEAD /allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz HTTP/1.1" 200 0
+2021-10-28 18:10:48 allennlp.common.file_utils DEBUG: waiting to acquire lock on /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3
+2021-10-28 18:10:48 filelock DEBUG: Attempting to acquire lock 140375795851168 on /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3.lock
+2021-10-28 18:10:48 filelock INFO: Lock 140375795851168 acquired on /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3.lock
+2021-10-28 18:10:48 allennlp.common.file_utils INFO: https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz not found in cache, downloading to /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3
+2021-10-28 18:10:48 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-28 18:10:49 urllib3.connectionpool DEBUG: https://storage.googleapis.com:443 "GET /allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz HTTP/1.1" 200 405972254
+downloading: 100%|##########| 405972254/405972254 [00:08<00:00, 48507361.93B/s]
+2021-10-28 18:10:57 allennlp.common.file_utils DEBUG: Renaming temp file /root/.allennlp/cache/tmptmv4sx7k.tmp to cache at /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3
+2021-10-28 18:10:57 allennlp.common.file_utils DEBUG: creating metadata file for /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3
+2021-10-28 18:10:57 filelock DEBUG: Attempting to release lock 140375795851168 on /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3.lock
+2021-10-28 18:10:57 filelock INFO: Lock 140375795851168 released on /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3.lock
+2021-10-28 18:10:57 allennlp.models.archival INFO: loading archive file https://storage.googleapis.com/allennlp-public-models/structured-prediction-srl-bert.2020.12.15.tar.gz from cache at /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3
+2021-10-28 18:10:57 allennlp.models.archival INFO: extracting archive file /root/.allennlp/cache/b5f1db011cc85691a5fa2bf29e055a712261a2e5d74a74edd7da2fffc98d4ab8.4c4ac7e06ec3d85631bd26b839f90b5a375d3ceeb43e3c74f1cf4758dcee2bb3 to temp dir /tmp/tmp1aaajl8k
+2021-10-28 18:11:01 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'bert_model_name': 'bert-base-uncased', 'type': 'srl'} and extras {'serialization_dir'}
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.type = srl
+2021-10-28 18:11:01 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp_models.structured_prediction.dataset_readers.srl.SrlReader'> from params {'bert_model_name': 'bert-base-uncased'} and extras {'serialization_dir'}
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.max_instances = None
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.manual_distributed_sharding = False
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.manual_multiprocess_sharding = False
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.token_indexers = None
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.domain_identifier = None
+2021-10-28 18:11:01 allennlp.common.params INFO: dataset_reader.bert_model_name = bert-base-uncased
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2021-10-28 18:11:01 filelock DEBUG: Attempting to acquire lock 140370298163648 on /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370298163648 acquired on /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 570
+Downloading: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 570/570 [00:00<00:00, 328kB/s]
+2021-10-28 18:11:01 filelock DEBUG: Attempting to release lock 140370298163648 on /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370298163648 released on /root/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2021-10-28 18:11:01 filelock DEBUG: Attempting to acquire lock 140370297104656 on /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370297104656 acquired on /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 231508
+Downloading: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232k/232k [00:00<00:00, 4.71MB/s]
+2021-10-28 18:11:01 filelock DEBUG: Attempting to release lock 140370297104656 on /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370297104656 released on /root/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2021-10-28 18:11:01 filelock DEBUG: Attempting to acquire lock 140370297105184 on /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370297105184 acquired on /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "GET /bert-base-uncased/resolve/main/tokenizer.json HTTP/1.1" 200 466062
+Downloading: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 466k/466k [00:00<00:00, 7.71MB/s]
+2021-10-28 18:11:01 filelock DEBUG: Attempting to release lock 140370297105184 on /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
+2021-10-28 18:11:01 filelock INFO: Lock 140370297105184 released on /root/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:01 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2021-10-28 18:11:02 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'bert_model_name': 'bert-base-uncased', 'type': 'srl'} and extras {'serialization_dir'}
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.type = srl
+2021-10-28 18:11:02 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp_models.structured_prediction.dataset_readers.srl.SrlReader'> from params {'bert_model_name': 'bert-base-uncased'} and extras {'serialization_dir'}
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.max_instances = None
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.manual_distributed_sharding = False
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.manual_multiprocess_sharding = False
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.token_indexers = None
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.domain_identifier = None
+2021-10-28 18:11:02 allennlp.common.params INFO: dataset_reader.bert_model_name = bert-base-uncased
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2021-10-28 18:11:02 allennlp.common.registrable DEBUG: instantiating registered subclass srl_bert of <class 'allennlp.models.model.Model'>
+2021-10-28 18:11:02 allennlp.common.params INFO: type = from_instances
+2021-10-28 18:11:02 allennlp.data.vocabulary INFO: Loading token dictionary from /tmp/tmp1aaajl8k/vocabulary.
+2021-10-28 18:11:02 filelock DEBUG: Attempting to acquire lock 140370297104464 on /tmp/tmp1aaajl8k/vocabulary/.lock
+2021-10-28 18:11:02 filelock INFO: Lock 140370297104464 acquired on /tmp/tmp1aaajl8k/vocabulary/.lock
+2021-10-28 18:11:02 filelock DEBUG: Attempting to release lock 140370297104464 on /tmp/tmp1aaajl8k/vocabulary/.lock
+2021-10-28 18:11:02 filelock INFO: Lock 140370297104464 released on /tmp/tmp1aaajl8k/vocabulary/.lock
+2021-10-28 18:11:02 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp.models.model.Model'> from params {'bert_model': 'bert-base-uncased', 'embedding_dropout': 0.1, 'type': 'srl_bert'} and extras {'vocab', 'serialization_dir'}
+2021-10-28 18:11:02 allennlp.common.params INFO: model.type = srl_bert
+2021-10-28 18:11:02 allennlp.common.from_params DEBUG: instantiating class <class 'allennlp_models.structured_prediction.models.srl_bert.SrlBert'> from params {'bert_model': 'bert-base-uncased', 'embedding_dropout': 0.1} and extras {'vocab', 'serialization_dir'}
+2021-10-28 18:11:02 allennlp.common.params INFO: model.regularizer = None
+2021-10-28 18:11:02 allennlp.common.params INFO: model.bert_model = bert-base-uncased
+2021-10-28 18:11:02 allennlp.common.params INFO: model.embedding_dropout = 0.1
+2021-10-28 18:11:02 allennlp.common.params INFO: model.initializer = <allennlp.nn.initializers.InitializerApplicator object at 0x7faa822c0940>
+2021-10-28 18:11:02 allennlp.common.params INFO: model.label_smoothing = None
+2021-10-28 18:11:02 allennlp.common.params INFO: model.ignore_span_metric = False
+2021-10-28 18:11:02 allennlp.common.params INFO: model.srl_eval_path = /opt/conda/lib/python3.8/site-packages/allennlp_models/structured_prediction/tools/srl-eval.pl
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+2021-10-28 18:11:02 filelock DEBUG: Attempting to acquire lock 140370297103360 on /root/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+2021-10-28 18:11:02 filelock INFO: Lock 140370297103360 acquired on /root/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+2021-10-28 18:11:02 urllib3.connectionpool DEBUG: https://cdn-lfs.huggingface.co:443 "GET /bert-base-uncased/097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a HTTP/1.1" 200 440473133
+Downloading: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 440M/440M [00:09<00:00, 47.7MB/s]
+2021-10-28 18:11:11 filelock DEBUG: Attempting to release lock 140370297103360 on /root/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+2021-10-28 18:11:11 filelock INFO: Lock 140370297103360 released on /root/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
+2021-10-28 18:11:14 allennlp.nn.initializers INFO: Initializing parameters
+2021-10-28 18:11:14 allennlp.nn.initializers INFO: Done initializing parameters; the following parameters are using their default initialization from their code
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.embeddings.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.embeddings.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.embeddings.position_embeddings.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.embeddings.token_type_embeddings.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.embeddings.word_embeddings.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.0.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.1.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.10.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.11.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.2.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.3.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.4.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.5.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.6.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.7.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.8.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.key.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.key.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.query.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.query.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.value.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.attention.self.value.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.intermediate.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.intermediate.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.output.LayerNorm.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.output.LayerNorm.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.output.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.encoder.layer.9.output.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.pooler.dense.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    bert_model.pooler.dense.weight
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    tag_projection_layer.bias
+2021-10-28 18:11:14 allennlp.nn.initializers INFO:    tag_projection_layer.weight
+2021-10-28 18:11:14 allennlp.models.archival INFO: removing temporary unarchived model dir at /tmp/tmp1aaajl8k
+2021-10-28 18:11:14 allennlp.common.registrable DEBUG: instantiating registered subclass semantic_role_labeling of <class 'allennlp.predictors.predictor.Predictor'>
+  3%|██████▌                                                                                                                                                                                                   | 1/31 [00:00<00:07,  4.03it/s]ack field acknowledges the syn .  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ 23%|█████████████████████████████████████████████▌                                                                                                                                                            | 7/31 [00:10<00:54,  2.27s/it]send if no sends have been issued and there is no pending data to send , 
+send then form a fin segment and send it , 
+send then form a fin segment and send it . 
+ 35%|███████████████████████████████████████████████████████████████████████▎                                                                                                                                 | 11/31 [00:20<00:48,  2.43s/it]syn has been acked ) ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ 71%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                          | 22/31 [00:36<00:08,  1.02it/s]fin is now acknowledged  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ 74%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                   | 23/31 [00:36<00:06,  1.20it/s]ack acknowledges our fin  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ 77%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                             | 24/31 [00:36<00:05,  1.37it/s]acknowledgment of our fin .  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+fin is now acknowledged ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ 87%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                          | 27/31 [00:38<00:02,  1.69it/s]fin has been acked ( perhaps in this segment ) ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 31/31 [00:42<00:00,  1.38s/it]
+root@14e8001b4810:/workspace/rfcnlp#
