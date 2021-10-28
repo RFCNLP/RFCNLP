@@ -68,8 +68,7 @@ sudo docker build -t rfcnlp .
 You may see some warnings about dependencies, but the image should build.
 
 ```
-sudo docker run --name rfcnlp bash --gpus device=0 nvidia/cuda
-
+sudo docker run --gpus all -it rfcnlp bash
 ```
 
 You will now be able to run any of the targets in the Makefile, from a prompt giving you full access to bash inside the docker image.
@@ -152,6 +151,30 @@ docker cp flamboyant_tu:rfcnlp/dccpbert2promela.out/ dccpbert2promela.out/
 ```
 
 There is a strange issue where when you do this, you don't have non-`sudo` permission to change or delete the copied files.  But you do have `sudo` permission, e.g., you can do `sudo rm -rf dccpbert2promela.out` if you'd like.
+
+## Command-Line Interface
+
+After interacting with the pre-defined [Makefile](Makefile) targets in the [Dockerfile](Dockerfile), you might want to start interacting directly with our software.  In this section, we explain the specific software provided, and how to interact with it.
+
+### `nlp2promela/nlp2promela.py`
+
+This script takes only one argument, namely the path to the intermediate representation of an RFC document.  It performs FSM Extraction on the provided intermediate representation.  Without loss of generality, if the path to the intermediate representation was `/dir1/dir2/dir3/protocol3.xml`, then it saves the extracted FSM as an image in `protocol3.png`, and as a Promela program in `protocol3.pml`.  
+
+In the special case where the FSM name (in the example, `protocol3`) contains the sub-string "TCP" or "DCP", respectively, it compares the graph representation of the extracted FSM to a canonical graph representation of TCP (or DCP, resp.), stored in [testConstants.py](nlp2promela/testConstants.py), and outputs a detailed summary of the differences.  Then, it performs Attacker Synthesis on the extracted FSM, using the TCP (or DCP, resp.) correctness properties stored in `promela-models/TCP/props`, and saves any synthesized attackers to `out/`.
+
+Example usage:
+
+```
+python3 nlp2promela/nlp2promela.py rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
+```
+
+### `nlp-parser/linear.py`
+
+TODO
+
+### `nlp-parser/bert_bilstm_crf.py`
+
+TODO
 
 ## Disclaimers
 
