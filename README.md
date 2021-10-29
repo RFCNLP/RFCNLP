@@ -127,7 +127,7 @@ The NLP pipeline uses machine learning and is consequentially non-deterministic.
 
 We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets are defined below.  Synthesized attacks are saved to the `out` directory, and are also analyzed in the CLI output.  Additionally, the extracted FSM is saved in `TCP.png` in the case of the TCP targets, or `DCCP.png` in the case of the DCCP targets.  The FSM is converted to a Promela program, which is saved in `TCP.pml` in the case of the TCP targets, or `DCCP.pml` in the case of the DCCP targets.  
 
-Of course, if you are running these targets inside the Docker image, all of these output files will be inside the image, so you will need to move them to the host machine if you want to inspect them in detail.  We show how to do this later on in this README.  
+If you are running these targets inside the Docker image, all of these output files will be inside the image, so you will need to move them to the host machine if you want to inspect them in detail.  We show how to do this later on in this README.  
 
 * `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.  Example terminal output can be found [here](example.outputs/tcp2promela.txt).
 
