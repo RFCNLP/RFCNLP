@@ -137,9 +137,9 @@ The targets for FSM Extraction and Attacker Synthesis against the NLP-derived in
 
 * `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.
 
-* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.
+* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccplinear2promela.txt).
 
-* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.
+* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcpbert2promela.txt).
 
 * `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.
 
@@ -206,7 +206,7 @@ docker cp flamboyant_tu:rfcnlp/dccplinear2promela.out/ dccplinear2promela.out/
 docker cp flamboyant_tu:rfcnlp/dccpbert2promela.out/   dccpbert2promela.out/
 ```
 
-There is a strange issue where when you do this, you don't have non-`sudo` permission to change or delete the copied files.  But you do have `sudo` permission, e.g., you can do `sudo rm -rf dccpbert2promela.out` if you'd like.
+You might need `sudo` to modify or delete the copied files, e.g., `sudo rm -rf dccpbert2promela.out`.
 
 Another thing to be aware of is that we liberally color the terminal output from our scripts for readability.  So if you are piping our output into your own software, you may run into issues.  These can be easily resolved by modifying [our coloring logic](nlp2promela/printUtils.py).
 
