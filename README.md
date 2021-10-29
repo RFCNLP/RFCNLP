@@ -135,7 +135,7 @@ Of course, if you are running these targets inside the Docker image, all of thes
 
 The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
 
-* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.
+* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcplinear2promela.txt).
 
 * `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccplinear2promela.txt).
 
