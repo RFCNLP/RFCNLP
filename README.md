@@ -6,7 +6,7 @@ The repository has been thoroughly anonymized for the double-blind review proces
 
 ## Reproduce Our Results
 
-To use our pre-trained technical language embedding, you'll need to get them using git-LFS, like so:
+To use our pre-trained technical language embedding, you'll need to get it using git-LFS, like so:
 
 ```
 git lfs pull
@@ -218,7 +218,7 @@ After interacting with the predefined [Makefile](Makefile) targets in the [Docke
 
 This script takes only one argument, namely the path to the intermediate representation of an RFC document.  It performs FSM Extraction on the provided intermediate representation.  Without loss of generality, if the path to the intermediate representation was `/dir1/dir2/dir3/protocol3.xml`, then it saves the extracted FSM as an image in `protocol3.png`, and as a Promela program in `protocol3.pml`.  
 
-In the special case where the FSM name (in the example, `protocol3`) contains the sub-string "TCP" or "DCCP", respectively, it compares the graph representation of the extracted FSM to a canonical graph representation of TCP (or DCCP, resp.), stored in [testConstants.py](nlp2promela/testConstants.py), and outputs a detailed summary of the differences.  Then, it performs Attacker Synthesis on the extracted FSM, using the TCP (or DCCP, resp.) correctness properties stored in `promela-models/TCP/props`, and saves any synthesized attackers to `out/`.
+In the special case where the FSM name (in the example, `protocol3`) contains the sub-string "TCP" or "DCCP", respectively, it compares the graph representation of the extracted FSM to a canonical graph representation of TCP (or DCCP, resp.), stored in [testConstants.py](nlp2promela/testConstants.py), and outputs a detailed summary of the differences.  Then, it performs Attacker Synthesis on the extracted FSM, using the TCP (or DCCP, resp.) correctness properties stored in `promela-models/TCP/props` (or `promela-models/DCCP/props`, resp.), and saves any synthesized attackers to `out/`.
 
 Example usage:
 
@@ -236,14 +236,14 @@ representation for a given protocol. It can be run by doing:
 
 ```
 python3 nlp-parser.py linear.py \
-	--protocol PROTOCOL         \
-	[--stem]                    \
-	[--write_results]           \
-	[--heuristics]              \
-	[--heuristics_only]         \
-	[--token_level]             \
-	[--phrase_level]            \
-	--outdir OUTDIR
+    --protocol PROTOCOL         \
+    [--stem]                    \
+    [--write_results]           \
+    [--heuristics]              \
+    [--heuristics_only]         \
+    [--token_level]             \
+    [--phrase_level]            \
+    --outdir OUTDIR
 ```
 
 #### Parameters
@@ -270,20 +270,20 @@ This script uses a Bert-BiLSTM-CRF model to learn to predict an intermediate
 representation for a given protocol. It can be run by doing:
 
 ```
-python3 bert_bilstm_crf.py          \
-	--protocol PROTOCOL             \
-	[--features]                    \
-	[--batch_size BATCH_SIZE]       \
-	[--patience PATIENCE]           \
-	--savedir SAVEDIR               \
-	[--do_train]                    \
-	[--do_eval]                     \
-	--outdir OUTDIR                 \
-	[--write_results]               \
-	[--heuristics]                  \
-	--bert_model BERT_MODEL         \
-	[--learning_rate LEARNING_RATE] \
-	[--cuda_device CUDA_DEVICE]
+python3 bert_bilstm_crf.py        \
+  --protocol PROTOCOL             \
+  [--features]                    \
+  [--batch_size BATCH_SIZE]       \
+  [--patience PATIENCE]           \
+  --savedir SAVEDIR               \
+  [--do_train]                    \
+  [--do_eval]                     \
+  --outdir OUTDIR                 \
+  [--write_results]               \
+  [--heuristics]                  \
+  --bert_model BERT_MODEL         \
+  [--learning_rate LEARNING_RATE] \
+  [--cuda_device CUDA_DEVICE]
 ```
 #### Parameters
 
