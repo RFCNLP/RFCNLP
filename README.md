@@ -129,7 +129,7 @@ We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets a
 
 Of course, if you are running these targets inside the Docker image, all of these output files will be inside the image, so you will need to move them to the host machine if you want to inspect them in detail.  We show how to do this later on in this README.  
 
-* `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.
+* `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.  Example terminal output can be found [here](example.outputs/tcp2promela.txt).
 
 * `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.  Example terminal output can be found [here](example.outputs/dccp2promela.txt).
 
@@ -143,7 +143,7 @@ The targets for FSM Extraction and Attacker Synthesis against the NLP-derived in
 
 * `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccpbert2promela.txt).
 
-The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce our results using our saved intermediary representations, using the targets given below.
+The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce [our results](RESULTS.july.27/) using our saved intermediary representations, using the targets given below.
 
 * `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/TCP.xml).
 
