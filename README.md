@@ -314,4 +314,4 @@ NeuralCRF+R in the paper)
 
 ## Disclaimers
 
-Considerable effort was taken to anonymize and automate our code-base for open-source release.  If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/anonymous-sp-submission/RFCNLP/issues) reporting the problem, and we will do our best to (anonymously) resolve it.
+If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/anonymous-sp-submission/RFCNLP/issues) reporting the problem, and we will do our best to resolve it.
