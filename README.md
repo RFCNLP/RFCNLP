@@ -141,7 +141,7 @@ The targets for FSM Extraction and Attacker Synthesis against the NLP-derived in
 
 * `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcpbert2promela.txt).
 
-* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.
+* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccpbert2promela.txt).
 
 The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce our results using our saved intermediary representations, using the targets given below.
 
