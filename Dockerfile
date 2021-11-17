@@ -54,7 +54,7 @@ RUN wget https://dlcdn.apache.org/opennlp/opennlp-1.9.3/apache-opennlp-1.9.3-bin
 RUN tar -xvzf apache-opennlp-1.9.3-bin.tar.gz
 RUN mv apache-opennlp-* /usr/bin/.
 # 2.3. Install our updated version of KORG
-RUN git clone https://github.com/anonymous-sp-submission/korg-update.git korg-update
+RUN git clone https://github.com/RFCNLP/RFCNLP-korg.git korg-update
 WORKDIR korg-update
 RUN pip3 install .
 # 3. Install spin.
