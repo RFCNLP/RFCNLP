@@ -267,103 +267,441 @@ The word "supports" might seem strange -- you can interpret it as meaning "verif
 
 These results are reported in Table IV of our paper.
 
-Next, we synthesize condidate attackers using each of the supported properties.  This is probably the most confusing part of the terminal output.  First, you will see output from Spin at multiple stages of this process, e.g.:
+Next, we synthesize condidate attackers using each of the supported properties.  These get saved to the folder `out/`.
+Meanwhile, the terminal output contains output from running Spin, which is useful from a development perspective, but not very useful for the end user.
+
+Once the attacks are synthesized and saved in the `out/` folder, only the ones with `_soft` in their file-name are relevant.  (The other ones do not incorporate our changes to support partial FSMs.)  For instance, Attacker 32 produced using `phi1` with TCP Gold:
 
 ```
-============ TRY TO ATTACK promela-models/TCP/props/phi1.pml============
-remainder = TEMPORARY-net-rem-9222408737716169234/7095940097103984140.pml
-prop = promela-models/TCP/props/phi1.pml
-network = TEMPORARY-net-rem-9222408737716169234/8309665970987394202.pml
-IO = promela-models/TCP/korg-components/IO.txt
-Models?  False
-ltl newPhi: (! (<> ((b==1)))) || ([] ((! ((state[0]==0))) || (! ((state[1]==4)))))
-pan:1: assertion violated  !( !(( !((state[0]==0))|| !((state[1]==4))))) (at depth 23)
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml1.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml2.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml3.trail
-pan:4: assertion violated  !(( !(( !((state[0]==0))|| !((state[1]==4))))&&(b==1))) (at depth 23)
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml4.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml5.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml6.trail
-pan:7: assertion violated  !((b==1)) (at depth 29)
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml7.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml8.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml9.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml10.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml11.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml12.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml13.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml14.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml15.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml16.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml17.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml18.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml19.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml20.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml21.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml22.trail
-pan: wrote attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml23.trail
+/* spin -t32 -s -r -p -g attack-promela-models.TCP.props.phi1-TCP-_daisy_check.pml */
+active proctype attacker() {
+	
+	if
+	:: BtoN ? SYN;
+	fi unless timeout;
+	if
+	:: BtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! ACK;
+	fi unless timeout;
+// recovery to N
+// N begins here ... 
+
+	do
+	:: AtoN ? SYN -> 
+		if
+		:: NtoB ! SYN;
+		fi unless timeout;
+
+	:: AtoN ? ACK -> 
+		if
+		:: NtoB ! ACK;
+		fi unless timeout;
+
+	:: AtoN ? FIN -> 
+		if
+		:: NtoB ! FIN;
+		fi unless timeout;
+
+	:: BtoN ? SYN -> 
+		if
+		:: NtoA ! SYN;
+		fi unless timeout;
+
+	:: BtoN ? ACK -> 
+		if
+		:: NtoA ! ACK;
+		fi unless timeout;
+
+	:: BtoN ? FIN -> 
+		if
+		:: NtoA ! FIN;
+		fi unless timeout;
+
+	od
+
+}
 ```
 
-Second, if a property is not supported by the extracted FSM, we print a message saying that because it is not supported, it cannot be used to synthesize candidate attackers.  For instance:
+All canonical attacks work, as KORG is sound and complete.  But an attack synthesized with an NLP-derived FSM might not always work, due to errors in the FSM.  To check if such an attack works - i.e., if it is confirmed - you can run it with the corresponding model.  For TCP, here is a nice test-harness, which will test if a TCP attack works against at least one of the TCP properties:
 
 ```
-promela-models/TCP/props/phi3.pml was not supported by TEMPORARY-net-rem-7326678231000585354/4934667472316810343.pml || TEMPORARY-net-rem-7326678231000585354/288689041877425805.pml so cannot be attacked.
-promela-models/TCP/props/phi5.pml was not supported by TEMPORARY-net-rem-7326678231000585354/4934667472316810343.pml || TEMPORARY-net-rem-7326678231000585354/288689041877425805.pml so cannot be attacked.
+mtype = { SYN, FIN, ACK, ABORT, CLOSE, RST, OPEN }
+
+chan AtoN = [1] of { mtype };
+chan NtoA = [0] of { mtype };
+chan BtoN = [1] of { mtype };
+chan NtoB = [0] of { mtype };
+
+int state[2];
+int pids[2];
+
+#define ClosedState    0
+#define ListenState    1
+#define SynSentState   2
+#define SynRecState    3
+#define EstState       4
+#define FinW1State     5
+#define CloseWaitState 6
+#define FinW2State     7
+#define ClosingState   8
+#define LastAckState   9
+#define TimeWaitState  10
+#define EndState       -1
+
+#define leftConnecting (state[0] == ListenState && state[1] == SynSentState)
+#define leftEstablished (state[0] == EstState)
+#define rightEstablished (state[1] == EstState)
+#define leftClosed (state[0] == ClosedState)
+
+bit b = 0;
+
+proctype TCP(chan snd, rcv; int i) {
+	pids[i] = _pid;
+CLOSED:
+	state[i] = ClosedState;
+	if
+	/* Passive open */
+	:: goto LISTEN;
+	/* Active open */
+	:: snd ! SYN; goto SYN_SENT;
+	/* Terminate */
+	:: goto end;
+	fi
+LISTEN:
+	state[i] = ListenState;
+	if
+	:: rcv ? SYN -> snd ! SYN; 
+	                snd ! ACK; goto SYN_RECEIVED;
+	/* Simultaneous LISTEN */
+	:: timeout -> goto CLOSED; 
+	/* recently added the 'timout.' */
+	fi
+SYN_SENT:
+	state[i] = SynSentState;
+	if
+	:: rcv ? SYN;
+		if
+		/* Standard behavior */
+		:: rcv ? ACK -> snd ! ACK; goto ESTABLISHED;
+		/* Simultaneous open */
+		:: snd ! ACK; goto SYN_RECEIVED;
+		fi
+	:: rcv ? ACK; rcv ? SYN -> snd ! ACK; goto ESTABLISHED;
+	/* Timeout */
+	:: timeout -> goto CLOSED;
+	fi
+SYN_RECEIVED:
+	state[i] = SynRecState;
+	rcv ? ACK; goto ESTABLISHED;
+	/* We may want to consider putting a timeout -> CLOSED here. */
+ESTABLISHED:
+	state[i] = EstState;
+	if
+	/* Close - initiator sequence */
+	:: snd ! FIN; goto FIN_WAIT_1;
+	/* Close - responder sequence */
+	:: rcv ? FIN -> snd ! ACK; goto CLOSE_WAIT;
+	fi
+FIN_WAIT_1:
+	state[i] = FinW1State;
+	if
+	/* Simultaneous close */
+	:: rcv ? FIN -> snd ! ACK; goto CLOSING;
+	/* Standard close */
+	:: rcv ? ACK -> goto FIN_WAIT_2;
+	fi
+CLOSE_WAIT:
+	state[i] = CloseWaitState;
+	snd ! FIN; goto LAST_ACK;
+FIN_WAIT_2:
+	state[i] = FinW2State;
+	rcv ? FIN -> snd ! ACK; goto TIME_WAIT;
+CLOSING:
+	state[i] = ClosingState;
+	rcv ? ACK -> goto TIME_WAIT;
+LAST_ACK:
+	state[i] = LastAckState;
+	rcv ? ACK -> goto CLOSED;
+TIME_WAIT:
+	state[i] = TimeWaitState;
+	goto CLOSED;
+end:
+	state[i] = EndState;
+}
+
+init {
+	state[0] = ClosedState;
+	state[1] = ClosedState;
+	run TCP(AtoN, NtoA, 0);
+	run TCP(BtoN, NtoB, 1);
+}
+
+ltl all_phi {
+	(eventually ( b == 1 ) ) implies (
+		(
+			always ( leftClosed implies !rightEstablished )
+		)
+		&&
+		(
+			( (always ( eventually ( state[0] == 1 && state[1] == 2 ) ) ) 
+				implies ( eventually ( state[0] == 4 ) ) )
+		)
+		&&
+		(
+			!(eventually (((always (state[0] == SynSentState))   ||
+			               (always (state[0] == SynRecState))    ||
+			               (always (state[0] == EstState))       ||
+			               (always (state[0] == FinW1State))     ||
+			               (always (state[0] == CloseWaitState)) ||
+			               (always (state[0] == FinW2State))     ||
+			               (always (state[0] == ClosingState))   ||
+			               (always (state[0] == LastAckState))   ||
+			               (always (state[0] == TimeWaitState)))
+			               &&
+			              ((always (state[1] == SynSentState))   ||
+			               (always (state[1] == SynRecState))    ||
+			               (always (state[1] == EstState))       ||
+			               (always (state[1] == FinW1State))     ||
+			               (always (state[1] == CloseWaitState)) ||
+			               (always (state[1] == FinW2State))     ||
+			               (always (state[1] == ClosingState))   ||
+			               (always (state[1] == LastAckState))   ||
+			               (always (state[1] == TimeWaitState)))))
+		)
+		&&
+		(
+			always (
+				(state[0] == SynRecState)
+					implies (
+						eventually (
+							(state[0] == EstState   || 
+							 state[0] == FinW1State ||
+							 state[0] == ClosedState)
+						)
+					)
+				)
+		)
+}
 ```
 
-On the other hand, if a property is supported by the extracted FSM, then we use KORG to generate candidate attackers.  The step where KORG generates the candidates looks like this:
+Simply append the attack to the end of the file, name it e.g. `test-TCP-attack.pml`, and then run e.g.
 
 ```
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_3_WITH_RECOVERY.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_3_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_13_WITH_RECOVERY.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
-out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_13_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
-			promela-models/TCP/props/phi1.pml
+spin -run -a -DNOREDUCE test-TCP-attack.pml
 ```
 
-Importantly, these are only candidates!  They are not actually confirmed.  In other words, all we've done is check that they work against the Promela program derived from the extracted FSM; we haven't yet checked that they also work against the Canonical version.  Next, we check if the candidates work against the corresponding Canonical Promela program.  The output from this step looks like this (and again, only the ones with `_soft_` in their names interest us!):
+If Spin reports no violation or acceptance cycle found, then the attack is not confirmed.  If it does find a violation or an acceptance cycle, then it saves a trail file.  You can view the trail file by running, e.g.:
 
 ```
-	 testing if attacks transfer to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
-
-		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
-		work as an attack with recovery against promela-models/TCP/props/phi2.pml
-		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
-
-
-		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
-		work as an attack with recovery against promela-models/TCP/props/phi3.pml
-		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
-
-		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
-		work as an attack with recovery against promela-models/TCP/props/phi5.pml
-		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
-
-		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY.pml does NOT
-		work as an attack with recovery against promela-models/TCP/props/phi1.pml
-		when applied to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml
-[ comparing to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml ]
-		out/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_0_WITH_RECOVERY_soft_transitions.pml is an attack with recovery against
-			promela-models/TCP/props/phi2.pml
-
+spin -t0 -s -r test-TCP-attack.pml
 ```
 
-In brief:
+For more information refer to the [Spin docs](http://spinroot.com/spin/whatispin.html).  For DCCP the process is the same, but the harness file to test attacks is the following:
 
-* We are only interested in the candidates that have `_soft_` in their name.  These are the ones we have modified to support partial FSMs.  If you're curious, the relevant code can be found [here](https://github.com/anonymous-sp-submission/korg-update/blob/44d2de312c56d0b844ddff5a5b1dee7082b35ca7/korg/Construct.py#L122).
+```
+mtype = { DCCP_REQUEST, 
+          DCCP_RESPONSE, 
+          DCCP_DATA, 
+          DCCP_ACK, 
+          DCCP_DATAACK, 
+          DCCP_CLOSEREQ, 
+          DCCP_CLOSE, 
+          DCCP_RESET,
+          DCCP_SYNC,
+          DCCP_SYNCACK };
 
-* The term "with recovery" is misleading.  The term comes from the [original KORG paper](https://arxiv.org/pdf/2004.01220.pdf), in Definition 7.  Basically these are the attacks which succeed even when we assume that they eventually terminate.  They are the only attacks we are interested in and report on, in our paper, because we consider non-terminating attacks to be unrealistic.
+chan AtoN = [1] of { mtype };
+chan NtoA = [0] of { mtype };
+chan BtoN = [1] of { mtype };
+chan NtoB = [0] of { mtype };
 
-* We consider a candidate to be "confirmed" if it causes the Canonical program to violate at least one of its correctness properties.  We check this by looking at the output under "testing if attacks transfer to `P`", where `P` is the Canonical program, e.g., `promela-models/DCCP/Canonical-Test-Client-Server/canonical.DCCP.client.server.pml`.  We don't use the word "transfers" in the paper, only in the code.  All it means is that we are checking if the attacks also work against the Canonical program, i.e., if the candidates are confirmed.
+int state[2];
+int before_state[2];
 
-* If the candidate is confirmed, you see a line like `[ comparing to promela-models/TCP/Canonical-Test/Canonical-TCP-test.pml ]` which says Canonical program it was confirmed against, and then a line saying which property it was confirmed against.
+#define ClosedState    0
+#define ListenState    1
+#define RequestState   2
+#define RespondState   3
+#define PartOpenState  4
+#define OpenState      5
+#define CloseReqState  6
+#define ClosingState   7
+#define TimeWaitState  8
 
-So, the snippet above communicates that attacker 0, when modified to support partial FSMs, is indeed confirmed using the Canonical TCP Promela program and the correctness property `phi2`.  These are the results we report in Table V of our paper.
+#define StableState    9
+#define ChangingState  10
+#define UnstableState  11
+#define EndState       -1
+
+#define leftClosed       (state[0] == ClosedState)
+#define rightEstablished (state[1] == OpenState)
+
+#define leftListen   (state[0] == ListenState)
+#define leftTimeWait (state[0] == TimeWaitState)
+#define leftRespond  (state[0] == RespondState)
+#define leftLTR      (leftListen || leftTimeWait || leftRespond)
+#define leftTR       (              leftTimeWait || leftRespond)
+
+bit b = 0;
+
+proctype DCCP(chan snd, rcv; int i) {
+    bool I_am_active;
+CLOSED:
+    I_am_active = false;
+    before_state[i] = state[i];
+    state[i] = ClosedState;
+    if
+    :: goto LISTEN; /* passive open */
+    :: snd ! DCCP_REQUEST;  /* active  open */ 
+       goto REQUEST; 
+    fi
+LISTEN:
+    before_state[i] = state[i];
+    state[i] = ListenState;
+    if
+    :: rcv ? DCCP_REQUEST -> /* rcv request  */
+       snd ! DCCP_RESPONSE; /* snd response */ 
+       goto RESPOND;
+    :: timeout -> goto CLOSED; // need to add this to the FSM & confirm
+    fi
+REQUEST:
+    I_am_active = true;
+    before_state[i] = state[i];
+    state[i] = RequestState;
+    if
+    :: rcv ? DCCP_RESPONSE -> /* rcv response */
+       snd ! DCCP_ACK;       /* snd Ack      */
+       goto PARTOPEN;
+    :: rcv ? DCCP_RESET -> goto CLOSED;
+    :: rcv ? DCCP_SYNC -> snd ! DCCP_RESET; goto CLOSED;
+    :: timeout -> goto CLOSED; // need to add this to the FSM & confirm
+    fi
+RESPOND:
+    I_am_active = false;
+    before_state[i] = state[i];
+    state[i] = RespondState;
+    /* rcv Ack/DataAck */
+    do
+    :: rcv ? DCCP_ACK     -> goto OPEN;
+    :: rcv ? DCCP_DATAACK -> goto OPEN; 
+    /* It MAY also leave the RESPOND state for CLOSED after a timeout of not less
+     * than 4MSL (8 minutes); when doing so, it SHOULD send a DCCP-Reset
+     * with Reset Code 2, "Aborted", to clean up state at the client. */
+    :: timeout -> 
+        if
+        :: snd ! DCCP_RESET;
+        :: skip;
+        fi
+        goto CLOSED;
+    :: snd ! DCCP_DATA; // need to add this to the FSM & confirm
+    od
+PARTOPEN:
+    before_state[i] = state[i];
+    state[i] = PartOpenState;
+    do
+    /* rcv packet */
+    :: rcv ? DCCP_DATA;    snd ! DCCP_ACK; goto OPEN;
+    :: rcv ? DCCP_DATAACK; snd ! DCCP_ACK; goto OPEN;
+    /* send packet */
+    :: snd ! DCCP_DATAACK;
+    /* timeout for reliability */
+    :: timeout -> goto CLOSED;
+    /* go to OPEN because they know about me -- but do so implicitly, because
+     * it would be kind of inconvenient to process a message twice in Promela.
+     */
+    :: rcv ? DCCP_CLOSEREQ -> snd ! DCCP_CLOSE; goto CLOSING; // duplicate OPEN logic
+    :: rcv ? DCCP_CLOSE    -> snd ! DCCP_RESET; goto CLOSED;  // duplicate OPEN logic
+    :: rcv ? DCCP_ACK      -> goto OPEN;
+    od
+OPEN:
+    before_state[i] = state[i];
+    state[i] = OpenState;
+    do
+    /* send data */
+    :: snd ! DCCP_DATA;
+    :: snd ! DCCP_DATAACK;
+    :: rcv ? DCCP_ACK;
+    :: rcv ? DCCP_DATA;
+    :: rcv ? DCCP_DATAACK;
+    /* server active close */
+    :: I_am_active == true -> 
+       snd ! DCCP_CLOSEREQ; /* snd CloseReq */
+       goto CLOSEREQ;
+    :: rcv ? DCCP_CLOSE -> /* rcv Close */
+       snd ! DCCP_RESET; /* snd Reset */
+       goto CLOSED;
+    /* active close */
+    :: I_am_active == true ->
+       snd ! DCCP_CLOSE; /* snd Close */ 
+       goto CLOSING;
+    :: rcv ? DCCP_CLOSEREQ -> /* rcv CloseReq */
+       snd ! DCCP_CLOSE;    /* snd Close */ 
+       goto CLOSING;
+    /* simply shut down the connection silently */
+    :: goto CLOSED; // need to add this to the FSM & confirm 
+    od
+CLOSEREQ:
+    before_state[i] = state[i];
+    state[i] = CloseReqState;
+    rcv ? DCCP_CLOSE;  /* rcv Close */
+    snd ! DCCP_RESET; /* snd Reset */
+    goto CLOSED;
+CLOSING:
+    before_state[i] = state[i];
+    state[i] = ClosingState;
+    if
+    :: rcv ? DCCP_RESET -> /* rcv Reset */
+       goto TIMEWAIT;
+    // Not in the spec
+    :: timeout -> goto CLOSED;
+    fi
+TIMEWAIT:
+    before_state[i] = state[i];
+    state[i] = TimeWaitState;
+    skip; /* 2MSL timer expires*/
+    goto CLOSED;
+}
+
+init {
+    state[0] = ClosedState;
+    state[1] = ClosedState;
+    before_state[0] = ClosedState;
+    before_state[1] = ClosedState;
+    run DCCP(AtoN, NtoA, 0);
+    run DCCP(BtoN, NtoB, 1);
+}
+
+ltl all_phi {
+    (eventually ( b == 1 ) ) implies (
+    	(
+    	    ! ( eventually 
+    	        always (
+    	            (state[0] == before_state[0]) &&
+    	            (state[1] == before_state[1])
+    	        )
+    	    )
+        )
+        &&
+        (
+    		always (
+            	!(state[0] == TimeWaitState && state[1] == TimeWaitState)
+        	)
+        )
+        &&
+        (
+        	!(eventually always (state[0] == before_state[0]))
+        )
+        &&
+        (
+        	always (
+    			!(
+    				state[0] == CloseReqState &&
+    				state[1] == CloseReqState
+    			)
+    		)	
+        )
+    )
+}
+```

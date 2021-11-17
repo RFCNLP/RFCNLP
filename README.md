@@ -102,7 +102,7 @@ Next, build the Docker image.
 sudo docker build -t rfcnlp .
 ```
 
-You may see some warnings about dependencies, but the image should build.  Example output from this step can be found [here](example.outputs/docker.build.txt).
+You may see some warnings about dependencies, but the image should build.
 
 ```
 sudo docker run --gpus all -it rfcnlp bash
@@ -115,13 +115,13 @@ You will now be able to run any of the targets in the Makefile, from a prompt gi
 
 The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
 
-* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccplineartrain.txt).
+* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/DCCP.xml`.
 
-* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcplineartrain.txt).
+* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/TCP.xml`.
 
-* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccpberttrain.txt).
+* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml`.
 
-* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcpberttrain.txt).
+* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml`.
 
 ### FSM Extraction & Attacker Synthesis Results 
 
@@ -143,7 +143,7 @@ The targets for FSM Extraction and Attacker Synthesis against the NLP-derived in
 
 * `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccpbert2promela.txt).
 
-The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce [our results](RESULTS.july.27/) using our saved intermediary representations, using the targets given below.
+The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce [our results](example.outputs/) using our saved intermediary representations, using the targets given below.
 
 * `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/TCP.xml).
 
@@ -226,7 +226,7 @@ Example usage:
 python3 nlp2promela/nlp2promela.py rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
 ```
 
-Interpreting the output in detail is complicated, because of how we use [KORG](https://github.com/anonymous-sp-submission/korg-update).  For more details, refer to the [attacker synthesis tutorial](tutorials/attacker.synthesis.md).
+Interpreting the output in detail is complicated, because of how we use [KORG](https://github.com/RFCNLP/RFCNLP-korg).  For more details, refer to the [attacker synthesis tutorial](tutorials/attacker.synthesis.md).
 
 
 ### `nlp-parser/linear.py`
