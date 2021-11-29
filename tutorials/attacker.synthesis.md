@@ -128,11 +128,219 @@ For more details refer to the [KORG paper](https://arxiv.org/abs/2004.01220) and
 
 ## 2. Canonical Attacker Synthesis
 
+### Important Caveat
+
+It is important to note that our modified version of KORG solves a very specific attacker synthesis problem for partial FSMs.  In the original KORG paper, and in the context of complete FSMs, this problem is called R∃ASP.  If you want to solve the ∃ASP, you should use the original version of KORG, not our modified version!  The only problem that we promise our modified version of KORG will solve is the one studied in our paper (R∃ASP).
+
+### Tutorial
+
 The easiest way to run the Canonical attacker synthesis is to use the [Makefile](https://github.com/RFCNLP/RFCNLP-korg/blob/master/Makefile) in [our modified version of KORG](https://github.com/RFCNLP/RFCNLP-korg).  
 - To generate attacks against Canonical TCP, run `make tcp`.  
 - To generate attacks against Canonical DCCP, run `make dccp`.  
 The Makefile has various other interesting targets which you may want to run in order to understand the code in great detail, but `tcp` and `dccp` are the only important ones for reproducing our results.
 
+As a concrete example, let's do attacker synthesis using Canonical TCP.  We navigate to the KORG source directory and type `make tcp`.  First we see the invocation of KORG which is executed by the `tcp` target in the Makefile.
+
+```
+for j in 1 2 3 4; do               \
+	python3 korg/Korg.py           \
+		--model=demo/TCP/TCP.pml   \
+		--phi=demo/TCP/phi$j.pml   \
+		--Q=demo/TCP/network.pml   \
+		--IO=demo/TCP/IO.txt       \
+		--max_attacks=100          \
+		--with_recovery=True       \
+		--name=TCP.$j              \
+		--characterize=False;      \
+done;
+```
+
+Next we see many lines of Spin-related output.
+
+```
+Models?  False
+ltl newPhi: (! (<> ((b==1)))) || ([] ((! ((state[0]==0))) || (! ((state[1]==4)))))
+pan:1: assertion violated  !( !(( !((state[0]==0))|| !((state[1]==4))))) (at depth 262)
+pan: wrote TCP.1_daisy_check.pml1.trail
+pan:2: assertion violated  !(( !(( !((state[0]==0))|| !((state[1]==4))))&&(b==1))) (at depth 262)
+pan: wrote TCP.1_daisy_check.pml2.trail
+pan:3: assertion violated  !((b==1)) (at depth 264)
+pan: wrote TCP.1_daisy_check.pml3.trail
+pan: wrote TCP.1_daisy_check.pml4.trail
+pan: wrote TCP.1_daisy_check.pml5.trail
+pan: wrote TCP.1_daisy_check.pml6.trail
+pan: wrote TCP.1_daisy_check.pml7.trail
+pan: wrote TCP.1_daisy_check.pml8.trail
+pan: wrote TCP.1_daisy_check.pml9.trail
+pan: wrote TCP.1_daisy_check.pml10.trail
+pan: wrote TCP.1_daisy_check.pml11.trail
+pan: wrote TCP.1_daisy_check.pml12.trail
+```
+... etc.  This output is useful for debug purposes.  For example, you will see many snippets like the following:
+
+```
+-------------- PARSING TRAIL: 
+
+ltl newPhi: (! (<> ((b==1)))) || ((! ([] (<> (((state[0]==1)) && ((state[1]==2)))))) || (<> ((state[0]==4))))
+starting claim 3
+Never claim moves to line 5	[(!((state[0]==4)))]
+  2:	proc  0 (:init::1) TCP.2_daisy_check.pml:104 (state 1)	[state[0] = 0]
+  4:	proc  0 (:init::1) TCP.2_daisy_check.pml:105 (state 2)	[state[1] = 0]
+Starting TCP with pid 3
+  6:	proc  0 (:init::1) TCP.2_daisy_check.pml:106 (state 3)	[(run TCP(AtoN,NtoA,0))]
+		queue 1 (AtoN): 
+  8:	proc  2 (TCP:1) TCP.2_daisy_check.pml:30 (state 1)	[pids[i] = _pid]
+		queue 1 (AtoN): 
+		pids[0] = 2
+		pids[1] = 0
+ 10:	proc  2 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+ 12:	proc  2 (TCP:1) TCP.2_daisy_check.pml:37 Send SYN	-> queue 1 (snd)
+ 12:	proc  2 (TCP:1) TCP.2_daisy_check.pml:37 (state 4)	[snd!SYN]
+		queue 1 (AtoN): [SYN]
+ 14:	proc  2 (TCP:1) TCP.2_daisy_check.pml:51 (state 18)	[state[i] = 2]
+		queue 1 (AtoN): [SYN]
+		state[0] = 2
+		state[1] = 0
+Starting TCP with pid 4
+ 16:	proc  0 (:init::1) TCP.2_daisy_check.pml:107 (state 4)	[(run TCP(BtoN,NtoB,1))]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+ 18:	proc  3 (TCP:1) TCP.2_daisy_check.pml:30 (state 1)	[pids[i] = _pid]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+		pids[0] = 2
+		pids[1] = 3
+ 20:	proc  3 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+ 22:	proc  3 (TCP:1) TCP.2_daisy_check.pml:37 Send SYN	-> queue 3 (snd)
+ 22:	proc  3 (TCP:1) TCP.2_daisy_check.pml:37 (state 4)	[snd!SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 24:	proc  3 (TCP:1) TCP.2_daisy_check.pml:51 (state 18)	[state[i] = 2]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		state[0] = 2
+		state[1] = 2
+ 26:	proc  1 (daisy:1) TCP.2_daisy_check.pml:123 Sent SYN	-> queue 4 (NtoB)
+ 26:	proc  1 (daisy:1) TCP.2_daisy_check.pml:123 (state 12)	[NtoB!SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 27:	proc  3 (TCP:1) TCP.2_daisy_check.pml:53 Recv SYN	<- queue 4 (rcv)
+ 27:	proc  3 (TCP:1) TCP.2_daisy_check.pml:53 (state 19)	[rcv?SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 29:	proc  1 (daisy:1) TCP.2_daisy_check.pml:121 Sent ACK	-> queue 4 (NtoB)
+ 29:	proc  1 (daisy:1) TCP.2_daisy_check.pml:121 (state 10)	[NtoB!ACK]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 30:	proc  3 (TCP:1) TCP.2_daisy_check.pml:56 Recv ACK	<- queue 4 (rcv)
+ 30:	proc  3 (TCP:1) TCP.2_daisy_check.pml:56 (state 20)	[rcv?ACK]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 32:	proc  1 (daisy:1) TCP.2_daisy_check.pml:124 (state 13)	[goto :b0]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 34:	proc  1 (daisy:1) TCP.2_daisy_check.pml:126 (state 17)	[b = 1]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		b = 1
+Never claim moves to line 4	[((!((state[0]==4))&&(b==1)))]
+ 36:	proc  1 (daisy:1) TCP.2_daisy_check.pml:130 Recv SYN	<- queue 1 (AtoN)
+ 36:	proc  1 (daisy:1) TCP.2_daisy_check.pml:130 (state 18)	[AtoN?SYN]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+Never claim moves to line 14	[(!((state[0]==4)))]
+ 38:	proc  2 (TCP:1) TCP.2_daisy_check.pml:62 (state 31)	[(timeout)]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+ 40:	proc  2 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+		state[0] = 0
+		state[1] = 2
+ 42:	proc  2 (TCP:1) TCP.2_daisy_check.pml:35 (state 3)	[goto LISTEN]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+ 44:	proc  2 (TCP:1) TCP.2_daisy_check.pml:42 (state 9)	[state[i] = 1]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+		state[0] = 1
+		state[1] = 2
+ 46:	proc  2 (TCP:1) TCP.2_daisy_check.pml:47 (state 14)	[(timeout)]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+      <<<<<START OF CYCLE>>>>>
+Never claim moves to line 13	[((!((state[0]==4))&&((state[0]==1)&&(state[1]==2))))]
+ 48:	proc  2 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+		state[0] = 0
+		state[1] = 2
+Never claim moves to line 9	[(!((state[0]==4)))]
+ 50:	proc  2 (TCP:1) TCP.2_daisy_check.pml:37 Send SYN	-> queue 1 (snd)
+ 50:	proc  2 (TCP:1) TCP.2_daisy_check.pml:37 (state 4)	[snd!SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+Never claim moves to line 14	[(!((state[0]==4)))]
+ 52:	proc  2 (TCP:1) TCP.2_daisy_check.pml:51 (state 18)	[state[i] = 2]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		state[0] = 2
+		state[1] = 2
+ 54:	proc  2 (TCP:1) TCP.2_daisy_check.pml:62 (state 31)	[(timeout)]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 56:	proc  2 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		state[0] = 0
+		state[1] = 2
+ 58:	proc  2 (TCP:1) TCP.2_daisy_check.pml:35 (state 3)	[goto LISTEN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 60:	proc  2 (TCP:1) TCP.2_daisy_check.pml:42 (state 9)	[state[i] = 1]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		state[0] = 1
+		state[1] = 2
+ 62:	proc  1 (daisy:1) TCP.2_daisy_check.pml:133 (state 20)	[(timeout)]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+Never claim moves to line 13	[((!((state[0]==4))&&((state[0]==1)&&(state[1]==2))))]
+ 64:	proc  1 (daisy:1) TCP.2_daisy_check.pml:130 Recv SYN	<- queue 1 (AtoN)
+ 64:	proc  1 (daisy:1) TCP.2_daisy_check.pml:130 (state 18)	[AtoN?SYN]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+Never claim moves to line 9	[(!((state[0]==4)))]
+ 66:	proc  2 (TCP:1) TCP.2_daisy_check.pml:47 (state 14)	[(timeout)]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+spin: trail ends after 66 steps
+#processes: 4
+		queue 1 (AtoN): 
+		queue 3 (BtoN): [SYN]
+		state[0] = 1
+		state[1] = 2
+		pids[0] = 2
+		pids[1] = 3
+		b = 1
+ 66:	proc  3 (TCP:1) TCP.2_daisy_check.pml:56 (state 21)
+ 66:	proc  2 (TCP:1) TCP.2_daisy_check.pml:32 (state 2)
+ 66:	proc  1 (daisy:1) TCP.2_daisy_check.pml:131 (state 21)
+ 66:	proc  0 (:init::1) TCP.2_daisy_check.pml:108 (state 5) <valid end state>
+ 66:	proc  - (newPhi:1) _spin_nvr.tmp:12 (state 19)
+4 processes created
+
+
+----- parsed to: 
+['NtoB ! SYN', 'NtoB ! ACK']
+['AtoN ? SYN', 'AtoN ? SYN']
+
+```
+
+TODO
 
 ## 3. Confirmation of Candidate Attackers
 
