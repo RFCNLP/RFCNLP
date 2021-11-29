@@ -129,29 +129,29 @@ We do FSM Extraction and Attacker Synthesis all at once.  The relevant targets a
 
 If you are running these targets inside the Docker image, all of these output files will be inside the image, so you will need to move them to the host machine if you want to inspect them in detail.  We show how to do this later on in this README.  
 
-* `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.  Example terminal output can be found [here](example.outputs/tcp2promela.txt).
+* `make tcp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD TCP intermediary representation.  Example terminal output can be found [here](example.outputs/tcp2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/tcp2promela/).  The extracted FSM can be found in Promela [here](example.outputs/tcp2promela/TCP.pml) or as a diagram [here](example.outputs/tcp2promela/TCP.png).
 
-* `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.  Example terminal output can be found [here](example.outputs/dccp2promela.txt).
+* `make dccp2promela` - runs FSM Extraction and Attacker Synthesis on the GOLD DCCP intermediary representation.  Example terminal output can be found [here](example.outputs/dccp2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/dccp2promela/).  The extracted FSM can be found in Promela [here](example.outputs/dccp2promela/DCCP.pml) or as a diagram [here](example.outputs/dccp2promela/DCCP.png).
 
 The targets for FSM Extraction and Attacker Synthesis against the NLP-derived intermediary representations are given below.
 
-* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcplinear2promela.txt).
+* `make tcplinear2promela` - runs FSM Extraction and Attacker Synthesis on the TCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcplinear2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/tcplinear2promela/).  The extracted FSM can be found in Promela [here](example.outputs/tcplinear2promela/TCP.pml) or as a diagram [here](example.outputs/tcplinear2promela/TCP.png).
 
-* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccplinear2promela.txt).
+* `make dccplinear2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP LinearCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccplinear2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/dccplinear2promela/).  The extracted FSM can be found in Promela [here](example.outputs/dccplinear2promela/DCCP.pml) or as a diagram [here](example.outputs/dccplinear2promela/DCCP.png).
 
-* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcpbert2promela.txt).
+* `make tcpbert2promela` - runs FSM Extraction and Attacker Synthesis on the TCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/tcpbert2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/tcpbert2promela/).  The extracted FSM can be found in Promela [here](example.outputs/tcpbert2promela/TCP.pml) or as a diagram [here](example.outputs/tcpbert2promela/TCP.png).
 
-* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccpbert2promela.txt).
+* `make dccpbert2promela` - runs FSM Extraction and Attacker Synthesis on the DCCP NeuralCRF+R intermediary representation.  Example terminal output can be found [here](example.outputs/dccpbert2promela.txt), and the corresponding synthesized attacks can be found [here](example.outputs/dccpbert2promela/).  The extracted FSM can be found in Promela [here](example.outputs/dccpbert2promela/DCCP.pml) or as a diagram [here](example.outputs/dccpbert2promela/DCCP.png).
 
 The machine learning step introduces some non-determinism, so your results might differ from those reported in our paper.  But, you can reproduce [our results](example.outputs/) using our saved intermediary representations, using the targets given below.
 
-* `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/TCP.xml).
+* `make tcplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/TCP.xml).  Example terminal output can be found [here](example.outputs/tcplinearpretrained2promela.txt) and the corresponding synthesized attacks can be found [here](example.outputs/tcplinearpretrained2promela/).
 
-* `make dccplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/DCCP.xml).
+* `make dccplinearpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP LinearCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/linear_phrases/DCCP.xml).  Example terminal output can be found [here](example.outputs/dccplinearpretrained2promela.txt) and the corresponding synthesized attacks can be found [here](example.outputs/dccplinearpretrained2promela/).
 
-* `make tcpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml).
+* `make tcpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific TCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml).  Example terminal output can be found [here](example.outputs/tcpbertpretrained2promela.txt) and the corresponding synthesized attacks can be found [here](example.outputs/tcpbertpretrained2promela/).
 
-* `make dccpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml).
+* `make dccpbertpretrained2promela` - runs FSM Extraction and Attacker Synthesis on the specific DCCP NeuralCRF+R intermediary representation generated on our machine and used in our paper, which is stored [here](rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml).  Example terminal output can be found [here](example.outputs/dccpbertpretrained2promela.txt) and the corresponding synthesized attacks can be found [here](example.outputs/dccpbertpretrained2promela/).
 
 ### Troubleshooting
 
@@ -314,4 +314,4 @@ NeuralCRF+R in the paper)
 
 ## Disclaimers
 
-If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/anonymous-sp-submission/RFCNLP/issues) reporting the problem, and we will do our best to resolve it.
+If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/RFCNLP/RFCNLP/issues) reporting the problem, and we will do our best to resolve it.
