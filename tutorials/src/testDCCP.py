@@ -2,6 +2,7 @@ import uuid
 import subprocess
 from pathlib import Path
 import os.path
+from glob import glob
 
 def analyzeDCCPattack(attackFileName):
 
@@ -38,7 +39,7 @@ def analyzeDCCPattack(attackFileName):
 
         newFileName += attackFileName.split("/")[-1].split("_WITH")[0] 
 
-        newFileName += ".phi" +  harnessFile.split(".pml").split("harness")[2]
+        newFileName += ".phi" +  harnessFile.split(".pml")[0].split("harness")[2]
 
         newFileName += ".strategy"
 
