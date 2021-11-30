@@ -154,7 +154,9 @@ Next we see many lines of Spin-related output.  This content is useful for debug
 ## 3. Confirmation of Candidate Attackers
 
 We call a candidate attacker *confirmed* if it has a terminating execution in which it violates one of the properties.
-For your convenience, we include the script [checkAttack.py](checkAttack.py).  The usage is `python3 checkAttack.py [attackFile]`, e.g., `python3 checkAttack.py example.outputs/dccplinear2promela/attack-promela-models.DCCP.props.phi1-DCCP-_True/attacker_96_WITH_RECOVERY_soft_transitions.pml`.  The script will check if a candidate attacker is confirmed or not, and print a detailed explanation to the terminal.
+For your convenience, we include the script [checkAttack.py](checkAttack.py).  The usage is `python3 checkAttack.py [attackFile]`, e.g., `python3 checkAttack.py example.outputs/dccplinear2promela/attack-promela-models.DCCP.props.phi1-DCCP-_True/attacker_96_WITH_RECOVERY_soft_transitions.pml`.  The script will check if a candidate attacker is confirmed or not, print a detailed explanation to the terminal, and then create and save a heuristic description of how the attack works against each property.  For example:
+
+TODO
 
 ## 4. Attacker Strategies
 
