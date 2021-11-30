@@ -594,11 +594,16 @@ Let's take a motivating example.  Consider [this attack](https://github.com/RFCN
 6. Receive an `ACK` from Peer B.
 7. Send an `ACK` from Peer B.
 
-Looking at this sequence of events, my first guess is that the attack is spoofing an active Peer B.  IE, when it does step 1, Peer B believes that the attacker is actually Peer A, having just transitioned into `SYN_SENT`.  How can I confirm this hypothesis?  Well, if we compute and then inspect the strategy files, we observe the following.
+Looking at this sequence of events, my first guess is that the attack is spoofing an active Peer A.  IE, when it does step 1, Peer B believes that the attacker is actually Peer A, having just transitioned into `SYN_SENT`.  How can I confirm this hypothesis?  Well, if we compute and then inspect the strategy files, we observe the following.
 
 1. Against [phi1](../promela-models/TCP/props/phi1.pml), the attack leads Peer B to `FIN-WAIT-1` after Peer A has terminated.
 2. Against [phi2](../promela-models/TCP/props/phi2.pml), the attack leads Peer B to get stuck in `SYN-SENT`.
 3. Against [phi3](../promela-models/TCP/props/phi3.pml), the attack leads the peers to deadlock in `SYN-SENT x CLOSING`.
 4. Against [phi4](../promela-models/TCP/props/phi4.pml), the attack leads Peer A to get stuck in `SYN-RECEIVED`.
 
-Combining these facts, it's reasonably to conclude the following: This attack was confirmed against all four properties; and in all four cases, it actively spoofed Peer A in order to either lead one or both peers into a deadlock or stuck state.  This is what we'd call the "overarching strategy" of an attack.  Basically, it's an English-language expert description of what the attack does and how, at a high level, which allows us to compare similar attacks even if they have different code.
+In cases 1 and 3, Peer B is lead (by the attacker actively spoofing Peer A) into a state deep in its FSM,
+supporting our hypothesis that the attacker is spoofing an active Peer A.
+In case 2, Peer B actually progresses through an entire establishment and teardown before getting stuck in `SYN-SENT`.
+And in case 4, Peer B progresses through an entire establishment and teardown, then terminates, allowing Peer A to get stuck in `SYN-RECEIVED`.
+We conclude that our hypothesis is correct.
+This attack was confirmed against all four properties; and in all four cases, it actively spoofed Peer A in order to either lead one or both peers into a deadlock or stuck state.
