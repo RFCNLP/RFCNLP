@@ -154,10 +154,304 @@ Next we see many lines of Spin-related output.  This content is useful for debug
 ## 3. Confirmation of Candidate Attackers
 
 We call a candidate attacker *confirmed* if it has a terminating execution in which it violates one of the properties.
-For your convenience, we include the script [checkAttack.py](checkAttack.py).  The usage is `python3 checkAttack.py [attackFile]`, e.g., `python3 checkAttack.py example.outputs/dccplinear2promela/attack-promela-models.DCCP.props.phi1-DCCP-_True/attacker_96_WITH_RECOVERY_soft_transitions.pml`.  The script will check if a candidate attacker is confirmed or not, print a detailed explanation to the terminal, and then create and save a heuristic description of how the attack works against each property.  For example:
+For your convenience, we include the script [checkAttack.py](checkAttack.py).  The usage is `python3 checkAttack.py [attackFile]`, e.g., `python3 checkAttack.py example.outputs/dccplinear2promela/attack-promela-models.DCCP.props.phi1-DCCP-_True/attacker_96_WITH_RECOVERY_soft_transitions.pml`.  The script will check if a candidate attacker is confirmed or not, print a detailed explanation to the terminal, and then create and save a heuristic description of how the attack works against each property.
 
-TODO
+For instance, suppose I run:
+
+```
+python3 checkAttack.py ../example.outputs/tcpbert2promela/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_32_WITH_RECOVERY_soft_transitions.pml
+```
+
+First, the script determines that the attack targets TCP, as it has "TCP" in the file-name.
+
+```
+Testing against TCP.
+```
+
+Next, the script begins testing to see if the attack is confirmed against [TCP property 1](../promela-models/TCP/props/phi1.pml).  It does this by appending the attacker to the [TCP property 1 harness file](tcp.harness.files/harness1.pml), adding the line `b = 1;` inside the attacker to signal attack termination, and then model-checking the file using [Spin](http://spinroot.com/spin/whatispin.html).
+
+```
+HARNESS =  src/tcp.harness.files/harness1.pml
+pan:1: assertion violated  !( !(( !((state[0]==0))|| !((state[1]==4))))) (at depth 228)
+pan: wrote tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml.trail
+
+(Spin Version 6.5.1 -- 31 July 2020)
+Warning: Search not completed
+
+Full statespace search for:
+	never claim         	+ (all_phi)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 108 byte, depth reached 473, errors: 1
+     1158 states, stored
+      906 states, matched
+     2064 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.150	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.272	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.611	memory used for DFS stack (-m10000)
+  128.806	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds
+ltl all_phi: (! (<> ((b==1)))) || ([] ((! ((state[0]==0))) || (! ((state[1]==4)))))
+
+```
+
+The warning (`Search not completed`) does not matter, since the assertion was violated.
+But if no violation was found, and Spin gave this warning, we would want to increase the search depth and try again.
+Having found a violating execution, the script replays it.
+
+```
+-----------------------------------
+ltl all_phi: (! (<> ((b==1)))) || ([] ((! ((state[0]==0))) || (! ((state[1]==4)))))
+starting claim 3
+Never claim moves to line 6	[(1)]
+  2:	proc  0 (:init::1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:104 (state 1)	[state[0] = 0]
+  4:	proc  0 (:init::1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:105 (state 2)	[state[1] = 0]
+Starting TCP with pid 3
+  6:	proc  0 (:init::1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:106 (state 3)	[(run TCP(AtoN,NtoA,0))]
+		queue 1 (AtoN): 
+  8:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:32 (state 1)	[pids[i] = _pid]
+		queue 1 (AtoN): 
+		pids[0] = 2
+		pids[1] = 0
+ 10:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:34 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+ 12:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:37 (state 3)	[goto LISTEN]
+		queue 1 (AtoN): 
+ 14:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:44 (state 9)	[state[i] = 1]
+		queue 1 (AtoN): 
+		state[0] = 1
+		state[1] = 0
+Starting TCP with pid 4
+ 16:	proc  0 (:init::1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:107 (state 4)	[(run TCP(BtoN,NtoB,1))]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+ 18:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:32 (state 1)	[pids[i] = _pid]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+		pids[0] = 2
+		pids[1] = 3
+ 20:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:34 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+ 22:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:37 (state 3)	[goto LISTEN]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+ 24:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:44 (state 9)	[state[i] = 1]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+		state[0] = 1
+		state[1] = 1
+ 26:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:49 (state 14)	[(timeout)]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+ 28:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:34 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): 
+		queue 3 (BtoN): 
+		state[0] = 0
+		state[1] = 1
+ 30:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:39 Send SYN	-> queue 1 (snd)
+ 30:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:39 (state 4)	[snd!SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+ 32:	proc  2 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:52 (state 18)	[state[i] = 2]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+		state[0] = 2
+		state[1] = 1
+ 34:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:49 (state 14)	[(timeout)]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+ 36:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:34 (state 2)	[state[i] = 0]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): 
+		state[0] = 2
+		state[1] = 0
+ 38:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:39 Send SYN	-> queue 3 (snd)
+ 38:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:39 (state 4)	[snd!SYN]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+ 40:	proc  3 (TCP:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:52 (state 18)	[state[i] = 2]
+		queue 1 (AtoN): [SYN]
+		queue 3 (BtoN): [SYN]
+		state[0] = 2
+		state[1] = 2
+ 42:	proc  1 (attacker:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:115 Sent ACK	-> queue 4 (NtoB)
+ 42:	proc  1 (attacker:1) tmp.6e3a690f-fa91-4aad-a579-43cbae1b2d08.pml:115 (state 1)	[NtoB!ACK]
+```
+... etc.
+
+This execution is then filtered to just the peer state updates, peer send and receive events, and attack termination event.
+The filtered execution, or "strategy", is printed to the terminal, like so:
+
+```
+-----------------------------------
+peerA in Listen
+peerB in Closed
+peerA in Listen
+peerB in Listen
+peerA in Closed
+```
+... etc. etc. etc. ...
+```
+peerA in Closed
+peerB in Established
+peerA in Closed
+peerB in Established
+Saved strategy to strategies.TCP.bert.phi1.attacker_32.phi1.strategy
+```
+
+This strategy is, as the terminal stated, saved to the ASCII text file _strategies.TCP.bert.phi1.attacker_32.phi1.strategy_.
+Since the attack was confirmed against the property, the strategy file contains first a header line, and then the body of the strategy:
+
+```
+rfc-nlp-anon/tutorials$ cat strategies.TCP.bert.phi1.attacker_32.phi1.strategy
+Strategy for: ../example.outputs/tcpbert2promela/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_32_WITH_RECOVERY_soft_transitions.pml
+peerA in Listen
+peerB in Closed
+peerA in Listen
+peerB in Listen
+peerA in Closed
+peerB in Listen
+peerA sends SYN
+peerA in Syn-Sent
+peerB in Listen
+peerA in Syn-Sent
+peerB in Closed
+peerB sends SYN
+peerA in Syn-Sent
+peerB in Syn-Sent
+peerB receives ACK
+peerB receives SYN
+peerB sends ACK
+peerA in Syn-Sent
+peerB in Established
+peerA receives SYN
+peerA sends ACK
+peerA in Syn-Received
+peerB in Established
+peerB sends FIN
+peerA in Syn-Received
+peerB in Fin-Wait-1
+peerA receives ACK
+peerA in Established
+peerB in Fin-Wait-1
+peerA sends FIN
+peerA in Fin-Wait-1
+peerB in Fin-Wait-1
+peerB receives ACK
+peerA in Fin-Wait-1
+peerB in Fin-Wait-2
+peerB receives FIN
+peerB sends ACK
+peerA in Fin-Wait-1
+peerB in Time-Wait
+peerA in Fin-Wait-1
+peerB in Closed
+peerA in Fin-Wait-1
+peerB in Listen
+peerA receives FIN
+peerA sends ACK
+peerA in Closing
+peerB in Listen
+peerA receives ACK
+peerA in Time-Wait
+peerB in Listen
+peerA in Closed
+peerB in Listen
+peerA in Listen
+peerB in Listen
+peerA in Listen
+peerB in Closed
+peerB sends SYN
+peerA in Listen
+peerB in Syn-Sent
+peerB receives ACK
+peerA receives SYN
+peerA sends SYN
+peerA sends ACK
+peerA in Syn-Received
+peerB in Syn-Sent
+peerB receives SYN
+peerB sends ACK
+peerA receives ACK
+peerA in Syn-Received
+peerB in Established
+peerB sends FIN
+peerA in Syn-Received
+peerB in Fin-Wait-1
+peerB receives ACK
+peerA in Syn-Received
+peerB in Fin-Wait-2
+peerA in Established
+peerB in Fin-Wait-2
+peerA sends FIN
+peerA in Fin-Wait-1
+peerB in Fin-Wait-2
+peerA receives FIN
+peerA sends ACK
+peerA in Closing
+peerB in Fin-Wait-2
+peerB receives FIN
+peerB sends ACK
+peerA in Closing
+peerB in Time-Wait
+peerA in Closing
+peerB in Closed
+peerB sends SYN
+peerA in Closing
+peerB in Syn-Sent
+peerA receives ACK
+peerA in Time-Wait
+peerB in Syn-Sent
+peerA in Closed
+peerB in Syn-Sent
+peerA sends SYN
+peerB receives ACK
+peerB receives SYN
+peerB sends ACK
+peerA in Closed
+peerB in Established
+peerA in Closed
+peerB in Established
+```
+
+On the other hand, if the attack is *not* confirmed against the property, then the saved strategy file consists of only the initial header line.  For instance, `../example.outputs/tcpbert2promela/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_32_WITH_RECOVERY_soft_transitions.pml` is not confirmed against `phi2`:
+
+```
+rfc-nlp-anon/tutorials$ cat strategies.TCP.bert.phi1.attacker_32.phi2.strategy 
+Strategy for: ../example.outputs/tcpbert2promela/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_32_WITH_RECOVERY_soft_transitions.pml
+rfc-nlp-anon/tutorials$
+```
 
 ## 4. Attacker Strategies
 
-TODO
+Now that we have these automatically generated strategy files, how can we go about actually characterizing the overarching strategy of an attack?  Unfortunately, it is not (yet) straightforward.  First, an attack might exhibit very different behaviors in violating executions against one property versus violating executions against another, unrelated property.  So, the idea that an attack exhibits a single "strategy" is, in some sense, false.  Second, the strategy files only record what effect the attack had on the peers - not what precisely the attacker *did*.  To know this, you need to look at the attacker code itself.
+
+Let's take a motivating example.  Consider [this attack](https://github.com/RFCNLP/RFCNLP-korg/blob/master/example.attacks/tcp/TCP.2_True/attacker_8_WITH_RECOVERY_soft_transitions.pml), which was generated using TCP Canonical and TCP property 2.  The attack attempts to do the following, before terminating:
+
+1. Send a `SYN` to Peer B.
+2. Receive a `SYN` from Peer B.
+3. Receive an `ACK` from Peer B.
+4. Send an `ACK` to Peer B.
+5. Send a `FIN` to Peer B.
+6. Receive an `ACK` from Peer B.
+7. Send an `ACK` from Peer B.
+
+Looking at this sequence of events, my first guess is that the attack is spoofing an active Peer B.  IE, when it does step 1, Peer B believes that the attacker is actually Peer A, having just transitioned into `SYN_SENT`.  How can I confirm this hypothesis?  Well, if we compute and then inspect the strategy files, we observe the following.
+
+1. Against [phi1](../promela-models/TCP/props/phi1.pml), the attack leads Peer B to `FIN-WAIT-1` after Peer A has terminated.
+2. Against [phi2](../promela-models/TCP/props/phi2.pml), the attack leads Peer B to get stuck in `SYN-SENT`.
+3. Against [phi3](../promela-models/TCP/props/phi3.pml), the attack leads the peers to deadlock in `SYN-SENT x CLOSING`.
+4. Against [phi4](../promela-models/TCP/props/phi4.pml), the attack leads Peer A to get stuck in `SYN-RECEIVED`.
+
+Combining these facts, it's reasonably to conclude the following: This attack was confirmed against all four properties; and in all four cases, it actively spoofed Peer A in order to either lead one or both peers into a deadlock or stuck state.  This is what we'd call the "overarching strategy" of an attack.  Basically, it's an English-language expert description of what the attack does and how, at a high level, which allows us to compare similar attacks even if they have different code.

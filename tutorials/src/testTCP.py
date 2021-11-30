@@ -44,7 +44,7 @@ def analyzeTCPattack(attackFileName):
 
         newFileName += attackFileName.split("/")[-1].split("_WITH")[0]
 
-        newFileName += ".phi" + harnessFile.split(".pml")[0].split("/")[1].split("harness")[1]
+        newFileName += ".phi" + harnessFile.split(".pml")[0].split("harness")[2]
 
         newFileName = newFileName.replace("/", ".")
 
