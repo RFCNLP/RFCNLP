@@ -1,0 +1,141 @@
+WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"  \
+	python3 nlp-parser/linear.py            \
+	--protocol TCP                          \
+	--stem                                  \
+	--heuristics                            \
+	--phrase_level                          \
+	--outdir rfcs-predicted/linear_phrases/ \
+	--write_results
+{'B-TRIGGER': 0, 'B-ACTION': 1, 'O': 2, 'B-TRANSITION': 3, 'B-TIMER': 4, 'B-ERROR': 5, 'B-VARIABLE': 6}
+vocabulary size 1287
+Iteration 0
+dual: 2.846620, dual_gap: 241.466791, primal: 244.313411
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Calculating final objective.
+              precision    recall  f1-score   support
+
+    B-ACTION     0.4581    0.6636    0.5420       107
+     B-ERROR     0.0000    0.0000    0.0000        38
+     B-TIMER     1.0000    0.4286    0.6000         7
+B-TRANSITION     0.5139    0.9487    0.6667        39
+   B-TRIGGER     0.7059    0.6171    0.6585       175
+  B-VARIABLE     0.6296    0.3542    0.4533        48
+    I-ACTION     0.3078    0.6421    0.4161       651
+     I-ERROR     0.0000    0.0000    0.0000       371
+     I-TIMER     1.0000    0.3824    0.5532        34
+I-TRANSITION     0.5144    0.9703    0.6724       202
+   I-TRIGGER     0.6932    0.8239    0.7529      1130
+  I-VARIABLE     0.4438    0.3049    0.3614       246
+           O     0.5959    0.3208    0.4171      1356
+
+    accuracy                         0.5232      4404
+   macro avg     0.5279    0.4967    0.4687      4404
+weighted avg     0.5151    0.5232    0.4896      4404
+
+ACC 0.5231607629427792
+WEIGHTED f1 0.48955392684192633
+MACRO F1 0.4687436964683978
+ent_type 0.5745721271393643
+partial 0.8264058679706602
+strict 0.5745721271393643
+exact 0.8264058679706602
+TRIGGER ent_type 0.656441717791411
+TRIGGER partial 0.656441717791411
+TRIGGER strict 0.656441717791411
+TRIGGER exact 0.656441717791411
+ACTION ent_type 0.5419847328244275
+ACTION partial 0.5419847328244275
+ACTION strict 0.5419847328244275
+ACTION exact 0.5419847328244275
+ERROR ent_type 0.0
+ERROR partial 0.0
+ERROR strict 0.0
+ERROR exact 0.0
+TIMER ent_type 0.6
+TIMER partial 0.6
+TIMER strict 0.6
+TIMER exact 0.6
+TRANSITION ent_type 0.6666666666666666
+TRANSITION partial 0.6666666666666666
+TRANSITION strict 0.6666666666666666
+TRANSITION exact 0.6666666666666666
+VARIABLE ent_type 0.45333333333333337
+VARIABLE partial 0.45333333333333337
+VARIABLE strict 0.45333333333333337
+VARIABLE exact 0.45333333333333337
+True True True False
+['in', 'the', 'syn-sent', 'state', '(', 'a', 'rst', 'received', 'in', 'response', 'to', 'an', 'initial', 'syn', ')', ',']
+['data', 'associated', 'with', 'send', 'may', 'be', 'sent', 'with', 'syn', 'segment', 'or', 'queued', 'for', 'transmission', 'after', 'entering', 'established', 'state', '.']
+['data', 'associated', 'with', 'send', 'may', 'be', 'sent', 'with', 'syn', 'segment', 'or', 'queued', 'for', 'transmission', 'after', 'entering', 'established', 'state', '.']
+['the', 'receive', 'will', 'get', 'a', '``', 'error', ':', 'connection', 'closing', '``', 'response', '.']
+['this', 'is', 'an', 'error', 'and', 'should', 'receive', 'a', '``', 'error', ':', 'connection', 'closing', '``', 'response', '.']
+False False False True
+              precision    recall  f1-score   support
+
+    B-ACTION     0.4591    0.6822    0.5489       107
+     B-ERROR     1.0000    0.1842    0.3111        38
+     B-TIMER     1.0000    0.1429    0.2500         7
+B-TRANSITION     0.7358    1.0000    0.8478        39
+   B-TRIGGER     0.7617    0.8400    0.7989       175
+  B-VARIABLE     0.6071    0.3542    0.4474        48
+    I-ACTION     0.3153    0.6528    0.4252       651
+     I-ERROR     1.0000    0.1536    0.2664       371
+     I-TIMER     1.0000    0.1471    0.2564        34
+I-TRANSITION     0.6066    1.0000    0.7551       202
+   I-TRIGGER     0.7248    0.9345    0.8164      1130
+  I-VARIABLE     0.4335    0.3049    0.3580       246
+           O     0.7153    0.3112    0.4337      1356
+
+    accuracy                         0.5736      4404
+   macro avg     0.7199    0.5160    0.5012      4404
+weighted avg     0.6616    0.5736    0.5455      4404
+
+ACC 0.5735694822888283
+WEIGHTED f1 0.5454667975471523
+MACRO F1 0.5011772365249066
+ent_type 0.6431818181818182
+partial 0.8238636363636364
+strict 0.6409090909090909
+exact 0.8227272727272728
+TRIGGER ent_type 0.7978142076502732
+TRIGGER partial 0.7978142076502732
+TRIGGER strict 0.7978142076502732
+TRIGGER exact 0.7978142076502732
+ACTION ent_type 0.5488721804511278
+ACTION partial 0.5488721804511278
+ACTION strict 0.5488721804511278
+ACTION exact 0.5488721804511278
+ERROR ent_type 0.3111111111111111
+ERROR partial 0.3111111111111111
+ERROR strict 0.3111111111111111
+ERROR exact 0.3111111111111111
+TIMER ent_type 0.25
+TIMER partial 0.25
+TIMER strict 0.25
+TIMER exact 0.25
+TRANSITION ent_type 0.8478260869565216
+TRANSITION partial 0.8369565217391304
+TRANSITION strict 0.8260869565217391
+TRANSITION exact 0.8260869565217391
+VARIABLE ent_type 0.4473684210526316
+VARIABLE partial 0.4473684210526316
+VARIABLE strict 0.4473684210526316
+VARIABLE exact 0.4473684210526316
+ack field acknowledges the syn .  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+send if no sends have been issued and there is no pending data to send , 
+send then form a fin segment and send it , 
+send then form a fin segment and send it . 
+syn has been acked ) ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+fin is now acknowledged  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+ack acknowledges our fin  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+acknowledgment of our fin .  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+fin is now acknowledged ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive
+fin has been acked ( perhaps in this segment ) ,  ['B-ACK', 'I-ACK', 'I-ACK', 'I-ACK'] [] receive

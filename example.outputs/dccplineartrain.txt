@@ -1,0 +1,151 @@
+WANDB_MODE="dryrun" WANRB_API_KEY="dryrun"  \
+	python3 nlp-parser/linear.py            \
+	--protocol DCCP                         \
+	--stem                                  \
+	--heuristics                            \
+	--phrase_level                          \
+	--outdir rfcs-predicted/linear_phrases/ \
+	--write_results
+{'B-TRIGGER': 0, 'B-ACTION': 1, 'O': 2, 'B-TRANSITION': 3, 'B-VARIABLE': 4, 'B-ERROR': 5, 'B-TIMER': 6}
+vocabulary size 1287
+Iteration 0
+dual: 2.398854, dual_gap: 247.660939, primal: 250.059792
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Calculating final objective.
+              precision    recall  f1-score   support
+
+    B-ACTION     0.5781    0.6000    0.5889       185
+     B-ERROR     0.3750    0.2727    0.3158        11
+     B-TIMER     1.0000    0.1538    0.2667        13
+B-TRANSITION     0.7273    0.3333    0.4571        48
+   B-TRIGGER     0.7660    0.7742    0.7701       279
+  B-VARIABLE     0.6471    0.2200    0.3284        50
+    I-ACTION     0.5635    0.7292    0.6357      1691
+     I-ERROR     0.4603    0.2522    0.3258       115
+     I-TIMER     1.0000    0.1078    0.1947       102
+I-TRANSITION     0.6802    0.3964    0.5009       338
+   I-TRIGGER     0.7595    0.7313    0.7452      2181
+  I-VARIABLE     0.4775    0.1352    0.2107       392
+           O     0.3834    0.5253    0.4433       573
+
+    accuracy                         0.6214      5978
+   macro avg     0.6475    0.4024    0.4449      5978
+weighted avg     0.6367    0.6214    0.6077      5978
+
+ACC 0.6214452994312479
+WEIGHTED f1 0.6076529730268525
+MACRO F1 0.44486585046482224
+ent_type 0.6974459724950884
+partial 0.9273084479371316
+strict 0.6974459724950884
+exact 0.9273084479371316
+TRIGGER ent_type 0.780399274047187
+TRIGGER partial 0.780399274047187
+TRIGGER strict 0.780399274047187
+TRIGGER exact 0.780399274047187
+ACTION ent_type 0.5983379501385042
+ACTION partial 0.5983379501385042
+ACTION strict 0.5983379501385042
+ACTION exact 0.5983379501385042
+ERROR ent_type 0.3157894736842105
+ERROR partial 0.3157894736842105
+ERROR strict 0.3157894736842105
+ERROR exact 0.3157894736842105
+TIMER ent_type 0.2857142857142857
+TIMER partial 0.2857142857142857
+TIMER strict 0.2857142857142857
+TIMER exact 0.2857142857142857
+TRANSITION ent_type 0.46376811594202894
+TRANSITION partial 0.46376811594202894
+TRANSITION strict 0.46376811594202894
+TRANSITION exact 0.46376811594202894
+VARIABLE ent_type 0.3283582089552239
+VARIABLE partial 0.3283582089552239
+VARIABLE strict 0.3283582089552239
+VARIABLE exact 0.3283582089552239
+True True True False
+['since', 'confirm', 'options', 'are', 'generated', 'only', 'in', 'response', 'to', 'change', 'options', ',']
+['a', 'client', 'in', 'the', 'request', 'state', 'should', 'use', 'an', 'exponential-backoff', 'timer', 'to', 'send', 'new', 'dccp-request', 'packets']
+['a', 'client', 'in', 'request', 'state', 'has', 'never', 'received', 'an', 'initial', 'sequence', 'number', 'from', 'its', 'peer', ',']
+['when', 'it', 'receives', 'a', 'dccp-response', 'from', 'the', 'server', '.']
+['the', 'server', 'must', 'reject', 'the', 'request', 'by', 'sending', 'a', 'dccp-', 'reset', 'packet', 'with', 'reset', 'code', '8', ',']
+['the', 'server', 'moves', 'from', 'the', 'listen', 'state', 'to', 'respond', 'and', 'sends', 'a', 'dccp-response', 'message', 'to', 'the', 'client']
+['when', 'it', 'receives', 'a', 'valid', 'dccp-ack', 'from', 'the', 'client', ',']
+['when', 'the', 'client', 'receives', 'a', 'dccp-response', 'from', 'the', 'server', ',']
+['it', 'moves', 'from', 'the', 'request', 'state', 'to', 'partopen', 'and', 'completes', 'the', 'three-way', 'handshake', 'by', 'sending', 'a', 'dccp-ack', 'packet', 'to', 'the', 'server', '.']
+['the', 'client', 'remains', 'in', 'partopen', 'until', 'it', 'can', 'be', 'sure', 'that', 'the', 'server', 'has', 'received', 'some', 'packet', 'the', 'client', 'sent', 'from', 'partopen', '(', 'either', 'the', 'initial', 'dccp-', 'ack', 'or', 'a', 'later', 'packet', ')', '.']
+['clients', 'in', 'the', 'partopen', 'state', 'that', 'want', 'to', 'send', 'data', 'must', 'do', 'so', 'using', 'dccp-dataack', 'packets', ',']
+['when', 'there', 'is', 'no', 'data', 'to', 'send', 'from', 'dccp', 'a', 'to', 'dccp', 'b', ',']
+['the', 'receiver', 'of', 'a', 'valid', 'dccp-closereq', 'packet', 'must', 'respond', 'with', 'a', 'dccp-close', 'packet', '.']
+['the', 'receiver', 'of', 'a', 'valid', 'dccp-close', 'packet', 'must', 'respond', 'with', 'a', 'dccp-', 'reset', 'packet', 'with', 'reset', 'code', '1', ',']
+['the', 'receiver', 'of', 'a', 'valid', 'dccp-reset', 'packet', '--', 'which', 'is', 'also', 'the', 'sender', 'of', 'the', 'dccp-close', 'packet', '(', 'and', 'possibly', 'the', 'receiver', 'of', 'the', 'dccp-closereq', 'packet', ')', '--', 'will', 'hold', 'timewait', 'state', 'for', 'the', 'connection', '.']
+['dccp', 'implementations', 'generally', 'transition', 'to', 'the', 'closed', 'state', 'after', 'sending', 'a', 'dccp-reset', 'packet', '.']
+['a', 'server', 'receiving', 'a', 'sequence-valid', 'dccp-closereq', 'packet', 'must', 'respond', 'with', 'a', 'dccp-sync', 'packet', 'and']
+['and', 'dccp-ack', 'packets', 'received', 'in', 'closereq', 'or', 'closing', 'states', 'may', 'be', 'either', 'processed', 'or', 'ignored', '.']
+['partopen', 'means', 'send', 'an', 'ack', ',']
+['generate', 'reset', '(', 'closed', ')', 'tear', 'down', 'connection', 'drop', 'packet', 'and', 'return']
+False False False True
+              precision    recall  f1-score   support
+
+    B-ACTION     0.5607    0.6486    0.6015       185
+     B-ERROR     0.4286    0.2727    0.3333        11
+     B-TIMER     1.0000    0.0769    0.1429        13
+B-TRANSITION     0.5349    0.4792    0.5055        48
+   B-TRIGGER     0.7698    0.6953    0.7307       279
+  B-VARIABLE     0.7000    0.2800    0.4000        50
+    I-ACTION     0.5370    0.7475    0.6250      1691
+     I-ERROR     0.4833    0.2522    0.3314       115
+     I-TIMER     1.0000    0.0882    0.1622       102
+I-TRANSITION     0.3876    0.5562    0.4569       338
+   I-TRIGGER     0.7691    0.6199    0.6865      2181
+  I-VARIABLE     0.5857    0.2092    0.3083       392
+           O     0.4409    0.4887    0.4636       573
+
+    accuracy                         0.5953      5978
+   macro avg     0.6306    0.4165    0.4421      5978
+weighted avg     0.6278    0.5953    0.5879      5978
+
+ACC 0.5953496152559384
+WEIGHTED f1 0.587903562179645
+MACRO F1 0.44212507545368257
+ent_type 0.6724137931034483
+partial 0.9204980842911877
+strict 0.6628352490421456
+exact 0.9157088122605364
+TRIGGER ent_type 0.7432950191570882
+TRIGGER partial 0.7432950191570882
+TRIGGER strict 0.7432950191570882
+TRIGGER exact 0.7432950191570882
+ACTION ent_type 0.6109660574412532
+ACTION partial 0.6109660574412532
+ACTION strict 0.6109660574412532
+ACTION exact 0.6109660574412532
+ERROR ent_type 0.33333333333333326
+ERROR partial 0.33333333333333326
+ERROR strict 0.33333333333333326
+ERROR exact 0.33333333333333326
+TIMER ent_type 0.15384615384615385
+TIMER partial 0.15384615384615385
+TIMER strict 0.15384615384615385
+TIMER exact 0.15384615384615385
+TRANSITION ent_type 0.5
+TRANSITION partial 0.4431818181818182
+TRANSITION strict 0.38636363636363635
+TRANSITION exact 0.38636363636363635
+VARIABLE ent_type 0.4
+VARIABLE partial 0.4
+VARIABLE strict 0.4
+VARIABLE exact 0.4
+{'verbs': [{'verb': 'leaves', 'description': '[ARG0: the client] [V: leaves] [ARG1: the request] [ARG2: state] [ARGM-PNC: for partopen]', 'tags': ['B-ARG0', 'I-ARG0', 'B-V', 'B-ARG1', 'I-ARG1', 'B-ARG2', 'B-ARGM-PNC', 'I-ARGM-PNC']}], 'words': ['the', 'client', 'leaves', 'the', 'request', 'state', 'for', 'partopen']}
+{'verbs': [{'verb': 'leaves', 'description': '[ARG0: the server] [V: leaves] [ARG1: the respond state] [ARG2: for open]', 'tags': ['B-ARG0', 'I-ARG0', 'B-V', 'B-ARG1', 'I-ARG1', 'I-ARG1', 'B-ARG2', 'I-ARG2']}], 'words': ['the', 'server', 'leaves', 'the', 'respond', 'state', 'for', 'open']}
+{'verbs': [{'verb': 'may', 'description': 'it [V: may] also leave the respond state for closed after a timeout of not less than 4msl ( 8 minutes ) ;', 'tags': ['O', 'B-V', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']}, {'verb': 'leave', 'description': '[ARG0: it] [ARGM-MOD: may] [ARGM-DIS: also] [V: leave] [ARG1: the respond state] [ARG2: for closed] [ARGM-TMP: after a timeout of not less than 4msl ( 8 minutes )] ;', 'tags': ['B-ARG0', 'B-ARGM-MOD', 'B-ARGM-DIS', 'B-V', 'B-ARG1', 'I-ARG1', 'I-ARG1', 'B-ARG2', 'I-ARG2', 'B-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'I-ARGM-TMP', 'O']}, {'verb': 'closed', 'description': '[ARG1: it] may also leave the respond state for [V: closed] after a timeout of not less than 4msl ( 8 minutes ) ;', 'tags': ['B-ARG1', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-V', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']}], 'words': ['it', 'may', 'also', 'leave', 'the', 'respond', 'state', 'for', 'closed', 'after', 'a', 'timeout', 'of', 'not', 'less', 'than', '4msl', '(', '8', 'minutes', ')', ';']}
+{'verbs': [{'verb': 'leaves', 'description': '[ARG0: the client] [V: leaves] [ARG1: the partopen state] [ARG2: for open]', 'tags': ['B-ARG0', 'I-ARG0', 'B-V', 'B-ARG1', 'I-ARG1', 'I-ARG1', 'B-ARG2', 'I-ARG2']}], 'words': ['the', 'client', 'leaves', 'the', 'partopen', 'state', 'for', 'open']}
+send a dccp endpoint must immediately generate and send a dccp-syncack response ( subject to any implementation rate limits ) ; 

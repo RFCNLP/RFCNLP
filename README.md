@@ -115,13 +115,13 @@ You will now be able to run any of the targets in the Makefile, from a prompt gi
 
 The NLP pipeline uses machine learning and is consequentially non-deterministic.  Hence, running the NLP targets in the Makefile can produce results that differ slightly from those reported in the paper.  We encourage you to try this and see what you get, but keep in mind that the results will depend on your CPU, GPU, and drivers.
 
-* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/DCCP.xml`.
+* `make dccplineartrain` - runs our LinearCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccplineartrain.txt).
 
-* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/TCP.xml`.
+* `make tcplineartrain` - runs our LinearCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/linear_phrases/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcplineartrain.txt).
 
-* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml`.
+* `make dccpberttrain` - runs our NeuralCRF+R model on the DCCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml`.  Example terminal output can be found [here](example.outputs/dccpberttrain.txt).
 
-* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml`.
+* `make tcpberttrain` - runs our NeuralCRF+R model on the TCP RFC and saves the resulting intermediary representation to `rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/TCP.xml`.  Example terminal output can be found [here](example.outputs/tcpberttrain.txt).
 
 ### FSM Extraction & Attacker Synthesis Results 
 
