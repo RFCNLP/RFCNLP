@@ -154,36 +154,149 @@ done;
 Next we see many lines of Spin-related output.  This content is useful for debugging.  Finally, just like with the NLP targets, attackers are saved to the folder `out/` and redundant attackers are removed.  The naming convention for TCP Canonical attacker folders is `TCP.x_True` where `x` is the number of the property that was used to find the attacks.  (The naming convention for DCCP is the same, but `DCCP.x_True` instead of `TCP.x_True`.)  Let's look at the saved attackers.
 
 ```
-rfc-nlp-anon/tutorials$ tree ../../korg-anon/out
-../../korg-anon/out
+rfc-nlp-anon/tutorials$ tree ../../korg-anon/example.attacks/tcp/
+../../korg-anon/example.attacks/tcp/
 ├── TCP.1_True
 │   ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
 │   └── attacker_47_WITH_RECOVERY.pml
-└── TCP.2_True
-    ├── attacker_10_WITH_RECOVERY_soft_transitions.pml
-    ├── attacker_11_WITH_RECOVERY.pml
+├── TCP.2_True
+│   ├── attacker_10_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_11_WITH_RECOVERY.pml
+│   ├── attacker_13_WITH_RECOVERY.pml
+│   ├── attacker_13_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_18_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_19_WITH_RECOVERY.pml
+│   ├── attacker_24_WITH_RECOVERY.pml
+│   ├── attacker_26_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_32_WITH_RECOVERY.pml
+│   ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_3_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_4_WITH_RECOVERY.pml
+│   ├── attacker_5_WITH_RECOVERY.pml
+│   ├── attacker_5_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_6_WITH_RECOVERY.pml
+│   ├── attacker_6_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_7_WITH_RECOVERY.pml
+│   └── attacker_8_WITH_RECOVERY_soft_transitions.pml
+├── TCP.3_True
+│   ├── attacker_11_WITH_RECOVERY.pml
+│   ├── attacker_11_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_13_WITH_RECOVERY.pml
+│   ├── attacker_14_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_15_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_16_WITH_RECOVERY.pml
+│   ├── attacker_17_WITH_RECOVERY.pml
+│   ├── attacker_18_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_19_WITH_RECOVERY.pml
+│   ├── attacker_19_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_21_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_22_WITH_RECOVERY.pml
+│   ├── attacker_23_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_24_WITH_RECOVERY.pml
+│   ├── attacker_26_WITH_RECOVERY.pml
+│   ├── attacker_26_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_28_WITH_RECOVERY.pml
+│   ├── attacker_28_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_29_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_30_WITH_RECOVERY.pml
+│   ├── attacker_32_WITH_RECOVERY.pml
+│   ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_33_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_34_WITH_RECOVERY.pml
+│   ├── attacker_35_WITH_RECOVERY.pml
+│   ├── attacker_35_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_37_WITH_RECOVERY.pml
+│   ├── attacker_37_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_40_WITH_RECOVERY.pml
+│   ├── attacker_40_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_41_WITH_RECOVERY.pml
+│   ├── attacker_42_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_43_WITH_RECOVERY.pml
+│   ├── attacker_44_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_45_WITH_RECOVERY.pml
+│   ├── attacker_46_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_47_WITH_RECOVERY.pml
+│   ├── attacker_48_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_49_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_50_WITH_RECOVERY.pml
+│   ├── attacker_51_WITH_RECOVERY.pml
+│   ├── attacker_52_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_53_WITH_RECOVERY.pml
+│   ├── attacker_54_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_55_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_56_WITH_RECOVERY.pml
+│   ├── attacker_57_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_58_WITH_RECOVERY.pml
+│   ├── attacker_59_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_60_WITH_RECOVERY.pml
+│   ├── attacker_61_WITH_RECOVERY.pml
+│   ├── attacker_61_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_63_WITH_RECOVERY.pml
+│   ├── attacker_64_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_65_WITH_RECOVERY.pml
+│   ├── attacker_67_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_68_WITH_RECOVERY.pml
+│   ├── attacker_68_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_69_WITH_RECOVERY.pml
+│   ├── attacker_69_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_72_WITH_RECOVERY.pml
+│   ├── attacker_72_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_74_WITH_RECOVERY.pml
+│   ├── attacker_74_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_75_WITH_RECOVERY.pml
+│   ├── attacker_76_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_77_WITH_RECOVERY.pml
+│   ├── attacker_77_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_7_WITH_RECOVERY.pml
+│   ├── attacker_8_WITH_RECOVERY_soft_transitions.pml
+│   ├── attacker_9_WITH_RECOVERY.pml
+│   └── attacker_9_WITH_RECOVERY_soft_transitions.pml
+└── TCP.4_True
     ├── attacker_13_WITH_RECOVERY.pml
-    ├── attacker_13_WITH_RECOVERY_soft_transitions.pml
     ├── attacker_18_WITH_RECOVERY_soft_transitions.pml
     ├── attacker_19_WITH_RECOVERY.pml
+    ├── attacker_19_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_20_WITH_RECOVERY.pml
+    ├── attacker_21_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_23_WITH_RECOVERY.pml
+    ├── attacker_23_WITH_RECOVERY_soft_transitions.pml
     ├── attacker_24_WITH_RECOVERY.pml
-    ├── attacker_26_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_25_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_28_WITH_RECOVERY.pml
+    ├── attacker_28_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_29_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_30_WITH_RECOVERY.pml
     ├── attacker_32_WITH_RECOVERY.pml
     ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
-    ├── attacker_3_WITH_RECOVERY_soft_transitions.pml
-    ├── attacker_4_WITH_RECOVERY.pml
-    ├── attacker_5_WITH_RECOVERY.pml
-    ├── attacker_5_WITH_RECOVERY_soft_transitions.pml
-    ├── attacker_6_WITH_RECOVERY.pml
-    ├── attacker_6_WITH_RECOVERY_soft_transitions.pml
-    ├── attacker_7_WITH_RECOVERY.pml
-    └── attacker_8_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_40_WITH_RECOVERY.pml
+    ├── attacker_40_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_41_WITH_RECOVERY.pml
+    ├── attacker_42_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_44_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_47_WITH_RECOVERY.pml
+    ├── attacker_61_WITH_RECOVERY.pml
+    ├── attacker_61_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_63_WITH_RECOVERY.pml
+    ├── attacker_63_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_65_WITH_RECOVERY.pml
+    ├── attacker_66_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_67_WITH_RECOVERY.pml
+    ├── attacker_67_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_68_WITH_RECOVERY.pml
+    ├── attacker_68_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_72_WITH_RECOVERY_soft_transitions.pml
+    └── attacker_77_WITH_RECOVERY.pml
+
+4 directories, 126 files
+
 
 ```
 
 The files without `soft_transitions` in their names are comparable to the attacks reported on in the original KORG paper.
 Those with `soft_transitions` are the attackers we report on in our paper, which are modified to support partial FSMs.
 Since we generated these using a Canonical FSM, they will all be confirmed against at least one property.
+
+Attacks synthesized from Canonical TCP can be found [here](https://github.com/RFCNLP/RFCNLP-korg/tree/master/example.attacks/tcp).  Attacks synthesized from Canonical DCCP can be found [here](https://github.com/RFCNLP/RFCNLP-korg/tree/master/example.attacks/dccp).
 
 ## 3. Confirmation of Candidate Attackers
 
