@@ -151,7 +151,39 @@ for j in 1 2 3 4; do               \
 done;
 ```
 
-Next we see many lines of Spin-related output.  This content is useful for debugging.  Finally, just like with the NLP targets, attackers are saved to the folder `out/` and redundant attackers are removed.  The naming convention for TCP Canonical attacker folders is `TCP.x_True` where `x` is the number of the property that was used to find the attacks.  The naming convention for DCCP is the same, but `DCCP.x_True` instead of `TCP.x_True`.
+Next we see many lines of Spin-related output.  This content is useful for debugging.  Finally, just like with the NLP targets, attackers are saved to the folder `out/` and redundant attackers are removed.  The naming convention for TCP Canonical attacker folders is `TCP.x_True` where `x` is the number of the property that was used to find the attacks.  (The naming convention for DCCP is the same, but `DCCP.x_True` instead of `TCP.x_True`.)  Let's look at the saved attackers.
+
+```
+rfc-nlp-anon/tutorials$ tree ../../korg-anon/out
+../../korg-anon/out
+├── TCP.1_True
+│   ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
+│   └── attacker_47_WITH_RECOVERY.pml
+└── TCP.2_True
+    ├── attacker_10_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_11_WITH_RECOVERY.pml
+    ├── attacker_13_WITH_RECOVERY.pml
+    ├── attacker_13_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_18_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_19_WITH_RECOVERY.pml
+    ├── attacker_24_WITH_RECOVERY.pml
+    ├── attacker_26_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_32_WITH_RECOVERY.pml
+    ├── attacker_32_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_3_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_4_WITH_RECOVERY.pml
+    ├── attacker_5_WITH_RECOVERY.pml
+    ├── attacker_5_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_6_WITH_RECOVERY.pml
+    ├── attacker_6_WITH_RECOVERY_soft_transitions.pml
+    ├── attacker_7_WITH_RECOVERY.pml
+    └── attacker_8_WITH_RECOVERY_soft_transitions.pml
+
+```
+
+The files without `soft_transitions` in their names are comparable to the attacks reported on in the original KORG paper.
+Those with `soft_transitions` are the attackers we report on in our paper, which are modified to support partial FSMs.
+Since we generated these using a Canonical FSM, they will all be confirmed against at least one property.
 
 ## 3. Confirmation of Candidate Attackers
 
