@@ -84,5 +84,49 @@
 `PARTOPEN - DCCP-RESET? -> OPEN` | Incorrect | Extraction algorithm error. It should handle "other than" correctly | **The client leaves the PARTOPEN state for OPEN** when it receives **a valid packet other than** DCCP-Response, DCCP-Reset, or DCCP-Sync from the server. |
 `PARTOPEN - DCCP-RESPONSE? -> OPEN` | Incorrect | Same as above | |
 `PARTOPEN - DCCP-SYNC? -> OPEN` | Incorrect | Same as above | |
+| `PARTOPEN - DCCP-RESPONSE?;DCCP-ACK! -> PARTOPEN` | Partially correct | Expected **DCCP-ACK!** instead. Text ambiguity. Explicit mention of the response event is parsed | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-annotated/DCCP.txt#L3946) | 
 
 *Note that just two spans of text in the RFC introduce all of the 8 incorrect transitions*
+
+### LinearCRF+R DCCP Errors
+
+| Transition | Error Type | Reason | Text |
+|--|--|--|--|
+| `CLOSED - ε -> LISTEN` | Missing | Same as Gold | |
+| `CLOSING - DCCP-RESET? -> TIMEWAIT`  | Missing | Same as Gold | |
+| `OPEN - DCCP-CLOSE! -> CLOSING`  | Missing | Same as Gold | |
+| `OPEN - DCCP-CLOSEREQ?;DCCP-CLOSE!` | Missing | Same as Gold | |
+| `LISTEN - timeout -> CLOSED`  | Missing | Same as Gold | |
+| `OPEN - DCCP-ACK? -> OPEN` | Missing | Same as Gold | | 
+| `OPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATA! -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATA? -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATAACK! -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATAACK? -> OPEN` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-CLOSEREQ?;DCCP-CLOSE! -> CLOSING` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-DATA?;DCCP-ACK! -> OPEN` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-DATAACK?;DCCP-ACK! -> OPEN` | Missing | Same as Gold | |
+| `REQUEST - DCCP-RESET? -> CLOSED` | Missing | Same as Gold | |
+| `REQUEST - DCCP-SYNC?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `RESPOND - DCCP-DATAACK? -> OPEN` | Missing | Same as Gold | |
+| `CLOSEREQ - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Textual ambiguity, expert knowledge needed to know what a handshake is and how it maps to server/client behavior. We get the correct states, but parse message as **DCCP-CLOSEREQ?** instead | DCCP connection termination uses a **handshake consisting of an optional DCCP-CloseReq packet, a DCCP-Close packet, and a DCCP-Reset packet**. The server **moves from the OPEN state, possibly through the CLOSEREQ state, to CLOSED**; the client moves from OPEN through CLOSING to TIMEWAIT, and after 2MSL wait time, to CLOSED |
+| `PARTOPEN - DCCP-ACK? -> OPEN` | Missing | NLP prediciton error. Not all events that are enumerated after *"other than"* statement are predicted in action span. | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L539) |
+| `PARTOPEN - DCCP-DATA? -> OPEN` | Missing | Same as above | |
+| `PARTOPEN - DCCP-DATAACK? -> OPEN` | Missing | Same as above | |
+| `PARTOPEN - DCCP-REQUEST? -> OPEN` | Missing | Same as above | |
+| `PARTOPEN - DCCP-DATAACK! -> PARTOPEN` | Missing | NLP prediction error. *Transition* span is marked as *action* | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L504) |
+| `PARTOPEN - timeout -> CLOSED` | Missing | NLP prediction error. This is a very hard case, as the target state is not explicit. In this case, the wording *“reset the connection...”* was explicitly annotated by the expert in GOLD as a transition to CLOSED, which was not done in other cases. | If the client remains in PARTOPEN for more than 4MSL, (8 minutes), **it SHOULD reset the connection with Reset Code 2, "Aborted".** |
+|  `TIMEWAIT - timeout -> CLOSED` | Missing | NLP prediction error. *Trigger* span predicted as *action* | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L561) |
+| `CLOSEREQ - DCCP-CLOSEREQ! -> CLOSED` | Incorrect | Textual ambiguity, expert knowledge needed to know what a handshake is and how it maps to server/client behavior. | DCCP connection termination uses a **handshake consisting of an optional DCCP-CloseReq packet, a DCCP-Close packet, and a DCCP-Reset packet**. The server **moves from the OPEN state, possibly through the CLOSEREQ state, to CLOSED**; the client moves from OPEN through CLOSING to TIMEWAIT, and after 2MSL wait time, to CLOSED |
+| `CLOSEREQ - ε -> TIMEWAIT` | Incorrect | NLP prediction error. *Transition* span predicted as *action* | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L56) | 
+| `CLOSING - timeout -> TIMEWAIT` | Incorrect | Extraction algorithm error. Incorrect handling of nested if-then statements, doesn’t find the right event  | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L566) |
+| `OPEN - timeout -> CLOSING` | Incorrect | Same as above | | 
+| `PARTOPEN - DCCP-RESPONSE? -> OPEN` | Incorrect | NLP prediction error. *Trigger* span is predicted as *transition* | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L532) | 
+| `PARTOPEN - DCCP-RESPONSE?;DCCP-DATA! -> REQUEST` | Incorrect | NLP post-processing error. Source and target state are swapped | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L39) | 
+| `TIMEWAIT - DCCP-RESET? -> TIMEWAIT` | Incorrect | NLP prediction error. *Timer* span is predicted as *trigger* | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L757) |
+| `TIMEWAIT - timeout -> TIMEWAIT` | Incorrect | NLP prediction error. Outside spans predicted as transitions. Really hard case, as there is transition-style language. | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L66) | 
+| `UNSTABLE - ε -> RESPOND` | Incorrect | Extraction algorithm error. It cannot find a source state and looks in irrelevant block | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L233) |
+| `LISTEN - DCCP-REQUEST? -> RESPOND` | Partially Correct | Expected **DCCP-REQUEST?;DCCP-RESPONSE!** instead. This transition is predicted in a few places. In the first mention, the prediction looks good as the response event is not explicit. In the second and third mentions, it seems like it should have been extracted based on NLP prediction, so it is likely an algorithm extraction error | RESPOND: A server socket enters this state, from LISTEN, after receiving a DCCP-Request from a client. Also see [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L659) |
+| `PARTOPEN - DCCP-ACK!;timeout;DCCP-RESET? -> PARTOPEN` | Partially correct | Same as Gold | | 
+
