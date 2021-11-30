@@ -2,10 +2,10 @@
 
 This tutorial consists of the following sections.
 
-1. **NLP Attacker Synthesis:** How to generate attacks using the intermediary representations (Gold, NeuralCRF+R, LinearCRF+R).
-2. **Canonical Attacker Synthesis:** How to generate attacks using the Canonical FSMs.
-3. **Confirmation of Candidate Attackers:** How to check if an attack generated using one of the intermediary representations is actually confirmed against the corresponding Canonical FSM.
-4. **Attacker Strategies:** How to characterize the strategy of a confirmed attack, in a semi-automated fashion.
+1. [**NLP Attacker Synthesis:** How to generate attacks using the intermediary representations (Gold, NeuralCRF+R, LinearCRF+R).](https://github.com/RFCNLP/RFCNLP/blob/main/tutorials/attacker.synthesis.md#1-nlp-attacker-synthesis)
+2. [**Canonical Attacker Synthesis:** How to generate attacks using the Canonical FSMs.](https://github.com/RFCNLP/RFCNLP/blob/main/tutorials/attacker.synthesis.md#2-canonical-attacker-synthesis)
+3. [**Confirmation of Candidate Attackers:** How to check if an attack generated using one of the intermediary representations is actually confirmed against the corresponding Canonical FSM.](https://github.com/RFCNLP/RFCNLP/blob/main/tutorials/attacker.synthesis.md#3-confirmation-of-candidate-attackers)
+4. [**Attacker Strategies:** How to characterize the strategy of a confirmed attack, in a semi-automated fashion.](https://github.com/RFCNLP/RFCNLP/blob/main/tutorials/attacker.synthesis.md#4-attacker-strategies)
 
 ## 1. NLP Attacker Synthesis
 
