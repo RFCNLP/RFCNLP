@@ -130,3 +130,44 @@
 | `LISTEN - DCCP-REQUEST? -> RESPOND` | Partially Correct | Expected **DCCP-REQUEST?;DCCP-RESPONSE!** instead. This transition is predicted in a few places. In the first mention, the prediction looks good as the response event is not explicit. In the second and third mentions, it seems like it should have been extracted based on NLP prediction, so it is likely an algorithm extraction error | RESPOND: A server socket enters this state, from LISTEN, after receiving a DCCP-Request from a client. Also see [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/DCCP.xml#L659) |
 | `PARTOPEN - DCCP-ACK!;timeout;DCCP-RESET? -> PARTOPEN` | Partially correct | Same as Gold | | 
 
+### NeuralCRF+R DCCP Errors
+
+| Transition | Error Type | Reason | Text |
+|--|--|--|--|
+|--|--|--|--|
+| `CLOSED - ε -> LISTEN` | Missing | Same as Gold | |
+| `CLOSING - DCCP-RESET? -> TIMEWAIT`  | Missing | Same as Gold | |
+| `OPEN - DCCP-CLOSE! -> CLOSING`  | Missing | Same as Gold | |
+| `OPEN - DCCP-CLOSEREQ?;DCCP-CLOSE! -> CLOSING` | Missing | Same as Gold | |
+| `LISTEN - timeout -> CLOSED`  | Missing | Same as Gold | |
+| `OPEN - DCCP-ACK? -> OPEN` | Missing | Same as Gold | | 
+| `OPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATA! -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATA? -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATAACK! -> OPEN` | Missing | Same as Gold | |
+| `OPEN - DCCP-DATAACK? -> OPEN` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-CLOSEREQ?;DCCP-CLOSE! -> CLOSING` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-DATA?;DCCP-ACK! -> OPEN` | Missing | Same as Gold | |
+| `PARTOPEN - DCCP-DATAACK?;DCCP-ACK! -> OPEN` | Missing | Same as Gold | |
+| `REQUEST - DCCP-RESET? -> CLOSED` | Missing | Same as Gold | |
+| `REQUEST - DCCP-SYNC?;DCCP-RESET! -> CLOSED` | Missing | Same as Gold | |
+| `RESPOND - DCCP-DATAACK? -> OPEN` | Missing | Same as Gold | |
+| `CLOSEREQ - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Same as Linear | |
+| `PARTOPEN - DCCP-ACK? -> OPEN` | Missing | Same as Linear | |
+| `PARTOPEN - DCCP-DATA? -> OPEN` | Missing | Same as Linear | |
+| `PARTOPEN - DCCP-DATAACK? -> OPEN` | Missing | Same as Linear | |
+| `PARTOPEN - DCCP-REQUEST? -> OPEN` | Missing | Same as Linear | |
+| `PARTOPEN - DCCP-DATAACK! -> PARTOPEN` | Missing | Same as Linear | |
+| `PARTOPEN - timeout -> CLOSED` | Missing | Same as Linear | |
+| `TIMEWAIT - timeout -> CLOSED` | Missing | Same as Linear | |
+| `CLOSEREQ - ε -> TIMEWAIT` | Incorrect | Same as Linear | |
+| `CLOSING - timeout -> TIMEWAIT` | Incorrect | Same as Linear | | 
+| `OPEN - timeout -> CLOSING` | Incorrect | Same as Linear | | 
+| `PARTOPEN - DCCP-RESPONSE?;DCCP-DATA! -> REQUEST` | Incorrect | Same as Linear | | 
+| `TIMEWAIT - DCCP-RESET? -> TIMEWAIT` | Incorrect | Same as Linear | | 
+| `TIMEWAIT - timeout -> TIMEWAIT` | Incorrect | Same as Linear | | 
+| `UNSTABLE - ε -> RESPOND` | Incorrect | Same as Linear | | 
+| `PARTOPEN - DCCP-RESPONSE?;DCCP-RESET?;DCCP-SYNC? -> OPEN` | Incorrect | NLP prediction error. *Action* spans predicted as *trigger* | See https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml#L509 |
+| `LISTEN - DCCP-REQUEST? -> RESPOND` | Partially Correct | Same as Linear | |
+| `PARTOPEN - DCCP-ACK!;timeout;DCCP-RESET? -> PARTOPEN` | Partially correct | Same as Gold | | 
