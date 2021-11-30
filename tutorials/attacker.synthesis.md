@@ -9,7 +9,7 @@ This tutorial consists of the following sections.
 
 ## 1. NLP Attacker Synthesis
 
-The easiest way to run the NLP attacker synthesis code is to use one of the Makefile targets, as described in the [README](../README.md).  For example, suppose we want to extract an FSM from the `TCP LinearCRF+R` intermediary representation, and then synthesize attacks using this FSM and our predefined correctness properties.  Then we would run, in Bash:
+The easiest way to run the NLP attacker synthesis code is to use one of the [Makefile](../Makefile) targets, as described in the [README](../README.md).  For example, suppose we want to extract an FSM from the `TCP LinearCRF+R` intermediary representation, and then synthesize attacks using this FSM and our predefined correctness properties.  Then we would run, in Bash:
 
 ```
 python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/linear_phrases/TCP.xml
