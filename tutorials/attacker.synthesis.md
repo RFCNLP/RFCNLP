@@ -132,6 +132,7 @@ For more details refer to the [KORG paper](https://arxiv.org/abs/2004.01220) and
 The easiest way to run the Canonical attacker synthesis is to use the [Makefile](https://github.com/RFCNLP/RFCNLP-korg/blob/master/Makefile) in [our modified version of KORG](https://github.com/RFCNLP/RFCNLP-korg).  
 - To generate attacks against Canonical TCP, run `make tcp`.  
 - To generate attacks against Canonical DCCP, run `make dccp`.  
+
 The Makefile has various other interesting targets which you may want to run in order to understand the code in great detail, but `tcp` and `dccp` are the only important ones for reproducing our results.
 
 As a concrete example, let's do attacker synthesis using Canonical TCP.  We navigate to the KORG source directory and type `make tcp`.  First we see the invocation of KORG which is executed by the `tcp` target in the Makefile.
