@@ -1,6 +1,9 @@
 # RFC Parsing with NLP
 
 This repository contains code, models, and results for our paper, which is currently in review.
+We additionally provide:
+* [a tutorial on how to use our software](tutorials/attacker.synthesis.md); and
+* [a detailed error analysis of the FSMs](tutorials/detailed.FSM.error.analysis.md).
 
 The repository has been thoroughly anonymized for the double-blind review process.
 
@@ -226,7 +229,7 @@ Example usage:
 python3 nlp2promela/nlp2promela.py rfcs-predicted/bert_pretrained_rfcs_crf_phrases_feats/DCCP.xml
 ```
 
-Interpreting the output in detail is complicated, because of how we use [KORG](https://github.com/RFCNLP/RFCNLP-korg).  For more details, refer to the [attacker synthesis tutorial](tutorials/attacker.synthesis.md).
+To see how to interpret the results, refer to the [attacker synthesis tutorial](tutorials/attacker.synthesis.md).
 
 
 ### `nlp-parser/linear.py`
