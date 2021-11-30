@@ -71,11 +71,7 @@ We could not find any with_recovery(model, (N), phi)-attacker A.
 
 Regardless, the rest of the terminal output consists of such information.  
 
-Pen-ultimately, we save files `TCP.pml` and `TCP.png`, if the protocol is TCP, or `DCCP.pml` and `DCCP.png`, if the protocol is DCCP.  Either way, these files contain the extracted FSM, in Promela and as a diagram, respectively.  For example, here is the automatically generated diagram for the TCP LinearCRF+R FSM:
-
-![TCP Linear Diagram](../example.outputs/tcplinear2promela/TCP.png)
-
-This image can be compared to the corresponding Tikz diagram in the Appendix of our paper (Figures 8, 9, and 10).
+Pen-ultimately, we save files `TCP.pml` and `TCP.png`, if the protocol is TCP, or `DCCP.pml` and `DCCP.png`, if the protocol is DCCP.  Either way, these files contain the extracted FSM, in Promela and as a diagram, respectively.  The Promela program is the result we report on in the paper.  At this time, the diagram rendering logic is imperfect, so the `.png` file might have some mistakes -- please refer to the `.pml` file instead.  If you would like to create FSM diagrams to compare with those we give in the Appendix of our paper, you can do so using [iSpin](http://spinroot.com/spin/Man/3_SpinGUI.html) (for more instructions refer [here](https://philenius.github.io/software%20quality/2020/04/09/installing-spin-on-ubuntu-19.html)).  Our diagrams in the Appendix of our paper are manually crafted in Tikz, based on the Promela code.
 
 Finally, we save synthesized attacker programs in `out/`.  The folder names, e.g. `attack-promela-models.DCCP.props.phi3-DCCP-_True`, indicate the protocol (e.g. `DCCP`) and the property which KORG used to synthesize the attackers in that folder (e.g. `phi3`).  Within each folder, there will be an equal number of Promela files with `soft_transitions` in their name, e.g., `attacker_92_WITH_RECOVERY_soft_transitions.pml`, and without, e.g. `attacker_91_WITH_RECOVERY.pml`.  The numbers in the filenames might not match, but there is a one-to-one correspondence between these files.  Those with `soft_transitions` in their file-name are the attackers we report in the paper, which are modified to time-out rather than block trying to send or receive.  For example, using TCP LinearCRF+R and `phi1`, we synthesize [this attacker](example.outputs/tcplinear2promela/attack-promela-models.TCP.props.phi1-TCP-_True/attacker_32_WITH_RECOVERY_soft_transitions.pml):
 
