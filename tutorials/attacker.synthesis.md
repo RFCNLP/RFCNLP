@@ -9,13 +9,18 @@ This tutorial consists of the following sections.
 
 ## 1. NLP Attacker Synthesis
 
-The easiest way to run the NLP attacker synthesis code is to use one of the [Makefile](../Makefile) targets, as described in the [README](../README.md).  For example, suppose we want to extract an FSM from the `TCP LinearCRF+R` intermediary representation, and then synthesize attacks using this FSM and our predefined correctness properties.  Then we would run, in Bash:
+The easiest way to run the NLP attacker synthesis code is to use one of the [Makefile](../Makefile) targets, as described in the [README](../README.md).  For example, suppose we want to extract an FSM from the `TCP LinearCRF+R` intermediary representation, and then synthesize attacks using this FSM and our predefined correctness properties.  Then we could run, in Bash:
 
 ```
 python3 nlp2promela/nlp2promela.py rfcs-predicted-paper/linear_phrases/TCP.xml
 ```
 
-Equivalently, we could simply use `make tcplinear2promela`.  The terminal output will begin with some debug information which is useful for development purposes, but not for actually using the tool.  In [our example output](../example.outputs/tcplinear2promela.txt), this debug information is printed in lines 1 through 34.  You can ignore these lines.
+Or equivalently, we could simply use:
+
+```
+make tcplinear2promela
+```
+The terminal output will begin with some debug information which is useful for development purposes, but not for actually using the tool.  In [our example output](../example.outputs/tcplinear2promela.txt), this debug information is printed in lines 1 through 34.  You can ignore these lines.
 
 Second, the terminal will print the correct, incorrect, and missing states.  In [our example output](../example.outputs/tcplinear2promela.txt), this information is printed in lines 34 through 45.  Notice that `∅` is the empty set, so for example, `WRONG STATES: ∅` means that none of the extracted states were incorrect (when compared to the Canonical FSM).
 
