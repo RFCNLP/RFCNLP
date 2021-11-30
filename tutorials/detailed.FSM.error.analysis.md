@@ -18,3 +18,71 @@
 | `CLOSING - FIN?;ACK!;ACK? -> CLOSING`  | Partially Correct | Same as above | |
 | `CLOSE_WAIT - FIN?;ACK!;ACK? -> CLOSE_WAIT` | Partially Correct | Same as above | |
 | `SYN_SENT - ACK! -> SYN_RECEIVED` | Partially Correct |  Expected **SYN?;ACK** instead. This is a textual ambiguity issue. The expert annotated the send event as just ACK. There is no explicit mention of a receive action. | If  the  state  is  SYN-SENT  then  enter  SYN-RECEIVED,  form a SYN,ACK  segment  and  send  it. | 
+
+
+### LinearCRF+R and Neural-CRF+R TCP Errors
+
+*Both models produce the same FSM*
+
+| Transition | Error Type | Reason | Text |
+|--|--|--|--|
+| `CLOSE_WAIT - FIN! -> LAST_ACK` | Missing | Same as Gold | |
+| `LISTEN - SYN?;ACK! -> SYN_RECEIVED` | Missing | Same as Gold | |
+| `FIN_WAIT_1 - FIN?;ACK! -> CLOSING` | Missing | Same as Gold | |
+| `CLOSED - SYN? -> LISTEN` | Incorrect | Same as Gold | |
+| `ESTABLISHED - FIN?;ACK!;ACK? -> CLOSING` | Incorrect | NLP prediction error. *Error* span predicted as *transition*. | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/TCP.xml#L799) | 
+| `SYN_RECEIVED - FIN?;ACK!;ACK? -> CLOSING` | Incorrect | Same as above | |
+| `FIN_WAIT_2 - SYN!;ACK! -> CLOSING` | Incorrect | NLP prediction error. *Error* span predicted as *transition*. | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/TCP.xml#L210) |
+| `LAST_ACK - SYN!;ACK! -> CLOSING` | Incorrect | Same as above | |
+| `TIME_WAIT - SYN!;ACK! -> CLOSING` | Incorrect | Same as above | |
+| `CLOSING - SYN!;ACK! -> CLOSING` | Incorrect | Same as above | |
+| `FIN_WAIT_1 - SYN!;ACK! -> CLOSING` | Incorrect | Same as above | |
+| `LAST_ACK - ACK?;FIN! -> CLOSING` | Incorrect | NLP prediction error.  *Error* span predicted as *transition*. | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-predicted-paper/linear_phrases/TCP.xml#L276) | 
+| `TIME_WAIT - ACK?;FIN! -> CLOSING` | Incorrect | Same as above | | 
+| `CLOSING - ACK?;FIN! -> CLOSING` | Incorrect | Same as above | |
+| `LISTEN - ACK?;FIN! -> ESTABLISHED` | Incorrect | No explicit event in the text, extraction algorithm looks in irrelevant block for an event. | **LISTEN state**, SYN-SENT state, SYN-RECEIVED state: queue for processing after **entering ESTABLISHED state.** |
+| `TIME_WAIT - FIN?;ACK!;ACK? -> TIME_WAIT` | Partially Correct | Same as Gold | |
+| `SYN_RECEIVED - FIN?;ACK!;ACK? -> CLOSE_WAIT` | Partially Correct | Same as Gold | |
+| `LAST_ACK - FIN?;ACK!;ACK? -> LAST_ACK` | Partially Correct | Same as Gold  | |
+| `FIN_WAIT_2 - FIN?;ACK!;ACK? -> TIME_WAIT` | Partially Correct | Same as Gold  | |
+| `ESTABLISHED - FIN?;ACK!;ACK? -> CLOSE_WAIT` | Partially Correct | Same as Gold  | |
+| `CLOSING - FIN?;ACK!;ACK? -> CLOSING`  | Partially Correct | Same as Gold  | |
+| `CLOSE_WAIT - FIN?;ACK!;ACK? -> CLOSE_WAIT` | Partially Correct | Same as Gold  | |
+| `SYN_SENT - SYN!;ACK! -> SYN_RECEIVED` | Partially Correct |  Same as Gold  | |
+| `SYN_SENT - ACK?;FIN! -> ESTABLISHED` | Partially Correct. | Expected **ACK?;ACK!**. No explicit event in the text, extraction algorithm looks in irrelevant block for an event. This segment was not annotated as a transition in Gold.  | LISTEN state, **SYN-SENT state**, SYN-RECEIVED state: queue for processing after **entering ESTABLISHED state.** |
+| `SYN_SENT - SYN!;ACK! -> ESTABLISHED` | Partially Correct  | Expected **ACK?;ACK!**. No explicit event in the text, extraction algorithm looks in irrelevant block for an event. This segment was not annotated as a transition in Gold. *Given that it introduces the same partially correct transition as above, it is not counted in stats.* | **SYN-SENT state**, SYN-RECEIVED state: Queue the data for transmission after **entering ESTABLISHED state.** |
+| `SYN_RECEIVED - ACK?;FIN! -> ESTABLISHED`  | Partially Correct | Expected **ACK?**. No explicit event in the text, extraction algorithm looks in irrelevant block for an event. This segment was not annotated as a transition in Gold.  | LISTEN state, SYN-SENT state, **SYN-RECEIVED state**: queue for processing after **entering ESTABLISHED state.** |
+`SYN_RECEIVED -  SYN!;ACK! -> ESTABLISHED` | Partially Correct | Expected **ACK?**. No explicit event in the text, extraction algorithm looks in irrelevant block for an event. This segment was not annotated as a transition in Gold. *Given that it introduces the same partially correct transition as above, it is not counted in stats.* | SYN-SENT state, **SYN-RECEIVED state**: Queue the data for transmission after **entering ESTABLISHED state.** |
+
+### GOLD DCCP Errors
+
+| Transition | Error Type | Reason | Text |
+|--|--|--|--|
+| `CLOSED - ε -> LISTEN` | Missing | Text ambiguity, expert knowledge is needed to infer the transition from the relevant text. | Each connection is actively initiated by one of the hosts, which we call the client; the other, initially passive host is called the server / **LISTEN**: Represents server sockets in the passive listening state. **LISTEN and CLOSED** are not associated with any particular DCCP connection. |
+`CLOSING - DCCP-RESET? -> TIMEWAIT` | Missing | Text ambiguity, expert knowledge needed to understand what a handshake is and how that maps to expected client/server behaviors. We get the correct source and target state, but we parse a *timeout* event instead. |  DCCP connection termination uses a **handshake consisting of an optional DCCP-CloseReq packet, a DCCP-Close packet, and a DCCP-Reset packet**. The server moves from the OPEN state, possibly through the CLOSEREQ state, to CLOSED; **the client moves from OPEN through CLOSING to TIMEWAIT**, and after 2MSL wait time, to CLOSED |
+`OPEN - DCCP-CLOSE! -> CLOSING` | Missing | Same as above | |
+`OPEN - DCCP-CLOSEREQ?;DCCP-CLOSE! -> CLOSING` | Missing | Same as above |  |
+`LISTEN - timeout -> CLOSED` | Missing | Not found in text | |
+`OPEN - DCCP-ACK? -> OPEN` | Missing | Not found in text, only in ascii diagram | |
+`OPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Source and target states are not explicit. | Either client or server may send a DCCP-Close packet, which will elicit a DCCP-Reset packet. |
+`OPEN - DCCP-DATA! -> OPEN` | Missing | Not found in text | |
+`OPEN - DCCP-DATA? -> OPEN` | Missing | Not found in text | |
+`OPEN - DCCP-DATAACK! -> OPEN` | Missing | Not found in text | |
+`OPEN - DCCP-DATAACK? -> OPEN` | Missing | Not found in text | |
+`PARTOPEN - DCCP-CLOSE?;DCCP-RESET! -> CLOSED` | Missing | Text/indentation ambiguity. Cannot infer nested if-statement between PARTOPEN state in step 12 and transition in step 14. Expert knowledge is needed to know that “tear down connection” means transition to CLOSED. | Too long, see [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-annotated/DCCP.txt#L3972) |
+`PARTOPEN - DCCP-CLOSEREQ?;DCCP-CLOSE! -> CLOSING` | Missing | Text/indentation ambiguity. Cannot infer nested if-statement between PARTOPEN state in step 12 and transition in step 13. | Too long, see [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-annotated/DCCP.txt#L3972) |
+`PARTOPEN - DCCP-DATA?;DCCP-ACK! -> OPEN` | Missing | Annotation error. Our expert did not annotate this transition | DCCP connections' initiation phase consists of a three-way handshake: an initial DCCP-Request packet sent by the client, a DCCP-Response sent by the server in reply, and finally an acknowledgement from the client, **usually via a DCCP-Ack or DCCP-DataAck packet**. **The client moves from the REQUEST state to PARTOPEN, and finally to OPEN**; the server moves from LISTEN to RESPOND, and finally to OPEN. | 
+`PARTOPEN - DCCP-DATAACK?;DCCP-ACK! -> OPEN` | Missing | Same as above | |
+`REQUEST - DCCP-RESET? -> CLOSED` | Missing | No explicit mention of the source and target state | See [here](https://github.com/RFCNLP/RFCNLP/blob/main/rfcs-annotated/DCCP.txt#L3931) |
+`REQUEST - DCCP-SYNC?;DCCP-RESET! -> CLOSED` | Missing | No explicit mention of the target state | **On receiving a sequence-valid DCCP-Sync packet**, ....  As an exception, if the peer endpoint is in the **REQUEST state, it MUST respond with a DCCP-Reset** instead of a DCCP-SyncAck. This serves to clean up DCCP A's half-open connection. |
+`RESPOND - DCCP-DATAACK? -> OPEN` | Missing | No explicit mention of the event | **OPEN**: Client and server sockets **enter this state from PARTOPEN and RESPOND, respectively** | 
+`CLOSING - timeout -> TIMEWAIT` | Incorrect | Text ambiguity, expert knowledge needed to understand what a handshake is and how that maps to expected client/server behaviors. Information is clarified in the ascii and examples of communication, which we do not consider. | DCCP connection termination uses a **handshake consisting of an optional DCCP-CloseReq packet, a DCCP-Close packet, and a DCCP-Reset packet**. The server moves from the OPEN state, possibly through the CLOSEREQ state, to CLOSED; **the client moves from OPEN through CLOSING to TIMEWAIT, and after 2MSL wait time, to CLOSED** |
+`OPEN - timeout -> CLOSING` | Incorrect | Same as above | |
+`PARTOPEN - DCCP-CLOSE? -> OPEN` | Incorrect | Text ambiguity, from the text it seems like transition would be valid. | **The client leaves the PARTOPEN state for OPEN** when it receives **a valid packet other than** DCCP-Response, DCCP-Reset, or DCCP-Sync from the server. |
+`PARTOPEN - DCCP-CLOSEREQ? -> OPEN` | Incorrect | Same as above | |
+`PARTOPEN - DCCP-SYNCACK? -> OPEN` | Incorrect | Same as above | |
+`PARTOPEN - DCCP-RESET? -> OPEN` | Incorrect | Extraction algorithm error. It should handle "other than" correctly | **The client leaves the PARTOPEN state for OPEN** when it receives **a valid packet other than** DCCP-Response, DCCP-Reset, or DCCP-Sync from the server. |
+`PARTOPEN - DCCP-RESPONSE? -> OPEN` | Incorrect | Same as above | |
+`PARTOPEN - DCCP-SYNC? -> OPEN` | Incorrect | Same as above | |
+
+*Note that just two spans of text in the RFC introduce all of the 8 incorrect transitions*
