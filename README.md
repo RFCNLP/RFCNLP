@@ -1,11 +1,22 @@
 # RFC Parsing with NLP
 
-This repository contains code, models, and results for our paper, which is currently in review.
+This repository contains code, models, and results for [our paper](rfcnlp.pdf), *Automated Attack Synthesis by Extracting Finite State Machines from Protocol Specification Documents*, to appear in the [43rd IEEE Symposium on Security and Privacy](https://www.ieee-security.org/TC/SP2022/).
+
 We additionally provide:
 * [a tutorial on how to use our software](tutorials/attacker.synthesis.md); and
 * [a detailed error analysis of the FSMs](tutorials/detailed.FSM.error.analysis.md).
 
-The repository has been thoroughly anonymized for the double-blind review process.
+To cite our paper, please use the following.
+
+```
+@inproceedings{rfcnlp,
+  title={Automated Attack Synthesis by Extracting Finite State Machines from Protocol Specification Documents},
+  author={Pacheco, Maria Lenore and von Hippel, Max and Weintraub, Ben and Goldwasser, Dan and Nita-Rotaru, Cristina},
+  booktitle={2022 IEEE Symposium on Security and Privacy (SP)},
+  year={2022},
+  organization={IEEE}
+}
+```
 
 ## Reproduce Our Results
 
