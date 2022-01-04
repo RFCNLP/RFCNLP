@@ -4,7 +4,7 @@
 * [PDF](rfcnlp.pdf)
 
 This repository contains code, models, and results for [Automated Attack Synthesis by Extracting Finite State Machines from Protocol Specification Documents](rfcnlp.pdf), 
-by [Maria Lanore Pancheco](https://mlpacheco.github.io/), 
+by [Maria Leonor Pacheco](https://mlpacheco.github.io/), 
 [Max von Hippel](https://mxvh.pl/), 
 [Ben Weintraub](https://ben-weintraub.com/), 
 [Dan Goldwasser](https://www.cs.purdue.edu/homes/dgoldwas/), and 
