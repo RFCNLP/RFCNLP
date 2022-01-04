@@ -15,18 +15,6 @@ We additionally provide:
 * [a tutorial on how to use our software](tutorials/attacker.synthesis.md); and
 * [a detailed error analysis of the FSMs](tutorials/detailed.FSM.error.analysis.md).
 
-To cite our paper, please use the following.
-
-```
-@inproceedings{rfcnlp,
-  title={Automated Attack Synthesis by Extracting Finite State Machines from Protocol Specification Documents},
-  author={Pacheco, Maria Lenore and von Hippel, Max and Weintraub, Ben and Goldwasser, Dan and Nita-Rotaru, Cristina},
-  booktitle={2022 IEEE Symposium on Security and Privacy (SP)},
-  year={2022},
-  organization={IEEE}
-}
-```
-
 ## Reproduce Our Results
 
 To use our pre-trained technical language embedding, you'll need to get it using git-LFS, like so:
