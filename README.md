@@ -1,4 +1,4 @@
-# RFC Parsing with NLP
+# Extracting Protocol FSMs from RFCs
 
 * [BIBTEX](rfcnlp.bib)
 * [PDF](rfcnlp.pdf)
