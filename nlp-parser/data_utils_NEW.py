@@ -690,8 +690,8 @@ def join_consecutive_transitions(X_test_data, y_test_trans, y_pred_trans, level_
         new_y_p.append(y_p[0])
 
         for i in range(1, len(y_p)):
-
-            if y_p[i-1][0].endswith('TRANSITION') and y_p[i][0].endswith('TRANSITION') and \
+            if len(y_p[i-1]) > 0 and len(y_p[i]) > 0 and\
+               y_p[i-1][0].endswith('TRANSITION') and y_p[i][0].endswith('TRANSITION') and \
                h[i-1][0] == h[i][0] and d[i-1][0] == d[i][0]:
                 new_span = ['I-TRANSITION'] * len(y_p[i])
                 new_y_p.append(new_span)
