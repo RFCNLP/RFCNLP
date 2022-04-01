@@ -50,7 +50,7 @@ RUN apt-get install -y wget
 RUN curl -o /models/en-ud-ewt-sentence.bin https://www.apache.org/dyn/closer.cgi/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-sentence-1.0-1.9.3.bin
 RUN curl -o /models/en-ud-ewt-pos.bin https://www.apache.org/dyn/closer.cgi/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-pos-1.0-1.9.3.bin
 RUN curl -o /models/en-ud-ewt-tokens.bin https://www.apache.org/dyn/closer.cgi/opennlp/models/ud-models-1.0/opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin
-RUN wget https://dlcdn.apache.org/opennlp/opennlp-1.9.3/apache-opennlp-1.9.3-bin.tar.gz
+RUN wget https://archive.apache.org/dist/opennlp/opennlp-1.9.3/apache-opennlp-1.9.3-bin.tar.gz
 RUN tar -xvzf apache-opennlp-1.9.3-bin.tar.gz
 RUN mv apache-opennlp-* /usr/bin/.
 # 2.3. Install our updated version of KORG
