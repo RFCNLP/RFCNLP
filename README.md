@@ -12,6 +12,8 @@ by [Maria Leonor Pacheco](https://mlpacheco.github.io/),
 [Cristina Nita-Rotaru](https://cnitarot.github.io/),
 to appear in the [43rd IEEE Symposium on Security and Privacy](https://www.ieee-security.org/TC/SP2022/).
 
+[![teaser-video](https://user-images.githubusercontent.com/4683443/167458590-9ada8044-442e-4672-8496-d949a79e90e1.png)](https://www.youtube.com/watch?v=33VaPC0VUQo)
+
 We additionally provide:
 * [a tutorial on how to use our software](tutorials/attacker.synthesis.md); and
 * [a detailed error analysis of the FSMs](tutorials/detailed.FSM.error.analysis.md).
