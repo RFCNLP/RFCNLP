@@ -326,6 +326,16 @@ NeuralCRF+R in the paper)
 * `--cuda_device`: receives an int specifying which of your GPU devices
   to use. It defaults to 0.
 
+### `nlp-parser/preprocess_phrases.py`
+
+This script preprocesses the annotated protocol files and outputs the
+preprocessed files needed by the scripts above.
+
+To be able to run this script, you first need to install Apache OpenNLP for the Python NLTK
+toolkit. To do this, please follow the instructions provided at
+[opennlp_python](https://github.com/paudan/opennlp_python). 
+
 ## Disclaimers
 
 If you encounter something that does not work as expected, please feel free to open a [GitHub Issue](https://github.com/RFCNLP/RFCNLP/issues) reporting the problem, and we will do our best to resolve it.
+

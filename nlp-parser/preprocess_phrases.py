@@ -227,28 +227,32 @@ def main():
 
     tokenizer = nltk.MWETokenizer(mwes=mwes, separator='')
 
-    #PROTOCOLS = ['BGPv4', 'DCCP', 'LTP', 'PPTP', 'SCTP', 'TCP']
-    #for protocol in PROTOCOLS:
-    print(args.protocol)
-    fp = open("rfcs-bio/{}_phrases.txt".format(args.protocol), "w")
-    fp_train = open("rfcs-bio/{}_phrases_train.txt".format(args.protocol), "w")
-    rfc = os.path.join("rfcs-annotated-tidied", "{}.xml".format(args.protocol))
-    xml = ET.parse(cleanFile(rfc))
+    # Find which files we have annotations for
+    annotated_protocols = [filename[:-4] for filename in os.listdir("rfcs-annotated-tidied") if filename.endswith(".xml")]
 
-    # Over-generating to learn
-    for i, control in enumerate(xml.iter('control')):
-        control_elems = []
-        if control.text is not None:
-            control_elems.append(('O', control.text, control.get('relevant'), 0, 0))
-        recursive_control(control, control.get('relevant'), control_elems)
-        write_control(args, control_elems, tokenizer, fp_train)
-    fp_train.close()
+    if args.protocol in annotated_protocols:
+        print(args.protocol)
+        fp = open("rfcs-bio/{}_phrases.txt".format(args.protocol), "w")
+        fp_train = open("rfcs-bio/{}_phrases_train.txt".format(args.protocol), "w")
+        rfc = os.path.join("rfcs-annotated-tidied", "{}.xml".format(args.protocol))
+        xml = ET.parse(cleanFile(rfc))
 
-    # Without over generation to predict
-    level_horizontal = 0; level_deep = 0
-    for child in xml.getroot():
-        recursive_parent(child, fp, tokenizer, args, level_horizontal, level_deep)
-    fp.close()
+        # Over-generating to learn
+        for i, control in enumerate(xml.iter('control')):
+            control_elems = []
+            if control.text is not None:
+                control_elems.append(('O', control.text, control.get('relevant'), 0, 0))
+            recursive_control(control, control.get('relevant'), control_elems)
+            write_control(args, control_elems, tokenizer, fp_train)
+        fp_train.close()
+
+        # Without over generation to predict
+        level_horizontal = 0; level_deep = 0
+        for child in xml.getroot():
+            recursive_parent(child, fp, tokenizer, args, level_horizontal, level_deep)
+        fp.close()
+    elif args.protocol not in annotated_protocols:
+        print("Protocol is not supported")
 
 if __name__ == "__main__":
     main()
