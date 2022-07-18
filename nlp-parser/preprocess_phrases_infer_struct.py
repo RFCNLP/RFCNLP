@@ -119,25 +119,23 @@ def recursive_tag(elem, parent_tag, attr, accum=[], level_horizontal=0, level_de
             accum.append((parent_tag, child.tail, attr, level_horizontal, level_deep))
 
 
-def recursive_parent(elem, fp, tokenizer, args, level_horizontal, level_deep):
+def recursive_parent(elem, fp, tokenizer, args):
     if elem.tag == "control":
-        level_horizontal += 1
         control_elems = []
         if elem.text is not None:
-            control_elems.append(('O', elem.text, elem.get('relevant'), level_horizontal, level_deep))
+            control_elems.append(('O', elem.text, elem.get('relevant'), elem.get('count'), elem.get('indent')))
 
-        recursive_control(elem, elem.get('relevant'), control_elems, level_horizontal, level_deep + 1)
+        recursive_control(elem, elem.get('relevant'), control_elems, elem.get('count'), elem.get('indent'))
         write_control(args, control_elems, tokenizer, fp)
         #level_horizontal += 1
     else:
         for child in elem:
-            recursive_parent(child, fp, tokenizer, args, level_horizontal, level_deep)
+            recursive_parent(child, fp, tokenizer, args)
 
 def recursive_control(elem, attr, accum=[], level_horizontal=0, level_deep=0):
     for child in elem:
         if child.tag == "control":
-            level_horizontal += 1
-            recursive_control(child, child.get('relevant'), accum, level_horizontal, level_deep + 1)
+            recursive_control(child, child.get('relevant'), accum, child.get('count'), child.get('indent'))
         else:
             if child.text is not None:
                 accum.append((child.tag, child.text, attr, level_horizontal, level_deep))
@@ -154,6 +152,7 @@ def write_control(args, control_elems, tokenizer, fp):
     prev_tag = None
     all_tags = []; all_text = []; all_attrs = []; all_pos = []; all_levels_h = []; all_levels_d = []
     for (tag, text, attr, level_h, level_d) in control_elems:
+        print(tag, text, attr, level_h, level_d)
         text = re.sub('\n', ' &newline;', text)
         tokens = tokenize(tokenizer, text)
         # continue if there are no tokens
@@ -231,25 +230,13 @@ def main():
     annotated_protocols = [filename[:-4] for filename in os.listdir("rfcs-annotated-tidied") if filename.endswith(".xml")]
 
     if args.protocol in annotated_protocols:
-        print(args.protocol)
-        fp = open("rfcs-bio/{}_phrases.txt".format(args.protocol), "w")
-        fp_train = open("rfcs-bio/{}_phrases_train.txt".format(args.protocol), "w")
-        rfc = os.path.join("rfcs-annotated-tidied", "{}.xml".format(args.protocol))
+        fp = open("rfcs-bio/{}_phrases_infer_struct.txt".format(args.protocol), "w")
+        rfc = os.path.join("rfcs-annotated-tidied", "{}-format.xml".format(args.protocol))
         xml = ET.parse(cleanFile(rfc))
 
-        # Over-generating to learn
-        for i, control in enumerate(xml.iter('control')):
-            control_elems = []
-            if control.text is not None:
-                control_elems.append(('O', control.text, control.get('relevant'), 0, 0))
-            recursive_control(control, control.get('relevant'), control_elems)
-            write_control(args, control_elems, tokenizer, fp_train)
-        fp_train.close()
-
         # Without over generation to predict
-        level_horizontal = 0; level_deep = 0
         for child in xml.getroot():
-            recursive_parent(child, fp, tokenizer, args, level_horizontal, level_deep)
+            recursive_parent(child, fp, tokenizer, args)
         fp.close()
     elif args.protocol not in annotated_protocols:
         print("Protocol is not supported")

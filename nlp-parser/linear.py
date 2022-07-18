@@ -29,6 +29,7 @@ def main():
     parser.add_argument('--token_level', default=False, action='store_true', help='perform prediction at token level')
     parser.add_argument('--phrase_level', default=False, action='store_true', help='perform prediction at the phrase level')
     parser.add_argument('--outdir', type=str, required=True)
+    parser.add_argument('--struct_infer', default=False, action='store_true', help='use the structure of original file')
     args = parser.parse_args()
 
     protocols = ["TCP", "SCTP", "PPTP", "LTP", "DCCP", "BGPv4"]
@@ -52,6 +53,9 @@ def main():
     elif args.phrase_level:
         args.train = ["rfcs-bio/{}_phrases_train.txt".format(p) for p in together_path_list]
         args.test = ["rfcs-bio/{}_phrases.txt".format(args.protocol)]
+        if args.struct_infer:
+            args.test = ["rfcs-bio/{}_phrases_infer_struct.txt".format(args.protocol)]
+
         X_train_data, y_train, level_h, level_d = data_utils.get_data(args.train, word2id, tag2id, pos2id, id2cap, stem2id)
         X_test_data, y_test, level_h, level_d = data_utils.get_data(args.test, word2id, tag2id, pos2id, id2cap, stem2id)
         #print(len(X_train_data), y_train.shape)
