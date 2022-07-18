@@ -333,7 +333,9 @@ preprocessed files needed by the scripts above.
 
 To be able to run this script, you first need to install Apache OpenNLP for the Python NLTK
 toolkit. To do this, please follow the instructions provided at
-[opennlp_python](https://github.com/paudan/opennlp_python). 
+[opennlp_python](https://github.com/paudan/opennlp_python).
+
+**TO-DO**: Add detailed instructions about how the preprocessing works. 
 
 ## Disclaimers
 
