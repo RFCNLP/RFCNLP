@@ -702,19 +702,19 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       Represents server sockets in the passive listening state.  LISTEN
       and CLOSED are not associated with any particular DCCP connection.
 
-   <control indent="3" count="1" relevant="true">
+   <control indent="2" count="1" relevant="true">
    <trigger><def_state id="3">REQUEST</def_state></trigger>
       <transition>A client socket enters this state, from <arg_source><ref_state id="1">CLOSED</ref_state></arg_source>,</transition> after <action type="send">sending a
       <arg><ref_event type="send" id="1">DCCP-Request</ref_event> packet</arg> to try to initiate a connection.</action>
    </control>
 
-   <control indent="3" count="2" relevant="true">
+   <control indent="2" count="2" relevant="true">
    <trigger><def_state id="4">RESPOND</def_state></trigger>
       <transition>A server socket enters this state, from <arg_source><ref_state id="2">LISTEN</ref_state></arg_source>,</transition> after <action type="receive">receiving a
       <arg><ref_event type="receive" id="1">DCCP-Request</ref_event></arg> from a client.</action>
    </control>
 
-   <control indent="3" count="3" relevant="true">
+   <control indent="2" count="3" relevant="true">
    <trigger><def_state id="5">PARTOPEN</def_state></trigger>
       <transition>A client socket enters this state, from <arg_source><ref_state id="3">REQUEST</ref_state></arg_source>,</transition> after <action type="receive">receiving a
       <arg><ref_event type="receive" id="2">DCCP-Response</ref_event></arg> from the server.</action>.  This state represents the third
@@ -731,7 +731,7 @@ Kohler, et al.              Standards Track                    [Page 13]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   <control indent="3" count="4" relevant="true">
+   <control indent="2" count="4" relevant="true">
    <trigger><def_state id="6">OPEN</def_state></trigger>
       The central data transfer portion of a DCCP connection.  <transition>Client
       and server sockets enter this state from <arg_source><ref_state id="5">PARTOPEN</ref_state></arg_source></transition> and <transition><arg_source><ref_state id="4">RESPOND</ref_state></arg_source></transition>,
@@ -740,7 +740,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       OPEN state.
    </control>
 
-   <control indent="3" count="5" relevant="true">
+   <control indent="2" count="5" relevant="true">
    <trigger><def_state id="7">CLOSEREQ</def_state></trigger>
       <transition>A server socket enters this state, from <arg_source><ref_state id="6">SERVER-OPEN</ref_state></arg_source></transition>, <action type="send">to order the
       client to <arg><ref_event type="send" id="6">close the connection</ref_event></arg></action> and to hold TIMEWAIT state.
@@ -750,9 +750,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       Server and client sockets can both enter this state to close the
       connection.
 
-   <control indent="3" count="6" relevant="true">
+   <control indent="2" count="6" relevant="true">
    <trigger><def_state id="9">TIMEWAIT</def_state></trigger>
-      <control indent="6" count="7" relevant="true"><trigger>
+      <control indent="4" count="7" relevant="true"><trigger>
       A server or client socket remains in this state <ref_event type="compute" id="11">for 2MSL (4
       minutes)</ref_event> after the connection has been torn down, to prevent
       mistakes due to the delivery of old packets.</trigger>  Only one of the
@@ -1782,9 +1782,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 6.1.  Change Options
 
    Change L and Change R options initiate feature negotiation.  The
-   option to use depends on the relevant feature's location: <control indent="3" count="8" relevant="false"><trigger>To start a
-   negotiation for feature F/A,</trigger> <action>DCCP A will send a Change L option;</action></control> <control indent="3" count="9" relevant="false"><trigger>to
-   start a negotiation for F/B,</trigger> <action>it will send a Change R option.</action></control>  <control indent="3" count="10" relevant="false"><action>Change
+   option to use depends on the relevant feature's location: <control indent="2" count="8" relevant="false"><trigger>To start a
+   negotiation for feature F/A,</trigger> <action>DCCP A will send a Change L option;</action></control> <control indent="2" count="9" relevant="false"><trigger>to
+   start a negotiation for F/B,</trigger> <action>it will send a Change R option.</action></control>  <control indent="2" count="10" relevant="false"><action>Change
    options are retransmitted</action> <trigger>until some response is received.</trigger></control>  They
    contain at least one Value, and thus have a length of at least 4.
 
@@ -1812,7 +1812,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 6.2.  Confirm Options
 
-   <control indent="3" count="11" relevant="false"><action>Confirm L and Confirm R options complete feature negotiation and are
+   <control indent="2" count="11" relevant="false"><action>Confirm L and Confirm R options complete feature negotiation and are
    sent</action> <trigger>in response to Change R and Change L options, respectively.</trigger></control>
    Confirm options MUST NOT be generated except in response to Change
    options.  Confirm options need not be retransmitted, since Change
@@ -1831,7 +1831,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
               +--------+--------+--------+--------+--------
                Type=35
 
-<control indent="0" count="12" relevant="false">   If an endpoint receives an invalid Change option -- with an unknown
+<control indent="1" count="12" relevant="false">   If an endpoint receives an invalid Change option -- with an unknown
    feature number, or an invalid value -- <action>it will respond with an empty
    Confirm option containing the problematic feature number, but no
    value.</action></control>  Such options have length 3.
@@ -1867,7 +1867,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    value and once in the confirmer's preference list.
 
    To reconcile the preference lists, select the first entry in the
-   server's list that also occurs in the client's list.  <control indent="3" count="13" relevant="true"><trigger>If there is no
+   server's list that also occurs in the client's list.  <control indent="2" count="13" relevant="true"><trigger>If there is no
    shared entry,</trigger> <variable>the feature's value MUST NOT change,</variable> and <action>the Confirm
    option will confirm the feature's previous value</action> (unless the Change
    option was Mandatory; see Section 6.6.9).
@@ -2091,12 +2091,12 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    a DCCP-Request), or it may create a "feature negotiation packet",
    often a DCCP-Ack or DCCP-Sync, just to carry the option.  Feature
    negotiation packets are controlled by the relevant congestion control
-   mechanism.  <control indent="3" count="14" relevant="false">For example, <action type="send">DCCP A may send a <arg><ref_event type="receive" id="4">DCCP-Ack</ref_event> or <ref_event type="receive" id="9">DCCP-Sync</ref_event></arg> for
+   mechanism.  <control indent="2" count="14" relevant="false">For example, <action type="send">DCCP A may send a <arg><ref_event type="receive" id="4">DCCP-Ack</ref_event> or <ref_event type="receive" id="9">DCCP-Sync</ref_event></arg> for
    feature negotiation</action> <trigger>only if the B-to-A CCID would allow sending a
    <ref_event type="send" id="4">DCCP-Ack</ref_event>.</trigger> In addition, <action>an endpoint SHOULD generate at most one
    feature negotiation packet per round-trip time.</action></control> 
 
-   <control indent="3" count="15" relevant="false"><trigger>On receiving a Change L or Change R option,</trigger> <action>a DCCP endpoint examines
+   <control indent="2" count="15" relevant="false"><trigger>On receiving a Change L or Change R option,</trigger> <action>a DCCP endpoint examines
    the included preference list,</action> <action>reconciles that with its own preference
    list,</action> <action>calculates the new value,</action> and <action>sends back a Confirm R or Confirm
    L option, respectively, informing its peer of the new value or that
@@ -2109,7 +2109,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    or to new feature negotiation packets, as described above.
 
    The Change-sending endpoint MUST wait to receive a corresponding
-   Confirm option before changing its stored feature value. <control indent="3" count="16" relevant="false"><action>The
+   Confirm option before changing its stored feature value. <control indent="2" count="16" relevant="false"><action>The
    Confirm-sending endpoint changes its stored feature value</action> <trigger>as soon as
    it sends the Confirm.</trigger></control>
 
@@ -2121,9 +2121,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
    DCCP endpoints exist in one of three states relative to each feature.
    STABLE is the normal state, where the endpoint knows the feature's
-   value and thinks the other endpoint agrees.  <control indent="3" count="17" relevant="true"><transition>An endpoint enters the
+   value and thinks the other endpoint agrees.  <control indent="2" count="17" relevant="true"><transition>An endpoint enters the
    CHANGING state</transition> <trigger>when it first sends a Change for the feature</trigger></control> and
-   <control indent="3" count="18" relevant="true"><transition>returns to STABLE</transition> <trigger>once it receives a corresponding Confirm.</trigger></control>  <control indent="3" count="18" relevant="true"><transition>The
+   <control indent="2" count="18" relevant="true"><transition>returns to STABLE</transition> <trigger>once it receives a corresponding Confirm.</trigger></control>  <control indent="2" count="18" relevant="true"><transition>The
    final state, UNSTABLE</transition>, <trigger>indicates that an endpoint in CHANGING state
    changed its preference list but has not yet transmitted a Change
    option with the new preference list.</trigger>
@@ -2171,9 +2171,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    feature's state (<def_state>STABLE</def_state>, <def_state>CHANGING</def_state>, or <def_state>UNSTABLE</def_state>); and "<def_var>F.value</def_var>", which
    is the feature's value.
 
-    <control indent="4" count="19" relevant="false"><trigger>First, check for unknown features (Section 6.6.7);
+    <control indent="3" count="19" relevant="false"><trigger>First, check for unknown features (Section 6.6.7);
       If F is unknown,</trigger>
-        <control indent="8" count="20" relevant="false"><trigger>If the option was Mandatory,</trigger>   /* Section 6.6.9 */
+        <control indent="5" count="20" relevant="false"><trigger>If the option was Mandatory,</trigger>   /* Section 6.6.9 */
             <action>Reset connection</action> and <action>return</action>
         <trigger>Otherwise, if O.type == Change R,</trigger>
             <action>Send Empty Confirm L on a future packet</action>
@@ -2181,7 +2181,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
         <action>Return</action>
     </control>
 
-    <control indent="4" count="21" relevant="false"><trigger>Second, check for reordering (Section 6.6.4);
+    <control indent="3" count="21" relevant="false"><trigger>Second, check for reordering (Section 6.6.4);
         If F.state == UNSTABLE or P.seqno &lt;= FGSR
         or (O.type == Confirm R and P.ackno &lt; FGSS),</trigger>
             <action>Ignore option</action> and <action>return</action>
@@ -2194,9 +2194,9 @@ Kohler, et al.              Standards Track                    [Page 39]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   <control indent="3" count="22" relevant="true"><trigger>Third, process Change R options;
+   <control indent="2" count="22" relevant="true"><trigger>Third, process Change R options;
       If O.type == Change R,</trigger>
-        <control indent="8" count="23" relevant="true"><trigger>If the option's value is valid,</trigger>   /* Section 6.6.8 */
+        <control indent="5" count="23" relevant="true"><trigger>If the option's value is valid,</trigger>   /* Section 6.6.8 */
             <action>Calculate new value</action>
             <action>Send Confirm L on a future packet</action>
             <transition>Set F.state := STABLE</transition>
@@ -2209,10 +2209,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
         </control>
     </control>
 
-   <control indent="3" count="24" relevant="true"><trigger>Fourth, process Confirm R options (but only in CHANGING state).
+   <control indent="2" count="24" relevant="true"><trigger>Fourth, process Confirm R options (but only in CHANGING state).
       If F.state == CHANGING and O.type == Confirm R,</trigger>
-        <control indent="8" count="25" relevant="true"><trigger>If O.len &gt; 3,</trigger>   /* nonempty */
-            <control indent="12" count="26" relevant="false"><trigger>If the option's value is valid,</trigger>
+        <control indent="5" count="25" relevant="true"><trigger>If O.len &gt; 3,</trigger>   /* nonempty */
+            <control indent="7" count="26" relevant="false"><trigger>If the option's value is valid,</trigger>
                <variable>Set F.value := new value</variable>
             <trigger>Otherwise,</trigger>
                <action>Reset connection</action> and <action>return</action>
@@ -2234,7 +2234,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    retransmissions in DCCP: a Change option that is sent again will be
    sent on a new packet with a new sequence number.
 
-   <control indent="3" count="27" relevant="false"><action>A CHANGING endpoint transmits another Change option</action> <trigger>once it realizes
+   <control indent="2" count="27" relevant="false"><action>A CHANGING endpoint transmits another Change option</action> <trigger>once it realizes
    that it has not heard back from the other endpoint.</trigger></control>  The new Change
    option need not contain the same payload as the original; reordering
    protection will ensure that agreement is reached based on the most
@@ -2262,7 +2262,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    to carry the options.  Any new packets are controlled by the relevant
    congestion-control mechanism.
 
-   Confirm options are never retransmitted, but <control indent="3" count="28" relevant="false"><action>the Confirm-sending
+   Confirm options are never retransmitted, but <control indent="2" count="28" relevant="false"><action>the Confirm-sending
    endpoint MUST generate a Confirm option</action> <trigger>after every non-reordered
    Change.</trigger></control>
 
@@ -2296,10 +2296,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Each endpoint checks two conditions on sequence numbers to decide
    whether to process received feature negotiation options.
 
-   1.<control indent="3" count="29" relevant="false"> <trigger>If a packet's Sequence Number is less than or equal to FGSR,</trigger> then
+   1.<control indent="2" count="29" relevant="false"> <trigger>If a packet's Sequence Number is less than or equal to FGSR,</trigger> then
       <action>its Change options MUST be ignored.</action></control>
 
-   2. <control indent="3" count="30" relevant="false"><trigger>If a packet's Sequence Number is less than or equal to FGSR, if it
+   2. <control indent="2" count="30" relevant="false"><trigger>If a packet's Sequence Number is less than or equal to FGSR, if it
       has no Acknowledgement Number, OR if its Acknowledgement Number is
       less than FGSS,</trigger> then <action>its Confirm options MUST be ignored</action>.</control>
 
@@ -2328,8 +2328,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 6.6.5.  Preference Changes
 
    Endpoints are allowed to change their preference lists at any time.
-   However, <control indent="3" count="31" relevant="true"><trigger>an endpoint that changes its preference list while in the
-   CHANGING state</trigger> <transition>MUST transition to the UNSTABLE state.</transition></control>  <control indent="3" count="32" relevant="true"><transition>It will
+   However, <control indent="2" count="31" relevant="true"><trigger>an endpoint that changes its preference list while in the
+   CHANGING state</trigger> <transition>MUST transition to the UNSTABLE state.</transition></control>  <control indent="2" count="32" relevant="true"><transition>It will
    transition back to CHANGING</transition> <trigger>once it has transmitted a Change option
    with the new preference list.</trigger></control>  This ensures that agreement is based
    on active preference lists.  Without the UNSTABLE state, simultaneous
@@ -2340,7 +2340,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 6.6.6.  Simultaneous Negotiation
 
-   <control indent="3" count="33" relevant="true"><trigger>The two endpoints might simultaneously open negotiation for the same
+   <control indent="2" count="33" relevant="true"><trigger>The two endpoints might simultaneously open negotiation for the same
    feature, after which</trigger> <action>an endpoint in the CHANGING state will receive a
    Change option for the same feature.</action>  Such received Change options can
    act as responses to the original Change options.  <action>The CHANGING
@@ -2369,26 +2369,26 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 6.6.7.  Unknown Features
 
-   <control indent="3" count="34" relevant="false"><trigger>Endpoints may receive Change options referring to feature numbers
+   <control indent="2" count="34" relevant="false"><trigger>Endpoints may receive Change options referring to feature numbers
    they do not understand</trigger> -- for instance, when an extended DCCP
    converses with a non-extended DCCP.  <action>Endpoints MUST respond to
    unknown Change options with Empty Confirm options</action> (that is, Confirm
    options containing no data), which inform the CHANGING endpoint that
-   the feature was not understood.  However, <control indent="3" count="35" relevant="false"><trigger>if the Change option was
+   the feature was not understood.  However, <control indent="2" count="35" relevant="false"><trigger>if the Change option was
    Mandatory,</trigger> <action>the connection MUST be reset</action></control>; see Section 6.6.9.</control>
 
-   <control indent="3" count="36" relevant="true"><trigger>On receiving an empty Confirm option for some feature,</trigger> <transition>the CHANGING
+   <control indent="2" count="36" relevant="true"><trigger>On receiving an empty Confirm option for some feature,</trigger> <transition>the CHANGING
    endpoint MUST transition back to the STABLE state,</transition> <variable>leaving the
    feature's value unchanged.</variable></control>  Section 15 suggests that the default
    value for any extension feature correspond to "extension not
    available".
 
    Some features are required to be understood by all DCCPs (see Section
-   6.4).  <control indent="3" count="37" relevant="true"><error>The CHANGING endpoint SHOULD reset the connection (with Reset
+   6.4).  <control indent="2" count="37" relevant="true"><error>The CHANGING endpoint SHOULD reset the connection (with Reset
    Code 5, "Option Error")</error> <trigger>if it receives an empty Confirm option for
    such a feature.</trigger></control>
 
-   <control indent="3" count="38" relevant="false"><trigger>Since Confirm options are generated only in response to Change
+   <control indent="2" count="38" relevant="false"><trigger>Since Confirm options are generated only in response to Change
    options, an endpoint should never receive a Confirm option referring
    to a feature number it does not understand.</trigger>  Nevertheless, <action>endpoints
    MUST ignore any such options they receive.</action></control>
@@ -2427,18 +2427,18 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    numbers, or that don't appear to be part of a current negotiation --
    are not invalid, although they are ignored by the receiver.
 
-   <control indent="3" count="39" relevant="false"><trigger>An endpoint receiving an invalid Change option</trigger> <action>MUST respond with the
-   corresponding empty Confirm option.</action></control>  <control indent="3" count="40" relevant="true"><trigger>An endpoint receiving an invalid
+   <control indent="2" count="39" relevant="false"><trigger>An endpoint receiving an invalid Change option</trigger> <action>MUST respond with the
+   corresponding empty Confirm option.</action></control>  <control indent="2" count="40" relevant="true"><trigger>An endpoint receiving an invalid
    Confirm option</trigger> <error>MUST reset the connection, with Reset Code 5, "Option
    Error".</error></control>
 
 6.6.9.  Mandatory Feature Negotiation
 
-   <control indent="3" count="41" relevant="true"><trigger>Change options may be preceded by Mandatory options (Section 5.8.2).</trigger>
+   <control indent="2" count="41" relevant="true"><trigger>Change options may be preceded by Mandatory options (Section 5.8.2).</trigger>
    <action>Mandatory Change options are processed like normal Change options</action>
    except that <error>the following failure cases will cause the receiver to
    reset the connection with Reset Code 6, "Mandatory Failure", rather
-   than send a Confirm option.</error></control>  <control indent="3" count="42" relevant="false"><action>The connection MUST be reset</action> <trigger>if:
+   than send a Confirm option.</error></control>  <control indent="2" count="42" relevant="false"><action>The connection MUST be reset</action> <trigger>if:
 
    o  the Change option's feature number was not understood;
 
@@ -2580,7 +2580,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    DCCP endpoints, like TCP endpoints, must take care before initiating
    connections when they boot.  In particular, they MUST NOT send
    packets whose sequence numbers are close to the sequence numbers of
-   packets lingering in the network from before the boot. <control indent="3" count="43" relevant="false">The simplest
+   packets lingering in the network from before the boot. <control indent="2" count="43" relevant="false">The simplest
    way to enforce this rule is <action>for DCCP endpoints to avoid sending any
    packets</action> <trigger>until one maximum segment lifetime (2 minutes) after boot.</trigger></control>
 
@@ -2603,9 +2603,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    protocol.  Therefore, DCCP's Acknowledgement Number field has a
    different meaning from TCP's.
 
-<control indent="0" count="44" relevant="false">   <action>A received packet is classified as acknowledgeable</action> <trigger>if and only if its
+<control indent="1" count="44" relevant="false">   <action>A received packet is classified as acknowledgeable</action> <trigger>if and only if its
    header was successfully processed by the receiving DCCP.</trigger></control>  In terms of
-   the pseudocode in Section 8.5,<control indent="3" count="45" relevant="false"><action>a received packet becomes
+   the pseudocode in Section 8.5,<control indent="2" count="45" relevant="false"><action>a received packet becomes
    acknowledgeable</action> <trigger>when the receiving endpoint reaches Step 8.</trigger></control> This
    means, for example, that all acknowledgeable packets have valid
    header checksums and sequence numbers.  A sent packet's
@@ -2831,7 +2831,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 7.5.4.  Handling Sequence-Invalid Packets
 
-   <control indent="3" count="46" relevant="false"><trigger>Endpoints respond to received sequence-invalid packets as follows.</trigger>
+   <control indent="2" count="46" relevant="false"><trigger>Endpoints respond to received sequence-invalid packets as follows.</trigger>
 
    o  <action type="receive"><arg>Any sequence-invalid <ref_event type="receive" id="9">DCCP-Sync</ref_event> or <ref_event type="receive" id="10">DCCP-SyncAck</ref_event></arg> packet MUST be
       ignored.</action>
@@ -2847,14 +2847,14 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       packet</arg>,</action> except that <variable>the response packet's Acknowledgement Number
       MUST equal the sequence-invalid packet's Sequence Number</variable>.</control>
 
-   <control indent="3" count="47" relevant="true"><trigger>On receiving a sequence-valid <ref_event type="receive" id="9">DCCP-Sync</ref_event> packet,</trigger> <variable>the peer endpoint
+   <control indent="2" count="47" relevant="true"><trigger>On receiving a sequence-valid <ref_event type="receive" id="9">DCCP-Sync</ref_event> packet,</trigger> <variable>the peer endpoint
    (say, DCCP B) MUST update its GSR variable</variable> and <action>reply with a DCCP-
    SyncAck packet.</action>  <variable>The DCCP-SyncAck packet's Acknowledgement Number
    will equal the DCCP-Sync's Sequence Number,</variable> which is not necessarily
-   GSR.</control>  <control indent="3" count="48" relevant="true"><trigger>Upon receiving this <ref_event type="receive" id="10">DCCP-SyncAck</ref_event>,</trigger> which will be sequence-valid
+   GSR.</control>  <control indent="2" count="48" relevant="true"><trigger>Upon receiving this <ref_event type="receive" id="10">DCCP-SyncAck</ref_event>,</trigger> which will be sequence-valid
    since it acknowledges the DCCP-Sync, <variable>DCCP A will update its GSR
    variable,</variable> and <action>the endpoints will be back in sync.</action></control> As an exception,
-   <control indent="3" count="49" relevant="false"><trigger>if the peer endpoint is in the <ref_state id="3">REQUEST</ref_state> state,</trigger> <action type="send">it MUST respond with <arg>a
+   <control indent="2" count="49" relevant="false"><trigger>if the peer endpoint is in the <ref_state id="3">REQUEST</ref_state> state,</trigger> <action type="send">it MUST respond with <arg>a
    <ref_event type="receive" id="8">DCCP-Reset</ref_event></arg> instead of a DCCP-SyncAck.</action></control> This serves to clean up DCCP
    A's half-open connection.
 
@@ -2877,7 +2877,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    packets in case they become valid later, however; this can reduce the
    impact of bursts of loss by delivering more packets to the
    application.  In particular, an endpoint MAY preserve sequence-
-   invalid packets for up to 2 round-trip times.  <control indent="3" count="50" relevant="false"><trigger>If, within that time,
+   invalid packets for up to 2 round-trip times.  <control indent="2" count="50" relevant="false"><trigger>If, within that time,
    the relevant sequence windows change so that the packets become
    sequence-valid,</trigger> <action>the endpoint MAY process them again.</action></control>
 
@@ -2909,11 +2909,11 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    otherwise cause problems.  The easiest such attacks to execute are as
    follows:
 
-   o  <control indent="3" count="51" relevant="false"><trigger>Send <ref_event type="receive" id="3">DCCP-Data</ref_event> packets with random Sequence Numbers. If one of
+   o  <control indent="2" count="51" relevant="false"><trigger>Send <ref_event type="receive" id="3">DCCP-Data</ref_event> packets with random Sequence Numbers. If one of
       these packets hits the valid sequence number window,</trigger> <action>the attack
       packet's application data may be inserted into the data stream</action>.</control>
 
-   o  <control indent="3" count="52" relevant="false"><trigger>Send <ref_event type="send" id="9">DCCP-Sync</ref_event> packets with random Sequence and Acknowledgement
+   o  <control indent="2" count="52" relevant="false"><trigger>Send <ref_event type="send" id="9">DCCP-Sync</ref_event> packets with random Sequence and Acknowledgement
       Numbers.  If one of these packets hits the valid acknowledgement
       number window,</trigger> <action>the receiver will shift its sequence number window
       accordingly, getting out of sync with the correct endpoint --
@@ -3057,7 +3057,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
          Sequence Number. */
       Set <def_var>REF_low</def_var> := low 24 bits of REF
       Set <def_var>REF_hi</def_var> := high 24 bits of REF
-<control indent="0" count="53" relevant="true"><trigger>      If REF_low (&lt;) S           /* circular comparison mod 2^24 */
+<control indent="1" count="53" relevant="true"><trigger>      If REF_low (&lt;) S           /* circular comparison mod 2^24 */
             and S |&lt;| REF_low,</trigger>   /* conventional, non-circular
                                     comparison */
          <variable>Return (((REF_hi + 1) mod 2^24) &lt;&lt; 24) | S</variable>
@@ -3084,7 +3084,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    sequence numbers.
 
    Allow Short Sequence Numbers has feature number 2 and is server-
-   priority.  It takes one-byte Boolean values.  <control indent="3" count="54" relevant="false"><trigger>When Allow Short
+   priority.  It takes one-byte Boolean values.  <control indent="2" count="54" relevant="false"><trigger>When Allow Short
    Seqnos/B is zero,</trigger> <action>DCCP B MUST NOT send packets with short sequence
    numbers</action> and <action>DCCP A MUST ignore any packets with short sequence
 
@@ -3141,7 +3141,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    +--------+--------+-------- ... --------+
     Type=37  Len=3-8       (1-6 bytes)
 
-   <control indent="3" count="55" relevant="false"><trigger>If a DCCP endpoint's Send NDP Count feature is one (see below),</trigger> then
+   <control indent="2" count="55" relevant="false"><trigger>If a DCCP endpoint's Send NDP Count feature is one (see below),</trigger> then
    <action>that endpoint MUST send an NDP Count option on every packet whose
 
 
@@ -3208,7 +3208,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Send NDP Count has feature number 7 and is server-priority.  It takes
-   one-byte Boolean values.  <control indent="3" count="56" relevant="false"><action>DCCP B MUST send NDP Count options as
+   one-byte Boolean values.  <control indent="2" count="56" relevant="false"><action>DCCP B MUST send NDP Count options as
    described above</action> <trigger>when Send NDP Count/B is one,</trigger> although <action>it MAY send
    NDP Count options</action> <trigger>even when Send NDP Count/B is zero.</trigger></control>  Values of two
    or more are reserved.  New connections start with Send NDP Count 0
@@ -3240,7 +3240,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 8.1.1.  Client Request
 
-   <control indent="3" count="57" relevant="true"><trigger>When a client decides to initiate a connection,</trigger> <transition>it enters the <ref_state id="3">REQUEST</ref_state>
+   <control indent="2" count="57" relevant="true"><trigger>When a client decides to initiate a connection,</trigger> <transition>it enters the <ref_state id="3">REQUEST</ref_state>
    state,</transition> <action>chooses an initial sequence number (Section 7.2),</action> and <action type="send">sends <arg>a
    <ref_event type="receive" id="1">DCCP-Request</ref_event> packet</arg> using that sequence number to the intended
    server.</action></control>
@@ -3251,7 +3251,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    also carry application data, but the client should be aware that the
    server may not accept such data.
 
-   <control indent="3" count="58" relevant="true"><timer>A client in the <ref_state id="3">REQUEST</ref_state> state SHOULD use an exponential-backoff timer
+   <control indent="2" count="58" relevant="true"><timer>A client in the <ref_state id="3">REQUEST</ref_state> state SHOULD use an exponential-backoff timer
    to send new <ref_event type="send" id="1">DCCP-Request</ref_event> packets</timer> <trigger>if no response is received.</trigger> <timer>The
    first retransmission should occur after approximately one second,
    backing off to not less than one packet every 64 seconds; or the
@@ -3268,14 +3268,14 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Sequence Number by one</variable> and <variable>MUST contain the same Service Code and
    application data as the original DCCP-Request.</variable></control>
 
-   <control indent="3" count="59" relevant="false"><trigger>A client MAY give up on its <ref_event type="receive" id="1">DCCP-Requests</ref_event> after some time (3 minutes,
+   <control indent="2" count="59" relevant="false"><trigger>A client MAY give up on its <ref_event type="receive" id="1">DCCP-Requests</ref_event> after some time (3 minutes,
    for example).  When it does,</trigger> <action type="send">it SHOULD send a <arg><ref_event type="send" id="8">DCCP-Reset</ref_event> packet</arg> to
    the server with Reset Code 2, "Aborted", to clean up state in case
-   one or more of the Requests actually arrived.</action></control> <control indent="3" count="60" relevant="true"><trigger>A client in <ref_state id="3">REQUEST</ref_state>
+   one or more of the Requests actually arrived.</action></control> <control indent="2" count="60" relevant="true"><trigger>A client in <ref_state id="3">REQUEST</ref_state>
    state has never received an initial sequence number from its peer,</trigger> so
    <variable>the DCCP-Reset's Acknowledgement Number MUST be set to zero.</variable></control>
 
-   <control indent="3" count="61" relevant="true"><transition>The client leaves the <arg_source><ref_state id="3">REQUEST</ref_state></arg_source> state for <arg_target><ref_state id="5">PARTOPEN</ref_state></arg_target></transition> <trigger>when it receives a
+   <control indent="2" count="61" relevant="true"><transition>The client leaves the <arg_source><ref_state id="3">REQUEST</ref_state></arg_source> state for <arg_target><ref_state id="5">PARTOPEN</ref_state></arg_target></transition> <trigger>when it receives a
    <ref_event type="receive" id="2">DCCP-Response</ref_event> from the server.</trigger></control>
 
 8.1.2.  Service Codes
@@ -3295,7 +3295,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Code.  Passive sockets MAY, at the implementation's discretion, be
    associated with more than one Service Code; this might let multiple
    applications, or multiple versions of the same application, listen on
-   the same port, differentiated by Service Code.  <control indent="3" count="62" relevant="true"><trigger>If the <ref_event type="receive" id="1">DCCP-Request's</ref_event>
+   the same port, differentiated by Service Code.  <control indent="2" count="62" relevant="true"><trigger>If the <ref_event type="receive" id="1">DCCP-Request's</ref_event>
    Service Code doesn't equal any of the server's Service Codes for the
    given port,</trigger> <error>the server MUST reject the request by sending a DCCP-
    Reset packet with Reset Code 8, "Bad Service Code".</error> <action type="send">A middlebox MAY
@@ -3342,7 +3342,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    o  Service Code 0 represents the absence of a meaningful Service Code
       and MUST NOT be allocated.
 
-   o  <control indent="3" count="63" relevant="true"><trigger>The value 4294967295 is an invalid Service Code.</trigger>  <error>Servers MUST
+   o  <control indent="2" count="63" relevant="true"><trigger>The value 4294967295 is an invalid Service Code.</trigger>  <error>Servers MUST
       reject any <ref_event type="receive" id="1">DCCP-Request</ref_event> with this Service Code value by sending a
       <ref_event type="send" id="8">DCCP-Reset</ref_event> packet with Reset Code 8, "Bad Service Code".</error></control>
 
@@ -3386,14 +3386,14 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 8.1.3.  Server Response
 
-   <control indent="3" count="64" relevant="true"><trigger>In the second phase of the three-way handshake,</trigger> <transition>the server moves from
+   <control indent="2" count="64" relevant="true"><trigger>In the second phase of the three-way handshake,</trigger> <transition>the server moves from
    the <arg_source><ref_state id="2">LISTEN</ref_state></arg_source> state to <arg_target><ref_state id="4">RESPOND</ref_state></arg_target></transition> and <action type="send">sends <arg>a <ref_event type="send" id="2">DCCP-Response</ref_event> message</arg> to the
    client</action></control>.  In this phase, a server will often specify the features it
    would like to use, either from among those the client requested or in
    addition to those.  Among these options is the congestion control
    mechanism the server expects to use.
 
-   <control indent="3" count="65" relevant="false"><action type="receive">The server MAY respond to a <arg><ref_event type="receive" id="1">DCCP-Request</ref_event> packet</arg> with a <arg><ref_event type="send" id="8">DCCP-Reset</ref_event>
+   <control indent="2" count="65" relevant="false"><action type="receive">The server MAY respond to a <arg><ref_event type="receive" id="1">DCCP-Request</ref_event> packet</arg> with a <arg><ref_event type="send" id="8">DCCP-Reset</ref_event>
    packet</arg> to refuse the connection.</action> <trigger>Relevant Reset Codes for refusing a
    connection include 7, "Connection Refused", when the <ref_event type="receive" id="1">DCCP-Request's</ref_event>
    Destination Port did not correspond to a DCCP port open for
@@ -3411,7 +3411,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    thus distinguish true retransmissions from network duplicates.)  The
    server will detect that the retransmitted DCCP-Request applies to an
    existing connection because of its Source and Destination Ports.
-<control indent="0" count="66" relevant="true">   <trigger>Every valid <ref_event type="receive" id="1">DCCP-Request</ref_event> received while the server is in the <ref_state id="4">RESPOND</ref_state>
+<control indent="1" count="66" relevant="true">   <trigger>Every valid <ref_event type="receive" id="1">DCCP-Request</ref_event> received while the server is in the <ref_state id="4">RESPOND</ref_state>
    state</trigger> <action type="send">MUST elicit <arg>a new <ref_event type="send" id="2">DCCP-Response</ref_event>.</arg></action>  <variable>Each new DCCP-Response MUST
    increment the server's Sequence Number by one</variable> and <action>MUST include the
    same application data, if any, as the original DCCP-Response.</action></control>
@@ -3437,8 +3437,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    The Data Dropped and Init Cookie options are particularly useful for
    DCCP-Response packets (Sections 11.7 and 8.1.4).
 
-   <control indent="3" count="67" relevant="true"><transition>The server leaves the <arg_source><ref_state id="4">RESPOND</ref_state></arg_source> state for <arg_target><ref_state id="6">OPEN</ref_state></arg_target></transition> <trigger>when it receives a valid
-   <ref_event type="receive" id="4">DCCP-Ack</ref_event> from the client, completing the three-way handshake.</trigger></control>  <control indent="3" count="68" relevant="true"><transition>It MAY
+   <control indent="2" count="67" relevant="true"><transition>The server leaves the <arg_source><ref_state id="4">RESPOND</ref_state></arg_source> state for <arg_target><ref_state id="6">OPEN</ref_state></arg_target></transition> <trigger>when it receives a valid
+   <ref_event type="receive" id="4">DCCP-Ack</ref_event> from the client, completing the three-way handshake.</trigger></control>  <control indent="2" count="68" relevant="true"><transition>It MAY
    also leave the <arg_source><ref_state id="4">RESPOND</ref_state></arg_source> state for <arg_target><ref_state id="1">CLOSED</ref_state></arg_target></transition> <trigger>after <ref_event type="compute" id="11">a timeout of not less
    than 4MSL (8 minutes);</ref_event> when doing so,</trigger> <action type="send">it SHOULD send <arg>a <ref_event type="send" id="8">DCCP-Reset</ref_event></arg>
    with Reset Code 2, "Aborted", to clean up state at the client.</action></control>
@@ -3457,15 +3457,15 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    about from both the DCCP-Request and DCCP-Response in an opaque
    cookie.  Typically the cookie will be encrypted using a secret known
    only to the server and will include a cryptographic checksum or magic
-   value so that correct decryption can be verified.  <control indent="3" count="69" relevant="true"><trigger>When the server
+   value so that correct decryption can be verified.  <control indent="2" count="69" relevant="true"><trigger>When the server
    receives the cookie back in the response,</trigger> <action>it can decrypt the cookie</action>
-   and <transition>instantiate all the state it avoided keeping.</transition></control>  <control indent="3" count="70" relevant="true"><trigger>In the meantime,</trigger>
+   and <transition>instantiate all the state it avoided keeping.</transition></control>  <control indent="2" count="70" relevant="true"><trigger>In the meantime,</trigger>
    <transition>it need not move from the <ref_state id="2">LISTEN</ref_state> state.</transition>
 </control>
    The Init Cookie option MUST NOT be sent on DCCP-Request or DCCP-Data
-   packets.  <control indent="3" count="71" relevant="false"><trigger>Any Init Cookie options received on <ref_event type="receive" id="1">DCCP-Request</ref_event> or DCCP-
+   packets.  <control indent="2" count="71" relevant="false"><trigger>Any Init Cookie options received on <ref_event type="receive" id="1">DCCP-Request</ref_event> or DCCP-
    Data packets, or after the connection has been established (when the
-   connection's state is &gt;= <ref_state id="6">OPEN</ref_state>),</trigger> <action>MUST be ignored.</action></control>  <control indent="3" count="72" relevant="false"><trigger>The server MAY
+   connection's state is &gt;= <ref_state id="6">OPEN</ref_state>),</trigger> <action>MUST be ignored.</action></control>  <control indent="2" count="72" relevant="false"><trigger>The server MAY
    include Init Cookie options in its <ref_event type="receive" id="2">DCCP-Response</ref_event>.  If so,</trigger> then <action>the
    client MUST echo the same Init Cookie options, in the same order, in
    each succeeding DCCP packet</action> <trigger>until one of those packets is
@@ -3493,9 +3493,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    (using a secret key) the connection's initial sequence and
    acknowledgement numbers, ports, Service Code, any options included on
    the DCCP-Request packet and the corresponding DCCP-Response, a random
-   salt, and a magic number.  <control indent="3" count="73" relevant="false"><trigger>On receiving a reflected Init Cookie,</trigger> <action>the
+   salt, and a magic number.  <control indent="2" count="73" relevant="false"><trigger>On receiving a reflected Init Cookie,</trigger> <action>the
    server would decrypt the cookie,</action> <action>validate it by checking its magic
-   number, sequence numbers, and ports,</action> and, <control indent="3" count="74" relevant="false"><trigger>if valid,</trigger> <action>create a
+   number, sequence numbers, and ports,</action> and, <control indent="2" count="74" relevant="false"><trigger>if valid,</trigger> <action>create a
    corresponding socket using the options.</action></control></control>
 
    Each individual Init Cookie option can hold at most 253 bytes of
@@ -3504,31 +3504,31 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 8.1.5.  Handshake Completion
 
-   <control indent="3" count="75" relevant="true"><trigger>When the client receives a <ref_event type="receive" id="2">DCCP-Response</ref_event> from the server,</trigger> <transition>it moves
+   <control indent="2" count="75" relevant="true"><trigger>When the client receives a <ref_event type="receive" id="2">DCCP-Response</ref_event> from the server,</trigger> <transition>it moves
    from the <arg_source><ref_state id="3">REQUEST</ref_state></arg_source> state to <arg_target><ref_state id="5">PARTOPEN</ref_state></arg_target></transition> and <action type="send">completes the three-way
-   handshake by sending <arg>a <ref_event type="send" id="4">DCCP-Ack</ref_event> packet</arg> to the server.</action></control> <control indent="3" count="76" relevant="true"><transition>The client
+   handshake by sending <arg>a <ref_event type="send" id="4">DCCP-Ack</ref_event> packet</arg> to the server.</action></control> <control indent="2" count="76" relevant="true"><transition>The client
    remains in <arg_source_target><ref_state id="5">PARTOPEN</ref_state></arg_source_target></transition> <trigger>until it can be sure that the server has received
    some packet the client sent from <ref_state id="5">PARTOPEN</ref_state></trigger> (either the initial DCCP-
    Ack or a later packet).  <action type="send">Clients in the <ref_state id="5">PARTOPEN</ref_state> state that want to
    send data MUST do so using <arg><ref_event type="send" id="5">DCCP-DataAck</ref_event> packets</arg>, not DCCP-Data
    packets.</action></control>  This is because DCCP-Data packets lack Acknowledgement
    Numbers, so the server can't tell from a DCCP-Data packet whether the
-   client saw its DCCP-Response.  <control indent="3" count="77" relevant="false"><trigger>Furthermore, if the <ref_event type="receive" id="2">DCCP-Response</ref_event>
+   client saw its DCCP-Response.  <control indent="2" count="77" relevant="false"><trigger>Furthermore, if the <ref_event type="receive" id="2">DCCP-Response</ref_event>
    included an Init Cookie,</trigger><action> that Init Cookie MUST be included on every
    packet sent in <ref_state id="5">PARTOPEN</ref_state>.</action></control>
 
-   <control indent="3" count="78" relevant="true"><trigger>The single <ref_event type="send" id="4">DCCP-Ack</ref_event> sent when entering the <ref_state id="5">PARTOPEN</ref_state> state might, of
+   <control indent="2" count="78" relevant="true"><trigger>The single <ref_event type="send" id="4">DCCP-Ack</ref_event> sent when entering the <ref_state id="5">PARTOPEN</ref_state> state might, of
    course, be dropped by the network.</trigger>  <action>The client SHOULD ensure that
    some packet gets through eventually.</action>  <timer>The preferred mechanism would
    be a roughly 200-millisecond timer, set every time a packet is
-   transmitted in <ref_state id="5">PARTOPEN</ref_state>.</timer> <control indent="3" count="79" relevant="true"><trigger>If this timer goes off and the client is
+   transmitted in <ref_state id="5">PARTOPEN</ref_state>.</timer> <control indent="2" count="79" relevant="true"><trigger>If this timer goes off and the client is
    still in <ref_state id="5">PARTOPEN</ref_state>,</trigger> <action type="send">the client generates another <arg><ref_event type="send" id="4">DCCP-Ack</ref_event></arg></action> and <timer>backs
-   off the timer.</timer></control>  <control indent="3" count="80" relevant="true"><trigger>If the client remains in <ref_state id="5">PARTOPEN</ref_state> <ref_event type="compute" id="11">for more than 4MSL</ref_event>
+   off the timer.</timer></control>  <control indent="2" count="80" relevant="true"><trigger>If the client remains in <ref_state id="5">PARTOPEN</ref_state> <ref_event type="compute" id="11">for more than 4MSL</ref_event>
    (8 minutes),</trigger> <transition>it SHOULD reset the connection with Reset Code 2,
    <ref_state id="1">"Aborted"</ref_state></transition></control>
    </control>
 
-   <control indent="3" count="81" relevant="true"><transition>The client leaves the <arg_source><ref_state id="5">PARTOPEN</ref_state></arg_source> state for <arg_target><ref_state id="6">OPEN</ref_state></arg_target></transition> <trigger>when it receives a
+   <control indent="2" count="81" relevant="true"><transition>The client leaves the <arg_source><ref_state id="5">PARTOPEN</ref_state></arg_source> state for <arg_target><ref_state id="6">OPEN</ref_state></arg_target></transition> <trigger>when it receives a
    valid packet other than <ref_event type="receive" id="2">DCCP-Response</ref_event>, <ref_event type="receive" id="8">DCCP-Reset</ref_event>, or <ref_event type="receive" id="9">DCCP-Sync</ref_event> from
    the server.</trigger></control>
 
@@ -3544,13 +3544,13 @@ Kohler, et al.              Standards Track                    [Page 63]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   <control indent="3" count="82" relevant="false"><action type="send">DCCP A sends <arg><ref_event type="send" id="3">DCCP-Data</ref_event></arg> and <arg><ref_event type="send" id="5">DCCP-DataAck</ref_event> packets</arg> to DCCP B</action> <trigger>due to
+   <control indent="2" count="82" relevant="false"><action type="send">DCCP A sends <arg><ref_event type="send" id="3">DCCP-Data</ref_event></arg> and <arg><ref_event type="send" id="5">DCCP-DataAck</ref_event> packets</arg> to DCCP B</action> <trigger>due to
    application events on host A.</trigger></control>  These packets are congestion-
    controlled by the CCID for the A-to-B half-connection.  In contrast,
    DCCP-Ack packets sent by DCCP A are controlled by the CCID for the
    B-to-A half-connection.  Generally, DCCP A will piggyback
    acknowledgement information on DCCP-Data packets when acceptable,
-   creating DCCP-DataAck packets.  <control indent="3" count="83" relevant="false"><action type="send"><arg><ref_event type="send" id="4">DCCP-Ack</ref_event></arg> packets are used</action> <trigger>when there
+   creating DCCP-DataAck packets.  <control indent="2" count="83" relevant="false"><action type="send"><arg><ref_event type="send" id="4">DCCP-Ack</ref_event></arg> packets are used</action> <trigger>when there
    is no data to send from DCCP A to DCCP B, or when the congestion
    state of the A-to-B CCID will not allow data to be sent.</trigger></control>
 
@@ -3558,7 +3558,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    transfer phase.  Some cases causing DCCP-Sync generation are
    discussed in Section 7.5.  One important distinction between DCCP-
    Sync packets and other packet types is that DCCP-Sync elicits an
-   immediate acknowledgement.  <control indent="3" count="84" relevant="true"><trigger>On receiving a valid <ref_event type="receive" id="9">DCCP-Sync</ref_event> packet,</trigger> <action type="send">a
+   immediate acknowledgement.  <control indent="2" count="84" relevant="true"><trigger>On receiving a valid <ref_event type="receive" id="9">DCCP-Sync</ref_event> packet,</trigger> <action type="send">a
    DCCP endpoint MUST immediately generate and send <arg>a <ref_event type="send" id="10">DCCP-SyncAck</ref_event>
    response</arg> (subject to any implementation rate limits);</action> <variable>the
    Acknowledgement Number on that DCCP-SyncAck MUST equal the Sequence
@@ -3572,15 +3572,15 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 8.3.  Termination
 
-   <control indent="3" count="85" relevant="true">
+   <control indent="2" count="85" relevant="true">
    <trigger>
    DCCP connection termination uses a handshake consisting of an
    optional <ref_event type="send" id="6">DCCP-CloseReq</ref_event> packet, a <ref_event type="receive" id="7">DCCP-Close</ref_event> packet, and a <ref_event type="send" id="8">DCCP-Reset</ref_event>
    packet.</trigger>  <transition>The server moves from the <arg_source><ref_state id="6">OPEN</ref_state></arg_source> state, possibly through the
-   <arg_intermediate><ref_state id="7">CLOSEREQ</ref_state></arg_intermediate> state, to <arg_target><ref_state id="1">CLOSED</ref_state></arg_target>;</transition></control> <control indent="3" count="86" relevant="true"><transition>the client moves from <arg_source><ref_state id="6">OPEN</ref_state></arg_source> through <arg_intermediate><ref_state id="8">CLOSING</ref_state></arg_intermediate>
+   <arg_intermediate><ref_state id="7">CLOSEREQ</ref_state></arg_intermediate> state, to <arg_target><ref_state id="1">CLOSED</ref_state></arg_target>;</transition></control> <control indent="2" count="86" relevant="true"><transition>the client moves from <arg_source><ref_state id="6">OPEN</ref_state></arg_source> through <arg_intermediate><ref_state id="8">CLOSING</ref_state></arg_intermediate>
    to <arg_intermediate><ref_state id="9">TIMEWAIT</ref_state></arg_intermediate>, and <ref_event type="compute" id="11">after 2MSL wait time</ref_event> (4 minutes) to <arg_target><ref_state id="1">CLOSED</ref_state></arg_target>.</transition></control>
 
-   <control indent="3" count="87" relevant="false"><action type="send">The sequence <arg><ref_event type="send" id="6">DCCP-CloseReq</ref_event>, <ref_event type="send" id="7">DCCP-Close</ref_event>, <ref_event type="send" id="8">DCCP-Reset</ref_event></arg> is used</action> <trigger>when the
+   <control indent="2" count="87" relevant="false"><action type="send">The sequence <arg><ref_event type="send" id="6">DCCP-CloseReq</ref_event>, <ref_event type="send" id="7">DCCP-Close</ref_event>, <ref_event type="send" id="8">DCCP-Reset</ref_event></arg> is used</action> <trigger>when the
    server decides to close the connection but doesn't want to hold
    <ref_state id="9">TIMEWAIT</ref_state> state:</trigger></control>
 
@@ -3628,10 +3628,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    current connection's source and destination addresses and ports can
    start up while old packets might remain in the network.
 
-   The termination handshake proceeds as follows.  <control indent="3" count="88" relevant="false"><trigger>The receiver of a
+   The termination handshake proceeds as follows.  <control indent="2" count="88" relevant="false"><trigger>The receiver of a
    valid <ref_event type="receive" id="6">DCCP-CloseReq</ref_event> packet</trigger> <action type="send">MUST respond with <arg>a <ref_event type="send" id="7">DCCP-Close</ref_event> packet.</arg></action></control>
-   <control indent="3" count="89" relevant="false"><trigger>The receiver of a valid <ref_event type="receive" id="7">DCCP-Close</ref_event> packet</trigger> <action>MUST respond with a DCCP-
-   Reset packet with Reset Code 1, "Closed".</action></control>  <control indent="3" count="90" relevant="false"><trigger>The receiver of a valid
+   <control indent="2" count="89" relevant="false"><trigger>The receiver of a valid <ref_event type="receive" id="7">DCCP-Close</ref_event> packet</trigger> <action>MUST respond with a DCCP-
+   Reset packet with Reset Code 1, "Closed".</action></control>  <control indent="2" count="90" relevant="false"><trigger>The receiver of a valid
    DCCP-Reset packet -- which is also the sender of the DCCP-Close
    packet (and possibly the receiver of the <ref_event type="receive" id="6">DCCP-CloseReq</ref_event> packet)</trigger> --
    <transition>will hold <ref_state id="9">TIMEWAIT</ref_state> state for the connection.</transition></control>
@@ -3645,7 +3645,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    clean.  For instance, the endpoint that receives a valid DCCP-Reset
    SHOULD hold TIMEWAIT state for the connection.  Processors that must
    distinguish between clean and unclean termination can examine the
-   Reset Code.  <control indent="3" count="91" relevant="true"><transition>DCCP implementations generally transition to the <ref_state id="1">CLOSED</ref_state>
+   Reset Code.  <control indent="2" count="91" relevant="true"><transition>DCCP implementations generally transition to the <ref_state id="1">CLOSED</ref_state>
    state</transition> <trigger>after sending a <ref_event type="send" id="8">DCCP-Reset</ref_event> packet.</trigger></control>
 
    Endpoints in the CLOSEREQ and CLOSING states MUST retransmit DCCP-
@@ -3663,11 +3663,11 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    every 64 seconds if no relevant response is received.
 
    Only the server can send a DCCP-CloseReq packet or enter the CLOSEREQ
-   state.  <control indent="3" count="92" relevant="false"><trigger>A server receiving a sequence-valid <ref_event type="receive" id="6">DCCP-CloseReq</ref_event> packet</trigger> <action type="send">MUST
+   state.  <control indent="2" count="92" relevant="false"><trigger>A server receiving a sequence-valid <ref_event type="receive" id="6">DCCP-CloseReq</ref_event> packet</trigger> <action type="send">MUST
    respond with <arg>a <ref_event type="send" id="9">DCCP-Sync</ref_event> packet</arg></action> and <trigger>otherwise</trigger> <action>ignore the DCCP-
    CloseReq.</action></control>
 
-   <control indent="3" count="93" relevant="false"><trigger><ref_event type="receive" id="3">DCCP-Data</ref_event>, <ref_event type="receive" id="5">DCCP-DataAck</ref_event>, and <ref_event type="receive" id="4">DCCP-Ack</ref_event> packets received in <ref_state id="7">CLOSEREQ</ref_state> or
+   <control indent="2" count="93" relevant="false"><trigger><ref_event type="receive" id="3">DCCP-Data</ref_event>, <ref_event type="receive" id="5">DCCP-DataAck</ref_event>, and <ref_event type="receive" id="4">DCCP-Ack</ref_event> packets received in <ref_state id="7">CLOSEREQ</ref_state> or
    <ref_state id="8">CLOSING</ref_state> states</trigger> <action>MAY be either processed or ignored.</action></control>
 
 8.3.1.  Abnormal Termination
@@ -3685,12 +3685,12 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    variables, the Sequence and Acknowledgement Numbers on the DCCP-Reset
    packet R are taken from the received packet P, as follows.
 
-   1. <control indent="3" count="94" relevant="true"><trigger>If P.ackno exists,</trigger> then <variable>set R.seqno := P.ackno + 1.</variable>  <trigger>Otherwise,</trigger>
+   1. <control indent="2" count="94" relevant="true"><trigger>If P.ackno exists,</trigger> then <variable>set R.seqno := P.ackno + 1.</variable>  <trigger>Otherwise,</trigger>
       <variable>set R.seqno := 0.</variable>
     </control>
    2. <variable>Set R.ackno := P.seqno.</variable>
 
-   3. <control indent="3" count="95" relevant="true"><trigger>If the packet used short sequence numbers (P.X == 0),</trigger> then <variable>set the
+   3. <control indent="2" count="95" relevant="true"><trigger>If the packet used short sequence numbers (P.X == 0),</trigger> then <variable>set the
       upper 24 bits of R.seqno and R.ackno to 0.</variable>
     </control>
 8.4.  DCCP State Diagram
@@ -3790,20 +3790,20 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       /* This step checks for malformed packets.  Packets that fail
          these checks are ignored -- they do not receive Resets in
          response */
-      <control indent="6" count="96" relevant="false"><trigger>If the packet is shorter than 12 bytes,</trigger> <action>drop packet</action> and <action>return</action></control>
-      <control indent="6" count="97" relevant="false"><trigger>If P.type is not understood,</trigger> <action>drop packet</action> and <action>return</action></control>
-      <control indent="6" count="98" relevant="false"><trigger>If P.Data Offset is smaller than the given packet type's
+      <control indent="4" count="96" relevant="false"><trigger>If the packet is shorter than 12 bytes,</trigger> <action>drop packet</action> and <action>return</action></control>
+      <control indent="4" count="97" relevant="false"><trigger>If P.type is not understood,</trigger> <action>drop packet</action> and <action>return</action></control>
+      <control indent="4" count="98" relevant="false"><trigger>If P.Data Offset is smaller than the given packet type's
             fixed header length or larger than the packet's length,</trigger>
             <action>drop packet</action> and <action>return</action></control>
-      <control indent="6" count="99" relevant="false"><trigger>If P.type is not Data, Ack, or DataAck and P.X == 0 (the packet
+      <control indent="4" count="99" relevant="false"><trigger>If P.type is not Data, Ack, or DataAck and P.X == 0 (the packet
             has short sequence numbers),</trigger> <action>drop packet</action> and <action>return</action></control>
-      <control indent="6" count="100" relevant="false"><trigger>If the header checksum is incorrect,</trigger> <action>drop packet</action> and <action>return</action></control>
-      <control indent="6" count="101" relevant="false"><trigger>If P.CsCov is too large for the packet size,</trigger> <action>drop packet</action> and
+      <control indent="4" count="100" relevant="false"><trigger>If the header checksum is incorrect,</trigger> <action>drop packet</action> and <action>return</action></control>
+      <control indent="4" count="101" relevant="false"><trigger>If P.CsCov is too large for the packet size,</trigger> <action>drop packet</action> and
             <action>return</action></control>
 
    Step 2: Check ports and process TIMEWAIT state
       /* Flow ID is &lt;src addr, src port, dst addr, dst port&gt; 4-tuple */
-      <control indent="6" count="102" relevant="false"><trigger>Look up flow ID in table and get corresponding socket
+      <control indent="4" count="102" relevant="false"><trigger>Look up flow ID in table and get corresponding socket
       If no socket, or S.state == <ref_state id="9">TIMEWAIT</ref_state>,</trigger>
          /* The following Reset's Sequence and Acknowledgement Numbers
             are taken from the input packet; see Section 8.3.1. */
@@ -3827,8 +3827,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Step 3: Process LISTEN state
-      <control indent="6" count="103" relevant="true"><trigger>If S.state == <ref_state id="2">LISTEN</ref_state>,</trigger>
-         <control indent="9" count="104" relevant="true"><trigger>If P.type == <ref_event type="receive" id="1">Request</ref_event> or P contains a valid Init Cookie option,</trigger>
+      <control indent="4" count="103" relevant="true"><trigger>If S.state == <ref_state id="2">LISTEN</ref_state>,</trigger>
+         <control indent="6" count="104" relevant="true"><trigger>If P.type == <ref_event type="receive" id="1">Request</ref_event> or P contains a valid Init Cookie option,</trigger>
             /* Must scan the packet's options to check for Init
                Cookies.  Only Init Cookies are processed here,
                however; other options are processed in Step 8.  This
@@ -3847,8 +3847,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
             <action>Drop packet</action> and <action>return</action></control></control>
 
    Step 4: Prepare sequence numbers in REQUEST
-      <control indent="6" count="105" relevant="true"><trigger>If S.state == <ref_state id="3">REQUEST</ref_state>,</trigger>
-         <control indent="9" count="106" relevant="true"><trigger>If (P.type == Response or P.type == Reset)
+      <control indent="4" count="105" relevant="true"><trigger>If S.state == <ref_state id="3">REQUEST</ref_state>,</trigger>
+         <control indent="6" count="106" relevant="true"><trigger>If (P.type == Response or P.type == Reset)
                and S.AWL &lt;= P.ackno &lt;= S.AWH,</trigger>
             /* Set sequence number variables corresponding to the
                other endpoint, so P will pass the tests in Step 6 */
@@ -3861,8 +3861,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
             <action>Drop packet</action> and <action>return</action></control></control>
 
    Step 5: Prepare sequence numbers for Sync
-      <control indent="6" count="107" relevant="true"><trigger>If P.type == Sync or P.type == SyncAck,</trigger>
-         <control indent="9" count="108" relevant="true"><trigger>If S.AWL &lt;= P.ackno &lt;= S.AWH and P.seqno &gt;= S.SWL,</trigger>
+      <control indent="4" count="107" relevant="true"><trigger>If P.type == Sync or P.type == SyncAck,</trigger>
+         <control indent="6" count="108" relevant="true"><trigger>If S.AWL &lt;= P.ackno &lt;= S.AWH and P.seqno &gt;= S.SWL,</trigger>
             /* P is valid, so update sequence number variables
                accordingly.  After this update, P will pass the tests
                in Step 6.  A SyncAck is generated if necessary in
@@ -3883,7 +3883,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Step 6: Check sequence numbers
-        <control indent="8" count="109" relevant="true"><trigger>If P.X == 0 and the relevant Allow Short Seqnos feature is 0,</trigger>
+        <control indent="5" count="109" relevant="true"><trigger>If P.X == 0 and the relevant Allow Short Seqnos feature is 0,</trigger>
             /* Packet has short seqnos, but short seqnos not allowed */
             <action>Drop packet</action> and <action>return</action>
         <trigger>Otherwise, if P.X == 0,</trigger>
@@ -3891,17 +3891,17 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
             in Section 7.6</variable>
         </control>
         <variable>Let LSWL = S.SWL</variable> and <variable>LAWL = S.AWL</variable>
-        <control indent="8" count="110" relevant="true"><trigger>If P.type == CloseReq or P.type == Close or P.type == Reset,</trigger>
+        <control indent="5" count="110" relevant="true"><trigger>If P.type == CloseReq or P.type == Close or P.type == Reset,</trigger>
             <variable>LSWL := S.GSR + 1, LAWL := S.GAR</variable>
         </control>
-        <control indent="8" count="111" relevant="true"><trigger>If LSWL &lt;= P.seqno &lt;= S.SWH
+        <control indent="5" count="111" relevant="true"><trigger>If LSWL &lt;= P.seqno &lt;= S.SWH
             and (P.ackno does not exist or LAWL &lt;= P.ackno &lt;= S.AWH),</trigger>
             <variable>Update S.GSR, S.SWL, S.SWH</variable>
-            <control indent="12" count="112" relevant="true"><trigger>If P.type != Sync,</trigger>
+            <control indent="7" count="112" relevant="true"><trigger>If P.type != Sync,</trigger>
                 <variable>Update S.GAR</variable>
             </control>
         <trigger>Otherwise,</trigger>
-            <control indent="12" count="113" relevant="false"><trigger>If P.type == Reset,</trigger>
+            <control indent="7" count="113" relevant="false"><trigger>If P.type == Reset,</trigger>
                 <action>Send Sync packet acknowledging S.GSR</action>
             <trigger>Otherwise,</trigger>
                 <action>Send Sync packet acknowledging P.seqno</action>
@@ -3910,7 +3910,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
         </control>
 
    Step 7: Check for unexpected packet types
-      <control indent="6" count="114" relevant="false"><trigger>If (S.is_server and P.type == CloseReq)
+      <control indent="4" count="114" relevant="false"><trigger>If (S.is_server and P.type == CloseReq)
            or (S.is_server and P.type == Response)
            or (S.is_client and P.type == Request)
            or (S.state &gt;= <ref_state id="6">OPEN</ref_state> and P.type == Request
@@ -3929,7 +3929,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
            or Received ECN Marked)
 
    Step 9: Process Reset
-      <control indent="6" count="115" relevant="true"><trigger>If P.type == <ref_event type="receive" id="8">Reset</ref_event>,</trigger>
+      <control indent="4" count="115" relevant="true"><trigger>If P.type == <ref_event type="receive" id="8">Reset</ref_event>,</trigger>
          <action>Tear down connection</action>
          <transition>S.state := <ref_state id="9">TIMEWAIT</ref_state></transition>
          <timer>Set TIMEWAIT timer</timer>
@@ -3944,8 +3944,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Step 10: Process REQUEST state (second part)
-      <control indent="6" count="116" relevant="true"><trigger>If S.state == <ref_state id="3">REQUEST</ref_state>,</trigger>
-         /* <control indent="9" count="117" relevant="true"><trigger>If we get here, P is a valid <ref_event type="receive" id="2">Response</ref_event> from the server (see
+      <control indent="4" count="116" relevant="true"><trigger>If S.state == <ref_state id="3">REQUEST</ref_state>,</trigger>
+         /* <control indent="6" count="117" relevant="true"><trigger>If we get here, P is a valid <ref_event type="receive" id="2">Response</ref_event> from the server (see
             Step 4)</trigger>, <transition>and we should move to <ref_state id="5">PARTOPEN</ref_state> state.</transition>  PARTOPEN
             means <action type="send">send an <arg><ref_event type="send" id="4">Ack</ref_event></arg>,</action> don't send Data packets, retransmit
             Acks periodically, and always include any Init Cookie from
@@ -3958,10 +3958,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Step 11: Process RESPOND state
-      <control indent="6" count="118" relevant="true"><trigger>If S.state == <ref_state id="4">RESPOND</ref_state>,</trigger>
-         <control indent="9" count="119" relevant="true"><trigger>If P.type == <ref_event type="receive" id="1">Request</ref_event>,</trigger>
+      <control indent="4" count="118" relevant="true"><trigger>If S.state == <ref_state id="4">RESPOND</ref_state>,</trigger>
+         <control indent="6" count="119" relevant="true"><trigger>If P.type == <ref_event type="receive" id="1">Request</ref_event>,</trigger>
             <action>Send <ref_event type="send" id="2">Response</ref_event>, possibly containing Init Cookie</action>
-            <control indent="12" count="120" relevant="false"><trigger>If Init Cookie was sent,</trigger>
+            <control indent="7" count="120" relevant="false"><trigger>If Init Cookie was sent,</trigger>
                <action>Destroy S</action> and <action>return</action></control>
                /* Step 3 will create another socket when the client
                   completes the three-way handshake */
@@ -3970,21 +3970,21 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
             <transition>S.state := <ref_state id="6">OPEN</ref_state></transition></control></control>
 
    Step 12: Process PARTOPEN state
-      <control indent="6" count="121" relevant="true"><trigger>If S.state == <arg_source><ref_state id="5">PARTOPEN</ref_state></arg_source>,</trigger>
-         <control indent="9" count="122" relevant="true"><trigger>If P.type == <ref_event type="receive" id="2">Response</ref_event>,</trigger>
+      <control indent="4" count="121" relevant="true"><trigger>If S.state == <arg_source><ref_state id="5">PARTOPEN</ref_state></arg_source>,</trigger>
+         <control indent="6" count="122" relevant="true"><trigger>If P.type == <ref_event type="receive" id="2">Response</ref_event>,</trigger>
             <action type="send">Send <arg><ref_event type="send" id="4">Ack</ref_event></arg></action>
          <trigger>Otherwise, if P.type != Sync,</trigger>
             <variable>S.OSR := P.seqno</variable>
             <transition>S.state := <arg_target><ref_state id="6">OPEN</ref_state></arg_target></transition></control></control>
 
    Step 13: Process CloseReq
-      <control indent="6" count="123" relevant="true"><trigger>If <ref_event type="receive" id="6">P.type == CloseReq</ref_event> and S.state &lt; <ref_state id="7">CLOSEREQ</ref_state>,</trigger>
+      <control indent="4" count="123" relevant="true"><trigger>If <ref_event type="receive" id="6">P.type == CloseReq</ref_event> and S.state &lt; <ref_state id="7">CLOSEREQ</ref_state>,</trigger>
          <action>Generate <ref_event type="send" id="7">Close</ref_event></action>
          <transition>S.state := <ref_state id="8">CLOSING</ref_state></transition>
          <timer>Set CLOSING timer</timer></control>
 
    Step 14: Process Close
-      <control indent="6" count="124" relevant="false"><trigger>If <ref_event type="receive" id="7">P.type == Close</ref_event>,</trigger>
+      <control indent="4" count="124" relevant="false"><trigger>If <ref_event type="receive" id="7">P.type == Close</ref_event>,</trigger>
          <action>Generate <ref_event type="send" id="8">Reset</ref_event>(Closed)</action>
          <action>Tear down connection</action>
          <action>Drop packet</action> and <action>return</action></control>
@@ -4001,7 +4001,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    Step 15: Process Sync
-<control indent="0" count="125" relevant="false"><trigger>If P.type == <ref_event type="receive" id="9">Sync</ref_event>,</trigger>
+<control indent="1" count="125" relevant="false"><trigger>If P.type == <ref_event type="receive" id="9">Sync</ref_event>,</trigger>
          <action>Generate SyncAck</action></control>
 
    Step 16: Process data
@@ -4100,7 +4100,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
                   options, network-layer pseudoheader, and the initial
                   (CsCov-1)*4 bytes of the packet's application data.
 
-   Thus, <control indent="3" count="126" relevant="false"><trigger>if CsCov is 1,</trigger> <action>none of the application data is protected by the
+   Thus, <control indent="2" count="126" relevant="false"><trigger>if CsCov is 1,</trigger> <action>none of the application data is protected by the
    header checksum.</action></control>  The value (CsCov-1)*4 MUST be less than or equal to
    the length of the application data.  Packets with invalid CsCov
    values MUST be ignored; in particular, their options MUST NOT be
@@ -4153,10 +4153,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    values of Checksum Coverage that DCCP B finds unacceptable.  Say that
    the value of Minimum Checksum Coverage/B is MinCsCov.  Then:
 
-   o  <control indent="3" count="127" relevant="false"><trigger>If MinCsCov = 0,</trigger> then <action>DCCP B only finds packets with CsCov = 0
+   o  <control indent="2" count="127" relevant="false"><trigger>If MinCsCov = 0,</trigger> then <action>DCCP B only finds packets with CsCov = 0
       acceptable.</action></control>
 
-   o  <control indent="3" count="128" relevant="false"><trigger>If MinCsCov &gt; 0,</trigger> then <action>DCCP B additionally finds packets with
+   o  <control indent="2" count="128" relevant="false"><trigger>If MinCsCov &gt; 0,</trigger> then <action>DCCP B additionally finds packets with
       CsCov &gt;= MinCsCov acceptable.</action></control>
 
 
@@ -4193,10 +4193,10 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
    A DCCP endpoint receiving a packet with a Data Checksum option either
    MUST or MAY check the Data Checksum; the choice depends on the value
-   of the Check Data Checksum feature described below.  <control indent="3" count="129" relevant="false"><trigger>If it checks the
+   of the Check Data Checksum feature described below.  <control indent="2" count="129" relevant="false"><trigger>If it checks the
    checksum,</trigger> <action>it computes the received application data's CRC-32c using
    the same algorithm as the sender</action> and <action>compares the result with the
-   Data Checksum value.</action></control>  <control indent="3" count="130" relevant="false"><trigger>If the CRCs differ, the endpoint reacts in one
+   Data Checksum value.</action></control>  <control indent="2" count="130" relevant="false"><trigger>If the CRCs differ, the endpoint reacts in one
    of two ways:
 
    o  The receiving application may have requested delivery of known-
@@ -4226,7 +4226,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
    Sync, and DCCP-SyncAck.  The receiver SHOULD calculate the
    application data area's CRC-32c on such packets, just as it does for
-   DCCP-Data and similar packets.  <control indent="3" count="131" relevant="false"><trigger>If the CRCs differ,</trigger> <action>the packets
+   DCCP-Data and similar packets.  <control indent="2" count="131" relevant="false"><trigger>If the CRCs differ,</trigger> <action>the packets
    similarly MUST be reported using Data Dropped options (Drop Code 3)</action></control>,
    although their application data areas would not be delivered to the
    application in any case.
@@ -4301,7 +4301,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
            Table 5: DCCP Congestion Control Identifiers
 
-   <control indent="3" count="132" relevant="false"><trigger>New connections start with CCID 2 for both endpoints.  If this is
+   <control indent="2" count="132" relevant="false"><trigger>New connections start with CCID 2 for both endpoints.  If this is
    unacceptable for a DCCP endpoint,</trigger> <action>that endpoint MUST send Mandatory
    Change(CCID) options on its first packets.</action></control>
 
@@ -4433,8 +4433,8 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Using CCID-specific options and feature options during a negotiation
    for the corresponding CCID feature is NOT RECOMMENDED, since it is
    difficult to predict which CCID will be in force when the option is
-   processed.  For example, <control indent="3" count="133" relevant="false"><trigger>if a <ref_event type="receive" id="1">DCCP-Request</ref_event> contains the option
-   sequence "Change L(CCID, 3), 128",</trigger> <control indent="3" count="134" relevant="false"><action>the CCID-specific option "128" may
+   processed.  For example, <control indent="2" count="133" relevant="false"><trigger>if a <ref_event type="receive" id="1">DCCP-Request</ref_event> contains the option
+   sequence "Change L(CCID, 3), 128",</trigger> <control indent="2" count="134" relevant="false"><action>the CCID-specific option "128" may
    be processed either by CCID 3</action> <trigger>(if the server supports CCID 3)</trigger> or <action>by
    the default CCID 2</action> <trigger>(if it does not).</trigger></control></control>  However, it is safe to include
    CCID-specific options following certain Mandatory Change(CCID)
@@ -4448,7 +4448,7 @@ Kohler, et al.              Standards Track                    [Page 79]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   options.  For example, <control indent="3" count="135" relevant="false"><trigger>if a <ref_event type="receive" id="1">DCCP-Request</ref_event> contains the option sequence
+   options.  For example, <control indent="2" count="135" relevant="false"><trigger>if a <ref_event type="receive" id="1">DCCP-Request</ref_event> contains the option sequence
    "Mandatory, Change L(CCID, 3), 128",</trigger> then either <action>the "128" option
    will be processed by CCID 3 or the connection will be reset</action>.</control>
 
@@ -4521,15 +4521,15 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    the number of packets outstanding in the network; in CCID 3, it
    includes the lengths of recent loss intervals.  Both CCIDs use an
    estimate of the round-trip time.  Congestion state depends on the
-   network path and is invalidated by path changes.  <control indent="3" count="136" relevant="true">Therefore, <transition>DCCP
+   network path and is invalidated by path changes.  <control indent="2" count="136" relevant="true">Therefore, <transition>DCCP
    senders and receivers SHOULD reset their congestion state</transition> --
    essentially restarting congestion control from "slow start" or
-   equivalent -- <trigger>on significant changes in the end-to-end path.</trigger></control>  <control indent="3" count="137" relevant="true">For
+   equivalent -- <trigger>on significant changes in the end-to-end path.</trigger></control>  <control indent="2" count="137" relevant="true">For
    example, <trigger>an endpoint that sends or receives a Mobile IPv6 Binding
    Update message [RFC3775]</trigger> <transition>SHOULD reset its congestion state for any
    corresponding DCCP connections.</transition></control>
 
-   <control indent="3" count="138" relevant="true"><transition>A DCCP implementation MAY also reset its congestion state</transition> <trigger>when a CCID
+   <control indent="2" count="138" relevant="true"><transition>A DCCP implementation MAY also reset its congestion state</transition> <trigger>when a CCID
    changes</trigger> (that is, when a negotiation for the CCID feature completes
    successfully and the new feature value differs from the old value).</control>
    Thus, a connection in a heavily congested environment might evade
@@ -4587,7 +4587,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    The ack-of-acks problem arises because some acknowledgement
    mechanisms are reliable.  For example, an HC-Receiver using CCID 2,
    TCP-like Congestion Control, sends Ack Vectors containing completely
-   reliable acknowledgement information.  <control indent="3" count="139" relevant="true"><trigger>The HC-Sender should
+   reliable acknowledgement information.  <control indent="2" count="139" relevant="true"><trigger>The HC-Sender should
    occasionally inform the HC-Receiver that it has received an ack.  If
    it did not,</trigger> <action>the HC-Receiver might resend complete Ack Vector
    information</action>, <transition>going back to the start of the connection</transition>, with every
@@ -4673,7 +4673,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
    secondary concerns, DCCP A can generally afford to wait indefinitely
-   for a data packet to piggyback its acknowledgement onto; <control indent="3" count="140" relevant="false"><trigger>if DCCP B
+   for a data packet to piggyback its acknowledgement onto; <control indent="2" count="140" relevant="false"><trigger>if DCCP B
    wants to elicit an acknowledgement,</trigger> <action type="send">it can send <arg>a <ref_event type="send" id="9">DCCP-Sync</ref_event></arg>.</action></control>
 
    Any restrictions on ack piggybacking are described in the relevant
@@ -4730,7 +4730,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
    o  Receivers MAY piggyback acknowledgement information on data
       packets, creating DCCP-DataAck packets.  The Ack Ratio does not
-      apply to piggybacked acknowledgements.  However, <control indent="6" count="141" relevant="false"><trigger>if the data
+      apply to piggybacked acknowledgements.  However, <control indent="4" count="141" relevant="false"><trigger>if the data
       packets are too big to carry acknowledgement information, or if
       the data sending rate is lower than Ack Ratio would suggest,</trigger> then
       <action>DCCP B SHOULD send enough pure DCCP-Ack packets to maintain the
@@ -4753,7 +4753,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       may lead to sending more acknowledgement packets than Ack Ratio
       would suggest.
 
-   o  <control indent="3" count="142" relevant="false"><action>Receivers SHOULD send acknowledgements immediately</action> <trigger>on receiving
+   o  <control indent="2" count="142" relevant="false"><action>Receivers SHOULD send acknowledgements immediately</action> <trigger>on receiving
       packets marked ECN Congestion Experienced or packets whose out-
       of-order sequence numbers potentially indicate loss.</trigger></control> However,
       there is no need to send such immediate acknowledgements for
@@ -4813,9 +4813,9 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
                   Table 6: DCCP Ack Vector States
 
-   <control indent="3" count="143" relevant="true"><trigger>The term "ECN marked" refers to packets with ECN code point 11, CE
+   <control indent="2" count="143" relevant="true"><trigger>The term "ECN marked" refers to packets with ECN code point 11, CE
    (Congestion Experienced); packets received with this ECN code point</trigger>
-   <transition>MUST be reported using State 1, Received ECN Marked.</transition></control>  <control indent="3" count="144" relevant="true"><trigger>Packets
+   <transition>MUST be reported using State 1, Received ECN Marked.</transition></control>  <control indent="2" count="144" relevant="true"><trigger>Packets
    received with ECN code points 00, 01, or 10 (Non-ECT, ECT(0), or
    ECT(1), respectively)</trigger> <transition>MUST be reported using State 0, Received.</transition></control>
 
@@ -4955,7 +4955,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    To read the table, choose the row corresponding to the packet's old
    state and the column corresponding to the packet's state in the newly
    received Ack Vector; then read the packet's new state off the table.
-   <control indent="3" count="145" relevant="true"><trigger>For an old state of 0 (received non-marked) and received state of 1
+   <control indent="2" count="145" relevant="true"><trigger>For an old state of 0 (received non-marked) and received state of 1
    (received ECN marked),</trigger> <transition>the packet's new state may be set to either 0
    or 1.</transition></control>  The HC-Sender implementation will be indifferent to ack
    reordering if it chooses new state 1 for that cell.
@@ -4973,7 +4973,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
                              3 | 0 | 1 | 3 |
                                +---+---+---+
 
-   This table equals the sender's table except that, <control indent="3" count="146" relevant="true"><trigger>when the stored
+   This table equals the sender's table except that, <control indent="2" count="146" relevant="true"><trigger>when the stored
    state is 1 and the received state is 0,</trigger> <transition>the receiver is allowed to
    switch its stored state to 0.</transition></control>
 
@@ -5381,12 +5381,12 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    received frames' IP headers when ECN Incapable/A is zero.  (This is
    independent of whether it can set ECN bits on sent frames.)  DCCP A
    thus sends a "Change L(ECN Inapable, 1)" option to DCCP B to inform
-   it that A cannot read ECN bits.  <control indent="3" count="147" relevant="false"><trigger>If the ECN Incapable/A feature is
+   it that A cannot read ECN bits.  <control indent="2" count="147" relevant="false"><trigger>If the ECN Incapable/A feature is
    one,</trigger> then <action>all of DCCP B's packets MUST be sent as ECN incapable.</action></control>  New
    connections start with ECN Incapable 0 (that is, ECN capable) for
    both endpoints.  Values of two or more are reserved.
 
-<control indent="0" count="148" relevant="false"><trigger>If a DCCP is not ECN capable,</trigger> <action>it MUST send Mandatory "Change L(ECN
+<control indent="1" count="148" relevant="false"><trigger>If a DCCP is not ECN capable,</trigger> <action>it MUST send Mandatory "Change L(ECN
    Incapable, 1)" options to the other endpoint until acknowledged (by
    "Confirm R(ECN Incapable, 1)") or the connection closes.</action>
    <action>Furthermore, it MUST NOT accept any data until the other endpoint
@@ -5400,7 +5400,7 @@ Kohler, et al.              Standards Track                    [Page 96]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   sends "Confirm R(ECN Incapable, 1).</action>"</control>  <control indent="3" count="149" relevant="false"><action>It SHOULD send Data Dropped
+   sends "Confirm R(ECN Incapable, 1).</action>"</control>  <control indent="2" count="149" relevant="false"><action>It SHOULD send Data Dropped
    options on its acknowledgements, with Drop Code 0 ("protocol
    constraints"),</action> <trigger>if the other endpoint does send data inappropriately.</trigger></control>
 
@@ -5485,7 +5485,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    field is set to Congestion Experienced, 11; a receiver that doesn't
    report a corresponding mark is most likely misbehaving.
 
-   <control indent="3" count="150" relevant="false"><trigger>Upon detecting possible misbehavior,</trigger> <action>a sender SHOULD respond as if
+   <control indent="2" count="150" relevant="false"><trigger>Upon detecting possible misbehavior,</trigger> <action>a sender SHOULD respond as if
    the receiver had reported one or more recent packets as ECN-marked
    (instead of unmarked),</action> while <action>a receiver SHOULD report one or more
    recent non-marked packets as ECN-marked.</action></control>  Alternately, a sender might
@@ -5536,7 +5536,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    might send Timestamp Values that were all multiples of 100.  The
    precise time corresponding to Timestamp Value zero is not specified:
    Timestamp Values are only meaningful relative to other Timestamp
-   Values sent on the same connection.  <control indent="3" count="151" relevant="true"><trigger>A DCCP receiving a Timestamp
+   Values sent on the same connection.  <control indent="2" count="151" relevant="true"><trigger>A DCCP receiving a Timestamp
    option</trigger> <timer>SHOULD respond with a Timestamp Echo option on the next packet
    it sends.</timer></control>
 
@@ -5580,7 +5580,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
    The option data, Elapsed Time, represents an estimated lower bound on
    the amount of time elapsed since the packet being acknowledged was
-   received, with units of hundredths of milliseconds.  <control indent="3" count="152" relevant="false"><trigger>If Elapsed Time
+   received, with units of hundredths of milliseconds.  <control indent="2" count="152" relevant="false"><trigger>If Elapsed Time
    is less than a half-second,</trigger> <action>the first, smaller form of the option
    SHOULD be used.</action></control>  Elapsed Times of more than 0.65535 seconds MUST be
    sent using the second form of the option.  The special Elapsed Time
@@ -5644,7 +5644,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Usually, this will be the last packet that was received -- the packet
    indicated by the Acknowledgement Number, if any -- but it might be a
    preceding packet.  Each Timestamp received will generally result in
-   exactly one Timestamp Echo transmitted. <control indent="3" count="153" relevant="false"><trigger>If an endpoint has received
+   exactly one Timestamp Echo transmitted. <control indent="2" count="153" relevant="false"><trigger>If an endpoint has received
    multiple Timestamp options since the last time it sent a packet,</trigger> then
    <action>it MAY ignore all Timestamp options but the one included on the
    packet with the greatest sequence number.</action>  Alternatively, <action>it MAY
@@ -5692,7 +5692,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    tolerance by producing packets smaller than the PMTU.
 
    The MPS reported to the application SHOULD be influenced by the size
-   expected to be required for DCCP headers and options.  <control indent="3" count="154" relevant="true"><trigger>If the
+   expected to be required for DCCP headers and options.  <control indent="2" count="154" relevant="true"><trigger>If the
    application provides data that, when combined with the options the
    DCCP implementation would like to include, would exceed the MPS,</trigger> <action type="send">the
    implementation should either send the options on a separate packet
@@ -5711,15 +5711,15 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    Classical PMTU discovery uses unfragmentable packets.  In IPv4, these
    packets have the IP Don't Fragment (DF) bit set; in IPv6, all packets
    are unfragmentable once emitted by an end host.  As specified in
-   [RFC1191], <control indent="3" count="155" relevant="false"><trigger>when a router receives a packet with DF set that is larger
+   [RFC1191], <control indent="2" count="155" relevant="false"><trigger>when a router receives a packet with DF set that is larger
    than the next link's MTU,</trigger> <action>it sends an ICMP Destination Unreachable
    message back to the source whose Code indicates that an
    unfragmentable packet was too large to forward (a "Datagram Too Big"
-   message).</action></control>  <control indent="3" count="156" relevant="true"><trigger>When a DCCP implementation receives a Datagram Too Big
+   message).</action></control>  <control indent="2" count="156" relevant="true"><trigger>When a DCCP implementation receives a Datagram Too Big
    message,</trigger> <variable>it decreases its PMTU to the Next-Hop MTU value given in the
-   ICMP message.</variable></control>  <control indent="3" count="157" relevant="true"><trigger>If the MTU given in the message is zero,</trigger> <variable>the sender
+   ICMP message.</variable></control>  <control indent="2" count="157" relevant="true"><trigger>If the MTU given in the message is zero,</trigger> <variable>the sender
    chooses a value for PMTU using the algorithm described in [RFC1191],
-   Section 7.</variable></control>  <control indent="3" count="158" relevant="false"><trigger>If the MTU given in the message is greater than the
+   Section 7.</variable></control>  <control indent="2" count="158" relevant="false"><trigger>If the MTU given in the message is greater than the
    current PMTU,</trigger> <action>the Datagram Too Big message is ignored, as described
    in [RFC1191].</action></control>  (We are aware that this may cause problems for DCCP
    endpoints behind certain firewalls.)
@@ -5736,12 +5736,12 @@ Kohler, et al.              Standards Track                   [Page 102]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   <control indent="3" count="159" relevant="false"><trigger>A DCCP sender MAY treat the reception of an ICMP Datagram Too Big
+   <control indent="2" count="159" relevant="false"><trigger>A DCCP sender MAY treat the reception of an ICMP Datagram Too Big
    message as an indication that the packet being reported was not lost
    due to congestion,</trigger> and so for the purposes of congestion control <action>it
    MAY ignore the DCCP receiver's indication that this packet did not
-   arrive.</action></control>  However, <control indent="3" count="160" relevant="false"><trigger>if this is done,</trigger> then <action>the DCCP sender MUST check
-   the ECN bits of the IP header echoed in the ICMP message</action> and <control indent="3" count="161" relevant="false"><action>only
+   arrive.</action></control>  However, <control indent="2" count="160" relevant="false"><trigger>if this is done,</trigger> then <action>the DCCP sender MUST check
+   the ECN bits of the IP header echoed in the ICMP message</action> and <control indent="2" count="161" relevant="false"><action>only
    perform this optimization</action> <trigger>if these ECN bits indicate that the packet
    did not experience congestion prior to reaching the router whose link
    MTU it exceeded.</trigger></control></control>
@@ -5758,7 +5758,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    bits [RFC792].  Any amount greater than 128 bits will include the
    Sequence Number.)  ICMP Datagram Too Big messages with incorrect or
    missing Sequence Numbers may be ignored, or the DCCP implementation
-   may lower the PMTU only temporarily in response.  <control indent="3" count="162" relevant="false"><trigger>If more than three
+   may lower the PMTU only temporarily in response.  <control indent="2" count="162" relevant="false"><trigger>If more than three
    odd Datagram Too Big messages are received and the other DCCP
    endpoint reports more than three lost packets, however,</trigger> <action>the DCCP
    implementation SHOULD assume the presence of a confused router</action> and
@@ -5781,7 +5781,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    A DCCP sender SHOULD send every packet as unfragmentable, as
    described above, with the following exceptions.
 
-   o  <control indent="3" count="163" relevant="false"><trigger>On IPv4 connections whose applications have requested
+   o  <control indent="2" count="163" relevant="false"><trigger>On IPv4 connections whose applications have requested
       fragmentation,</trigger> <action>the sender SHOULD send packets with the DF bit not
       set.</action></control>
 
@@ -5792,7 +5792,7 @@ Kohler, et al.              Standards Track                   [Page 103]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-   o  <control indent="3" count="164" relevant="false"><trigger>On IPv6 connections whose applications have requested
+   o  <control indent="2" count="164" relevant="false"><trigger>On IPv6 connections whose applications have requested
       fragmentation,</trigger> <action>the sender SHOULD use fragmentation extension
       headers to fragment packets larger than PMTU into suitably-sized
       chunks.</action></control>(Those chunks are, of course, unfragmentable.)
@@ -5810,7 +5810,7 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
       preemptively fragmented to a size not larger than the relevant
       interface MTU.
 
-   <control indent="3" count="165" relevant="true"><trigger>If the DCCP implementation has decreased the PMTU, the sending
+   <control indent="2" count="165" relevant="true"><trigger>If the DCCP implementation has decreased the PMTU, the sending
    application has not requested fragmentation, and the sending
    application attempts to send a packet larger than the new MPS,</trigger> <action>the
    API MUST refuse to send the packet</action> and <error>return an appropriate error to
@@ -5827,12 +5827,12 @@ RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
    DCCPs.
 
    o  DCCP processors MUST NOT act punitively towards options and
-      features they do not understand.  <control indent="6" count="166" relevant="false"><action>For example, DCCP processors
+      features they do not understand.  <control indent="4" count="166" relevant="false"><action>For example, DCCP processors
       MUST NOT reset the connection</action> <trigger>if some field marked Reserved in
       this specification is non-zero; if some unknown option is present;
       or if some feature negotiation option mentions an unknown feature.</trigger>
       Instead, <action>DCCP processors MUST ignore these events.</action></control> The Mandatory
-      option is the single exception: <control indent="6" count="167" relevant="false"><trigger>if Mandatory precedes some unknown
+      option is the single exception: <control indent="4" count="167" relevant="false"><trigger>if Mandatory precedes some unknown
       option or feature,</trigger> <action>the connection MUST be reset.</action></control>
 
    o  DCCP processors MUST anticipate the possibility of unknown feature
@@ -5848,13 +5848,13 @@ Kohler, et al.              Standards Track                   [Page 104]
 RFC 4340      Datagram Congestion Control Protocol (DCCP)     March 2006
 
 
-      cannot be an unknown value.  <control indent="6" count="168" relevant="false"><action>A DCCP MUST respond with an empty
+      cannot be an unknown value.  <control indent="4" count="168" relevant="false"><action>A DCCP MUST respond with an empty
       Confirm option</action> <trigger>if it is assigned an unacceptable value for some
       non-negotiable feature.</trigger></control>
 
    o  Each DCCP extension SHOULD be controlled by some feature.  The
       default value of this feature SHOULD correspond to "extension not
-      available".  <control indent="6" count="169" relevant="true"><trigger>If an extended DCCP wants to use the extension,</trigger> <variable>it
+      available".  <control indent="4" count="169" relevant="true"><trigger>If an extended DCCP wants to use the extension,</trigger> <variable>it
       SHOULD attempt to change the feature's value using a Change L or
       Change R option.</variable>  <variable>Any non-extended DCCP will ignore the option,
       thus leaving the feature value at its default, "extension not

@@ -2377,17 +2377,17 @@ September 1981
 
   Reset Processing
 
-  <control indent="2" count="1" relevant="true"><trigger>In all states except <ref_state id="2">SYN-SENT</ref_state>,</trigger> <action>all reset (RST) segments are validated
-  by checking their SEQ-fields.</action>  <control indent="2" count="2" relevant="true">A reset is valid <trigger>if its sequence number
-  is in the window.</trigger></control></control>  <control indent="2" count="3" relevant="true"><trigger>In the <ref_state id="2">SYN-SENT</ref_state> state</trigger> (a <ref_event type="receive" id="9">RST</ref_event> received in response
-  to an initial SYN), <control indent="2" count="4" relevant="true">the RST is acceptable <trigger>if the <ref_event type="receive" id="7">ACK</ref_event> field
+  <control indent="1" count="1" relevant="true"><trigger>In all states except <ref_state id="2">SYN-SENT</ref_state>,</trigger> <action>all reset (RST) segments are validated
+  by checking their SEQ-fields.</action>  <control indent="1" count="2" relevant="true">A reset is valid <trigger>if its sequence number
+  is in the window.</trigger></control></control>  <control indent="1" count="3" relevant="true"><trigger>In the <ref_state id="2">SYN-SENT</ref_state> state</trigger> (a <ref_event type="receive" id="9">RST</ref_event> received in response
+  to an initial SYN), <control indent="1" count="4" relevant="true">the RST is acceptable <trigger>if the <ref_event type="receive" id="7">ACK</ref_event> field
   acknowledges the SYN.</trigger></control></control>
 
-  <control indent="2" count="5" relevant="true"><trigger>The receiver of a <ref_event type="receive" id="9">RST</ref_event></trigger> first validates it, then changes state.  <control indent="2" count="5" relevant="true"><trigger>If the
-  receiver was in the <ref_state id="1">LISTEN</ref_state> state,</trigger> <action>it ignores it.</action>  <control indent="2" count="6" relevant="true"><trigger>If the receiver was
+  <control indent="1" count="5" relevant="true"><trigger>The receiver of a <ref_event type="receive" id="9">RST</ref_event></trigger> first validates it, then changes state.  <control indent="1" count="5" relevant="true"><trigger>If the
+  receiver was in the <ref_state id="1">LISTEN</ref_state> state,</trigger> <action>it ignores it.</action>  <control indent="1" count="6" relevant="true"><trigger>If the receiver was
   in <ref_state id="3">SYN-RECEIVED</ref_state> state and had previously been in the <ref_state id="1">LISTEN</ref_state> state,</trigger>
-  then <transition>the receiver returns to the <ref_state id="1">LISTEN</ref_state> state,</transition> <control indent="2" count="7" relevant="true"><trigger>otherwise</trigger> <action>the receiver
-  aborts the connection</action> and <transition>goes to the <ref_state id="11">CLOSED</ref_state> state.</transition></control>  <control indent="2" count="8" relevant="true"><trigger>If the receiver
+  then <transition>the receiver returns to the <ref_state id="1">LISTEN</ref_state> state,</transition> <control indent="1" count="7" relevant="true"><trigger>otherwise</trigger> <action>the receiver
+  aborts the connection</action> and <transition>goes to the <ref_state id="11">CLOSED</ref_state> state.</transition></control>  <control indent="1" count="8" relevant="true"><trigger>If the receiver
   was in any other state,</trigger> <action>it aborts the connection</action> and advises the user
   and <transition>goes to the <ref_state id="11">CLOSED</ref_state> state.</transition></control></control></control></control>
 
@@ -2860,7 +2860,7 @@ September 1981
         process can masquerade as another without the collusion of the
         TCP.
 
-        <control indent="8" count="9" relevant="true"><trigger>If the active/passive flag is set to passive,</trigger> then this is a
+        <control indent="4" count="9" relevant="true"><trigger>If the active/passive flag is set to passive,</trigger> then this is a
         call to <ref_state id="1">LISTEN</ref_state> for an incoming connection.</control>  A passive open may
         have either a fully specified foreign socket to wait for a
         particular connection or an unspecified foreign socket to wait
@@ -3365,42 +3365,42 @@ Functional Specification
 
 
 
-  <control indent="2" count="10" relevant="true"><trigger><ref_event type="receive" id="1">OPEN</ref_event> Call</trigger>
+  <control indent="1" count="10" relevant="true"><trigger><ref_event type="receive" id="1">OPEN</ref_event> Call</trigger>
 
-    <control indent="4" count="11" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
+    <control indent="2" count="11" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
 
       <variable>Create a new transmission control block (TCB) to hold connection
       state information.</variable>  <variable>Fill in local socket identifier, foreign
       socket, precedence, security/compartment, and user timeout
       information.</variable>  Note that some parts of the foreign socket may be
       unspecified in a passive OPEN and are to be filled in by the
-      parameters of the incoming SYN segment.  <control indent="6" count="12" relevant="true"><trigger>Verify the security and
+      parameters of the incoming SYN segment.  <control indent="3" count="12" relevant="true"><trigger>Verify the security and
       precedence requested are allowed for this user, if not</trigger> <error>return
       "error:  precedence not allowed" or "error:  security/compartment
-      not allowed."</error></control>  <control indent="6" count="13" relevant="true"><trigger>If passive</trigger> <transition>enter the <ref_state id="1">LISTEN</ref_state> state</transition> and <action>return.</action></control>  <control indent="6" count="13" relevant="true"><trigger>If
+      not allowed."</error></control>  <control indent="3" count="13" relevant="true"><trigger>If passive</trigger> <transition>enter the <ref_state id="1">LISTEN</ref_state> state</transition> and <action>return.</action></control>  <control indent="3" count="13" relevant="true"><trigger>If
       active and the foreign socket is unspecified,</trigger> <error>return "error:
-      foreign socket unspecified";</error></control> <control indent="6" count="14" relevant="true"><trigger>if active and the foreign socket is
+      foreign socket unspecified";</error></control> <control indent="3" count="14" relevant="true"><trigger>if active and the foreign socket is
       specified,</trigger> <action type="issue">issue <arg>a <ref_event type="compute" id="10">SYN</ref_event> segment.</arg></action>  <variable>An initial send sequence number
       (ISS) is selected.</variable>  <action type="send"><arg>A <ref_event type="send" id="10">SYN</ref_event> segment of the form &lt;SEQ=ISS&gt;&lt;CTL=SYN&gt;</arg>
       is sent.</action>  <variable>Set SND.UNA to ISS, SND.NXT to ISS+1,</variable> <transition>enter <ref_state id="2">SYN-SENT</ref_state>
       state,</transition> and <action>return</action></control>.
 
-      <control indent="6" count="15" relevant="true"><trigger>If the caller does not have access to the local socket specified,</trigger>
-      <error>return "error:  connection illegal for this process".</error></control>  <control indent="6" count="16" relevant="true"><trigger>If there is
+      <control indent="3" count="15" relevant="true"><trigger>If the caller does not have access to the local socket specified,</trigger>
+      <error>return "error:  connection illegal for this process".</error></control>  <control indent="3" count="16" relevant="true"><trigger>If there is
       no room to create a new connection,</trigger> <error>return "error:  insufficient
       resources".</error></control></control>
 
-    <control indent="4" count="17" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
+    <control indent="2" count="17" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
 
-      <control indent="6" count="18" relevant="true"><trigger>If active and the foreign socket is specified,</trigger> then <variable>change the
+      <control indent="3" count="18" relevant="true"><trigger>If active and the foreign socket is specified,</trigger> then <variable>change the
       connection from passive to active,</variable> <variable>select an ISS.</variable>  <action type="send">Send <arg>a <ref_event type="send" id="10">SYN</ref_event>
       segment,</arg></action> <variable>set SND.UNA to ISS,</variable> <variable>SND.NXT to ISS+1.</variable>  <transition>Enter <ref_state id="2">SYN-SENT</ref_state>
       state.</transition>  Data associated with SEND may be sent with SYN segment or
       queued for transmission after entering ESTABLISHED state.  The
       urgent bit if requested in the command must be sent with the data
-      segments sent as a result of this command.  <control indent="6" count="19" relevant="true"><trigger>If there is no room to
+      segments sent as a result of this command.  <control indent="3" count="19" relevant="true"><trigger>If there is no room to
       queue the request,</trigger> <error>respond with "error:  insufficient resources".</error></control>
-      <control indent="6" count="20" relevant="true"><trigger>If Foreign socket was not specified,</trigger> then <error>return "error:  foreign
+      <control indent="3" count="20" relevant="true"><trigger>If Foreign socket was not specified,</trigger> then <error>return "error:  foreign
       socket unspecified".</error></control></control></control>
 
 
@@ -3424,7 +3424,7 @@ OPEN Call
 
 
 
-    <control indent="4" count="21" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE
+    <control indent="2" count="21" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE
     <ref_state id="3">SYN-RECEIVED</ref_state> STATE
     <ref_state id="4">ESTABLISHED</ref_state> STATE
     <ref_state id="5">FIN-WAIT-1</ref_state> STATE
@@ -3483,44 +3483,44 @@ Functional Specification
 
 
 
-  <control indent="2" count="22" relevant="true"><trigger><ref_event type="receive" id="2">SEND</ref_event> Call</trigger>
+  <control indent="1" count="22" relevant="true"><trigger><ref_event type="receive" id="2">SEND</ref_event> Call</trigger>
 
-    <control indent="4" count="23" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
+    <control indent="2" count="23" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
 
-      <control indent="6" count="24" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> then <error>return
+      <control indent="3" count="24" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> then <error>return
       "error:  connection illegal for this process".</error>
 
       <trigger>Otherwise,</trigger> <error>return "error:  connection does not exist".</error></control></control>
 
-    <control indent="4" count="25" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
+    <control indent="2" count="25" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
 
-      <control indent="6" count="26" relevant="true"><trigger>If the foreign socket is specified,</trigger> then <variable>change the connection
+      <control indent="3" count="26" relevant="true"><trigger>If the foreign socket is specified,</trigger> then <variable>change the connection
       from passive to active,</variable> <variable>select an ISS.</variable>  <action type="send">Send a <arg><ref_event type="send" id="10">SYN</ref_event> segment,</arg></action> <variable>set
       SND.UNA to ISS,</variable> <variable>SND.NXT to ISS+1.</variable>  <transition>Enter <ref_state id="2">SYN-SENT</ref_state> state.</transition></control>  Data
       associated with SEND may be sent with SYN segment or queued for
       transmission after entering ESTABLISHED state.  The urgent bit if
       requested in the command must be sent with the data segments sent
-      as a result of this command.  <control indent="6" count="27" relevant="true"><trigger>If there is no room to queue the
-      request,</trigger> <error>respond with "error:  insufficient resources".</error></control>  <control indent="6" count="28" relevant="true"><trigger>If
+      as a result of this command.  <control indent="3" count="27" relevant="true"><trigger>If there is no room to queue the
+      request,</trigger> <error>respond with "error:  insufficient resources".</error></control>  <control indent="3" count="28" relevant="true"><trigger>If
       Foreign socket was not specified,</trigger> then <error>return "error:  foreign
       socket unspecified".</error></control></control>
 
-    <control indent="4" count="29" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE
+    <control indent="2" count="29" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE
     <ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
 
       <action>Queue the data for transmission</action> after entering <ref_state id="4">ESTABLISHED</ref_state> state.
-      <control indent="6" count="30" relevant="true"><trigger>If no space to queue,</trigger> <error>respond with "error:  insufficient
+      <control indent="3" count="30" relevant="true"><trigger>If no space to queue,</trigger> <error>respond with "error:  insufficient
       resources".</error></control></control>
 
-    <control indent="4" count="31" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
+    <control indent="2" count="31" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
     <ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
 
       Segmentize the buffer and send it with a piggybacked
-      acknowledgment (acknowledgment value = RCV.NXT).  <control indent="6" count="32" relevant="true"><trigger>If there is
+      acknowledgment (acknowledgment value = RCV.NXT).  <control indent="3" count="32" relevant="true"><trigger>If there is
       insufficient space to remember this buffer,</trigger> simply <error>return "error:
       insufficient resources".</error></control>
 
-      <control indent="6" count="33" relevant="true"><trigger>If the urgent flag is set,</trigger> then <variable>SND.UP &lt;- SND.NXT-1</variable> and <variable>set the
+      <control indent="3" count="33" relevant="true"><trigger>If the urgent flag is set,</trigger> then <variable>SND.UP &lt;- SND.NXT-1</variable> and <variable>set the
       urgent pointer in the outgoing segments.</variable></control></control>
 
 
@@ -3542,7 +3542,7 @@ SEND Call
 
 
 
-    <control indent="4" count="34" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE
+    <control indent="2" count="34" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE
     <ref_state id="6">FIN-WAIT-2</ref_state> STATE
     <ref_state id="8">CLOSING</ref_state> STATE
     <ref_state id="9">LAST-ACK</ref_state> STATE
@@ -3601,36 +3601,36 @@ Functional Specification
 
 
 
-  <control indent="2" count="35" relevant="true"><trigger><ref_event type="receive" id="3">RECEIVE</ref_event> Call</trigger>
+  <control indent="1" count="35" relevant="true"><trigger><ref_event type="receive" id="3">RECEIVE</ref_event> Call</trigger>
 
-    <control indent="4" count="36" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
+    <control indent="2" count="36" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
 
-      <control indent="6" count="37" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> return
+      <control indent="3" count="37" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> return
       <error>"error:  connection illegal for this process".</error>
 
       <trigger>Otherwise</trigger> <error>return "error:  connection does not exist".</error></control></control>
 
-    <control indent="4" count="38" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE
+    <control indent="2" count="38" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE
     <ref_state id="2">SYN-SENT</ref_state> STATE
     <ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
 
-      <action>Queue for processing</action> after entering <ref_state id="4">ESTABLISHED</ref_state> state.  <control indent="6" count="39" relevant="true"><trigger>If there
+      <action>Queue for processing</action> after entering <ref_state id="4">ESTABLISHED</ref_state> state.  <control indent="3" count="39" relevant="true"><trigger>If there
       is no room to queue this request,</trigger> <error>respond with "error:
       insufficient resources".</error></control></control>
 
-    <control indent="4" count="40" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
+    <control indent="2" count="40" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
     <ref_state id="5">FIN-WAIT-1</ref_state> STATE
     <ref_state id="6">FIN-WAIT-2</ref_state> STATE</trigger>
 
-      <control indent="6" count="41" relevant="true"><trigger>If insufficient incoming segments are queued to satisfy the
-      request,</trigger> <action>queue the request.</action></control>  <control indent="6" count="42" relevant="true"><trigger>If there is no queue space to
+      <control indent="3" count="41" relevant="true"><trigger>If insufficient incoming segments are queued to satisfy the
+      request,</trigger> <action>queue the request.</action></control>  <control indent="3" count="42" relevant="true"><trigger>If there is no queue space to
       remember the RECEIVE,</trigger> <error>respond with "error:  insufficient
       resources".</error></control>
 
-      <control indent="6" count="43" relevant="true"><action>Reassemble queued incoming segments into receive buffer</action> and <action>return
+      <control indent="3" count="43" relevant="true"><action>Reassemble queued incoming segments into receive buffer</action> and <action>return
       to user.</action>  <variable>Mark "push seen" (PUSH)</variable> <trigger>if this is the case.</trigger></control>
 
-      <control indent="6" count="44" relevant="false"><trigger>If RCV.UP is in advance of the data currently being passed to the
+      <control indent="3" count="44" relevant="false"><trigger>If RCV.UP is in advance of the data currently being passed to the
       user</trigger> <action>notify the user of the presence of urgent data.</action></control>
 
       When the TCP takes responsibility for delivering data to the user
@@ -3660,15 +3660,15 @@ RECEIVE Call
 
 
 
-    <control indent="4" count="45" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
+    <control indent="2" count="45" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
 
       Since the remote side has already sent FIN, RECEIVEs must be
       satisfied by text already on hand, but not yet delivered to the
-      user.  <control indent="6" count="46" relevant="true"><trigger>If no text is awaiting delivery,</trigger> <error>the RECEIVE will get a
+      user.  <control indent="3" count="46" relevant="true"><trigger>If no text is awaiting delivery,</trigger> <error>the RECEIVE will get a
       "error:  connection closing" response.</error>  <trigger>Otherwise,</trigger> any remaining
       text can be used to satisfy the RECEIVE.</control></control>
 
-    <control indent="4" count="47" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
+    <control indent="2" count="47" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
     <ref_state id="9">LAST-ACK</ref_state> STATE
     <ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
@@ -3719,38 +3719,38 @@ Functional Specification
 
 
 
-  <control indent="2" count="48" relevant="true"><trigger><ref_event type="receive" id="4">CLOSE</ref_event> Call</trigger>
+  <control indent="1" count="48" relevant="true"><trigger><ref_event type="receive" id="4">CLOSE</ref_event> Call</trigger>
 
-    <control indent="4" count="49" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
+    <control indent="2" count="49" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
 
-      <control indent="6" count="50" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> <error>return
+      <control indent="3" count="50" relevant="true"><trigger>If the user does not have access to such a connection,</trigger> <error>return
       "error:  connection illegal for this process".</error>
 
       <trigger>Otherwise,</trigger> return <error>"error:  connection does not exist".</error></control></control>
 
-    <control indent="4" count="51" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
+    <control indent="2" count="51" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
 
       <error>Any outstanding RECEIVEs are returned with "error:  closing"</error>
       responses.  <variable>Delete TCB,</variable> <transition>enter <ref_state id="11">CLOSED</ref_state> state,</transition> and <action>return.</action></control>
 
-    <control indent="4" count="52" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE</trigger>
+    <control indent="2" count="52" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE</trigger>
 
       <variable>Delete the TCB</variable> and <error>return "error:  closing" responses to any
       queued SENDs, or RECEIVEs.</error></control>
 
-    <control indent="4" count="53" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
+    <control indent="2" count="53" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
 
-      <control indent="6" count="54" relevant="true"><trigger>If no SENDs have been issued and there is no pending data to send,</trigger>
+      <control indent="3" count="54" relevant="true"><trigger>If no SENDs have been issued and there is no pending data to send,</trigger>
       then <action type="issue">form <arg>a <ref_event type="send" id="11">FIN</ref_event> segment</arg></action> and <action type="send">send <arg><ref_event type="send" id="11">it</ref_event></arg>,</action> and <transition>enter <ref_state id="5">FIN-WAIT-1</ref_state> state;</transition>
       <trigger>otherwise</trigger> <action>queue for processing</action> after entering <ref_state id="4">ESTABLISHED</ref_state> state.</control></control>
 
-    <control indent="4" count="55" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
+    <control indent="2" count="55" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
 
       <action>Queue this until all preceding SENDs have been segmentized</action>, then
       <action type="issue">form <arg>a <ref_event type="send" id="11">FIN</ref_event> segment</arg></action> and <action type="send">send <arg><ref_event type="send" id="11">it</ref_event></arg>.</action>  In any case, <transition>enter <ref_state id="5">FIN-WAIT-1</ref_state>
       state.</transition></control>
 
-    <control indent="4" count="56" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE
+    <control indent="2" count="56" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE
     <ref_state id="6">FIN-WAIT-2</ref_state> STATE</trigger>
 
       Strictly speaking, this is an error and should receive a <error>"error:
@@ -3778,12 +3778,12 @@ CLOSE Call
 
 
 
-    <control indent="4" count="57" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
+    <control indent="2" count="57" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
 
       <action>Queue this request until all preceding SENDs have been
       segmentized</action>; then <action type="send">send a <arg><ref_event type="send" id="11">FIN</ref_event> segment</arg></action>, <transition>enter <ref_state id="8">CLOSING</ref_state> state.</transition></control>
 
-    <control indent="4" count="58" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
+    <control indent="2" count="58" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
     <ref_state id="9">LAST-ACK</ref_state> STATE
     <ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
@@ -3837,27 +3837,27 @@ Functional Specification
 
 
 
-  <control indent="2" count="59" relevant="true"><trigger><ref_event type="receive" id="5">ABORT</ref_event> Call</trigger>
+  <control indent="1" count="59" relevant="true"><trigger><ref_event type="receive" id="5">ABORT</ref_event> Call</trigger>
 
-    <control indent="4" count="60" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
+    <control indent="2" count="60" relevant="true"><trigger><ref_state id="11">CLOSED</ref_state> STATE</trigger> (i.e., TCB does not exist)
 
-      <control indent="6" count="61" relevant="true"><trigger>If the user should not have access to such a connection,</trigger> <error>return
+      <control indent="3" count="61" relevant="true"><trigger>If the user should not have access to such a connection,</trigger> <error>return
       "error:  connection illegal for this process".</error>
 
       <trigger>Otherwise</trigger> <error>return "error:  connection does not exist".</error></control></control>
 
-    <control indent="4" count="62" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
+    <control indent="2" count="62" relevant="true"><trigger><ref_state id="1">LISTEN</ref_state> STATE</trigger>
 
       Any outstanding RECEIVEs should be returned with <error>"error:
       connection reset" responses.</error>  <variable>Delete TCB,</variable> <transition>enter <ref_state id="11">CLOSED</ref_state> state,</transition> and
       <action>return.</action></control>
 
-    <control indent="4" count="63" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE</trigger>
+    <control indent="2" count="63" relevant="true"><trigger><ref_state id="2">SYN-SENT</ref_state> STATE</trigger>
 
       <action>All queued SENDs and RECEIVEs should be given "connection reset"
       notification,</action> <variable>delete the TCB,</variable> <transition>enter <ref_state id="11">CLOSED</ref_state> state,</transition> and <action>return.</action></control>
 
-    <control indent="4" count="64" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
+    <control indent="2" count="64" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
     <ref_state id="4">ESTABLISHED</ref_state> STATE
     <ref_state id="5">FIN-WAIT-1</ref_state> STATE
     <ref_state id="6">FIN-WAIT-2</ref_state> STATE
@@ -3872,7 +3872,7 @@ Functional Specification
       RST formed above) or retransmission should be flushed</action>, <variable>delete the
       TCB,</variable> <transition>enter <ref_state id="11">CLOSED</ref_state> state,</transition> and <action>return.</action></control>
 
-    <control indent="4" count="65" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
+    <control indent="2" count="65" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
     <ref_state id="9">LAST-ACK</ref_state> STATE
     <ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
@@ -4016,16 +4016,16 @@ SEGMENT ARRIVES
 
   SEGMENT ARRIVES
 
-    <control indent="4" count="66" relevant="true"><trigger>If the state is <ref_state id="11">CLOSED</ref_state></trigger> (i.e., TCB does not exist) then
+    <control indent="2" count="66" relevant="true"><trigger>If the state is <ref_state id="11">CLOSED</ref_state></trigger> (i.e., TCB does not exist) then
 
-      <action>all data in the incoming segment is discarded.</action> <control indent="6" count="67" relevant="false"><trigger>An incoming
-      segment containing a <ref_event type="receive" id="9">RST</ref_event></trigger> <action>is discarded.</action></control> <control indent="6" count="68" relevant="false"><trigger>An incoming segment not
+      <action>all data in the incoming segment is discarded.</action> <control indent="3" count="67" relevant="false"><trigger>An incoming
+      segment containing a <ref_event type="receive" id="9">RST</ref_event></trigger> <action>is discarded.</action></control> <control indent="3" count="68" relevant="false"><trigger>An incoming segment not
       containing a <ref_event type="receive" id="9">RST</ref_event></trigger> <action type="send">causes <arg>a <ref_event type="send" id="9">RST</ref_event></arg> to be sent in response.</action></control>  The
       acknowledgment and sequence field values are selected to make the
       reset sequence acceptable to the TCP that sent the offending
       segment.
 
-      <control indent="6" count="69" relevant="true"><trigger>If the <ref_event type="receive" id="7">ACK</ref_event> bit is off,</trigger> <variable>sequence number zero is used,</variable>
+      <control indent="3" count="69" relevant="true"><trigger>If the <ref_event type="receive" id="7">ACK</ref_event> bit is off,</trigger> <variable>sequence number zero is used,</variable>
 
         <variable>&lt;SEQ=0&gt;&lt;ACK=SEG.SEQ+SEG.LEN&gt;&lt;CTL=RST,ACK&gt;</variable>
 
@@ -4035,7 +4035,7 @@ SEGMENT ARRIVES
 
       </variable>Return.</control></control>
 
-    <control indent="4" count="70" relevant="true"><trigger>If the state is <ref_state id="1">LISTEN</ref_state></trigger> then
+    <control indent="2" count="70" relevant="true"><trigger>If the state is <ref_state id="1">LISTEN</ref_state></trigger> then
 
       first check for an RST
 
@@ -4054,7 +4054,7 @@ SEGMENT ARRIVES
 
       third check for a SYN
 
-        <control indent="8" count="71" relevant="false"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> bit is set,</trigger> <action>check the security.</action> <control indent="8" count="71" relevant="false"><trigger>If the
+        <control indent="4" count="71" relevant="false"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> bit is set,</trigger> <action>check the security.</action> <control indent="4" count="71" relevant="false"><trigger>If the
         security/compartment on the incoming segment does not exactly
         match the security/compartment in the TCB</trigger> then <action type="send">send a <arg><ref_event type="send" id="9">reset</ref_event></arg></action> and
         <action>return.</action>
@@ -4073,13 +4073,13 @@ Functional Specification
 
 
 
-        <control indent="8" count="72" relevant="true"><trigger>If the SEG.PRC is greater than the TCB.PRC then if allowed by
+        <control indent="4" count="72" relevant="true"><trigger>If the SEG.PRC is greater than the TCB.PRC then if allowed by
         the user and the system</trigger> <variable>set TCB.PRC&lt;-SEG.PRC,</variable> <trigger>if not allowed</trigger>
         <action type="send">send <arg>a reset</arg></action> and <action>return.</action>
 
           <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action></control>
 
-        <control indent="8" count="73" relevant="true"><trigger>If the SEG.PRC is less than the TCB.PRC</trigger> then <action>continue.</action></control>
+        <control indent="4" count="73" relevant="true"><trigger>If the SEG.PRC is less than the TCB.PRC</trigger> then <action>continue.</action></control>
 
         <variable>Set RCV.NXT to SEG.SEQ+1,</variable> <variable>IRS is set to SEG.SEQ</variable> and <action>any other
         control or text should be queued for processing later.</action>  <variable>ISS
@@ -4091,7 +4091,7 @@ Functional Specification
         <transition>state should be changed to <ref_state id="3">SYN-RECEIVED</ref_state>.</transition>  Note that any other
         incoming control or data (combined with SYN) will be processed
         in the SYN-RECEIVED state, but processing of SYN and ACK should
-        not be repeated.  <control indent="8" count="74" relevant="true"><trigger>If the listen was not fully specified (i.e.,
+        not be repeated.  <control indent="4" count="74" relevant="true"><trigger>If the listen was not fully specified (i.e.,
         the foreign socket was not fully specified),</trigger> then <variable>the
         unspecified fields should be filled in now.</variable></control></control>
 
@@ -4104,13 +4104,13 @@ Functional Specification
         incarnation of the connection.  So you are unlikely to get here,
         but if you do, drop the segment, and return.</control>
 
-    <control indent="4" count="75" relevant="true"><trigger>If the state is <ref_state id="2">SYN-SENT</ref_state></trigger> then
+    <control indent="2" count="75" relevant="true"><trigger>If the state is <ref_state id="2">SYN-SENT</ref_state></trigger> then
 
       first check the ACK bit
 
-        <control indent="8" count="76" relevant="unsure"><trigger>If the <ref_event type="receive" id="7">ACK</ref_event> bit is set
+        <control indent="4" count="76" relevant="unsure"><trigger>If the <ref_event type="receive" id="7">ACK</ref_event> bit is set
 
-          If SEG.ACK =&lt; ISS, or SEG.ACK &gt; SND.NXT,</trigger> <action type="send">send a <arg><ref_event type="send" id="9">reset</ref_event></arg></action> <control indent="10" count="77" relevant="true"><trigger>(unless
+          If SEG.ACK =&lt; ISS, or SEG.ACK &gt; SND.NXT,</trigger> <action type="send">send a <arg><ref_event type="send" id="9">reset</ref_event></arg></action> <control indent="5" count="77" relevant="true"><trigger>(unless
           the <ref_event type="receive" id="9">RST</ref_event> bit is set, if so </trigger> <action>drop the segment</action> and <action>return)</action></control>
 
             <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action>
@@ -4132,7 +4132,7 @@ SEGMENT ARRIVES
 
 
 
-        <control indent="8" count="78" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set
+        <control indent="4" count="78" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set
 
           If the <ref_event type="receive" id="7">ACK</ref_event> was acceptable</trigger> then <error>signal the user "error:
           connection reset",</error> <action>drop the segment,</action> <transition>enter <ref_state id="11">CLOSED</ref_state> state,</transition>
@@ -4141,7 +4141,7 @@ SEGMENT ARRIVES
 
       third check the security and precedence
 
-        <control indent="8" count="79" relevant="unsure"><trigger>If the security/compartment in the segment does not exactly
+        <control indent="4" count="79" relevant="unsure"><trigger>If the security/compartment in the segment does not exactly
         match the security/compartment in the TCB,</trigger>  <action type="send">send <arg>a reset</arg></action>
 
           <trigger>If there is an <ref_event type="receive" id="7">ACK</ref_event></trigger>
@@ -4152,14 +4152,14 @@ SEGMENT ARRIVES
 
             <action>&lt;SEQ=0&gt;&lt;ACK=SEG.SEQ+SEG.LEN&gt;&lt;CTL=RST,ACK&gt;</action></control>
 
-        <control indent="8" count="80" relevant="unsure"><trigger>If there is an <ref_event type="receive" id="7">ACK</ref_event>
+        <control indent="4" count="80" relevant="unsure"><trigger>If there is an <ref_event type="receive" id="7">ACK</ref_event>
 
           The precedence in the segment must match the precedence in the
           TCB, if not,</trigger> <action type="send">send a <arg><ref_event type="send" id="9">reset</ref_event></arg></action>
 
             <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action></control>
 
-        <control indent="8" count="81" relevant="unsure"><trigger>If there is no <ref_event type="receive" id="7">ACK</ref_event>
+        <control indent="4" count="81" relevant="unsure"><trigger>If there is no <ref_event type="receive" id="7">ACK</ref_event>
 
           If the precedence in the segment is higher than the precedence
           in the TCB then if allowed by the user and the system</trigger> <variable>raise
@@ -4168,17 +4168,17 @@ SEGMENT ARRIVES
 
             <action>&lt;SEQ=0&gt;&lt;ACK=SEG.SEQ+SEG.LEN&gt;&lt;CTL=RST,ACK&gt;</action></control>
 
-          <control indent="10" count="82" relevant="false"><trigger>If the precedence in the segment is lower than the precedence
+          <control indent="5" count="82" relevant="false"><trigger>If the precedence in the segment is lower than the precedence
           in the TCB</trigger> <action>continue.</action></control>
 
-        <control indent="8" count="83" relevant="false"><trigger>If a reset was sent,</trigger> <action>discard the segment</action> and <action>return.</action></control>
+        <control indent="4" count="83" relevant="false"><trigger>If a reset was sent,</trigger> <action>discard the segment</action> and <action>return.</action></control>
 
       fourth check the SYN bit
 
         This step should be reached only if the ACK is ok, or there is
         no ACK, and it the segment did not contain a RST.
 
-        <control indent="8" count="84" relevant="true"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> bit is on and the security/compartment and precedence
+        <control indent="4" count="84" relevant="true"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> bit is on and the security/compartment and precedence
 
 
                                                                [Page 67]
@@ -4196,13 +4196,13 @@ Functional Specification
         is an ACK),</variable> and <action>any segments on the retransmission queue which
         are thereby acknowledged should be removed.</action></control>
 
-        <control indent="8" count="85" relevant="true"><trigger>If SND.UNA &gt; ISS (our SYN has been ACKed),</trigger> <transition>change the connection
+        <control indent="4" count="85" relevant="true"><trigger>If SND.UNA &gt; ISS (our SYN has been ACKed),</trigger> <transition>change the connection
         state to <ref_state id="4">ESTABLISHED</ref_state>,</transition> <action type="issue">form an <arg><ref_event type="send" id="7">ACK</ref_event> segment</arg></action>
 
           <action>&lt;SEQ=SND.NXT&gt;&lt;ACK=RCV.NXT&gt;&lt;CTL=ACK&gt;</action>
 
         and <action type="send">send it.</action>  Data or controls which were queued for
-        transmission may be included.</control>  <control indent="8" count="86" relevant="unsure"><trigger>If there are other controls or
+        transmission may be included.</control>  <control indent="4" count="86" relevant="unsure"><trigger>If there are other controls or
         text in the segment then</trigger> <action>continue processing at the sixth step
         below where the URG bit is checked,</action> <trigger>otherwise</trigger> <action>return.</action>
 
@@ -4210,11 +4210,11 @@ Functional Specification
 
           <action>&lt;SEQ=ISS&gt;&lt;ACK=RCV.NXT&gt;&lt;CTL=SYN,ACK&gt;</action>
 
-        and <action type="send">send <arg><ref_event type="send" id="7">it</ref_event></arg>.</action></control>  <control indent="8" count="87" relevant="unsure"><trigger>If there are other controls or text in the
+        and <action type="send">send <arg><ref_event type="send" id="7">it</ref_event></arg>.</action></control>  <control indent="4" count="87" relevant="unsure"><trigger>If there are other controls or text in the
         segment,</trigger> <action>queue them for processing after the <ref_state id="4">ESTABLISHED</ref_state> state
         has been reached,</action> <action>return</action>.
 
-      fifth, <control indent="6" count="88" relevant="false"><trigger>if neither of the <ref_event type="receive" id="10">SYN</ref_event> or <ref_event type="receive" id="9">RST</ref_event> bits is set</trigger> then <action>drop the
+      fifth, <control indent="3" count="88" relevant="false"><trigger>if neither of the <ref_event type="receive" id="10">SYN</ref_event> or <ref_event type="receive" id="9">RST</ref_event> bits is set</trigger> then <action>drop the
       segment</action> and <action>return.</action></control></control></control>
 
 
@@ -4254,7 +4254,7 @@ SEGMENT ARRIVES
 
     first check sequence number
 
-      <control indent="6" count="89" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
+      <control indent="3" count="89" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
       <ref_state id="4">ESTABLISHED</ref_state> STATE
       <ref_state id="5">FIN-WAIT-1</ref_state> STATE
       <ref_state id="6">FIN-WAIT-2</ref_state> STATE
@@ -4285,17 +4285,17 @@ SEGMENT ARRIVES
           &gt;0      &gt;0     RCV.NXT =&lt; SEG.SEQ &lt; RCV.NXT+RCV.WND
                       or RCV.NXT =&lt; SEG.SEQ+SEG.LEN-1 &lt; RCV.NXT+RCV.WND
 
-        <control indent="8" count="90" relevant="true"><trigger>If the RCV.WND is zero,</trigger> <variable>no segments will be acceptable,</variable> but
+        <control indent="4" count="90" relevant="true"><trigger>If the RCV.WND is zero,</trigger> <variable>no segments will be acceptable,</variable> but
         special allowance should be made to accept valid ACKs, URGs and
         RSTs.</control>
 
-        <control indent="8" count="91" relevant="unsure"><trigger>If an incoming segment is not acceptable,</trigger> <action type="send"><arg>an acknowledgment</arg>
+        <control indent="4" count="91" relevant="unsure"><trigger>If an incoming segment is not acceptable,</trigger> <action type="send"><arg>an acknowledgment</arg>
         should be sent in reply</action> <trigger>(unless the <ref_event type="receive" id="9">RST</ref_event> bit is set, if so</trigger> <action>drop
         the segment</action> and <action>return):</action>
 
           <action>&lt;SEQ=SND.NXT&gt;&lt;ACK=RCV.NXT&gt;&lt;CTL=ACK&gt;</action></control>
 
-        <control indent="8" count="92" relevant="unsure"><trigger>After sending the acknowledgment,</trigger> <action>drop the unacceptable segment</action>
+        <control indent="4" count="92" relevant="unsure"><trigger>After sending the acknowledgment,</trigger> <action>drop the unacceptable segment</action>
         and <action>return.</action></control>
 
 
@@ -4319,13 +4319,13 @@ Functional Specification
 
     second check the RST bit,
 
-      <control indent="6" count="93" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
+      <control indent="3" count="93" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
 
-        <control indent="8" count="94" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set</trigger>
+        <control indent="4" count="94" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set</trigger>
 
-          <control indent="10" count="95" relevant="true"><trigger>If this connection was initiated with a passive OPEN (i.e.,
+          <control indent="5" count="95" relevant="true"><trigger>If this connection was initiated with a passive OPEN (i.e.,
           came from the <ref_state id="1">LISTEN</ref_state> state),</trigger> then <transition>return this connection to
-          <ref_state id="1">LISTEN</ref_state> state</transition> and <action>return.</action>  The user need not be informed.</control>  <control indent="10" count="96" relevant="true"><trigger>If
+          <ref_state id="1">LISTEN</ref_state> state</transition> and <action>return.</action>  The user need not be informed.</control>  <control indent="5" count="96" relevant="true"><trigger>If
           this connection was initiated with an active OPEN (i.e., came
           from <ref_state id="2">SYN-SENT</ref_state> state)</trigger> then <error>the connection was refused, signal
           the user "connection refused".</error></control>  <trigger>In either case,</trigger> <action>all segments
@@ -4333,22 +4333,22 @@ Functional Specification
           active OPEN case, <transition>enter the <ref_state id="11">CLOSED</ref_state> state</transition> and <variable>delete the TCB,</variable>
           and <action>return.</action></control></control>
 
-      <control indent="6" count="97" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state>
+      <control indent="3" count="97" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state>
       <ref_state id="5">FIN-WAIT-1</ref_state>
       <ref_state id="6">FIN-WAIT-2</ref_state>
       <ref_state id="7">CLOSE-WAIT</ref_state></trigger>
 
-        <control indent="8" count="98" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set then,</trigger> <action type="receive">any outstanding RECEIVEs and SEND
+        <control indent="4" count="98" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set then,</trigger> <action type="receive">any outstanding RECEIVEs and SEND
         should receive <arg>"reset" responses.</arg></action>  <action>All segment queues should be
         flushed.</action>  Users should also receive an unsolicited general
         <error>"connection reset" signal.</error>  <transition>Enter the <ref_state id="11">CLOSED</ref_state> state,</transition> <variable>delete the
         TCB,</variable> and <action>return.</action></control></control>
 
-      <control indent="6" count="99" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
+      <control indent="3" count="99" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE
       <ref_state id="9">LAST-ACK</ref_state> STATE
       <ref_state id="10">TIME-WAIT</ref_state></trigger>
 
-        <control indent="8" count="100" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set then,</trigger> <transition>enter the <ref_state id="11">CLOSED</ref_state> state,</transition> <variable>delete the
+        <control indent="4" count="100" relevant="true"><trigger>If the <ref_event type="receive" id="9">RST</ref_event> bit is set then,</trigger> <transition>enter the <ref_state id="11">CLOSED</ref_state> state,</transition> <variable>delete the
         TCB</variable>, and <action>return.</action></control></control>
 
 
@@ -4370,15 +4370,15 @@ SEGMENT ARRIVES
 
     third check security and precedence
 
-      <control indent="6" count="101" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state></trigger>
+      <control indent="3" count="101" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state></trigger>
 
-        <control indent="8" count="102" relevant="false"><trigger>If the security/compartment and precedence in the segment do not
+        <control indent="4" count="102" relevant="false"><trigger>If the security/compartment and precedence in the segment do not
         exactly match the security/compartment and precedence in the TCB</trigger>
         then <action type="send">send <arg>a <ref_event type="send" id="9">reset</ref_event>,</arg></action> and <action>return.</action></control></control>
 
-      <control indent="6" count="103" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
+      <control indent="3" count="103" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
 
-        <control indent="8" count="104" relevant="true"><trigger>If the security/compartment and precedence in the segment do not
+        <control indent="4" count="104" relevant="true"><trigger>If the security/compartment and precedence in the segment do not
         exactly match the security/compartment and precedence in the TCB</trigger>
         then <action type="send">send <arg>a <ref_event type="send" id="9">reset</ref_event>,</arg></action> any outstanding RECEIVEs and SEND should
         receive "reset" responses.  <action>All segment queues should be
@@ -4393,7 +4393,7 @@ SEGMENT ARRIVES
 
     fourth, check the SYN bit,
 
-      <control indent="6" count="105" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state>
+      <control indent="3" count="105" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state>
       <ref_state id="4">ESTABLISHED</ref_state> STATE
       FIN-WAIT STATE-1
       FIN-WAIT STATE-2
@@ -4402,7 +4402,7 @@ SEGMENT ARRIVES
       <ref_state id="9">LAST-ACK</ref_state> STATE
       <ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
-        <control indent="8" count="106" relevant="true"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> is in the window it is an error,</trigger> <action type="send">send a <arg><ref_event type="send" id="9">reset,</ref_event></arg></action> <action type="receive">any
+        <control indent="4" count="106" relevant="true"><trigger>If the <ref_event type="receive" id="10">SYN</ref_event> is in the window it is an error,</trigger> <action type="send">send a <arg><ref_event type="send" id="9">reset,</ref_event></arg></action> <action type="receive">any
         outstanding RECEIVEs and SEND should receive <arg>"reset" responses,</arg></action>
         <action>all segment queues should be flushed,</action> the user should also
         receive an unsolicited general <error>"connection reset" signal,</error> <transition>enter
@@ -4429,36 +4429,36 @@ Functional Specification
 
     fifth check the ACK field,
 
-      <control indent="6" count="107" relevant="false"><trigger>if the <ref_event type="receive" id="7">ACK</ref_event> bit is off</trigger> <action>drop the segment</action> and <action>return</action></control>
+      <control indent="3" count="107" relevant="false"><trigger>if the <ref_event type="receive" id="7">ACK</ref_event> bit is off</trigger> <action>drop the segment</action> and <action>return</action></control>
 
-      <control indent="6" count="108" relevant="true"><trigger>if the <ref_event type="receive" id="7">ACK</ref_event> bit is on</trigger>
+      <control indent="3" count="108" relevant="true"><trigger>if the <ref_event type="receive" id="7">ACK</ref_event> bit is on</trigger>
 
-        <control indent="8" count="109" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
+        <control indent="4" count="109" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE</trigger>
 
-          <control indent="10" count="110" relevant="true"><trigger>If SND.UNA =&lt; SEG.ACK =&lt; SND.NXT</trigger> then <transition>enter <ref_state id="4">ESTABLISHED</ref_state> state</transition>
+          <control indent="5" count="110" relevant="true"><trigger>If SND.UNA =&lt; SEG.ACK =&lt; SND.NXT</trigger> then <transition>enter <ref_state id="4">ESTABLISHED</ref_state> state</transition>
           and continue processing.
 
-            <control indent="12" count="111" relevant="false"><trigger>If the segment acknowledgment is not acceptable,</trigger> <action type="issue">form a
+            <control indent="6" count="111" relevant="false"><trigger>If the segment acknowledgment is not acceptable,</trigger> <action type="issue">form a
             <arg>reset segment,</arg></action>
 
               <action>&lt;SEQ=SEG.ACK&gt;&lt;CTL=RST&gt;</action>
 
             and <action type="send">send it.</action></control></control></control></control>
 
-        <control indent="8" count="112" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
+        <control indent="4" count="112" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
 
-          <control indent="10" count="113" relevant="true"><trigger>If SND.UNA &lt; SEG.ACK =&lt; SND.NXT then,</trigger> <variable>set SND.UNA &lt;- SEG.ACK.</variable>
+          <control indent="5" count="113" relevant="true"><trigger>If SND.UNA &lt; SEG.ACK =&lt; SND.NXT then,</trigger> <variable>set SND.UNA &lt;- SEG.ACK.</variable>
           <action>Any segments on the retransmission queue which are thereby
           entirely acknowledged are removed.</action>  Users should receive
           positive acknowledgments for buffers which have been SENT and
           fully acknowledged (i.e., SEND buffer should be returned with
-          "ok" response).</control>  <control indent="10" count="114" relevant="false"><trigger>If the ACK is a duplicate
-          (SEG.ACK &lt; SND.UNA),</trigger> <action>it can be ignored.</action></control>  <control indent="10" count="115" relevant="false"><trigger>If the ACK acks
+          "ok" response).</control>  <control indent="5" count="114" relevant="false"><trigger>If the ACK is a duplicate
+          (SEG.ACK &lt; SND.UNA),</trigger> <action>it can be ignored.</action></control>  <control indent="5" count="115" relevant="false"><trigger>If the ACK acks
           something not yet sent (SEG.ACK &gt; SND.NXT)</trigger> then <action type="send">send an <arg><ref_event type="send" id="7">ACK,</ref_event></arg></action>
           <action>drop the segment,</action> and <action>return.</action></control>
 
-          <control indent="10" count="116" relevant="true"><trigger>If SND.UNA &lt; SEG.ACK =&lt; SND.NXT,</trigger> <action>the send window should be
-          updated.</action></control>  <control indent="10" count="117" relevant="true"><trigger>If (SND.WL1 &lt; SEG.SEQ or (SND.WL1 = SEG.SEQ and
+          <control indent="5" count="116" relevant="true"><trigger>If SND.UNA &lt; SEG.ACK =&lt; SND.NXT,</trigger> <action>the send window should be
+          updated.</action></control>  <control indent="5" count="117" relevant="true"><trigger>If (SND.WL1 &lt; SEG.SEQ or (SND.WL1 = SEG.SEQ and
           SND.WL2 =&lt; SEG.ACK)),</trigger> <variable>set SND.WND &lt;- SEG.WND,</variable> <variable>set
           SND.WL1 &lt;- SEG.SEQ,</variable> and <variable>set SND.WL2 &lt;- SEG.ACK.</variable></control>
 
@@ -4486,9 +4486,9 @@ SEGMENT ARRIVES
 
 
 
-        <control indent="8" count="118" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE</trigger>
+        <control indent="4" count="118" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE</trigger>
 
-          In addition to the processing for the ESTABLISHED state, <control indent="10" count="119" relevant="true"><trigger>if
+          In addition to the processing for the ESTABLISHED state, <control indent="5" count="119" relevant="true"><trigger>if
           our <ref_event type="receive" id="7">FIN is now acknowledged</ref_event></trigger> then <transition>enter <ref_state id="6">FIN-WAIT-2</ref_state></transition> and continue
           processing in that state.</control></control>
 
@@ -4502,19 +4502,19 @@ SEGMENT ARRIVES
 
           Do the same processing as for the ESTABLISHED state.
 
-        <control indent="8" count="120" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE</trigger>
+        <control indent="4" count="120" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE</trigger>
 
-          In addition to the processing for the ESTABLISHED state, <control indent="10" count="121" relevant="true"><trigger>if
+          In addition to the processing for the ESTABLISHED state, <control indent="5" count="121" relevant="true"><trigger>if
           the <ref_event type="receive" id="7">ACK acknowledges our FIN</ref_event></trigger> then <transition>enter the <ref_state id="10">TIME-WAIT</ref_state> state,</transition>
           <trigger>otherwise</trigger> <action>ignore the segment.</action></control></control>
 
-        <control indent="8" count="122" relevant="true"><trigger><ref_state id="9">LAST-ACK</ref_state> STATE</trigger>
+        <control indent="4" count="122" relevant="true"><trigger><ref_state id="9">LAST-ACK</ref_state> STATE</trigger>
 
           The only thing that can arrive in this state is an
-          acknowledgment of our FIN.  <control indent="10" count="123" relevant="true"><trigger>If our <ref_event type="receive" id="7">FIN is now acknowledged</ref_event>,</trigger>
+          acknowledgment of our FIN.  <control indent="5" count="123" relevant="true"><trigger>If our <ref_event type="receive" id="7">FIN is now acknowledged</ref_event>,</trigger>
           <variable>delete the TCB,</variable> <transition>enter the <ref_state id="11">CLOSED</ref_state> state,</transition> and <action>return.</action></control></control>
 
-        <control indent="8" count="124" relevant="true"><trigger><ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
+        <control indent="4" count="124" relevant="true"><trigger><ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
           The only thing that can arrive in this state is a
           retransmission of the remote FIN.  Acknowledge it, and <timer>restart
@@ -4522,11 +4522,11 @@ SEGMENT ARRIVES
 
     sixth, check the URG bit,
 
-      <control indent="6" count="125" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
+      <control indent="3" count="125" relevant="true"><trigger><ref_state id="4">ESTABLISHED</ref_state> STATE
       <ref_state id="5">FIN-WAIT-1</ref_state> STATE
       <ref_state id="6">FIN-WAIT-2</ref_state> STATE</trigger>
 
-        <control indent="8" count="126" relevant="true"><trigger>If the URG bit is set,</trigger> <variable>RCV.UP &lt;- max(RCV.UP,SEG.UP),</variable></control> and signal
+        <control indent="4" count="126" relevant="true"><trigger>If the URG bit is set,</trigger> <variable>RCV.UP &lt;- max(RCV.UP,SEG.UP),</variable></control> and signal
         the user that the remote side has urgent data if the urgent
         pointer (RCV.UP) is in advance of the data consumed.  If the
         user has already been signaled (or is still in the "urgent
@@ -4618,37 +4618,37 @@ SEGMENT ARRIVES
       since the SEG.SEQ cannot be validated; drop the segment and
       return.
 
-      <control indent="6" count="127" relevant="true"><trigger>If the <ref_event type="receive" id="11">FIN</ref_event> bit is set,</trigger> <error>signal the user "connection closing"</error> and
+      <control indent="3" count="127" relevant="true"><trigger>If the <ref_event type="receive" id="11">FIN</ref_event> bit is set,</trigger> <error>signal the user "connection closing"</error> and
       <action>return any pending RECEIVEs with same message,</action> <action>advance RCV.NXT
       over the FIN,</action> and <action type="send">send <arg> <ref_event type="send" id="7">an acknowledgment for the FIN</ref_event>.</arg></action>  Note that
       FIN implies PUSH for any segment text not yet delivered to the
       user.
 
-        <control indent="8" count="128" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
+        <control indent="4" count="128" relevant="true"><trigger><ref_state id="3">SYN-RECEIVED</ref_state> STATE
         <ref_state id="4">ESTABLISHED</ref_state> STATE</trigger>
 
           <transition>Enter the <ref_state id="7">CLOSE-WAIT</ref_state> state.</transition></control>
 
-        <control indent="8" count="129" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE</trigger>
+        <control indent="4" count="129" relevant="true"><trigger><ref_state id="5">FIN-WAIT-1</ref_state> STATE</trigger>
 
-          <control indent="10" count="130" relevant="true"><trigger>If our FIN has been <ref_event type="receive" id="7">ACKed</ref_event> (perhaps in this segment),</trigger> then
+          <control indent="5" count="130" relevant="true"><trigger>If our FIN has been <ref_event type="receive" id="7">ACKed</ref_event> (perhaps in this segment),</trigger> then
           <transition>enter <ref_state id="10">TIME-WAIT</ref_state>,</transition> <timer>start the time-wait timer,</timer> <timer>turn off the other
           timers;</timer> <trigger>otherwise</trigger> <transition>enter the <ref_state id="8">CLOSING</ref_state> state.</transition></control></control>
 
-        <control indent="8" count="131" relevant="true"><trigger><ref_state id="6">FIN-WAIT-2</ref_state> STATE</trigger>
+        <control indent="4" count="131" relevant="true"><trigger><ref_state id="6">FIN-WAIT-2</ref_state> STATE</trigger>
 
           <transition>Enter the <ref_state id="10">TIME-WAIT</ref_state> state.</transition>  <timer>Start the time-wait timer,</timer> <timer>turn
           off the other timers.</timer></control>
 
-        <control indent="8" count="132" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
+        <control indent="4" count="132" relevant="true"><trigger><ref_state id="7">CLOSE-WAIT</ref_state> STATE</trigger>
 
           <transition>Remain in the <ref_state id="7">CLOSE-WAIT</ref_state> state.</transition></control>
 
-        <control indent="8" count="133" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE</trigger>
+        <control indent="4" count="133" relevant="true"><trigger><ref_state id="8">CLOSING</ref_state> STATE</trigger>
 
           <transition>Remain in the <ref_state id="8">CLOSING</ref_state> state.</transition></control>
 
-        <control indent="8" count="134" relevant="true"><trigger><ref_state id="9">LAST-ACK</ref_state> STATE</trigger>
+        <control indent="4" count="134" relevant="true"><trigger><ref_state id="9">LAST-ACK</ref_state> STATE</trigger>
 
           <transition>Remain in the <ref_state id="9">LAST-ACK</ref_state> state.</transition></control>
 
@@ -4663,7 +4663,7 @@ Functional Specification
 
 
 
-        <control indent="8" count="135" relevant="true"><trigger><ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
+        <control indent="4" count="135" relevant="true"><trigger><ref_state id="10">TIME-WAIT</ref_state> STATE</trigger>
 
           <transition>Remain in the <ref_state id="10">TIME-WAIT</ref_state> state.</transition>  <timer>Restart the 2 MSL time-wait
           timeout.</timer></control>
@@ -4722,23 +4722,23 @@ USER TIMEOUT
 
 
 
-  <control indent="2" count="136" relevant="true"><trigger>USER TIMEOUT</trigger>
+  <control indent="1" count="136" relevant="true"><trigger>USER TIMEOUT</trigger>
 
-    For any state <control indent="4" count="137" relevant="true"><trigger>if the user timeout expires,</trigger> <action>flush all queues,</action> <error>signal
+    For any state <control indent="2" count="137" relevant="true"><trigger>if the user timeout expires,</trigger> <action>flush all queues,</action> <error>signal
     the user "error:  connection aborted due to user timeout"</error> in general
     and for any outstanding calls, <variable>delete the TCB,</variable> <transition>enter the <ref_state id="11">CLOSED</ref_state>
     state</transition> and <action>return.</action></control></control>
 
-  <control indent="2" count="138" relevant="true"><trigger>RETRANSMISSION TIMEOUT</trigger>
+  <control indent="1" count="138" relevant="true"><trigger>RETRANSMISSION TIMEOUT</trigger>
 
-    For any state <control indent="4" count="139" relevant="true"><trigger>if the retransmission timeout expires on a segment in
+    For any state <control indent="2" count="139" relevant="true"><trigger>if the retransmission timeout expires on a segment in
     the retransmission queue,</trigger> <action type="send">send <arg>the segment at the front of the
     retransmission queue</arg> again,</action> <timer>reinitialize the retransmission timer,</timer>
     and <action>return.</action></control></control>
 
-  <control indent="2" count="140" relevant="true"><trigger>TIME-WAIT TIMEOUT</trigger>
+  <control indent="1" count="140" relevant="true"><trigger>TIME-WAIT TIMEOUT</trigger>
 
-    <control indent="4" count="141" relevant="true"><trigger>If the time-wait timeout expires on a connection</trigger> <variable>delete the TCB,</variable>
+    <control indent="2" count="141" relevant="true"><trigger>If the time-wait timeout expires on a connection</trigger> <variable>delete the TCB,</variable>
     <transition>enter the <ref_state id="11">CLOSED</ref_state> state</transition> and <action>return.</action></control></control>
 
 

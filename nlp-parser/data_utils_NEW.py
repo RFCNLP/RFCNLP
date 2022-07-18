@@ -925,7 +925,7 @@ def write_results(X_test_data, y_test_trans, y_pred_trans, level_h_trans, level_
         #open_continued_control = False
         prev_tag = None
         prev_h = 0; prev_d = 0; prev_offset = 1
-        num_open_control = {1: 1}
+        num_open_control = {min(d): 1}
         i = 0
         ack_tags = []; ack_type = None
         open_arg = False;

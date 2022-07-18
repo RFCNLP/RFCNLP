@@ -19,15 +19,31 @@ def main():
 
     print(args.protocol)
     fp_ann = open('rfcs-annotated-tidied/{}.xml'.format(args.protocol))
-    fp_out = open('rfcs-annotated-tidied/{}-format.xml'.format(args.protocol), "w")
-    sent_count = 0
+    indent_range = set()
 
     for line in fp_ann:
         indent = len(line) - len(line.lstrip())
         if "<control" in line:
+            indent_range.add(indent)
+
+    indent_range = list(indent_range)
+    indent_range.sort()
+    projected_range = list(range(1, len(indent_range)+1))
+    print(indent_range, projected_range)
+
+    fp_ann = open('rfcs-annotated-tidied/{}.xml'.format(args.protocol))
+    fp_out = open('rfcs-annotated-tidied/{}-format.xml'.format(args.protocol), "w")
+    sent_count = 0
+    for line in fp_ann:
+        indent = len(line) - len(line.lstrip())
+        if "<control" in line:
+            index_of_indent = indent_range.index(indent)
+            indent_proj = projected_range[index_of_indent]
+
             sent_count += 1
-            line = line.replace('<control ', '<control indent="{}" count="{}" '.format(indent, sent_count))
+            line = line.replace('<control ', '<control indent="{}" count="{}" '.format(indent_proj, sent_count))
         fp_out.write(line)
+
 
 if __name__ == "__main__":
     main()
