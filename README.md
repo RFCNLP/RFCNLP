@@ -18,6 +18,8 @@ We additionally provide:
 * [a tutorial on how to use our software](tutorials/attacker.synthesis.md); and
 * [a detailed error analysis of the FSMs](tutorials/detailed.FSM.error.analysis.md).
 
+We also blogged about this work on [dev.to](https://dev.to/maxvonhippel/automated-attack-synthesis-by-extracting-protocol-fsms-from-rfcs-1dck) and [APNIC](https://blog.apnic.net/2022/10/19/formally-verifying-protocols-from-textual-specifications/).
+
 ## Reproduce Our Results
 
 To use our pre-trained technical language embedding, you'll need to get it using git-LFS, like so:
